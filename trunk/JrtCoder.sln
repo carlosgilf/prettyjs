@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JrtCoder", "JrtCoder\JrtCoder.csproj", "{CFAD9D03-3258-46EF-BE2F-73417F43D52E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "JrtCoderSetip", "Setup1\Setup1.vdproj", "{6E54D485-9F50-448D-86DD-079E842849F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddinCustomAction", "AddinCustomAction\AddinCustomAction.csproj", "{4C33959B-8B34-4990-AC8A-79F90F2FF64E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestJsParser", "TestJsParser\TestJsParser.csproj", "{D049AB18-8CDA-446B-BB12-93F3E4777129}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 5
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = JrtCoder\\JrtCoder.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = JrtCoder\\
+		SccProjectUniqueName2 = Setup1\\Setup1.vdproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = Setup1\\
+		SccProjectUniqueName3 = AddinCustomAction\\AddinCustomAction.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = AddinCustomAction\\
+		SccProjectUniqueName4 = TestJsParser\\TestJsParser.csproj
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = TestJsParser\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFAD9D03-3258-46EF-BE2F-73417F43D52E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFAD9D03-3258-46EF-BE2F-73417F43D52E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFAD9D03-3258-46EF-BE2F-73417F43D52E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFAD9D03-3258-46EF-BE2F-73417F43D52E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E54D485-9F50-448D-86DD-079E842849F6}.Debug|Any CPU.ActiveCfg = Debug
+		{6E54D485-9F50-448D-86DD-079E842849F6}.Release|Any CPU.ActiveCfg = Release
+		{4C33959B-8B34-4990-AC8A-79F90F2FF64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C33959B-8B34-4990-AC8A-79F90F2FF64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C33959B-8B34-4990-AC8A-79F90F2FF64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C33959B-8B34-4990-AC8A-79F90F2FF64E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D049AB18-8CDA-446B-BB12-93F3E4777129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D049AB18-8CDA-446B-BB12-93F3E4777129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D049AB18-8CDA-446B-BB12-93F3E4777129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D049AB18-8CDA-446B-BB12-93F3E4777129}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
