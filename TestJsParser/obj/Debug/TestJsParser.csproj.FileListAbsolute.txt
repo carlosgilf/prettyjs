@@ -1,0 +1,10 @@
+E:\jrt\Add-in开发\JrtCoder\TestJsParser\bin\Debug\TestJsParser.exe
+E:\jrt\Add-in开发\JrtCoder\TestJsParser\bin\Debug\TestJsParser.pdb
+E:\jrt\Add-in开发\JrtCoder\TestJsParser\bin\Debug\JrtCoder.dll
+E:\jrt\Add-in开发\JrtCoder\TestJsParser\bin\Debug\JrtCoder.pdb
+E:\jrt\Add-in开发\JrtCoder\TestJsParser\obj\Debug\ResolveAssemblyReference.cache
+E:\jrt\Add-in开发\JrtCoder\TestJsParser\obj\Debug\TestJsParser.Form1.resources
+E:\jrt\Add-in开发\JrtCoder\TestJsParser\obj\Debug\TestJsParser.Properties.Resources.resources
+E:\jrt\Add-in开发\JrtCoder\TestJsParser\obj\Debug\TestJsParser.csproj.GenerateResource.Cache
+E:\jrt\Add-in开发\JrtCoder\TestJsParser\obj\Debug\TestJsParser.exe
+E:\jrt\Add-in开发\JrtCoder\TestJsParser\obj\Debug\TestJsParser.pdb
