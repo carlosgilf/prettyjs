@@ -329,6 +329,15 @@ namespace Jrt.PrettyJs
                 MenuCommand settingsMenuItem = new MenuCommand(settingsCallback, menuCommandID);
                 mcs.AddCommand(settingsMenuItem);
 
+                menuCommandID = new CommandID(GuidList.guidPrettyJsCmdSet, (int)PkgCmdIDList.cmdAddToRegion);
+                MenuCommand addRegionMenuItem = new MenuCommand(settingsCallback, menuCommandID);
+                mcs.AddCommand(addRegionMenuItem);
+
+
+                menuCommandID = new CommandID(GuidList.guidPrettyJsCmdSet, (int)PkgCmdIDList.cmdFormatSelectedJs1);
+                MenuCommand selectedJsMenuItem1 = new MenuCommand(menuSelectedJsCallback, menuCommandID);
+                mcs.AddCommand(selectedJsMenuItem1);
+
             }
         }
         #endregion

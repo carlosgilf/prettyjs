@@ -47,6 +47,10 @@
       <Group guid="guidPrettyJsCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
       </Group>
+
+      <Group guid="guidPrettyJsCmdSet" id="ContextMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN"/>
+      </Group>
       
 
 
@@ -92,6 +96,25 @@
         </Strings>
       </Button>
 
+
+      <Button guid="guidPrettyJsCmdSet" id="cmdAddToRegion" priority="0x0100" type="Button">
+        <Parent guid="guidPrettyJsCmdSet" id="ContextMenuGroup" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <Strings>
+          <CommandName>cmdAddToRegion</CommandName>
+          <ButtonText>Add to region</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidPrettyJsCmdSet" id="cmdFormatSelectedJs1" priority="0x0100" type="Button">
+        <Parent guid="guidPrettyJsCmdSet" id="ContextMenuGroup" />
+        <Icon guid="guidImages" id="bmpPic2" />
+        <Strings>
+          <CommandName>cmdFormatSelectedJs1</CommandName>
+          <ButtonText>Format Selected Code</ButtonText>
+        </Strings>
+      </Button>
+
     </Buttons>
    
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -119,9 +142,13 @@
     <GuidSymbol name="guidPrettyJsCmdSet" value="{9c0dac38-df57-4b87-a49a-74abbbd82b35}">
 
       <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="ContextMenuGroup" value="0x1021" />
       <IDSymbol name="cmdFormatJs" value="0x0100" />
       <IDSymbol name="cmdFormatSelectedJs" value="0x0101" />
+      <IDSymbol name="cmdFormatSelectedJs1" value="0x0105" />
       <IDSymbol name="cmdSettings" value="0x0102" />
+      <IDSymbol name="cmdAddToRegion" value="0x0104" />
+      
     </GuidSymbol>
     
     
