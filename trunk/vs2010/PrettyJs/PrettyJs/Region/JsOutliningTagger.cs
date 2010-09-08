@@ -54,6 +54,7 @@ namespace Jrt.PrettyJs {
         Regex CustomEnd { get; set; }
         Regex CommentStart { get; set; }
         Regex CommentEnd { get; set; }
+        Regex CommentAll { get; set; }
         #endregion
 
         #region Events ////////////////////////////////////////////////////////////////////////////
@@ -84,6 +85,7 @@ namespace Jrt.PrettyJs {
 
             CommentStart = new Regex(CommentStartPattern, RegexOptions);
             CommentEnd = new Regex(CommentEndPattern, RegexOptions);
+            CommentAll = new Regex(CommentAllPattern, RegexOptions);
 
             this.Refactor();
         }
@@ -147,7 +149,13 @@ namespace Jrt.PrettyJs {
             {
                 if (lastComment == false)
                 {
-                    if (CommentStart.IsMatch(text))
+                    if (CommentAll.IsMatch(text))
+                    {
+                        match = CommentAll.Match(text);
+                        text = match.Groups["code"].Value;
+                        return parser(text);
+                    }
+                    else if(CommentStart.IsMatch(text))
                     {
                         match = CommentStart.Match(text);
                         if (match.Groups["comment"].Value == "/*")
