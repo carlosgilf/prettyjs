@@ -280,6 +280,68 @@ namespace Jrt.PrettyJs
             }
         }
 
+        public void AddRegionCallback(object server, EventArgs e)
+        {
+            IVsUIShell uiShell = (IVsUIShell)GetService(typeof(SVsUIShell));
+            DTE2 dte2 = GetService(typeof(SDTE)) as EnvDTE80.DTE2;
+
+            Document activeDoc = dte2.ActiveDocument;
+            if (activeDoc == null)
+            {
+                MessageBox.Show("没有活动文档。");
+                return;
+            }
+
+            TextDocument textDoc = activeDoc.Object("TextDocument") as TextDocument;
+            if (textDoc == null)
+            {
+                MessageBox.Show("请选择要插入的文档。");
+                return;
+            }
+            TextSelection objTextSelection = textDoc.Selection;
+            EditPoint editPoint = textDoc.Selection.ActivePoint.CreateEditPoint();
+            if (!textDoc.Selection.IsEmpty)
+            {
+                string regionSpace = "";
+
+
+                //选区扩充到第一行的开头位置,以及最后一行的结束位置
+                int topLine = objTextSelection.ActivePoint.Line;
+                int bottomLine = objTextSelection.AnchorPoint.Line;
+
+                if (objTextSelection.ActivePoint.Line > objTextSelection.AnchorPoint.Line)
+                {
+                    objTextSelection.SwapAnchor();
+                    topLine = objTextSelection.ActivePoint.Line;
+                    bottomLine = objTextSelection.AnchorPoint.Line;
+                }
+                objTextSelection.StartOfLine(vsStartOfLineOptions.vsStartOfLineOptionsFirstColumn, true);
+                string text = objTextSelection.Text;
+                for (int i = 0; i < text.Length; i++)
+                {
+                    if (text[i] == '\t' || text[i] == ' ')
+                    {
+                        regionSpace += text[i];
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                EditPoint topPoint = objTextSelection.ActivePoint.CreateEditPoint();
+                topPoint.Insert(regionSpace + "//##\r\n");
+                objTextSelection.MoveTo(objTextSelection.AnchorPoint.Line, 1, false);
+                objTextSelection.EndOfLine(false);
+                EditPoint topPoint1 = objTextSelection.AnchorPoint.CreateEditPoint();
+                topPoint1.Insert("\r\n" + regionSpace + "//#end");
+                //objTextSelection.MoveToLineAndOffset(topLine, 1, true);
+                //objTextSelection.EndOfLine(true);
+                //objTextSelection.SwapAnchor();
+                //objTextSelection.OutlineSection();
+                //objTextSelection.StartOfLine(vsStartOfLineOptions.vsStartOfLineOptionsFirstColumn, false);
+
+            }
+        }
 
         /// <summary>
         /// Default constructor of the package.
@@ -307,6 +369,8 @@ namespace Jrt.PrettyJs
             Trace.WriteLine (string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
             base.Initialize();
 
+            SetCodeOption();
+
             // Add our command handlers for menu (commands must exist in the .vsct file)
             OleMenuCommandService mcs = GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
             if ( null != mcs )
@@ -330,13 +394,8 @@ namespace Jrt.PrettyJs
                 mcs.AddCommand(settingsMenuItem);
 
                 menuCommandID = new CommandID(GuidList.guidPrettyJsCmdSet, (int)PkgCmdIDList.cmdAddToRegion);
-                MenuCommand addRegionMenuItem = new MenuCommand(settingsCallback, menuCommandID);
+                MenuCommand addRegionMenuItem = new MenuCommand(AddRegionCallback, menuCommandID);
                 mcs.AddCommand(addRegionMenuItem);
-
-
-                menuCommandID = new CommandID(GuidList.guidPrettyJsCmdSet, (int)PkgCmdIDList.cmdFormatSelectedJs1);
-                MenuCommand selectedJsMenuItem1 = new MenuCommand(menuSelectedJsCallback, menuCommandID);
-                mcs.AddCommand(selectedJsMenuItem1);
 
             }
         }

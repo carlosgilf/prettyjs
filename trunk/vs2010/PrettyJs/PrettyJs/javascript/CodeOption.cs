@@ -25,7 +25,7 @@ namespace Jrt.PrettyJs
     [Serializable]
     public class CodeOption
     {
-        private CodeStyle style = CodeStyle.MS;
+        private CodeStyle style = CodeStyle.C;
 
         /// <summary>
         /// 代码风格
@@ -62,7 +62,7 @@ namespace Jrt.PrettyJs
             }
         }
 
-        private bool identUseTab = true;
+        private bool identUseTab = false;
         public bool IdentUseTab
         {
             get { return identUseTab; }
