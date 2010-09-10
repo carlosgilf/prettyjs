@@ -59,10 +59,6 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="v8sharp, Version=0.1.1.0, Culture=neutral, PublicKeyToken=df93e80061ee5c07, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dlls\v8sharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="EnvDTE">
@@ -125,7 +121,6 @@
     <Compile Include="javascript\Beautifier.cs" />
     <Compile Include="javascript\CodeOption.cs" />
     <Compile Include="javascript\IN.cs" />
-    <Compile Include="javascript\JsFormatter.cs" />
     <Compile Include="javascript\TK.cs" />
     <Compile Include="JsFormatSettings.cs">
       <SubType>Form</SubType>

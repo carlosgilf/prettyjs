@@ -40,7 +40,7 @@ namespace Jrt.PrettyJs
     [Guid(GuidList.guidPrettyJsPkgString)]
     public sealed class PrettyJsPackage : Package
     {
-        JsFormatter formatter = new JsFormatter();
+        //JsFormatter formatter = new JsFormatter();
 
         private Beautifier beautifier = new Beautifier();
         public CodeOption option = new CodeOption();
@@ -84,16 +84,16 @@ namespace Jrt.PrettyJs
         }
 
 
-        public void FormatAllCode()
-        {
-            IVsUIShell uiShell = (IVsUIShell)GetService(typeof(SVsUIShell));
-            IWpfTextView view = GetActiveTextView();
-            //String selectedText = view.Selection.SelectedSpans[0].GetText();
-            var allText = view.TextSnapshot.GetText();
-            string formatedCode = formatter.Format(allText);
-            var s = new Span(0, 1);
-            view.TextBuffer.Replace(new Span(0, allText.Length), formatedCode);
-        }
+        //public void FormatAllCode()
+        //{
+        //    IVsUIShell uiShell = (IVsUIShell)GetService(typeof(SVsUIShell));
+        //    IWpfTextView view = GetActiveTextView();
+        //    //String selectedText = view.Selection.SelectedSpans[0].GetText();
+        //    var allText = view.TextSnapshot.GetText();
+        //    string formatedCode = formatter.Format(allText);
+        //    var s = new Span(0, 1);
+        //    view.TextBuffer.Replace(new Span(0, allText.Length), formatedCode);
+        //}
 
         public void Format(bool isFormatAll)
         {
@@ -339,7 +339,6 @@ namespace Jrt.PrettyJs
                 //objTextSelection.SwapAnchor();
                 //objTextSelection.OutlineSection();
                 //objTextSelection.StartOfLine(vsStartOfLineOptions.vsStartOfLineOptionsFirstColumn, false);
-
             }
         }
 
