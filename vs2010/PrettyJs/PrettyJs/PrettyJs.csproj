@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="v8sharp, Version=0.1.1.0, Culture=neutral, PublicKeyToken=df93e80061ee5c07, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\v8sharp.dll</HintPath>
+      <HintPath>..\Dlls\v8sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
