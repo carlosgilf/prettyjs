@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettyJs", "PrettyJs\PrettyJs.csproj", "{4CE37A79-254A-4BD2-A462-3A2283B38284}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dlls", "Dlls", "{F1D017FE-3E96-4115-A6A6-EB9647E136A6}"
+	ProjectSection(SolutionItems) = preProject
+		Dlls\v8sharp.dll = Dlls\v8sharp.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
