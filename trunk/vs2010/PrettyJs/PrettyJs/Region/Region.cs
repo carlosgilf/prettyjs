@@ -27,6 +27,8 @@ namespace Jrt.PrettyJs {
 
         public int StartOffset{get;set;}
 
+        public int EndOffset { get; set; }
+
         public string Text { get; set; }
 
         public RegionType Type { get; set; }
@@ -41,7 +43,7 @@ namespace Jrt.PrettyJs {
         /// <returns></returns>
         public SnapshotSpan AsSnapshotSpan() {
             //return new SnapshotSpan(this.Start, this.End);
-            return new SnapshotSpan(this.Start + this.StartOffset, this.End);
+            return new SnapshotSpan(this.Start + this.StartOffset, this.End - EndOffset);
 
         }
 
