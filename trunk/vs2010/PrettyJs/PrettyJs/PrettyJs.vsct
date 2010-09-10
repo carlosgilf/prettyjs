@@ -143,6 +143,18 @@
     </CommandPlacement>
   </CommandPlacements>
 
+  <!--<KeyBindings>
+    <KeyBinding guid="guidPrettyJsCmdSet" id="cmdFormatJs"
+        key1="R" mod1="Control"  key2="F"  editor="guidVSStd97" />
+  </KeyBindings>-->
+
+
+  <KeyBindings>
+
+    <KeyBinding guid="guidPrettyJsCmdSet" id="cmdFormatJs"
+       editor="guidVSStd97" key1="M" mod1="Control" key2="F" />
+
+  </KeyBindings>
 
 
   <Symbols>
