@@ -152,8 +152,12 @@
   <KeyBindings>
 
     <KeyBinding guid="guidPrettyJsCmdSet" id="cmdFormatJs"
-       editor="guidVSStd97" key1="M" mod1="Control" key2="F" />
+       editor="guidVSStd97" key1="B" mod1="Control" mod2="Control" key2="F" />
 
+    <KeyBinding guid="guidPrettyJsCmdSet" id="cmdFormatSelectedJs"
+      editor="guidVSStd97" key1="B" mod1="Control" mod2="Control" key2="G" />
+    
+    
   </KeyBindings>
 
 
@@ -175,7 +179,6 @@
       <IDSymbol name="ContextMenuGroup" value="0x1021" />
       <IDSymbol name="cmdFormatJs" value="0x0100" />
       <IDSymbol name="cmdFormatSelectedJs" value="0x0101" />
-      <IDSymbol name="cmdFormatSelectedJs1" value="0x0105" />
       <IDSymbol name="cmdSettings" value="0x0102" />
       <IDSymbol name="cmdAddToRegion" value="0x0104" />
       

@@ -3,13 +3,15 @@
   <Identifier Id="60f39d2e-2efa-4d31-8d3d-e4e9c471cff5">
     <Name>PrettyJs</Name>
     <Author>Jrt</Author>
-    <Version>1.0</Version>
+    <Version>1.2</Version>
     <Description xml:space="preserve">Easy to Beautify/formatting javascript code.and Outline for javaScript codeblocks and custom regions</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>http://jintan.cnblogs.com</MoreInfoUrl>
     <InstalledByMsi>false</InstalledByMsi>
     <SupportedProducts>
       <VisualStudio Version="10.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
         <Edition>Pro</Edition>
       </VisualStudio>
     </SupportedProducts>
