@@ -23,7 +23,8 @@ namespace Jrt.PrettyJs
 
         static readonly string BlockBeginPattern = @"(?<text>^.*)(?:\s*\{)";
         static readonly string BlockEndPattern = @"(?:\})";
-        static readonly string CustomBeginPattern = @"((?://\s*\#\#)|(?://\s*\#\>))(?<text>.*)";
+        //static readonly string CustomBeginPattern = @"((?://\s*\#\#)|(?://\s*\#\>))(?<text>.*)";
+        static readonly string CustomBeginPattern = @"(?<text>((?://\s*\#\#)|(?://\s*\#\>))(?<title>.*))";
         static readonly string CustomEndPattern = @"(?://\s*\#end)|(?://\s*\#\<)";
 
         static readonly string CommentStartPattern = @"(?<code>.*?)(?<comment>/\*|//)(.*)";
@@ -200,8 +201,10 @@ namespace Jrt.PrettyJs
                             stack.Push(new Region
                             {
                                 Start = line.Start,
+                                StartOffset = originalText.IndexOf("{"),
                                 StartLine = line.LineNumber,
-                                Text = match.Groups["text"].Value,
+                                Text = "...",
+                                //Text = match.Groups["text"].Value,
                                 Type = RegionType.Block
                             });
                         }
@@ -214,6 +217,7 @@ namespace Jrt.PrettyJs
                             if (region.Type == RegionType.Block) stack.Pop();
                             region.End = line.End;
                             region.EndLine = line.LineNumber;
+                            region.EndOffset = text.Length - text.IndexOf('}') - 1;
                             newRegions.Add(region);
                         }
                     }
@@ -222,12 +226,14 @@ namespace Jrt.PrettyJs
                 if (CustomBegin.IsMatch(originalText))
                 {
                     match = CustomBegin.Match(originalText);
+                    string title = match.Groups["title"].Value;
+                    title = string.IsNullOrEmpty(title) ? "..." : title;
                     stack.Push(new Region
                     {
                         Start = line.Start,
                         StartOffset = originalText.IndexOf(match.Groups["text"].Value),
                         StartLine = line.LineNumber,
-                        Text = match.Groups["text"].Value,
+                        Text = title,
                         Type = RegionType.Custom
                     });
                 }
