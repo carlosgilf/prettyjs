@@ -1,22 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.Text;
-using Microsoft.VisualStudio.Text.Outlining;
 using Microsoft.VisualStudio.Text.Tagging;
-using Microsoft.VisualStudio.Utilities;
 
-namespace Jrt.PrettyJs {
-
+namespace Jrt.PrettyJs
+{
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    internal sealed class JavascriptCoderTagger : ITagger<IOutliningRegionTag> {
-
+    internal sealed class JavascriptCoderTagger : ITagger<IOutliningRegionTag>
+    {
         #region Static Fields /////////////////////////////////////////////////////////////////////
 
         static readonly RegexOptions RegexOptions =
@@ -34,28 +29,34 @@ namespace Jrt.PrettyJs {
         static readonly string CommentStartPattern = @"(?<code>.*?)(?<comment>/\*|//)(.*)";
         static readonly string CommentEndPattern = @"(.*)(?<comment>\*/)(?<code>.*)";
         static readonly string CommentAllPattern = @"(.*?)/\*(.*?)\*/(?<code>.*)";
-        
 
-        #endregion
-        
+        #endregion Static Fields /////////////////////////////////////////////////////////////////////
+
         #region Fields  ///////////////////////////////////////////////////////////////////////////
 
         ITextBuffer _buffer;
         List<Region> _regions;
         ITextSnapshot _snapshot;
 
-        #endregion
+        #endregion Fields  ///////////////////////////////////////////////////////////////////////////
 
         #region Properties  ///////////////////////////////////////////////////////////////////////
 
         Regex BlockBegin { get; set; }
+
         Regex BlockEnd { get; set; }
+
         Regex CustomBegin { get; set; }
+
         Regex CustomEnd { get; set; }
+
         Regex CommentStart { get; set; }
+
         Regex CommentEnd { get; set; }
+
         Regex CommentAll { get; set; }
-        #endregion
+
+        #endregion Properties  ///////////////////////////////////////////////////////////////////////
 
         #region Events ////////////////////////////////////////////////////////////////////////////
 
@@ -64,7 +65,7 @@ namespace Jrt.PrettyJs {
         /// </summary>
         public event EventHandler<SnapshotSpanEventArgs> TagsChanged;
 
-        #endregion
+        #endregion Events ////////////////////////////////////////////////////////////////////////////
 
         #region Construct /////////////////////////////////////////////////////////////////////////
 
@@ -72,7 +73,8 @@ namespace Jrt.PrettyJs {
         /// Initializes a new instance of the <see cref="JavascriptCoderTagger"/> class.
         /// </summary>
         /// <param name="buffer">The buffer.</param>
-        public JavascriptCoderTagger(ITextBuffer buffer) {
+        public JavascriptCoderTagger(ITextBuffer buffer)
+        {
             _buffer = buffer;
             _snapshot = buffer.CurrentSnapshot;
             _regions = new List<Region>();
@@ -89,7 +91,8 @@ namespace Jrt.PrettyJs {
 
             this.Refactor();
         }
-        #endregion
+
+        #endregion Construct /////////////////////////////////////////////////////////////////////////
 
         #region Methods ///////////////////////////////////////////////////////////////////////////
 
@@ -98,8 +101,8 @@ namespace Jrt.PrettyJs {
         /// </summary>
         /// <param name="spans">The spans.</param>
         /// <returns></returns>
-        public IEnumerable<ITagSpan<IOutliningRegionTag>> GetTags(NormalizedSnapshotSpanCollection spans) {
-
+        public IEnumerable<ITagSpan<IOutliningRegionTag>> GetTags(NormalizedSnapshotSpanCollection spans)
+        {
             if (spans.Count == 0) yield break;
 
             List<Region> currentRegions = _regions;
@@ -109,12 +112,13 @@ namespace Jrt.PrettyJs {
             int startLineNumber = entire.Start.GetContainingLine().LineNumber;
             int endLineNumber = entire.End.GetContainingLine().LineNumber;
 
-            foreach (var region in currentRegions) {
-                if (region.StartLine <= endLineNumber && region.EndLine >= startLineNumber) {
+            foreach (var region in currentRegions)
+            {
+                if (region.StartLine <= endLineNumber && region.EndLine >= startLineNumber)
+                {
                     yield return region.AsOutliningRegionTag();
                 }
             }
-
         }
 
         /// <summary>
@@ -122,8 +126,9 @@ namespace Jrt.PrettyJs {
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="Microsoft.VisualStudio.Text.TextContentChangedEventArgs"/> instance containing the event data.</param>
-        void OnBufferChanged(object sender, TextContentChangedEventArgs e) {
-            // If this isn't the most up-to-date version of the buffer, 
+        void OnBufferChanged(object sender, TextContentChangedEventArgs e)
+        {
+            // If this isn't the most up-to-date version of the buffer,
             // then ignore it for now (we'll eventually get another change event).
             if (e.After != _buffer.CurrentSnapshot) return;
             this.Refactor();
@@ -133,8 +138,8 @@ namespace Jrt.PrettyJs {
         /// Refactors the specified spans.
         /// </summary>
         /// <param name="spans">The spans.</param>
-        void Refactor() {
-            
+        void Refactor()
+        {
             ITextSnapshot newSnapshot = _buffer.CurrentSnapshot;
             List<Region> newRegions = new List<Region>();
             Match match;
@@ -143,7 +148,6 @@ namespace Jrt.PrettyJs {
             bool lastComment = false;
 
             Func<string, string> parser = null;
-
 
             parser = (string text) =>
             {
@@ -155,7 +159,7 @@ namespace Jrt.PrettyJs {
                         text = match.Groups["code"].Value;
                         return parser(text);
                     }
-                    else if(CommentStart.IsMatch(text))
+                    else if (CommentStart.IsMatch(text))
                     {
                         match = CommentStart.Match(text);
                         if (match.Groups["comment"].Value == "/*")
@@ -179,33 +183,13 @@ namespace Jrt.PrettyJs {
                 return text;
             };
 
-            foreach (var line in newSnapshot.Lines) {
+            foreach (var line in newSnapshot.Lines)
+            {
                 string text = line.GetText();
                 string originalText = text;
                 bool isComment = lastComment;
                 text = parser(text);
-                
-                //if (lastComment == false )
-                //{
-                //    if (CommentStart.IsMatch(text))
-                //    {
-                //        match = CommentStart.Match(text);
-                //        if (match.Groups["comment"].Value == "/*")
-                //        {
-                //            isComment = true;
-                //        }
-                //        text = match.Groups["code"].Value;
-                //    }
-                //}
-                //else
-                //{
-                //    if (CommentEnd.IsMatch(text))
-                //    {
-                //        match = CommentEnd.Match(text);
-                //        isComment = false;
-                //        text = match.Groups["code"].Value;
-                //    }
-                //}
+
                 if (!isComment)
                 {
                     if (BlockBegin.IsMatch(text))
@@ -262,12 +246,12 @@ namespace Jrt.PrettyJs {
 
             //determine the changed span, and send a changed event with the new spans
             List<Span> oldSpans =
-                new List<Span>(_regions.Select(r =>
-                    r.AsSnapshotSpan()
-                    .TranslateTo(newSnapshot, SpanTrackingMode.EdgeExclusive)
-                    .Span));
-            List<Span> newSpans =
-                    new List<Span>(newRegions.Select(r => r.AsSnapshotSpan().Span));
+                new List<Span>(
+                    _regions.Select(r =>
+                        r.AsSnapshotSpan().TranslateTo(newSnapshot, SpanTrackingMode.EdgeExclusive).Span
+                    )
+               );
+            List<Span> newSpans = new List<Span>(newRegions.Select(r => r.AsSnapshotSpan().Span));
 
             NormalizedSpanCollection oldSpanCollection = new NormalizedSpanCollection(oldSpans);
             NormalizedSpanCollection newSpanCollection = new NormalizedSpanCollection(newSpans);
@@ -277,12 +261,14 @@ namespace Jrt.PrettyJs {
             int changeStart = int.MaxValue;
             int changeEnd = -1;
 
-            if (removed.Count > 0) {
+            if (removed.Count > 0)
+            {
                 changeStart = removed[0].Start;
                 changeEnd = removed[removed.Count - 1].End;
             }
 
-            if (newSpans.Count > 0) {
+            if (newSpans.Count > 0)
+            {
                 changeStart = Math.Min(changeStart, newSpans[0].Start);
                 changeEnd = Math.Max(changeEnd, newSpans[newSpans.Count - 1].End);
             }
@@ -290,15 +276,16 @@ namespace Jrt.PrettyJs {
             _snapshot = newSnapshot;
             _regions = newRegions;
 
-            if (changeStart <= changeEnd) {
+            if (changeStart <= changeEnd)
+            {
                 ITextSnapshot snap = _snapshot;
                 if (this.TagsChanged != null)
                     this.TagsChanged(this, new SnapshotSpanEventArgs(
                         new SnapshotSpan(_snapshot, Span.FromBounds(changeStart, changeEnd))));
             }
-
         }
-        #endregion
+
+        #endregion Methods ///////////////////////////////////////////////////////////////////////////
     }
 
     public class CommentParserResult
