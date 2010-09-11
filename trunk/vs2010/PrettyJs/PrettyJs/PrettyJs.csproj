@@ -182,7 +182,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="beautify.js" />
+    <Resource Include="Resources\options.png" />
     <Content Include="Resources\Package.ico" />
+    <Resource Include="Resources\addRegion.bmp" />
+    <Resource Include="Resources\format.png" />
+    <Resource Include="Resources\formatSelected.png" />
   </ItemGroup>
   <PropertyGroup>
     <UseCodebase>true</UseCodebase>

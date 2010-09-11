@@ -74,36 +74,36 @@
 
       <Button guid="guidPrettyJsCmdSet" id="cmdFormatJs" priority="0x0100" type="Button">
         <Parent guid="guidPrettyJsCmdSet" id="MyMenuGroup" />
-        <Icon guid="guidImages" id="bmpPic1" />
+        <Icon guid="guidFromatScriptBitmap" id="bmpPic1" />
         <Strings>
           <CommandName>cmdFormatJs</CommandName>
-          <ButtonText>Format All Code</ButtonText>
+          <ButtonText>Format Document Javascript</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="guidPrettyJsCmdSet" id="cmdFormatSelectedJs" priority="0x0100" type="Button">
         <Parent guid="guidPrettyJsCmdSet" id="MyMenuGroup" />
-        <!--<Icon guid="guidImages" id="bmpPic2" />-->
+        <Icon guid="guidFromatSelectedScriptBitmap" id="bmpPic1" />
         <Strings>
           <CommandName>cmdFormatSelectedJs</CommandName>
-          <ButtonText>Format Selected Code</ButtonText>
+          <ButtonText>Format Selected Javascript</ButtonText>
         </Strings>
         
       </Button>
 
       <Button guid="guidPrettyJsCmdSet" id="cmdSettings" priority="0x0100" type="Button">
         <Parent guid="guidPrettyJsCmdSet" id="MyMenuGroup" />
-        <!--<Icon guid="guidImages" id="bmpPic3" />-->
+        <Icon guid="guidOptionsBitmap" id="bmpPic1" />
         <Strings>
           <CommandName>cmdSettings</CommandName>
-          <ButtonText>PrettyJs Settings</ButtonText>
+          <ButtonText>PrettyJs Options...</ButtonText>
         </Strings>
       </Button>
 
 
       <Button guid="guidPrettyJsCmdSet" id="cmdAddToRegion" priority="0x0100" type="Button">
         <Parent guid="guidPrettyJsCmdSet" id="ctxMenuGroup" />
-        <!--<Icon guid="guidImages" id="bmpPic1" />-->
+        <Icon guid="guidAddRegionBitmap" id="bmpPic1" />
         <Strings>
           <CommandName>cmdAddToRegion</CommandName>
           <ButtonText>Add to region</ButtonText>
@@ -130,6 +130,11 @@
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
       <Bitmap guid="guidImages" href="Resources\Images_32bit.bmp" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows"/>
 
+
+      <Bitmap guid="guidFromatScriptBitmap" href="Resources\format.png" usedList="bmpPic1" />
+      <Bitmap guid="guidFromatSelectedScriptBitmap" href="Resources\formatSelected.png" usedList="bmpPic1" />
+      <Bitmap guid="guidAddRegionBitmap" href="Resources\addRegion.bmp" usedList="bmpPic1" />
+      <Bitmap guid="guidOptionsBitmap" href="Resources\options.png" usedList="bmpPic1" />
     </Bitmaps>
     
     
@@ -193,6 +198,23 @@
       <IDSymbol name="bmpPicX" value="4" />
       <IDSymbol name="bmpPicArrows" value="5" />
     </GuidSymbol>
+
+    <GuidSymbol name="guidFromatScriptBitmap" value="{40E89541-7304-4693-BA8E-3E35945EBD8E}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidFromatSelectedScriptBitmap" value="{07DA51AD-F58C-4BFA-A321-7E9BE457FC1A}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidAddRegionBitmap" value="{B4A98ED8-14E4-4A35-9C3A-4336D264DF02}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidOptionsBitmap" value="{5DD4D02E-58D8-430F-AFD9-C00EDD2D4096}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+
   </Symbols>
 
 </CommandTable>
