@@ -16,6 +16,8 @@ using EnvDTE;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.Editor;
 using System.Text;
+using HtmlAgilityPack;
+using System.IO;
 
 namespace Jrt.PrettyJs
 {
@@ -99,6 +101,7 @@ namespace Jrt.PrettyJs
         {
             bool handled = false;
             IVsUIShell uiShell = (IVsUIShell)GetService(typeof(SVsUIShell));
+            IWpfTextView view = GetActiveTextView();
             DTE2 dte2 = GetService(typeof(SDTE)) as EnvDTE80.DTE2;
 
             Document activeDoc = dte2.ActiveDocument;
@@ -127,26 +130,98 @@ namespace Jrt.PrettyJs
             {
                 if (isFormatAll)
                 {
-
-                    if (!dte2.UndoContext.IsOpen)
+                    if (lang == "HTML")
                     {
-                        dte2.UndoContext.Open("格式化文档", false);
-                        handled = true;
-                    }
-                    EditPoint objEditPt = textDoc.StartPoint.CreateEditPoint();
-                    EditPoint activPt = textDoc.Selection.ActivePoint.CreateEditPoint();
-                    string firstSt = activPt.GetText(objEditPt);
-                    int activeOffset = firstSt.Length - 1;
-                    EditPoint objMovePt = textDoc.EndPoint.CreateEditPoint();
-                    objEditPt.StartOfDocument();
-                    objMovePt.EndOfDocument();
-                    string sql = objMovePt.GetLines(1, objMovePt.Line + 1);
-                    beautifier.Indent = 0;
-                    beautifier.activeOffset = activeOffset;
-                    beautifier.js_beautify(sql);
-                    objEditPt.ReplaceText(objMovePt, beautifier.output, (int)vsEPReplaceTextOptions.vsEPReplaceTextKeepMarkers);
+                        HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+                        var allText = view.TextSnapshot.GetText();
+                        doc.LoadHtml(allText);
+                        if (!dte2.UndoContext.IsOpen)
+                        {
+                            dte2.UndoContext.Open("格式化文档", false);
+                            handled = true;
+                        }
 
-                    textDoc.Selection.MoveToAbsoluteOffset(beautifier.activeFormatedOffset + 1, false);
+
+                        foreach (HtmlNode script in doc.DocumentNode.SelectNodes("//script"))
+                        {
+                            int indent = 1;
+                            string space = "";
+                            if (script.PreviousSibling!=null)
+	                        {
+                                var node = script.PreviousSibling;
+                                var prevNodeHtml = node.OuterHtml;
+                                while (true)
+                                {
+                                    if (node.PreviousSibling == null)
+                                    {
+                                        break;
+                                    }
+                                    prevNodeHtml = node.PreviousSibling.OuterHtml + prevNodeHtml;
+                                    if (node.PreviousSibling.OuterHtml.IndexOf('\r')>-1
+                                        ||node.PreviousSibling.OuterHtml.IndexOf('\n')>-1
+                                        )
+                                    {
+                                        break;
+                                    }
+                                    node = node.PreviousSibling;
+                                }
+                                
+                                int spaceCount = 0;
+                                for (int i = prevNodeHtml.Length - 1; i >= 0; i--)
+                                {
+                                    if ("\r\n".IndexOf(prevNodeHtml[i]) >= 0)
+                                    {
+                                        break;
+                                    }
+                                    if (prevNodeHtml[i] == '\t')
+                                    {
+                                        space += prevNodeHtml[i];
+                                        spaceCount += 4;
+                                    }
+                                    else
+                                    {
+                                        space += " ";
+                                        spaceCount += 1;
+                                    }
+                                }
+                                indent = spaceCount/4 + 1;
+	                        }
+                            beautifier.Indent = indent;
+                            beautifier.activeOffset = 0;
+                            beautifier.js_beautify(script.InnerHtml.TrimStart());
+                            script.InnerHtml = "\r\n" + "".PadLeft(indent * 4, ' ') + beautifier.output + "\r\n" + space;
+                            //doc.Save(
+                            //var span = new Span();
+                            //view.TextBuffer.Delete();
+                        }
+
+                        StringBuilder sb = new StringBuilder();
+                        StringWriter sw = new StringWriter(sb);
+                        doc.Save(sw);
+                        view.TextBuffer.Replace(new Span(0, allText.Length), sb.ToString());
+                    }
+                    else 
+                    {
+                        if (!dte2.UndoContext.IsOpen)
+                        {
+                            dte2.UndoContext.Open("格式化文档", false);
+                            handled = true;
+                        }
+                        EditPoint objEditPt = textDoc.StartPoint.CreateEditPoint();
+                        EditPoint activPt = textDoc.Selection.ActivePoint.CreateEditPoint();
+                        string firstSt = activPt.GetText(objEditPt);
+                        int activeOffset = firstSt.Length - 1;
+                        EditPoint objMovePt = textDoc.EndPoint.CreateEditPoint();
+                        objEditPt.StartOfDocument();
+                        objMovePt.EndOfDocument();
+                        string sql = objMovePt.GetLines(1, objMovePt.Line + 1);
+                        beautifier.Indent = 0;
+                        beautifier.activeOffset = activeOffset;
+                        beautifier.js_beautify(sql);
+                        objEditPt.ReplaceText(objMovePt, beautifier.output, (int)vsEPReplaceTextOptions.vsEPReplaceTextKeepMarkers);
+
+                        textDoc.Selection.MoveToAbsoluteOffset(beautifier.activeFormatedOffset + 1, false); 
+                    }
                 }
                 else
                 {
@@ -203,23 +278,7 @@ namespace Jrt.PrettyJs
                                 string topLineText = objTextSelection.Text;
                                 if (topLineText.Trim() != "")
                                 {
-                                    int spaceCount = 0;
-                                    for (int i = 0; i < topLineText.Length; i++)
-                                    {
-                                        if (topLineText[i] == '\t')
-                                        {
-                                            spaceCount += 4;
-                                        }
-                                        else if (topLineText[i] == ' ')
-                                        {
-                                            spaceCount += 1;
-                                        }
-                                        else
-                                        {
-                                            break;
-                                        }
-                                    }
-                                    int indent = spaceCount / 4;
+                                    int indent = beautifier.StringToIndent(topLineText);
                                     topLineText = topLineText.Trim();
                                     string lastStr = topLineText[topLineText.Length - 1].ToString();
                                     string endChars = "{[";
@@ -365,14 +424,14 @@ namespace Jrt.PrettyJs
         /// </summary>
         protected override void Initialize()
         {
-            Trace.WriteLine (string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
+            Trace.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
             base.Initialize();
 
             SetCodeOption();
 
             // Add our command handlers for menu (commands must exist in the .vsct file)
             OleMenuCommandService mcs = GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
-            if ( null != mcs )
+            if (null != mcs)
             {
                 //// Create the command for the menu item.
                 //CommandID menuCommandID = new CommandID(GuidList.guidPrettyJsCmdSet, (int)PkgCmdIDList.cmdFormatJs);
