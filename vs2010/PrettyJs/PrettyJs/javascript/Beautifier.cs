@@ -1515,6 +1515,51 @@ namespace Jrt.PrettyJs
         bool inEqualOp = false;
         #endregion
 
+        public int StringToIndent(string topLineText)
+        {
+            int spaceCount = 0;
+            for (int i = 0; i < topLineText.Length; i++)
+            {
+                if (topLineText[i] == '\t')
+                {
+                    spaceCount += 4;
+                }
+                else if (topLineText[i] == ' ')
+                {
+                    spaceCount += 1;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            int indent = spaceCount / 4;
+            return indent;
+        }
+
+        public string GetSpace(string topLineText)
+        {
+            string space = "";
+
+            for (int i = 0; i < topLineText.Length; i++)
+            {
+                if (whitespace.Contains(topLineText[i]))
+                {
+                    space += topLineText[i];
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return space;
+        }
+
+        public string IndentToString(int indent)
+        {
+            return str_repeat(this.IdentStr, indent);
+        }
+
     }
 }
 
