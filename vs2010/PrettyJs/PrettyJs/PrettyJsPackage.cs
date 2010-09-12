@@ -102,6 +102,7 @@ namespace Jrt.PrettyJs
             bool handled = false;
             IVsUIShell uiShell = (IVsUIShell)GetService(typeof(SVsUIShell));
             IWpfTextView view = GetActiveTextView();
+
             DTE2 dte2 = GetService(typeof(SDTE)) as EnvDTE80.DTE2;
 
             Document activeDoc = dte2.ActiveDocument;
@@ -109,8 +110,8 @@ namespace Jrt.PrettyJs
             {
                 MessageBox.Show("没有活动文档。");
                 return;
-            }
-
+            } 
+            
             TextDocument textDoc = activeDoc.Object("TextDocument") as TextDocument;
             if (textDoc == null)
             {
@@ -140,7 +141,6 @@ namespace Jrt.PrettyJs
                             dte2.UndoContext.Open("格式化文档", false);
                             handled = true;
                         }
-
 
                         foreach (HtmlNode script in doc.DocumentNode.SelectNodes("//script"))
                         {
