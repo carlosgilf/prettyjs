@@ -13,8 +13,9 @@ namespace Jrt.PrettyJs {
         Custom
     }
 
-    class Region {
+    internal class Region {
 
+        public static SnapshotPoint? currentCustomRegion;
         #region Properties  ///////////////////////////////////////////////////////////////////////
 
         public SnapshotPoint End { get; set; }
