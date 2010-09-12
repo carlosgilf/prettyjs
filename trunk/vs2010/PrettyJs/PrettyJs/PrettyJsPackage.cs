@@ -393,11 +393,20 @@ namespace Jrt.PrettyJs
                 objTextSelection.EndOfLine(false);
                 EditPoint topPoint1 = objTextSelection.AnchorPoint.CreateEditPoint();
                 topPoint1.Insert("\r\n" + regionSpace + "//#end");
-                //objTextSelection.MoveToLineAndOffset(topLine, 1, true);
-                //objTextSelection.EndOfLine(true);
-                //objTextSelection.SwapAnchor();
-                //objTextSelection.OutlineSection();
-                //objTextSelection.StartOfLine(vsStartOfLineOptions.vsStartOfLineOptionsFirstColumn, false);
+                
+                object customIn = new object();
+                object customOut = new object();
+                try
+                {
+                    //raising command "Edit.ToggleOutliningExpansion"
+                    //parameters are its GUID and its ID
+                    dte2.Commands.Raise("{1496A755-94DE-11D0-8C3F-00C04FC2AAE2}", 129, ref customIn, ref customOut);
+                }
+                catch (Exception xcp)
+                {
+                    throw xcp;
+                }
+
             }
         }
 
