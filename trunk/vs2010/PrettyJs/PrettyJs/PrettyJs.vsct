@@ -75,7 +75,9 @@
       <Button guid="guidPrettyJsCmdSet" id="cmdFormatJs" priority="0x0100" type="Button">
         <Parent guid="guidPrettyJsCmdSet" id="MyMenuGroup" />
         <Icon guid="guidFromatScriptBitmap" id="bmpPic1" />
+        <CommandFlag>DefaultDisabled</CommandFlag>
         <Strings>
+          
           <CommandName>cmdFormatJs</CommandName>
           <ButtonText>Format Document Javascript</ButtonText>
         </Strings>
