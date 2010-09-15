@@ -196,6 +196,7 @@ namespace AMS.Profile
 					return result.ToString();
 				}
 			}
+            return null;
 		}
 
 		/// <summary>
@@ -307,6 +308,7 @@ namespace AMS.Profile
 		            return entries.Split(new char[] {'\0'});			
 				}
 			}
+            return null;
 		}
 
 		/// <summary>
@@ -337,6 +339,7 @@ namespace AMS.Profile
 		            return sections.Split(new char[] {'\0'});			
 				}
 			}
+            return null;
 		}
 	}
 }
