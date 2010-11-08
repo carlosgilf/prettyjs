@@ -184,6 +184,12 @@ namespace Jrt.PrettyJs
                 return text;
             };
 
+            //TODO 以后需要删除，为了性能考虑，不处理大于5000行的js
+            if (newSnapshot.Lines.Count()>5000)
+            {
+                return;
+            }
+            
             foreach (var line in newSnapshot.Lines)
             {
                 string text = line.GetText();
