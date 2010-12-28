@@ -183,7 +183,11 @@ namespace Jrt.PrettyJs
                     {
                         isCustom = true;
                         var last=firstLine.IndexOf('\r');
-                        if (last>0)
+                        if (last==0)
+                        {
+                            firstLine = "…";
+                        }
+                        else if (last>0)
 	                    {
                             firstLine = firstLine.Substring(0, last);
 	                    }
