@@ -41,7 +41,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TableToRdlc.test.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 2);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(663, 410);
+            this.reportViewer1.Size = new System.Drawing.Size(663, 326);
             this.reportViewer1.TabIndex = 0;
             // 
             // button1
@@ -57,10 +57,11 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.richTextBox1.Location = new System.Drawing.Point(226, 418);
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.Location = new System.Drawing.Point(110, 334);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(440, 150);
+            this.richTextBox1.Size = new System.Drawing.Size(556, 234);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
