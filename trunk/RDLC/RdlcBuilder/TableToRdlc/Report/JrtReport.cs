@@ -300,6 +300,7 @@ namespace Common.Report
         private BodyType CreateBody()
         {
             var body = new Body { ReportItems = CreateReportItems(), Height = "285mm" };
+            
             return body.Create();
         }
 

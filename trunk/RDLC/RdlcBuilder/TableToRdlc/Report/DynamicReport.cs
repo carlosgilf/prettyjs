@@ -9,6 +9,8 @@ using Common.Report.Exporting;
 using System.Web;
 using System.Collections.Specialized;
 using System.Xml;
+using System.Web.UI;
+using TableToRdlc.Report;
 
 namespace Common.Report
 {
@@ -38,6 +40,11 @@ namespace Common.Report
 
         public void ShowReport(ReportViewer rptViewer)
         {
+            if (m_dataSet==null)
+            {
+                m_dataSet = new DataTable();
+                m_dataSet.Columns.Add("JustForNoError");
+            }
             GetColumns();
             //rptViewer.Reset();
             rptViewer.LocalReport.DisplayName = string.IsNullOrEmpty(Rdl.PageHeaderText) ? "Report" : Rdl.PageHeaderText;
@@ -47,6 +54,11 @@ namespace Common.Report
 
         public void ShowReport(Microsoft.Reporting.WinForms.ReportViewer rptViewer)
         {
+            if (m_dataSet == null)
+            {
+                m_dataSet = new DataTable();
+                m_dataSet.Columns.Add("JustForNoError");
+            }
             GetColumns();
             rptViewer.Reset();
             rptViewer.LocalReport.DisplayName = string.IsNullOrEmpty(Rdl.PageHeaderText) ? "Report" : Rdl.PageHeaderText;
@@ -64,8 +76,35 @@ namespace Common.Report
             rptViewer.LocalReport.DisplayName = string.IsNullOrEmpty(Rdl.PageHeaderText) ? "Report" : Rdl.PageHeaderText;
             rptViewer.LocalReport.LoadReportDefinition(m_rdl);
             rptViewer.LocalReport.DataSources.Add(new ReportDataSource("MyData", m_dataSet));
-
             //rptViewer.LocalReport.Refresh();
+        }
+
+        public void ShowReport(ReportViewer rptViewer, Control contrl)
+        {
+            string html = RenderControls(contrl);
+            ShowReport(rptViewer, html);
+        }
+
+        public void ShowReport(ReportViewer rptViewer, string tableHtml)
+        {
+            HtmlTable table = new HtmlTable();
+            table.TableHtml = tableHtml;
+            table.Create();
+            this.Rdl.Tables.Add(table.Table);
+            ShowReport(rptViewer);
+        }
+
+        public string RenderControls(Control control)
+        {
+            control.Visible = true;
+            control.EnableViewState = false;
+            StringWriter output = new StringWriter();
+            Page m_pageHolder = new Page();
+            var form = new System.Web.UI.HtmlControls.HtmlForm();
+            form.Controls.Add(control);
+            m_pageHolder.Controls.Add(form);
+            HttpContext.Current.Server.Execute(m_pageHolder, output, false);
+            return output.ToString();
         }
 
         private MemoryStream ExportRDLC(BaseDeviceInfoSettings exportTypeSetting, string deviceInfoXml, out IReportExporter winFormsReportExporter, out LocalReport localReport)
