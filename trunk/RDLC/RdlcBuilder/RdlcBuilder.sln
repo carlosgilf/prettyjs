@@ -5,6 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableToRdlc", "TableToRdlc\TableToRdlc.csproj", "{07630A05-B65C-41E3-8201-78F0D425BE86}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dlls", "Dlls", "{21A86C00-EB16-480F-A078-022B8B467D6B}"
+	ProjectSection(SolutionItems) = preProject
+		dlls\HtmlAgilityPack.dll = dlls\HtmlAgilityPack.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True

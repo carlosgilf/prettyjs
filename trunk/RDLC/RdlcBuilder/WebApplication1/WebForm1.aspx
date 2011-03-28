@@ -30,7 +30,7 @@
     
 <table id ="PrintTable" cellpadding ="0" cellspacing ="0" border ="1">
     <tr>
-        <td colspan ="2" rowspan ="2"  style="  text-decoration:underline;  font-size:55px;  vertical-align:middle;   color:Blue"  align="center" >one</td>
+        <td colspan ="2" bgcolor="red" rowspan ="2"  style=" b padding:100px 100px 0 0; background-color:Maroon;  text-decoration:underline;  font-size:55px;  vertical-align:middle;   color:Blue"  align="center" >one</td>
         <td width ="100px" height="80px" >two</td>
         <td width ="100px">three</td>
     </tr>
