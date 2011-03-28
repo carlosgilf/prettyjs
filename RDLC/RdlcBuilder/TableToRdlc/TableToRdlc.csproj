@@ -36,7 +36,7 @@
   <ItemGroup>
     <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\HtmlAgilityPack.dll</HintPath>
+      <HintPath>..\dlls\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -67,6 +67,7 @@
     <Compile Include="Report\RdlGenerator.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Report\RdlUtils.cs" />
     <Compile Include="Report\ReportDefinition.cs" />
     <Compile Include="Report\ReportElementsEx.cs" />
     <Compile Include="Report\ReportElemnets.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Report\ReportExporters\Size.cs" />
     <Compile Include="Report\TableBase.cs" />
     <Compile Include="Report\TableRdlGenerator.cs" />
+    <Compile Include="Report\TextBoxBuilder.cs" />
     <Compile Include="Report\WinFormsReportExporter.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

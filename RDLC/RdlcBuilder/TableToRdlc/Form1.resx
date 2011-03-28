@@ -117,4 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>&lt;table id ="PrintTable" cellpadding ="0" cellspacing ="0" border ="1"&gt;
+    &lt;tr&gt;
+        &lt;td colspan ="2" bgcolor="red" rowspan ="2"  style="background-color:#dd4353;   text-decoration:underline;  font-size:55px;  vertical-align:middle;   color:Blue"  align="center" &gt;one&lt;/td&gt;
+        &lt;td width ="100px" height="80px" &gt;two&lt;/td&gt;
+        &lt;td width ="100px"&gt;three&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan ="3"&gt;four&lt;/td&gt;
+        &lt;td style="height:60px"&gt;five&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td width ="100px" style="height:60px"&gt;six&lt;/td&gt;
+        &lt;td width ="100px" rowspan ="2"&gt;seven&lt;/td&gt;
+        &lt;td&gt;eight&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td style="height:80px"&gt;nine&lt;/td&gt;
+        &lt;td&gt;ten&lt;/td&gt;
+    &lt;/tr&gt;
+			
+&lt;/table&gt;</value>
+  </data>
 </root>
