@@ -5,7 +5,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Common.Report;
 using System.Data;
-using TableToRdlc.Report;
+using Common.Report;
 using System.IO;
 using System.Text;
 
@@ -13,7 +13,7 @@ namespace WebApplication1
 {
     public partial class _Default : System.Web.UI.Page
     {
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             this.GridView1.Visible = false;
@@ -43,7 +43,7 @@ namespace WebApplication1
             bind.Rdl.TopMargin = 8;
             bind.Rdl.BottomMargin = 10;
             bind.Rdl.PageFooterText = "\"第 \" & {0} & \" 页.共 \" & {1} & \" 页\"";
-            bind.ShowReport(this.ReportViewer1,this.GridView1);
+            bind.ShowReport(this.ReportViewer1, this.GridView1);
         }
     }
 }

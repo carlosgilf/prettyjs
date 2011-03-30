@@ -5,7 +5,7 @@ using System.Text;
 using Common.Dynamic;
 using Common.Report.Rdlc.Enums;
 
-namespace TableToRdlc.Report
+namespace Common.Report
 {
     public static class RdlUtils
     {

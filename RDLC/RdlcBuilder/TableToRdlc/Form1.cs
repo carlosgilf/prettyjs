@@ -6,10 +6,10 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Common.Report;
-using TableToRdlc.Report;
+using Common.Report;
 using Microsoft.Reporting.WinForms;
 
-namespace TableToRdlc
+namespace Common
 {
     public partial class Form1 : Form
     {
