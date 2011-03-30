@@ -10,7 +10,7 @@ using System.Web;
 using System.Collections.Specialized;
 using System.Xml;
 using System.Web.UI;
-using TableToRdlc.Report;
+using Common.Report;
 
 namespace Common.Report
 {

@@ -5,7 +5,7 @@ using System.Text;
 using Common.Dynamic;
 using Rdl;
 
-namespace TableToRdlc.Report
+namespace Common.Report
 {
     public class TableBase
     {
@@ -13,6 +13,7 @@ namespace TableToRdlc.Report
         /// 生成的table占用的宽度(mm)
         /// </summary>
         public double TotalWidht { get; internal set; }
+        public double TotalHeight { get; internal set; }
 
         public NewTablix Table
         {
@@ -61,6 +62,7 @@ namespace TableToRdlc.Report
                                Rows = new RowCollection() { row }
                            };
             Table.TotalWidht = this.TotalWidht;
+            Table.TotalHeight = this.TotalHeight;
             Table.TablixCorner = new TablixCornerEx() { Rows = this.Rows };
             Table.TablixBody = body;
             Table.TablixColumnHierarchy = CreateTablixColumnHierarchy();

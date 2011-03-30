@@ -1,4 +1,4 @@
-﻿namespace TableToRdlc
+﻿namespace Common
 {
     partial class Form1
     {

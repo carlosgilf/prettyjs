@@ -253,6 +253,8 @@ namespace Common.Dynamic
         /// </summary>
         public double TotalWidht { get; internal set; }
 
+        public double TotalHeight { get; internal set; }
+
         public string Name;
         public ActionInfoType ActionInfo;
         public string Bookmark;

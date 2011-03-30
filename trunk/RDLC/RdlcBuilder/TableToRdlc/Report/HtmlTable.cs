@@ -6,7 +6,7 @@ using Common.Report.Rdlc.Enums;
 using HtmlAgilityPack;
 using Common.Dynamic;
 using Rdl;
-namespace TableToRdlc.Report
+namespace Common.Report
 {
     public class HtmlTable : TableBase
     {
@@ -132,6 +132,7 @@ namespace TableToRdlc.Report
                 rowIndex++;
                 //var iHeight = ConvertUnit(height);
                 iHeight = (iHeight == 0 ? 6 : iHeight);
+                TotalHeight += iHeight;
                 row.Height = iHeight + "mm";
                 this.Rows.Add(row);
             }

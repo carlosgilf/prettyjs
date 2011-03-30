@@ -132,7 +132,7 @@ namespace Common.Report
                                   DataSources = CreateDataSources(),
                                   Body = CreateBody(),
                                   DataSets = CreateDataSets(),
-                                  Width = A4Width + "mm"
+                                  Width = maxWidth + "mm"
                               };
 
             var p = new Page
@@ -299,21 +299,47 @@ namespace Common.Report
 
         private BodyType CreateBody()
         {
-            var body = new Body { ReportItems = CreateReportItems(), Height = "285mm" };
+            var body = new Body { ReportItems = CreateReportItems(), Height = maxHeigth+"mm"//285mm" 
+                            };
             
             return body.Create();
         }
+
+        double maxWidth;
+        double maxHeigth;
 
         private ReportItemsType CreateReportItems()
         {
             foreach (var tb in Tables)
             {
+                if (tb.TotalWidht > maxWidth)
+                {
+                    maxWidth = tb.TotalWidht;
+                }
+
+                if (tb.TotalHeight > maxHeigth)
+                {
+                    maxHeigth = tb.TotalHeight;
+                }
+
                 var left = (A4Width - tb.TotalWidht)/2;
                 if (left>0)
                 {
                     tb.Left = left+"mm";
                 }
             }
+            if (maxWidth<A4Width)
+            {
+                maxWidth = A4Width;
+            }
+
+            //算上页眉+页脚
+            //maxHeigth = maxHeigth + 18;
+            if (maxHeigth<A4Height-18)
+            {
+                maxHeigth = A4Height-18;
+            }
+            
             var reportItems = new ReportItemsEx { Tablixs = Tables };
             return reportItems.Create();
         }

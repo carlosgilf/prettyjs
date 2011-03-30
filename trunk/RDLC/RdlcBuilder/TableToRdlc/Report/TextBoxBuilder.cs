@@ -6,7 +6,7 @@ using Common.Dynamic;
 using HtmlAgilityPack;
 using Rdl;
 
-namespace TableToRdlc.Report
+namespace Common.Report
 {
     public class TextBoxBuilder
     {

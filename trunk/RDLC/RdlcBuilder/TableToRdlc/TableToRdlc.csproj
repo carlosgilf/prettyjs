@@ -8,7 +8,7 @@
     <ProjectGuid>{07630A05-B65C-41E3-8201-78F0D425BE86}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TableToRdlc</RootNamespace>
+    <RootNamespace>Common</RootNamespace>
     <AssemblyName>TableToRdlc</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
