@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<minimalLanguageDiagram dslVersion="1.1.0.0" absoluteBounds="0, 0, 11, 8.5" name="ChargeModal">
+  <modelMoniker name="/ChargeModal" />
+  <nestedChildShapes>
+    <entityShape Id="21e5bf66-d145-45a6-919f-54cedf1f97c4" absoluteBounds="1.75, 1, 1.5, 0.89203938802083371">
+      <entityMoniker name="/ChargeModal/UserInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5fef189a-f65b-45af-9129-dde64e59895a" absoluteBounds="1.7650000000000001, 1.4100000000000001, 1.4700000000000002, 0.38203938802083331" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="f3a06577-500b-434e-a6a9-5006fcd6a5c7" absoluteBounds="4, 1, 1.5, 0.70101969401041675">
+      <entityMoniker name="/ChargeModal/KeyTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8176ea9b-02c8-4825-a509-a1a11b25f318" absoluteBounds="4.0150000000000006, 1.4100000000000001, 1.4700000000000002, 0.19101969401041666" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="5a1d9733-075c-41d4-b894-e097cddb726f" absoluteBounds="1.625, 2.375, 1.5, 0.89203938802083371">
+      <entityMoniker name="/ChargeModal/Sm" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef735784-61f4-4ee6-b61c-4f75b33cf3ae" absoluteBounds="1.6400000000000001, 2.785, 1.4700000000000002, 0.38203938802083337" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+  </nestedChildShapes>
+</minimalLanguageDiagram>
