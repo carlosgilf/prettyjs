@@ -28,10 +28,12 @@ namespace KeepAcconts.Web
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.dataGridView1 = new Gizmox.WebGUI.Forms.DataGridView();
             this.txtUserName = new Gizmox.WebGUI.Forms.TextBox();
             this.txtLoginName = new Gizmox.WebGUI.Forms.TextBox();
+            this.navBar1 = new KeepAcconts.Web.UI.NavBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,8 +70,18 @@ namespace KeepAcconts.Web
             this.txtLoginName.Size = new System.Drawing.Size(100, 21);
             this.txtLoginName.TabIndex = 3;
             // 
+            // navBar1
+            // 
+            this.navBar1.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
+            this.navBar1.Location = new System.Drawing.Point(254, 270);
+            this.navBar1.Name = "navBar1";
+            this.navBar1.Size = new System.Drawing.Size(257, 109);
+            this.navBar1.TabIndex = 4;
+            this.navBar1.Text = "NavBar";
+            // 
             // Form1
             // 
+            this.Controls.Add(this.navBar1);
             this.Controls.Add(this.txtLoginName);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.dataGridView1);
@@ -89,5 +101,6 @@ namespace KeepAcconts.Web
         private Gizmox.WebGUI.Forms.DataGridView dataGridView1;
         private Gizmox.WebGUI.Forms.TextBox txtUserName;
         private Gizmox.WebGUI.Forms.TextBox txtLoginName;
+        private KeepAcconts.Web.UI.NavBar navBar1;
     }
 }
