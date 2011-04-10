@@ -117,13 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="panel1.BackgroundImage" xml:space="preserve">
-    <value>Apple.topBg.png</value>
-  </data>
-  <data name="panel3.BackgroundImage" xml:space="preserve">
-    <value>Apple.spliter.png</value>
-  </data>
   <data name="pictureBox1.Image" xml:space="preserve">
-    <value>Apple.newLog5.png</value>
+    <value>defaultIco.png</value>
   </data>
 </root>

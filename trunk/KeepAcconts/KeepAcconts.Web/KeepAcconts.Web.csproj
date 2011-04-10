@@ -70,9 +70,17 @@
     <Content Include="MyButton1Skin.Button.css" />
     <Content Include="MyButton1Skin.Button.xslt" />
     <Content Include="Readme.txt" />
+    <Content Include="Resources\Images\Apple\navItemBg.png" />
+    <Content Include="Resources\Images\Apple\newLog.png" />
+    <Content Include="Resources\Images\Apple\newLog1.png" />
+    <Content Include="Resources\Images\Apple\newLog2.png" />
+    <Content Include="Resources\Images\Apple\newLog5.png" />
+    <Content Include="Resources\Images\Apple\spliter.png" />
+    <Content Include="Resources\Images\Apple\topBg.png" />
     <Content Include="Resources\Images\BCenter.gif" />
     <Content Include="Resources\Images\BL.gif" />
     <Content Include="Resources\Images\BR.gif" />
+    <Content Include="Resources\Images\defaultIco.png" />
     <Content Include="Resources\Images\login.gif" />
     <Content Include="Resources\Images\logo%24.png" />
     <Content Include="Resources\Images\logo%241.png" />
@@ -125,8 +133,20 @@
       <DependentUpon>Main.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainAppleUI.resx">
+      <DependentUpon>MainAppleUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyButton1Skin.resx">
       <DependentUpon>MyButton1Skin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NavBar.resx">
+      <DependentUpon>NavBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NavItemButton.resx">
+      <DependentUpon>NavItemButton.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="ListViewCheckAll.cs">
@@ -141,6 +161,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainAppleUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainAppleUI.Designer.cs">
+      <DependentUpon>MainAppleUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyButton1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -150,6 +176,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Theme1.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\NavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NavBar.Designer.cs">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NavItemButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NavItemButton.Designer.cs">
+      <DependentUpon>NavItemButton.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -179,7 +217,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1422</DevelopmentServerPort>
+          <DevelopmentServerPort>6218</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="navBar1.Items" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAEZLZWVwQWNjb250cy5XZWIsIFZlcnNpb249MS4wLjAuMCwgQ3Vs
+        dHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBAEAAACNAVN5c3RlbS5Db2xsZWN0aW9ucy5H
+        ZW5lcmljLkxpc3RgMVtbS2VlcEFjY29udHMuV2ViLlVJLk5hdkl0ZW1CdXR0b24sIEtlZXBBY2NvbnRz
+        LldlYiwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGxd
+        XQMAAAAGX2l0ZW1zBV9zaXplCF92ZXJzaW9uBAAAIktlZXBBY2NvbnRzLldlYi5VSS5OYXZJdGVtQnV0
+        dG9uW10CAAAACAgJAwAAAAAAAAAAAAAABwMAAAAAAQAAAAAAAAAEIEtlZXBBY2NvbnRzLldlYi5VSS5O
+        YXZJdGVtQnV0dG9uAgAAAAs=
+</value>
+  </data>
 </root>
