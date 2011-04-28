@@ -475,7 +475,9 @@ namespace Common.Dynamic
 
         public List<NewTablix> Tablixs=new List<NewTablix>();
 
-        public TextboxType[] Textbox;
+        //public TextboxType[] Textbox;
+        public List<TextboxEx> Textboxs=new List<TextboxEx>();
+
         public ReportItemsType Create()
         {
             ReportItemsType type = new ReportItemsType();
@@ -514,12 +516,20 @@ namespace Common.Dynamic
                 {
                     items.Add(t.Create());
                 }
-                //items.AddRange(Tablix);
+                //items.AddRange(Tablix); 
             }
-            if (Textbox != null)
+
+            if (Textboxs != null && Textboxs.Count>0)
             {
-                items.AddRange(Textbox);
+                foreach (var txt in Textboxs)
+                {
+                    items.Add(txt.Create(txt.Name));
+                }
             }
+            //if (Textbox != null)
+            //{
+            //    items.AddRange(Textbox);
+            //}
 
             type.Items = items.ToArray();
             return type;
