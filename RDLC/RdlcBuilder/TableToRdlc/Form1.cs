@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Common.Report;
 using Common.Report;
 using Microsoft.Reporting.WinForms;
+using TableToRdlc.Report;
 
 namespace Common
 {
@@ -39,25 +40,32 @@ namespace Common
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DynamicReport bind = new DynamicReport();
-            DataTable dt = new DataTable();
-            dt.Columns.Add("tttt");
-            bind.DataSource = dt;
+            //DynamicReport bind = new DynamicReport();
+            //DataTable dt = new DataTable();
+            //dt.Columns.Add("tttt");
+            //bind.DataSource = dt;
 
-            bind.Rdl.PageHeaderText = "成绩";
-            bind.Rdl.LeftMargin = 8;
-            bind.Rdl.RightMargin = 5;
-            bind.Rdl.TopMargin = 8;
-            bind.Rdl.BottomMargin = 10;
-            bind.Rdl.PageFooterText = "\"第 \" & {0} & \" 页.共 \" & {1} & \" 页\"";
+            //bind.Rdl.PageHeaderText = "成绩";
+            //bind.Rdl.LeftMargin = 8;
+            //bind.Rdl.RightMargin = 5;
+            //bind.Rdl.TopMargin = 8;
+            //bind.Rdl.BottomMargin = 10;
+            //bind.Rdl.PageFooterText = "\"第 \" & {0} & \" 页.共 \" & {1} & \" 页\"";
 
-            HtmlTable table = new HtmlTable();
-            table.TableHtml = this.richTextBox1.Text;
-            table.Create();
-            bind.Rdl.Tables.Add(table.Table);
+            //HtmlTable table = new HtmlTable();
+            //table.TableHtml = this.richTextBox1.Text;
+            //table.Create();
+            //bind.Rdl.Tables.Add(table.Table);
 
-            bind.ShowReport(this.reportViewer1);
+            //bind.ShowReport(this.reportViewer1);
 
+            var table1 = WebTable.HtmlToTable(this.richTextBox1.Text);
+            TextBoxTable tableBuilder=new TextBoxTable();
+            tableBuilder.Table = table1;
+
+            ReportRender render=new ReportRender();
+            render.BuildReport = tableBuilder;
+            render.ShowReport(this.reportViewer1);
         }
     }
 }
