@@ -9,7 +9,7 @@ namespace Common.Report
 {
     public class SimpleTableReportBuilder : BaseReportBuilder
     {
-        public WebTable Table;
+        public SimpleTable Table;
         public override ReportItemsEx CreateReportItems()
         {
             var reportItems=base.CreateReportItems();

@@ -69,6 +69,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Report\RdlUtils.cs" />
+    <Compile Include="Report\ReportBuilder\SimpleTable.cs" />
     <Compile Include="Report\ReportDefinition.cs" />
     <Compile Include="Report\ReportElementsEx.cs" />
     <Compile Include="Report\ReportElemnets.cs" />
@@ -88,7 +89,6 @@
     <Compile Include="Report\TextBoxBuilder.cs" />
     <Compile Include="Report\ReportBuilder\BaseReportBuilder.cs" />
     <Compile Include="Report\WinFormsReportExporter.cs" />
-    <Compile Include="WebTable.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
