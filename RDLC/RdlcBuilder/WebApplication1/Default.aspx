@@ -52,12 +52,10 @@
                 SortExpression="FTitle" />
             <asp:BoundField DataField="FKeywords" HeaderText="FKeywords" 
                 SortExpression="FKeywords" />
-            <asp:BoundField DataField="FPromulgatorID" HeaderText="FPromulgatorID" 
-                SortExpression="FPromulgatorID" />
+   
             <asp:BoundField DataField="FCategory" HeaderText="FCategory" 
                 SortExpression="FCategory" />
-            <asp:BoundField DataField="FTypeID" HeaderText="FTypeID" 
-                SortExpression="FTypeID" />
+         
             <asp:BoundField DataField="FAttachmentInfos" HeaderText="FAttachmentInfos" 
                 SortExpression="FAttachmentInfos" />
             <asp:BoundField DataField="FViewLevel" HeaderText="FViewLevel" 
