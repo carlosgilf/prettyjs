@@ -8,6 +8,7 @@ using System.Data;
 using Common.Report;
 using System.IO;
 using System.Text;
+using TableToRdlc.Report;
 
 namespace WebApplication1
 {
@@ -36,14 +37,26 @@ namespace WebApplication1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            DynamicReport bind = new DynamicReport();
-            bind.Rdl.PageHeaderText = "成绩";
-            bind.Rdl.LeftMargin = 8;
-            bind.Rdl.RightMargin = 5;
-            bind.Rdl.TopMargin = 8;
-            bind.Rdl.BottomMargin = 10;
-            bind.Rdl.PageFooterText = "\"第 \" & {0} & \" 页.共 \" & {1} & \" 页\"";
-            bind.ShowReport(this.ReportViewer1, this.GridView1);
+            //DynamicReport bind = new DynamicReport();
+            //bind.Rdl.PageHeaderText = "成绩";
+            //bind.Rdl.LeftMargin = 8;
+            //bind.Rdl.RightMargin = 5;
+            //bind.Rdl.TopMargin = 8;
+            //bind.Rdl.BottomMargin = 10;
+            //bind.Rdl.PageFooterText = "\"第 \" & {0} & \" 页.共 \" & {1} & \" 页\"";
+            //bind.ShowReport(this.ReportViewer1, this.GridView1);
+
+
+
+            ReportRender render = new ReportRender();
+            render.BuildReport = new SimpleTableReportBuilder()
+            {
+                PageHeaderText = "成绩",
+                PageFooterText = "\"第 \" & {0} & \" 页.共 \" & {1} & \" 页\"",
+                Table = WebTable.HtmlToTable(this.GridView1)
+            };
+            render.ShowReport(this.ReportViewer1);
+
         }
     }
 }
