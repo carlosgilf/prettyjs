@@ -228,7 +228,16 @@ namespace Common.Report
         int Seed = 0;
         public TextboxEx CreateTextboxEx(string fieldName, bool hidden)
         {
-            var style = new StyleEx() { FontSize = "9pt", FontFamily = "宋体" };
+            return CreateTextboxEx(null, fieldName, hidden);
+        }
+
+
+        public TextboxEx CreateTextboxEx(StyleEx style, string fieldName, bool hidden)
+        {
+            if (style == null)
+            {
+                style = new StyleEx() { FontSize = "9pt", FontFamily = "宋体" };
+            }
             var parap = new ParagraphEx
             {
                 Style = style,

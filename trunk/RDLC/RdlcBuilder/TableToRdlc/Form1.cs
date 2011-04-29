@@ -59,12 +59,15 @@ namespace Common
 
             //bind.ShowReport(this.reportViewer1);
 
-            var table1 = WebTable.HtmlToTable(this.richTextBox1.Text);
-            TextBoxTable tableBuilder=new TextBoxTable();
-            tableBuilder.Table = table1;
 
-            ReportRender render=new ReportRender();
-            render.BuildReport = tableBuilder;
+
+            ReportRender render = new ReportRender();
+            render.BuildReport = new SimpleTableReportBuilder()
+            {
+                PageHeaderText = "成绩",
+                PageFooterText = "\"第 \" & {0} & \" 页.共 \" & {1} & \" 页\"",
+                Table = WebTable.HtmlToTable(this.richTextBox1.Text)
+            };
             render.ShowReport(this.reportViewer1);
         }
     }

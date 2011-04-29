@@ -3,24 +3,34 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Microsoft.Reporting.WebForms;
+using Common.Report;
 
 namespace TableToRdlc.Report
 {
     public class ReportRender
     {
-        public IBuildReport BuildReport;
+        public BaseReportBuilder BuildReport;
 
         public void ShowReport(Microsoft.Reporting.WinForms.ReportViewer rptViewer)
         {
             var report=GenerateRdl();
             DumpRdl(report);
             rptViewer.Reset();
-            rptViewer.LocalReport.DisplayName = "rrr";
+            rptViewer.LocalReport.DisplayName = string.IsNullOrEmpty(BuildReport.PageHeaderText) ? "Report" : BuildReport.PageHeaderText;
             rptViewer.LocalReport.LoadReportDefinition(report);
             rptViewer.LocalReport.DataSources.Clear();
             rptViewer.RefreshReport();
         }
 
+        public void ShowReport(ReportViewer rptViewer)
+        {
+            var report = GenerateRdl();
+            DumpRdl(report);
+            rptViewer.LocalReport.DisplayName = string.IsNullOrEmpty(BuildReport.PageHeaderText) ? "Report" : BuildReport.PageHeaderText;
+            rptViewer.LocalReport.LoadReportDefinition(report);
+            rptViewer.LocalReport.Refresh();
+        }
 
         private MemoryStream GenerateRdl()
         {
@@ -42,7 +52,7 @@ namespace TableToRdlc.Report
     }
 
 
-    public interface IBuildReport
+    public interface IReportBuilder
     {
         void WriteXml(Stream ms);
     }
