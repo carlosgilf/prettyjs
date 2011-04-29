@@ -710,7 +710,15 @@ namespace Common.Dynamic
         public TextboxType Create(string name)
         {
             TextboxType type = new TextboxType();
-            type.Name = Name;
+            if (!string.IsNullOrEmpty(name))
+            {
+                type.Name = name;
+            }
+            else
+            {
+                type.Name = Name;
+            }
+            
             ArrayList items = new ArrayList();
             ArrayList itemsElementName = new ArrayList();
             if (ActionInfo != null)

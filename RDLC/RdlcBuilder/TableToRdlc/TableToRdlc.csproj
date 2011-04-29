@@ -52,17 +52,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlphaNumericPasswordGenerator.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\HtmlTable.cs" />
     <Compile Include="Program.cs" />
@@ -86,11 +81,12 @@
     <Compile Include="Report\ReportExporters\Rect.cs" />
     <Compile Include="Report\ReportExporters\ReportRenderType.cs" />
     <Compile Include="Report\ReportExporters\Size.cs" />
-    <Compile Include="Report\ReportRender.cs" />
+    <Compile Include="Report\ReportBuilder\ReportRender.cs" />
+    <Compile Include="Report\ReportBuilder\SimpleTableReportBuilder.cs" />
     <Compile Include="Report\TableBase.cs" />
     <Compile Include="Report\TableRdlGenerator.cs" />
     <Compile Include="Report\TextBoxBuilder.cs" />
-    <Compile Include="Report\TextBoxTable.cs" />
+    <Compile Include="Report\ReportBuilder\BaseReportBuilder.cs" />
     <Compile Include="Report\WinFormsReportExporter.cs" />
     <Compile Include="WebTable.cs" />
     <EmbeddedResource Include="Form1.resx">
