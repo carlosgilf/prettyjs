@@ -66,7 +66,7 @@ namespace Common
             {
                 PageHeaderText = "成绩",
                 PageFooterText = "\"第 \" & {0} & \" 页.共 \" & {1} & \" 页\"",
-                Table = WebTable.HtmlToTable(this.richTextBox1.Text)
+                Table = SimpleTable.HtmlToTable(this.richTextBox1.Text)
             };
             render.ShowReport(this.reportViewer1);
         }

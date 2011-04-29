@@ -13,7 +13,7 @@ using System.Web.UI.WebControls;
 
 namespace TableToRdlc.Report
 {
-    public class WebTable
+    public class SimpleTable
     {
         public List<TR> Rows = new List<TR>();
         public List<double> Columns = new List<double>();
@@ -215,15 +215,15 @@ namespace TableToRdlc.Report
             this.Computed = true;
         }
 
-        public static WebTable HtmlToTable(Control control)
+        public static SimpleTable HtmlToTable(Control control)
         {
             var html = RenderControls(control);
             return HtmlToTable(html);
         }
 
-        public static WebTable HtmlToTable(string html)
+        public static SimpleTable HtmlToTable(string html)
         {
-            var table = new WebTable();
+            var table = new SimpleTable();
             var widths = new double[100];
 
             var doc = new HtmlDocument();
