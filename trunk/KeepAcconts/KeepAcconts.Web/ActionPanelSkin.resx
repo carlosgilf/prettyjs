@@ -117,4 +117,71 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.css" xml:space="preserve">
+    <value>StyleSheetResource</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.css:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.css:FileName" xml:space="preserve">
+    <value>ActionPanelSkin.Panel.css</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.css:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ActionPanelSkin.Panel.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.css:Comment" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.css:PresentationRole" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.css:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.css:Presentation" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.css:PresentationRole" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.css:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.xslt" xml:space="preserve">
+    <value>TemplateResource</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.xslt:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.xslt:FileName" xml:space="preserve">
+    <value>ActionPanelSkin.Panel.xslt</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.xslt:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ActionPanelSkin.Panel.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.xslt:Comment" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.xslt:PresentationRole" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.xslt:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.xslt:Presentation" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.xslt:PresentationRole" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="Skin:KeepAcconts.Web.ActionPanelSkin:Panel.xslt:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
 </root>

@@ -5,6 +5,7 @@ using System.Linq;
 using Gizmox.WebGUI.Forms;
 using Mindscape.LightSpeed;
 using Mindscape.LightSpeed.Linq;
+using System.Collections.Generic;
 #endregion
 
 namespace KeepAcconts.Web
@@ -58,6 +59,16 @@ namespace KeepAcconts.Web
             }
 
 
+        }
+
+        public static  List<UserInfo> GetData()
+        {
+            var _context1 = new LightSpeedContext<ChargeModalUnitOfWork>("default");
+            using (var unitOfWork = _context1.CreateUnitOfWork())
+            {
+                var us = from u in unitOfWork.UserInfos select u;
+                return us.ToList();
+            }
         }
 
         private static LightSpeedContext<ChargeModalUnitOfWork> _context;
