@@ -24,14 +24,16 @@ namespace KeepAcconts.Web
 
         }
 
+
+        private string rootRelPath = "test";
         private string currentPath = "";
         private string rootPath = "";
         private void FileManager_Load(object sender, EventArgs e)
         {
+            this.fileDlg.MaxFileSize = 1024000;
             Filelist.GridLines = false;
             Filelist.CheckBoxes = false;
-
-            rootPath=currentPath = VWGContext.Current.HttpContext.Server.MapPath("~/");
+            rootPath = currentPath = VWGContext.Current.HttpContext.Server.MapPath( "~/"+rootRelPath);
             this.pathLinker1.RootPath = rootPath;
 
             this.pathLinker1.LinkClick = (button, path) => {
@@ -122,16 +124,9 @@ namespace KeepAcconts.Web
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            currentPath = VWGContext.Current.HttpContext.Server.MapPath("~/");
-            BindList(currentPath);
-        }
 
-        private void Filelist_ItemBinding(object sender, ListViewItemBindingEventArgs e)
-        {
 
-        }
+      
 
         private void Filelist_RowItemBinding(object sender, ListViewItemBindingEventArgs e)
         {
@@ -146,8 +141,173 @@ namespace KeepAcconts.Web
             }
         }
 
+        private void toolBar1_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
+        {
+            if (e.Button.Name=="tbtNewDirectory")
+            {
+                var frm = new frmAddEditDir();
+                frm.fileManager = this;
+                frm.Action = FileAction.AddDir;
+                frm.ShowDialog();
+            }
+            else if (e.Button.Name == "tbtnAddFiles")
+            {
+                fileDlg.ShowDialog();
+            }
+            else if (e.Button.Name == "tbtnDelete")
+            {
+                Delete();
+            }
+        }
+
+        public void CreateDir(string name)
+        {
+            Directory.CreateDirectory(Path.Combine(currentPath, name));
+            BindList(currentPath);
+        }
+
+        private void fileDlg_FileOk(object sender, CancelEventArgs e)
+        {
+            var files = fileDlg.Files;
+            for (int i = 0; i < files.Count; i++)
+            {
+                var path = Path.Combine(currentPath, files[i].OriginalFileName);
+                var file = files[i];
+                if (File.Exists(path))
+                {
+                    MessageBox.Show(string.Format("此文件夹已包含和“{0}”的文件，是否覆盖?",file.OriginalFileName), "提示", MessageBoxButtons.YesNo, (obj, ev) =>
+                    {
+                        if (((Form)obj).DialogResult == DialogResult.Yes)
+	                    {
+                            file.SaveAs(path);
+	                    }
+                    });
+                }
+                else
+                {
+                    file.SaveAs(path);
+                }
+            }
+            BindList(currentPath);
+        }
+
+        private void meunDelete_Click(object sender, EventArgs e)
+        {
+            Delete();
+        }
+
+        internal void Delete()
+        {
+            if (this.Filelist.SelectedItems != null)
+            {
+
+                MessageBox.Show(string.Format("你确定要删除？"), "提示", MessageBoxButtons.YesNo, (obj, ev) =>
+                {
+                    if (((Form)obj).DialogResult == DialogResult.Yes)
+                    {
+                        foreach (ListViewItem item in Filelist.SelectedItems)
+                        {
+                            var struck = item.Tag as FileStruck;
+                            if (struck != null)
+                            {
+                                var name = struck.Name;
+                                var path = System.IO.Path.Combine(currentPath, name);
+                                if (struck.Type == "文件夹")
+                                {
+                                    Directory.Delete(path, true);
+                                }
+                                else
+                                {
+                                    File.Delete(path);
+                                }
+                            }
+                        }
+                        BindList(currentPath);
+                    }
+                });
+            }
+        }
+        
+        internal void RenameFile(string newName)
+        {
+            var item = Filelist.SelectedItem;
+            var struck = item.Tag as FileStruck;
+            if (struck != null)
+            {
+                var oldPath = Path.Combine(currentPath, struck.Name);
+                var newPath = Path.Combine(currentPath, newName);
+                FileInfo file = new FileInfo(oldPath);
+                file.MoveTo(newPath);
+                BindList(currentPath);
+            }
+        }
+
+        internal void RenameDir(string newName)
+        {
+            var item = Filelist.SelectedItem;
+            var struck = item.Tag as FileStruck;
+            if (struck != null)
+            {
+                var oldPath = Path.Combine(currentPath, struck.Name);
+                var newPath = Path.Combine(currentPath, newName);
+                DirectoryInfo dir = new DirectoryInfo(oldPath);
+                dir.MoveTo(newPath);
+                BindList(currentPath);
+            }
+        }
+
+        private void menuRename_Click(object sender, EventArgs e)
+        {
+             var item = Filelist.SelectedItem;
+            var struck = item.Tag as FileStruck;
+            if (struck != null)
+            {
+                var frm = new frmAddEditDir();
+                frm.fileManager = this;
+                frm.TxtFiledValue = struck.Name;
+                if (struck.Type=="文件夹")
+                {
+                    frm.Action = FileAction.RenameDir;
+                }
+                else
+                {
+                    frm.Action = FileAction.RenameFile;
+                    
+                }
+                frm.ShowDialog();
+               
+            }
+        }
+
+        private void menuCopyUrl_Click(object sender, EventArgs e)
+        {
+            var item = Filelist.SelectedItem;
+            var struck = item.Tag as FileStruck;
+            if (struck != null)
+            {
+                string strLink = struck.Name;
 
 
+
+                string relPath = currentPath.Remove(0, rootPath.Length);
+
+                relPath = "/" + rootRelPath + relPath;
+
+                relPath=relPath.Replace("\\", "/").Replace("//", "/");
+
+                if (Context.HttpContext.Request.ApplicationPath.EndsWith("/"))
+                    strLink = Context.HttpContext.Request.ApplicationPath + strLink;
+                else
+                    strLink = Context.HttpContext.Request.ApplicationPath + "/" + strLink;
+                strLink = "http://" + Context.HttpContext.Request.Url.Authority + relPath + strLink;
+
+
+                var frm = new frmAddEditDir();
+                frm.Action = FileAction.ShowUrl;
+                frm.TxtFiledValue = strLink;
+                frm.ShowDialog();
+            }
+        }
     }
 
     public class FileStruck
