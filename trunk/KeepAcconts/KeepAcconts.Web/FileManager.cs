@@ -24,23 +24,57 @@ namespace KeepAcconts.Web
 
         }
 
+        public Undo<string> undoer = new Undo<string>();
+        
 
-        private string rootRelPath = "test";
+        private string rootRelPath = "";
         private string currentPath = "";
         private string rootPath = "";
         private void FileManager_Load(object sender, EventArgs e)
         {
-            this.fileDlg.MaxFileSize = 1024000;
-            Filelist.GridLines = false;
-            Filelist.CheckBoxes = false;
-            rootPath = currentPath = VWGContext.Current.HttpContext.Server.MapPath( "~/"+rootRelPath);
-            this.pathLinker1.RootPath = rootPath;
+            this.pAddrBarContainer.Controls.Add(this.txtAddr);
+            this.txtAddr.Width = 510;
+            this.txtAddr.Location = new Point(2, 0);
+            this.picForward.Visible = false;
+            this.picBack.Visible = false;
+            undoer.StepChanaged += new Action<bool, bool>(undoer_StepChanaged);
+            undoer.Start();
+            try
+            {
 
-            this.pathLinker1.LinkClick = (button, path) => {
-                var fullPath=Path.Combine(rootPath, path);
-                BindList(fullPath);
-            };
-            BindList(currentPath);
+                this.fileDlg.MaxFileSize = 50240000;
+                Filelist.GridLines = false;
+                Filelist.CheckBoxes = false;
+                rootPath = currentPath = VWGContext.Current.HttpContext.Server.MapPath("~/" + rootRelPath);
+                this.pathLinker1.RootPath = rootPath;
+
+                this.pathLinker1.LinkClick = (button, path) =>
+                {
+                    var fullPath = Path.Combine(rootPath, path);
+
+                    if (!fullPath.Equals(currentPath, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        picBack.Visible = true;
+                        undoer.AddAction(fullPath);
+                    }
+
+                    BindList(fullPath);
+                    
+                };
+                BindList(currentPath);
+                undoer.Init(currentPath);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void undoer_StepChanaged( bool enableBack,bool enableForward)
+        {
+            this.picBack.Visible = enableBack;
+            this.picForward.Visible = enableForward;
         }
 
 
@@ -69,6 +103,7 @@ namespace KeepAcconts.Web
             this.Filelist.DataListSource = list;
             this.Filelist.Bind();
             currentPath = parentPath;
+           
             string path = currentPath.Remove(0,rootPath.Length);
             this.pathLinker1.CurrentPath = path;
         }
@@ -85,6 +120,7 @@ namespace KeepAcconts.Web
                     var name = struck.Name;
                     currentPath = System.IO.Path.Combine(currentPath, name);
                     BindList(currentPath);
+                    undoer.AddAction(currentPath);
                 }
             }
         }
@@ -308,7 +344,164 @@ namespace KeepAcconts.Web
                 frm.ShowDialog();
             }
         }
+
+        private void pathLinker1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void picBack_Click(object sender, EventArgs e)
+        {
+            var path=undoer.Back();
+            if (!string.IsNullOrEmpty(path))
+            {
+                 BindList(path);
+            }
+        }
+
+        private void picForward_Click(object sender, EventArgs e)
+        {
+            var path = undoer.Forward();
+            if (!string.IsNullOrEmpty(path))
+            {
+                BindList(path);
+            }
+        }
+
+        private void pathLinker1_Click(object sender, EventArgs e)
+        {
+            this.txtAddr.Visible = true;
+            this.txtAddr.Text =Path.Combine("¸ùÄ¿Â¼", pathLinker1.CurrentPath);
+            this.txtAddr.Focus();
+            this.txtAddr.SelectAll();
+            pathLinker1.Visible = false;
+        }
+
+ 
+
+        private void pathLinker1_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtAddr_Leave(object sender, EventArgs e)
+        {
+            this.txtAddr.Visible = false;
+            pathLinker1.Visible = true;
+        }
+
     }
+
+    public class Undo<T>
+    {
+        public bool Started = false;
+        public void Start()
+        {
+            Started = true;
+        }
+
+        public List<T> Operations = new List<T>();
+
+        public event Action<bool, bool> StepChanaged;
+
+        private int currentStep=-1;
+//enableBack,enableForward
+        public int CurrentStep
+        {
+            get { return currentStep; }
+            set { currentStep = value; }
+        }
+
+        public void AddAction(T operation)
+        {
+            if (Started==false)
+                return;
+
+          
+            while (currentStep < Operations.Count-1)
+            {
+                Operations.RemoveAt(Operations.Count - 1);
+            }
+        
+
+            //currentStep++;
+            Operations.Add(operation);
+            currentStep = Operations.Count - 1;
+            
+            enableBack = true;
+            enableForward = false;
+            if (StepChanaged != null)
+            {
+                StepChanaged(enableBack, enableForward);
+            }
+        }
+
+        public void Init(T operation)
+        {
+            Operations.Add(operation);
+            currentStep =0;
+        }
+
+        public T Back()
+        {
+            T ret = default(T);
+            if (currentStep>0)
+            {
+                currentStep--;
+                enableForward = true;
+                ret= Operations[currentStep];
+            }
+            else
+            {
+                enableBack = false;
+            }
+
+            if (currentStep == 0)
+            {
+                enableBack = false;
+            }
+
+            if (StepChanaged != null)
+            {
+                StepChanaged(enableBack, enableForward);
+            }
+            return ret;
+        }
+
+        bool enableBack, enableForward;
+
+        public T Forward()
+        {
+            T ret = default(T);
+            if (currentStep < Operations.Count - 1)
+            {
+                currentStep++;
+                enableBack = true;
+                
+
+                ret= Operations[currentStep];
+            }
+            else
+            {
+                enableForward = false;
+            }
+
+
+            if (currentStep == Operations.Count - 1)
+            {
+                enableForward = false;
+            }
+
+
+            if (StepChanaged!=null)
+            {
+                StepChanaged(enableBack, enableForward);
+            }
+            return ret;
+        }
+    }
+
 
     public class FileStruck
     {

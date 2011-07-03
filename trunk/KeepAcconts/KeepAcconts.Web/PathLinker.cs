@@ -22,6 +22,8 @@ namespace KeepAcconts.Web
             InitializeComponent();
         }
 
+      
+
         string rootPath = "";
 
         public string RootPath
@@ -53,8 +55,8 @@ namespace KeepAcconts.Web
             btn.CustomStyle = "F";
             btn.Font = new System.Drawing.Font("ËÎÌו", 9F);
             btn.FlatStyle = Gizmox.WebGUI.Forms.FlatStyle.Flat;
-            btn.Location = new System.Drawing.Point(0, 4);
-            btn.Size = new System.Drawing.Size(width, 23);
+            btn.Location = new System.Drawing.Point(0, 0);
+            btn.Size = new System.Drawing.Size(width, 22);
             btn.TabIndex = 0;
             btn.Text = text;
             return btn;
@@ -66,10 +68,10 @@ namespace KeepAcconts.Web
             Button button2 = new Button();
             button2.CustomStyle = "F";
             button2.FlatStyle = Gizmox.WebGUI.Forms.FlatStyle.Flat;
-            button2.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle("arrow_right.png");
-            button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            button2.Location = new System.Drawing.Point(50, 4);
-            button2.Size = new System.Drawing.Size(13, 23);
+            button2.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle("arrow_right1.png");
+            button2.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            button2.Location = new System.Drawing.Point(50, 0);
+            button2.Size = new System.Drawing.Size(13, 22);
             return button2;
         }
 
@@ -100,6 +102,13 @@ namespace KeepAcconts.Web
                 {
                     return;
                 }
+                var imgBtn = CreateImgButton();
+                imgBtn.Location = new System.Drawing.Point(lastX, 0);
+                this.Controls.Add(imgBtn);
+
+                lastX += imgBtn.Size.Width;
+
+
                 Button btn = null;
                 if (p == ":")
                 {
@@ -118,16 +127,12 @@ namespace KeepAcconts.Web
 
 
                 btn.Tag = lastButton;
-                btn.Location = new System.Drawing.Point(lastX, 4);
+                btn.Location = new System.Drawing.Point(lastX, 0);
                 lastButton = btn;
                 this.Controls.Add(btn);
                 lastX += btn.Size.Width;
 
-                var imgBtn = CreateImgButton();
-                imgBtn.Location = new System.Drawing.Point(lastX, 4);
-                this.Controls.Add(imgBtn);
 
-                lastX += imgBtn.Size.Width;
 
             }
         }
@@ -138,6 +143,7 @@ namespace KeepAcconts.Web
         {
             if (LinkClick != null)
             {
+                
                 var btn = sender as Button;
                 string path = btn.ImageKey;
 
@@ -147,8 +153,11 @@ namespace KeepAcconts.Web
                     preBtn = preBtn.Tag as Button;
                     path = System.IO.Path.Combine(preBtn.ImageKey, path);
                 }
+                
                 LinkClick(btn, path);
             }
         }
     }
+
+
 }
