@@ -81,6 +81,8 @@
     <Content Include="MyButton1Skin.Button.css" />
     <Content Include="MyButton1Skin.Button.xslt" />
     <Content Include="Readme.txt" />
+    <Content Include="Resources\Images\action_back.png" />
+    <Content Include="Resources\Images\action_forward.png" />
     <Content Include="Resources\Images\Apple\navItemBg.png" />
     <Content Include="Resources\Images\Apple\newLog.png" />
     <Content Include="Resources\Images\Apple\newLog1.png" />
@@ -94,6 +96,10 @@
     <Content Include="Resources\Images\BL.gif" />
     <Content Include="Resources\Images\BR.gif" />
     <Content Include="Resources\Images\defaultIco.png" />
+    <Content Include="Resources\Images\directs.jpg" />
+    <Content Include="Resources\Images\direct_forward.gif" />
+    <Content Include="Resources\Images\direct_back.png" />
+    <Content Include="Resources\Images\direct_bg.png" />
     <Content Include="Resources\Images\FileIcons\dir16.png" />
     <Content Include="Resources\Images\FileIcons\dir.png" />
     <Content Include="Resources\Images\FileIcons\dir_16.png" />
@@ -117,6 +123,9 @@
     <Content Include="Resources\Images\logo2yellow.png" />
     <Content Include="Resources\Images\logoBlue.png" />
     <Content Include="Resources\Images\PS_Logo.png" />
+    <Content Include="Resources\Images\arrow_right1.png" />
+    <Content Include="Resources\Images\refresh.png" />
+    <Content Include="Resources\Images\search.png" />
     <Content Include="Resources\Images\tCenter.gif" />
     <Content Include="Resources\Images\title.png" />
     <Content Include="Resources\Images\TL.gif" />
@@ -202,6 +211,10 @@
       <DependentUpon>frmAddEditDir.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFileManager.resx">
+      <DependentUpon>frmFileManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListViewCheckAll.resx">
       <DependentUpon>ListViewCheckAll.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -251,6 +264,12 @@
     </Compile>
     <Compile Include="frmAddEditDir.Designer.cs">
       <DependentUpon>frmAddEditDir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFileManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFileManager.Designer.cs">
+      <DependentUpon>frmFileManager.cs</DependentUpon>
     </Compile>
     <Compile Include="ListViewCheckAll.cs">
       <SubType>Form</SubType>
@@ -341,7 +360,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>24103</DevelopmentServerPort>
+          <DevelopmentServerPort>36046</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
