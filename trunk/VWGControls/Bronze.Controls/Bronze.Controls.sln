@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gizmox.WebGUI.Samples.Jcrop", "Gizmox.WebGUI.Samples.Jcrop\Gizmox.WebGUI.Samples.Jcrop.csproj", "{2FF7ADD9-0A49-4B61-8424-2BD3421A7E41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bronze.Controls.VWG", "Bronze.Controls.VWG\Bronze.Controls.VWG.csproj", "{551801BB-5BBF-4487-A659-1232A09B2EFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bronze.Controls.Examples", "Bronze.Controls.Examples\Bronze.Controls.Examples.csproj", "{BA335756-912E-4351-AEB9-2FF3F2EB9485}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FF7ADD9-0A49-4B61-8424-2BD3421A7E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF7ADD9-0A49-4B61-8424-2BD3421A7E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF7ADD9-0A49-4B61-8424-2BD3421A7E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF7ADD9-0A49-4B61-8424-2BD3421A7E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{551801BB-5BBF-4487-A659-1232A09B2EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551801BB-5BBF-4487-A659-1232A09B2EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551801BB-5BBF-4487-A659-1232A09B2EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551801BB-5BBF-4487-A659-1232A09B2EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA335756-912E-4351-AEB9-2FF3F2EB9485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA335756-912E-4351-AEB9-2FF3F2EB9485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA335756-912E-4351-AEB9-2FF3F2EB9485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA335756-912E-4351-AEB9-2FF3F2EB9485}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
