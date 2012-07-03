@@ -82,6 +82,18 @@
     <Compile Include="FrmHoverPanel.Designer.cs">
       <DependentUpon>FrmHoverPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMenus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenus.Designer.cs">
+      <DependentUpon>FrmMenus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcMenu.Designer.cs">
+      <DependentUpon>UcMenu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmImageProcessor.resx">
       <DependentUpon>FrmImageProcessor.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -91,6 +103,14 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmMenus.resx">
+      <DependentUpon>FrmMenus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcMenu.resx">
+      <DependentUpon>UcMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.config" />
