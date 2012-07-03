@@ -1,0 +1,10 @@
+﻿.Panel-Control
+{
+	[Skin.Border];
+	[Skin.Background];
+}
+
+.HoverPanelHidden
+{
+	display:none;
+}
