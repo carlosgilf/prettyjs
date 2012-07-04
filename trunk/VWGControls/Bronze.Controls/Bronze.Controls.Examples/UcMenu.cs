@@ -23,26 +23,27 @@ namespace Bronze.Controls.Examples
             this.hoverPopup.Hidden = true;
             string show = string.Format(
             @"
-var obj=$('#VWG_{0}');
+var obj=$(Web_GetElementByDataId('{0}'));
+
+obj.parent().parent().parent().css('z-index', '900');
 var delayTimer=obj.attr('delayTimer');
-window.clearInterval(delayTimer)
+window.clearInterval(delayTimer);
 if(obj.attr('showed')!='1'){{
-    obj.css('z-index', '900');
-    obj.attr('showed',1)
+    obj.attr('showed',1);
     obj.find('.HoverPanelHidden').removeClass('HoverPanelHidden');
-    obj.slideDown(300);
+    obj.slideDown(500);
 }}
             ", this.hoverPopup.ID);
 
             string hide = string.Format(@"
-var obj=$('#VWG_{0}');
+var obj=$(Web_GetElementByDataId('{0}'));
 var delayTimer=obj.attr('delayTimer');
 window.clearInterval(delayTimer);
+
 delayTimer= setInterval(function(){{
     window.clearInterval(delayTimer);
-    obj.css('z-index', '1');
-    obj.slideUp(120,function(){{obj.attr('showed',0)}});
-}},300);
+    obj.slideUp(200,function(){{obj.attr('showed',0)}});
+}},100);
 obj.attr('delayTimer',delayTimer);
 ", this.hoverPopup.ID);
 
