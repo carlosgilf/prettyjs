@@ -141,11 +141,11 @@ namespace Bronze.Controls.VWG
             {
                 objWriter.WriteAttributeString("OverScript", OnClientMouseOver);
             }
+            this.InvokeScript(string.Format("HoverPanel_Init('{0}')", this.ID));
             if (!string.IsNullOrEmpty(OnClientMouseLeave))
             {
-
                 objWriter.WriteAttributeString("LeaveScript", OnClientMouseLeave);
-                this.InvokeScript(string.Format("HoverPanel_Init('{0}')", this.ID));
+                
                 if (RenderRunClientMouseLeave)
                 {
                     this.InvokeScript(OnClientMouseLeave);
@@ -154,6 +154,7 @@ namespace Bronze.Controls.VWG
 
             if (Hidden)
             {
+                //通过XLST重写只能设置第二层div的样式，所以还需要通过js隐藏最外层的div
                 this.InvokeScript(string.Format("$('#VWG_{0}').hide()", this.ID));
             }
 

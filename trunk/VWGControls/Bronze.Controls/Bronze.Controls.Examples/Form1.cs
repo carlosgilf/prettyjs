@@ -15,14 +15,11 @@ using Gizmox.WebGUI.Forms;
 
 namespace Bronze.Controls.Examples
 {
-    public partial class FrmMenus : Form
+    public partial class Form1 : Form
     {
-        public FrmMenus()
+        public Form1()
         {
             InitializeComponent();
-            this.ucMenu1.SetMenu(this.panel1);
-            this.ucMenu2.SetMenu(this.panel2);
-            this.ucMenu3.SetMenu(this.panel3);
         }
     }
 }

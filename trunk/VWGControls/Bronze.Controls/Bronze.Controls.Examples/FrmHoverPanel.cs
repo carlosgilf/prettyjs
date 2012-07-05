@@ -30,9 +30,10 @@ var obj=$('#VWG_{0}');
 var delayTimer=obj.attr('delayTimer');
 window.clearInterval(delayTimer)
 if(obj.attr('showed')!='1'){{
-    obj.attr('showed',1)
+    obj.attr('showed',1);
     obj.find('.HoverPanelHidden').removeClass('HoverPanelHidden');
-    obj.slideDown(500);
+    
+    obj.css('display','block').children().css('top',-obj.height()).animate({{top:0}},800);
 }}
             ", this.hoverPopup.ID);
 
@@ -42,7 +43,8 @@ var delayTimer=obj.attr('delayTimer');
 window.clearInterval(delayTimer);
 delayTimer= setInterval(function(){{
     window.clearInterval(delayTimer);
-    obj.slideUp(700,function(){{obj.attr('showed',0)}});
+   
+    obj.children().animate({{top:0-obj.height()}},600,function(){{ obj.css('display','none');obj.attr('showed',0);}});
 }},300);
 obj.attr('delayTimer',delayTimer);
 ", this.hoverPopup.ID);
