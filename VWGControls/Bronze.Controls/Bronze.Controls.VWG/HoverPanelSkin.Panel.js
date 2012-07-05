@@ -72,26 +72,31 @@ function vwg_showMenu(id,option,animate){
     if(obj.attr('showed')!='1'){
         obj.attr('showed',1);
         obj.find('.HoverPanelHidden').removeClass('HoverPanelHidden');
-        obj[_option.animate](_option.duration);
+        obj[_option.animate](_option.duration,function(){});
     }
 };
 
-function vwg_hideMenu(id,option,animate){
-    var _option={duration:500,animate:'dropUp'};
+function vwg_hideMenu(id,option,animate,hideTimeout){
+    var _option={duration:500,animate:'dropUp',hideTimeout:150};
     if(isNumber(option)) {
         _option.duration=option;
     }
     if (animate) {
         _option.animate=animate;
     }
+    if (hideTimeout) {
+        _option.hideTimeout=hideTimeout
+    }
     var obj=$(Web_GetElementByDataId(id));
 
     var delayTimer=obj.attr('delayTimer');
     window.clearInterval(delayTimer);
+
     delayTimer= setInterval(function(){
         window.clearInterval(delayTimer);
-        obj[_option.animate](_option.duration);
-    },200);
+        obj.attr('showed',0);
+        obj[_option.animate](_option.duration,function(){obj.attr('showed',0);});
+    },_option.hideTimeout);
     obj.attr('delayTimer',delayTimer);
 };
 
@@ -109,8 +114,14 @@ function isNumber(n) {
         }
 		
         var obj=$(this);
-        obj.css('display','block').children().css('top',-obj.height()).
-        stop().animate({top : 0},{
+        var ss=obj.attr('inited');
+        if (ss==null || ss=='') {
+            obj.children().css('top',-obj.height());
+            obj.attr('inited',1);
+        }
+        obj.css('display','block').children().
+        stop().
+        animate({top : 0},{
             queue : false,
             duration : cfg.duration,
             easing : cfg.easing || '',
@@ -128,7 +139,10 @@ function isNumber(n) {
             cfg.callback=callback;
         }
 		var obj=$(this);
-	    obj.css('display','block').children().stop().animate({
+	    obj.css('display','block').children().stop().
+        css('top',0).
+//        stop().
+        animate({
             top:0-obj.height()
         },
         {
@@ -137,7 +151,6 @@ function isNumber(n) {
             easing : cfg.easing || '',
             complete : function(){
                 obj.css('display','none');
-                obj.attr('showed',0);
                 if(cfg.callback)cfg.callback();
             }
         });

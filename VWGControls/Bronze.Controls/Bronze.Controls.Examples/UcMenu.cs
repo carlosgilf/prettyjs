@@ -16,14 +16,24 @@ namespace Bronze.Controls.Examples
 {
     public partial class UcMenu : UserControl
     {
-        
+        private string animate;
+
+        public string Animate
+        {
+            get { return animate ?? "dropDown,dropUp"; }
+            set 
+            { 
+                animate = value;
+                SetClientAction();
+            }
+        }
 
         public UcMenu()
         {
             InitializeComponent();
 
 
-            this.hoverPopup.Hidden = true;
+           
 //            string show = string.Format(
 //            @"
 //var obj=$(Web_GetElementByDataId('{0}'));
@@ -47,14 +57,24 @@ namespace Bronze.Controls.Examples
 //obj.attr('delayTimer',delayTimer);
 //", this.hoverPopup.ID);
 
-            var show = string.Format("vwg_showMenu('{0}')", this.hoverPopup.ID);
-            var hide = string.Format("vwg_hideMenu('{0}',400)", this.hoverPopup.ID);
+
+            SetClientAction();
+        }
+
+        public void SetClientAction()
+        {
+
+            this.hoverPopup.Hidden = true;
+            var showHide = Animate.Split(',');
+            var show = string.Format("vwg_showMenu('{0}',400,'{1}')", this.hoverPopup.ID, showHide[0]);
+            var hide = string.Format("vwg_hideMenu('{0}',200,'{1}',120)", this.hoverPopup.ID, showHide[1]);
 
             this.hoverBtn.OnClientMouseOver = show;
             this.hoverBtn.OnClientMouseLeave = hide;
 
             this.hoverPopup.OnClientMouseOver = show;
             this.hoverPopup.OnClientMouseLeave = hide;
+            this.Update();
         }
 
         public void SetMenu(Control menu)

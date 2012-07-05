@@ -35,11 +35,11 @@ namespace Bronze.Controls.Examples
             this.ucMenu2 = new Bronze.Controls.Examples.UcMenu();
             this.ucMenu3 = new Bronze.Controls.Examples.UcMenu();
             this.panel1 = new Gizmox.WebGUI.Forms.Panel();
-            this.textBox1 = new Gizmox.WebGUI.Forms.TextBox();
-            this.label1 = new Gizmox.WebGUI.Forms.Label();
-            this.label2 = new Gizmox.WebGUI.Forms.Label();
-            this.textBox2 = new Gizmox.WebGUI.Forms.TextBox();
             this.button1 = new Gizmox.WebGUI.Forms.Button();
+            this.textBox2 = new Gizmox.WebGUI.Forms.TextBox();
+            this.label2 = new Gizmox.WebGUI.Forms.Label();
+            this.label1 = new Gizmox.WebGUI.Forms.Label();
+            this.textBox1 = new Gizmox.WebGUI.Forms.TextBox();
             this.label3 = new Gizmox.WebGUI.Forms.Label();
             this.label4 = new Gizmox.WebGUI.Forms.Label();
             this.panel2 = new Gizmox.WebGUI.Forms.Panel();
@@ -50,6 +50,7 @@ namespace Bronze.Controls.Examples
             this.textBox4 = new Gizmox.WebGUI.Forms.TextBox();
             this.panel3 = new Gizmox.WebGUI.Forms.Panel();
             this.monthCalendar1 = new Gizmox.WebGUI.Forms.MonthCalendar();
+            this.comboBox1 = new Gizmox.WebGUI.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -57,6 +58,7 @@ namespace Bronze.Controls.Examples
             // 
             // ucMenu1
             // 
+            this.ucMenu1.Animate = "dropDown,dropUp";
             this.ucMenu1.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.ucMenu1.Location = new System.Drawing.Point(24, 13);
             this.ucMenu1.Name = "ucMenu1";
@@ -66,6 +68,7 @@ namespace Bronze.Controls.Examples
             // 
             // ucMenu2
             // 
+            this.ucMenu2.Animate = "dropDown,dropUp";
             this.ucMenu2.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.ucMenu2.Location = new System.Drawing.Point(120, 13);
             this.ucMenu2.Name = "ucMenu2";
@@ -75,6 +78,7 @@ namespace Bronze.Controls.Examples
             // 
             // ucMenu3
             // 
+            this.ucMenu3.Animate = "dropDown,dropUp";
             this.ucMenu3.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.ucMenu3.Location = new System.Drawing.Point(218, 13);
             this.ucMenu3.Name = "ucMenu3";
@@ -95,22 +99,20 @@ namespace Bronze.Controls.Examples
             this.panel1.Size = new System.Drawing.Size(200, 158);
             this.panel1.TabIndex = 3;
             // 
-            // textBox1
+            // button1
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 0;
+            this.button1.Location = new System.Drawing.Point(85, 105);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
             // 
-            // label1
+            // textBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "用户名";
+            this.textBox2.Location = new System.Drawing.Point(62, 52);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 21);
+            this.textBox2.TabIndex = 0;
             // 
             // label2
             // 
@@ -122,20 +124,22 @@ namespace Bronze.Controls.Examples
             this.label2.TabIndex = 1;
             this.label2.Text = "密码";
             // 
-            // textBox2
+            // label1
             // 
-            this.textBox2.Location = new System.Drawing.Point(62, 52);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "用户名";
             // 
-            // button1
+            // textBox1
             // 
-            this.button1.Location = new System.Drawing.Point(85, 105);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.textBox1.Location = new System.Drawing.Point(60, 18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 0;
             // 
             // label3
             // 
@@ -229,12 +233,26 @@ namespace Bronze.Controls.Examples
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(10, 105);
             this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.SelectionEnd = new System.DateTime(2011, 7, 5, 13, 45, 51, 984);
+            this.monthCalendar1.SelectionStart = new System.DateTime(2011, 7, 5, 13, 45, 51, 984);
             this.monthCalendar1.Size = new System.Drawing.Size(269, 155);
             this.monthCalendar1.TabIndex = 3;
             this.monthCalendar1.Value = new System.DateTime(2011, 7, 5, 13, 45, 51, 984);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DisplayMember = "Key";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(401, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 4;
+            this.comboBox1.ValueMember = "Value";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // FrmMenus
             // 
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -243,6 +261,7 @@ namespace Bronze.Controls.Examples
             this.Controls.Add(this.ucMenu1);
             this.Size = new System.Drawing.Size(787, 592);
             this.Text = "FrmMenus";
+            this.Load += new System.EventHandler(this.FrmMenus_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -271,6 +290,7 @@ namespace Bronze.Controls.Examples
         private TextBox textBox4;
         private Panel panel3;
         private MonthCalendar monthCalendar1;
+        private ComboBox comboBox1;
 
 
 

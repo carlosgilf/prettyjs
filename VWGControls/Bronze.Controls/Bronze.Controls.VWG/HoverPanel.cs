@@ -112,7 +112,10 @@ namespace Bronze.Controls.VWG
         public bool Hidden
         {
             get { return hidden; }
-            set { hidden = value; }
+            set { 
+                hidden = value;
+                this.Update();
+            }
         }
 
         public bool RenderRunClientMouseLeave
