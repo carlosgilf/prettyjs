@@ -23,6 +23,7 @@ namespace Bronze.Controls.Examples
             this.ucMenu1.SetMenu(this.panel1);
             this.ucMenu2.SetMenu(this.panel2);
             this.ucMenu3.SetMenu(this.panel3);
+            this.ucMenu4.SetMenu(this.hoverPanel1);
         }
 
         private void FrmMenus_Load(object sender, EventArgs e)

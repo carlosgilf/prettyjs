@@ -72,7 +72,8 @@ function vwg_showMenu(id,option,animate){
     if(obj.attr('showed')!='1'){
         obj.attr('showed',1);
         obj.find('.HoverPanelHidden').removeClass('HoverPanelHidden');
-        obj[_option.animate](_option.duration,function(){});
+//        obj[_option.animate](_option.duration,function(){});
+        obj[_option.animate](_option);
     }
 };
 
@@ -114,13 +115,10 @@ function isNumber(n) {
         }
 		
         var obj=$(this);
-        var ss=obj.attr('inited');
-        if (ss==null || ss=='') {
-            obj.children().css('top',-obj.height());
-            obj.attr('inited',1);
-        }
+
+        //obj.children().css('top',-obj.height());
         obj.css('display','block').children().
-        stop().
+        stop().css('top',-obj.height()).
         animate({top : 0},{
             queue : false,
             duration : cfg.duration,
@@ -141,7 +139,6 @@ function isNumber(n) {
 		var obj=$(this);
 	    obj.css('display','block').children().stop().
         css('top',0).
-//        stop().
         animate({
             top:0-obj.height()
         },
