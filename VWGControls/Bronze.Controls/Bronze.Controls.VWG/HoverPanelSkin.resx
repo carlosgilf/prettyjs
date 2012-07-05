@@ -190,4 +190,28 @@
   <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.js:Presentation" xml:space="preserve">
     <value>100</value>
   </data>
+  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js" xml:space="preserve">
+    <value>ScriptResource</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:FileName" xml:space="preserve">
+    <value>HoverPanelSkin.jquery.easing.js</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>HoverPanelSkin.jquery.easing.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:PresentationRole" xml:space="preserve">
+    <value>101</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
 </root>

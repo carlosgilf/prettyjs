@@ -39,6 +39,7 @@ namespace Bronze.Controls.Examples
             // 
             // hoverPopup
             // 
+            this.hoverPopup.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0);
             this.hoverPopup.CustomStyle = "HoverPanelSkin";
             this.hoverPopup.Hidden = false;
             this.hoverPopup.HoverBackColor = System.Drawing.Color.Transparent;
@@ -47,6 +48,7 @@ namespace Bronze.Controls.Examples
             this.hoverPopup.OnClientMouseLeave = null;
             this.hoverPopup.OnClientMouseOver = null;
             this.hoverPopup.Overable = true;
+            this.hoverPopup.Radius = 0;
             this.hoverPopup.RenderRunClientMouseLeave = false;
             this.hoverPopup.Size = new System.Drawing.Size(138, 14);
             this.hoverPopup.TabIndex = 1;
@@ -63,14 +65,15 @@ namespace Bronze.Controls.Examples
             this.hoverBtn.OnClientMouseLeave = null;
             this.hoverBtn.OnClientMouseOver = null;
             this.hoverBtn.Overable = true;
+            this.hoverBtn.Radius = 0;
             this.hoverBtn.RenderRunClientMouseLeave = false;
-            this.hoverBtn.Size = new System.Drawing.Size(90, 27);
+            this.hoverBtn.Size = new System.Drawing.Size(138, 27);
             this.hoverBtn.TabIndex = 2;
             // 
             // 菜单
             // 
             this.菜单.AutoSize = true;
-            this.菜单.Location = new System.Drawing.Point(14, 5);
+            this.菜单.Location = new System.Drawing.Point(48, 5);
             this.菜单.Name = "菜单";
             this.菜单.Size = new System.Drawing.Size(35, 13);
             this.菜单.TabIndex = 0;
@@ -78,6 +81,7 @@ namespace Bronze.Controls.Examples
             // 
             // UcMenu
             // 
+            this.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0);
             this.Controls.Add(this.hoverPopup);
             this.Controls.Add(this.hoverBtn);
             this.Size = new System.Drawing.Size(142, 45);

@@ -94,6 +94,9 @@
     <Compile Include="FrmMenus.Designer.cs">
       <DependentUpon>FrmMenus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Theme1.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UcMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>

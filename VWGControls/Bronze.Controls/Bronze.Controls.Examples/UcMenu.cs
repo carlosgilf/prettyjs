@@ -31,7 +31,7 @@ namespace Bronze.Controls.Examples
         public UcMenu()
         {
             InitializeComponent();
-
+            this.hoverPopup.Radius = 5;
 
            
 //            string show = string.Format(
@@ -67,7 +67,7 @@ namespace Bronze.Controls.Examples
             this.hoverPopup.Hidden = true;
             var showHide = Animate.Split(',');
             var show = string.Format("vwg_showMenu('{0}',400,'{1}')", this.hoverPopup.ID, showHide[0]);
-            var hide = string.Format("vwg_hideMenu('{0}',200,'{1}',120)", this.hoverPopup.ID, showHide[1]);
+            var hide = string.Format("vwg_hideMenu('{0}',300,'{1}',50)", this.hoverPopup.ID, showHide[1]);
 
             this.hoverBtn.OnClientMouseOver = show;
             this.hoverBtn.OnClientMouseLeave = hide;
@@ -88,6 +88,7 @@ namespace Bronze.Controls.Examples
                 hoverPopup.Controls.Add(menu);
                 this.Width = hoverPopup.Width;
                 this.Height = hoverPopup.Top + hoverPopup.Height;
+                this.BringToFront();
             }
         }
     }

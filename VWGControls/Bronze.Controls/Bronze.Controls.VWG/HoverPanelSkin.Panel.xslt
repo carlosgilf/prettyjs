@@ -12,7 +12,36 @@
     
     </xsl:if>-->
 
-    <xsl:if test="@Hidden='0'">
+    <xsl:variable name ="hiddenClass" >
+      <xsl:choose>
+        <xsl:when test="not(@Hidden='0')">
+          <xsl:value-of select="'HoverPanelHidden '"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="''"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:variable name ="radiusClass" >
+      <xsl:choose>
+        <xsl:when test="@Radius='Radius'">
+          <xsl:value-of select="'HoverPanelRadius '"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="''"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+
+    <xsl:call-template name="tplDrawPanelAPI">
+      <xsl:with-param name="prmControlClass" select="concat('Panel-Control ',$hiddenClass,$radiusClass)"/>
+    </xsl:call-template>
+    
+
+
+    <!--<xsl:if test="@Hidden='0'">
       <xsl:call-template name="tplDrawPanelAPI">
         <xsl:with-param name="prmControlClass" select="'Panel-Control '"/>
       </xsl:call-template>
@@ -22,7 +51,7 @@
       <xsl:call-template name="tplDrawPanelAPI">
         <xsl:with-param name="prmControlClass" select="'Panel-Control HoverPanelHidden'"/>
       </xsl:call-template>
-    </xsl:if>
+    </xsl:if>-->
    
    
   </xsl:template>

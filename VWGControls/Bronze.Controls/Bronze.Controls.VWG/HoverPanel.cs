@@ -109,6 +109,9 @@ namespace Bronze.Controls.VWG
             set;
         }
 
+        private int radius = 0;
+        
+
         public bool Hidden
         {
             get { return hidden; }
@@ -122,6 +125,12 @@ namespace Bronze.Controls.VWG
         {
             get { return renderRunClientMouseOut; }
             set { renderRunClientMouseOut = value; }
+        }
+
+        public int Radius
+        {
+            get { return radius; }
+            set { radius = value; }
         }
 
         protected override void RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext objContext, Gizmox.WebGUI.Common.Interfaces.IAttributeWriter objWriter)
@@ -159,6 +168,11 @@ namespace Bronze.Controls.VWG
             {
                 //通过XLST重写只能设置第二层div的样式，所以还需要通过js隐藏最外层的div
                 this.InvokeScript(string.Format("$('#VWG_{0}').hide()", this.ID));
+            }
+
+            if (Radius>0)
+            {
+                objWriter.WriteAttributeString("Radius", "Radius");
             }
 
 

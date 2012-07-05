@@ -66,6 +66,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HoverPanelSkin.jquery.easing.js">
+      <DependentUpon>HoverPanelSkin.cs</DependentUpon>
+    </Content>
     <Content Include="HoverPanelSkin.Panel.css">
       <DependentUpon>HoverPanelSkin.cs</DependentUpon>
     </Content>
