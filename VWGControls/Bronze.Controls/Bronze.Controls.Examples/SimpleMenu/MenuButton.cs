@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
-
+using Bronze.Controls.VWG;
 using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms;
 
@@ -19,6 +19,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
         public MenuButton()
         {
             InitializeComponent();
+            this.lbText.BringToFront();
         }
 
         private string title="";
@@ -45,6 +46,58 @@ namespace Bronze.Controls.Examples.SimpleMenu
                 animate = value;
                 SetClientAction();
             }
+        }
+
+        public  HoverPanel GetButton(string text)
+        {
+            var btn = this.hoverBtn;
+            if (text!=null)
+            {
+                this.lbText.Text = text;
+            }
+            this.Controls.Remove(btn);
+            return btn;
+        }
+
+        public string GetButtonScript(bool show)
+        {
+            return GetControlClientScript(show, this.btnTop, this.btnMain);
+        }
+
+
+        public string GetPopupScript(bool show)
+        {
+            return GetControlClientScript(show, this.hoverPopup);
+        }
+
+        public string GetGroupActionScript(bool show)
+        {
+            return GetControlClientScript(show, this.btnTop, this.btnMain, this.hoverPopup);
+        }
+
+        public string GetControlClientScript(bool show, params Control[] controls)
+        {
+            string action = show ? "show()" : "hide()";
+            var sb = new StringBuilder();
+            string template = "$('#VWG_{0}').{1};";
+            foreach (var c in controls)
+            {
+                sb.AppendFormat(template, c.ID, action);
+            }
+            return sb.ToString();
+        }
+
+        public HoverPanel GetPopup(Control menuContent)
+        {
+            var btn = hoverPopup;
+            
+            hoverPopup.Height = menuContent.Height + panelPopuBottom.Height;
+            hoverPopup.Width = menuContent.Width;
+            menuContent.Dock = DockStyle.Fill;
+            panelMenuContanier.Controls.Clear();
+            panelMenuContanier.Controls.Add(menuContent);
+            this.Controls.Remove(btn);
+            return btn;
         }
 
         public void SetMenu(Control menu)

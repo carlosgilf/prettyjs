@@ -103,11 +103,17 @@
     <Compile Include="FrmMenus.Designer.cs">
       <DependentUpon>FrmMenus.cs</DependentUpon>
     </Compile>
-    <Compile Include="SimpleMenu\FrmMainMenu.cs">
+    <Compile Include="Demo\FrmBaseMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SimpleMenu\FrmMainMenu.Designer.cs">
-      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    <Compile Include="Demo\FrmBaseMenu.Designer.cs">
+      <DependentUpon>FrmBaseMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\FrmDemoSupperMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo\FrmDemoSupperMenu.Designer.cs">
+      <DependentUpon>FrmDemoSupperMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="SimpleMenu\MenuButton.cs">
       <SubType>UserControl</SubType>
@@ -115,17 +121,17 @@
     <Compile Include="SimpleMenu\MenuButton.Designer.cs">
       <DependentUpon>MenuButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="SimpleMenu\Popup.cs">
+    <Compile Include="Demo\MenuItemCreator.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SimpleMenu\Popup.Designer.cs">
-      <DependentUpon>Popup.cs</DependentUpon>
+    <Compile Include="Demo\MenuItemCreator.Designer.cs">
+      <DependentUpon>MenuItemCreator.cs</DependentUpon>
     </Compile>
-    <Compile Include="SimpleMenu\SimpleMenu.cs">
+    <Compile Include="SimpleMenu\SupperMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SimpleMenu\SimpleMenu.Designer.cs">
-      <DependentUpon>SimpleMenu.cs</DependentUpon>
+    <Compile Include="SimpleMenu\SupperMenu.Designer.cs">
+      <DependentUpon>SupperMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Theme1.cs">
       <SubType>Component</SubType>
@@ -153,20 +159,24 @@
       <DependentUpon>FrmMenus.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SimpleMenu\FrmMainMenu.resx">
-      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Demo\FrmBaseMenu.resx">
+      <DependentUpon>FrmBaseMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo\FrmDemoSupperMenu.resx">
+      <DependentUpon>FrmDemoSupperMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleMenu\MenuButton.resx">
       <DependentUpon>MenuButton.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SimpleMenu\Popup.resx">
-      <DependentUpon>Popup.cs</DependentUpon>
+    <EmbeddedResource Include="Demo\MenuItemCreator.resx">
+      <DependentUpon>MenuItemCreator.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SimpleMenu\SimpleMenu.resx">
-      <DependentUpon>SimpleMenu.cs</DependentUpon>
+    <EmbeddedResource Include="SimpleMenu\SupperMenu.resx">
+      <DependentUpon>SupperMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UcMenu.resx">

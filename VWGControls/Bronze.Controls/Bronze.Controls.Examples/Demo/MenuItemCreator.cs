@@ -12,13 +12,18 @@ using Gizmox.WebGUI.Forms;
 
 #endregion
 
-namespace Bronze.Controls.Examples.SimpleMenu
+namespace Bronze.Controls.Examples
 {
-    public partial class Popup : UserControl
+    public partial class MenuItemCreator : UserControl
     {
-        public Popup()
+        public MenuItemCreator()
         {
             InitializeComponent();
+        }
+
+        private void ItemDateTime_DateChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
