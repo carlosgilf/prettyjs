@@ -22,10 +22,17 @@ namespace Bronze.Controls.Examples.SimpleMenu
             
         }
 
+        public void Add(string text , Control menu)
+        {
+            var btn = new MenuButton();
+            btn.Title = text;
+
+        }
+
         private void SimpleMenu_Load(object sender, EventArgs e)
         {
-            this.menuButton4.SetMenu(this.groupBox1);
-            this.menuButton1.SetMenu(this.panel3);
+            //this.menuButton4.SetMenu(this.groupBox1);
+            //this.menuButton1.SetMenu(this.panel3);
         }
     }
 }

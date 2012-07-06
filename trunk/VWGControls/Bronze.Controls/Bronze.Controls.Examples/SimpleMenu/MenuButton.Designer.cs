@@ -188,7 +188,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             // 
             this.Controls.Add(this.hoverPopup);
             this.Controls.Add(this.hoverBtn);
-            this.Size = new System.Drawing.Size(118, 43);
+            this.Size = new System.Drawing.Size(424, 292);
             this.Text = "MenuButton";
             this.hoverPopup.ResumeLayout(false);
             this.panelPopuBottom.ResumeLayout(false);

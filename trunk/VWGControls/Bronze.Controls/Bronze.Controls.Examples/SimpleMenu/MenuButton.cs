@@ -21,6 +21,20 @@ namespace Bronze.Controls.Examples.SimpleMenu
             InitializeComponent();
         }
 
+        private string title="";
+
+        public string Title
+        {
+            get { return title; }
+            set 
+            { 
+                title = value;
+                this.lbText.Text = value;
+                this.lbText.Update();
+            }
+        }
+       
+
         private string animate;
 
         public string Animate
