@@ -67,6 +67,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
+    <Content Include="Resources\Images\MenuBlue\bar_bg.png" />
+    <Content Include="Resources\Images\MenuBlue\bar_left.png" />
+    <Content Include="Resources\Images\MenuBlue\bar_right.png" />
+    <Content Include="Resources\Images\MenuBlue\btn_center.png" />
+    <Content Include="Resources\Images\MenuBlue\btn_left.png" />
+    <Content Include="Resources\Images\MenuBlue\btn_right.png" />
+    <Content Include="Resources\Images\MenuBlue\menu_center.png" />
+    <Content Include="Resources\Images\MenuBlue\menu_left.png" />
+    <Content Include="Resources\Images\MenuBlue\menu_right.png" />
     <Content Include="Resources\Images\pool.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +103,24 @@
     <Compile Include="FrmMenus.Designer.cs">
       <DependentUpon>FrmMenus.cs</DependentUpon>
     </Compile>
+    <Compile Include="SimpleMenu\FrmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleMenu\FrmMainMenu.Designer.cs">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleMenu\MenuButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SimpleMenu\MenuButton.Designer.cs">
+      <DependentUpon>MenuButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleMenu\SimpleMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SimpleMenu\SimpleMenu.Designer.cs">
+      <DependentUpon>SimpleMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Theme1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -118,6 +145,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmMenus.resx">
       <DependentUpon>FrmMenus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleMenu\FrmMainMenu.resx">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleMenu\MenuButton.resx">
+      <DependentUpon>MenuButton.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleMenu\SimpleMenu.resx">
+      <DependentUpon>SimpleMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UcMenu.resx">

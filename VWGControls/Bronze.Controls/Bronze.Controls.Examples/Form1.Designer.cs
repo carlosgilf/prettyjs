@@ -32,6 +32,7 @@ namespace Bronze.Controls.Examples
         private void InitializeComponent()
         {
             this.panel1 = new Gizmox.WebGUI.Forms.Panel();
+            this.panel2 = new Gizmox.WebGUI.Forms.Panel();
             this.SuspendLayout();
             // 
             // panel1
@@ -43,10 +44,20 @@ namespace Bronze.Controls.Examples
             this.panel1.Size = new System.Drawing.Size(200, 236);
             this.panel1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(229, 120);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.TabIndex = 0;
+            // 
             // Form1
             // 
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Size = new System.Drawing.Size(419, 466);
+            this.Size = new System.Drawing.Size(631, 466);
             this.Text = "Form1";
             this.ResumeLayout(false);
 
@@ -55,6 +66,7 @@ namespace Bronze.Controls.Examples
         #endregion
 
         private Panel panel1;
+        private Panel panel2;
 
 
     }
