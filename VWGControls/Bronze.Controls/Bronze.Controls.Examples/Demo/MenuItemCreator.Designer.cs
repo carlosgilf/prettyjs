@@ -37,7 +37,11 @@ namespace Bronze.Controls.Examples
             this.label3 = new Gizmox.WebGUI.Forms.Label();
             this.label4 = new Gizmox.WebGUI.Forms.Label();
             this.ItemHome = new Gizmox.WebGUI.Forms.GroupBox();
+            this.panel1 = new Gizmox.WebGUI.Forms.Panel();
+            this.dateTimePicker1 = new Gizmox.WebGUI.Forms.DateTimePicker();
+            this.listBox1 = new Gizmox.WebGUI.Forms.ListBox();
             this.ItemHome.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ItemDateTime
@@ -95,13 +99,44 @@ namespace Bronze.Controls.Examples
             this.ItemHome.TabIndex = 6;
             this.ItemHome.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.Silver);
+            this.panel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Location = new System.Drawing.Point(501, 43);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(212, 187);
+            this.panel1.TabIndex = 8;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFirstDayOfWeek = Gizmox.WebGUI.Forms.Day.Default;
+            this.dateTimePicker1.CustomFormat = "";
+            this.dateTimePicker1.Location = new System.Drawing.Point(13, 15);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(152, 21);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Location = new System.Drawing.Point(13, 47);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = Gizmox.WebGUI.Forms.SelectionMode.One;
+            this.listBox1.Size = new System.Drawing.Size(152, 121);
+            this.listBox1.TabIndex = 1;
+            // 
             // MenuItemCreator
             // 
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ItemHome);
             this.Controls.Add(this.ItemDateTime);
-            this.Size = new System.Drawing.Size(549, 446);
+            this.Size = new System.Drawing.Size(771, 446);
             this.Text = "MenuItemCreator";
             this.ItemHome.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -114,6 +149,9 @@ namespace Bronze.Controls.Examples
         private Label label4;
         internal MonthCalendar ItemDateTime;
         internal GroupBox ItemHome;
+        internal Panel panel1;
+        private ListBox listBox1;
+        private DateTimePicker dateTimePicker1;
 
 
     }
