@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="panelBar.BackgroundImage" xml:space="preserve">
-    <value>MenuBlue.bar_bg.png</value>
-  </data>
   <data name="panel2.BackgroundImage" xml:space="preserve">
     <value>MenuBlue.bar_right.png</value>
   </data>
   <data name="panel1.BackgroundImage" xml:space="preserve">
     <value>MenuBlue.bar_left.png</value>
+  </data>
+  <data name="panelBar.BackgroundImage" xml:space="preserve">
+    <value>MenuBlue.bar_bg.png</value>
   </data>
 </root>

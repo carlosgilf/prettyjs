@@ -38,11 +38,11 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.pictureBox2 = new Gizmox.WebGUI.Forms.PictureBox();
             this.pictureBox1 = new Gizmox.WebGUI.Forms.PictureBox();
             this.hoverBtn = new Bronze.Controls.VWG.HoverPanel();
-            this.lbText = new Gizmox.WebGUI.Forms.Label();
             this.btnTop = new Gizmox.WebGUI.Forms.Panel();
             this.panel3 = new Gizmox.WebGUI.Forms.Panel();
             this.btn_left = new Gizmox.WebGUI.Forms.Panel();
             this.btnMain = new Gizmox.WebGUI.Forms.Panel();
+            this.lbText = new Gizmox.WebGUI.Forms.Label();
             this.hoverPopup.SuspendLayout();
             this.panelPopuBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -58,8 +58,8 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.hoverPopup.Controls.Add(this.panelPopuBottom);
             this.hoverPopup.CustomStyle = "HoverPanelSkin";
             this.hoverPopup.Hidden = true;
-            this.hoverPopup.HoverBackColor = System.Drawing.Color.Black;
-            this.hoverPopup.Location = new System.Drawing.Point(0, 34);
+            this.hoverPopup.HoverBackColor = System.Drawing.Color.Transparent;
+            this.hoverPopup.Location = new System.Drawing.Point(0, 60);
             this.hoverPopup.Name = "hoverPopup";
             this.hoverPopup.OnClientMouseLeave = null;
             this.hoverPopup.OnClientMouseOver = null;
@@ -116,12 +116,12 @@ namespace Bronze.Controls.Examples.SimpleMenu
             // 
             // hoverBtn
             // 
-            this.hoverBtn.Controls.Add(this.lbText);
             this.hoverBtn.Controls.Add(this.btnTop);
             this.hoverBtn.Controls.Add(this.btnMain);
+            this.hoverBtn.Controls.Add(this.lbText);
             this.hoverBtn.CustomStyle = "HoverPanelSkin";
             this.hoverBtn.Hidden = false;
-            this.hoverBtn.HoverBackColor = System.Drawing.Color.Black;
+            this.hoverBtn.HoverBackColor = System.Drawing.Color.Transparent;
             this.hoverBtn.Location = new System.Drawing.Point(0, 0);
             this.hoverBtn.Name = "hoverBtn";
             this.hoverBtn.OnClientMouseLeave = null;
@@ -129,20 +129,8 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.hoverBtn.Overable = true;
             this.hoverBtn.Radius = 0;
             this.hoverBtn.RenderRunClientMouseLeave = false;
-            this.hoverBtn.Size = new System.Drawing.Size(89, 35);
+            this.hoverBtn.Size = new System.Drawing.Size(65, 35);
             this.hoverBtn.TabIndex = 2;
-            // 
-            // lbText
-            // 
-            this.lbText.Anchor = Gizmox.WebGUI.Forms.AnchorStyles.Top;
-            this.lbText.AutoSize = true;
-            this.lbText.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lbText.ForeColor = System.Drawing.Color.White;
-            this.lbText.Location = new System.Drawing.Point(22, 6);
-            this.lbText.Name = "lbText";
-            this.lbText.Size = new System.Drawing.Size(44, 17);
-            this.lbText.TabIndex = 0;
-            this.lbText.Text = "Home";
             // 
             // btnTop
             // 
@@ -183,6 +171,18 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.btnMain.Name = "btnMain";
             this.btnMain.Size = new System.Drawing.Size(89, 35);
             this.btnMain.TabIndex = 1;
+            // 
+            // lbText
+            // 
+            this.lbText.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
+            this.lbText.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lbText.ForeColor = System.Drawing.Color.White;
+            this.lbText.Location = new System.Drawing.Point(0, 0);
+            this.lbText.Name = "lbText";
+            this.lbText.Size = new System.Drawing.Size(65, 35);
+            this.lbText.TabIndex = 0;
+            this.lbText.Text = "Home";
+            this.lbText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // MenuButton
             // 
