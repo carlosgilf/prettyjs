@@ -31,8 +31,9 @@ namespace Bronze.Controls.Examples
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDemoSupperMenu));
             this.supperMenu1 = new Bronze.Controls.Examples.SimpleMenu.SupperMenu();
+            this.dataGridView1 = new Gizmox.WebGUI.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // supperMenu1
@@ -47,14 +48,25 @@ namespace Bronze.Controls.Examples
             this.supperMenu1.TabIndex = 0;
             this.supperMenu1.Text = "SupperMenu";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = Gizmox.WebGUI.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(96, 117);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("zh-CN");
+            this.dataGridView1.Size = new System.Drawing.Size(309, 207);
+            this.dataGridView1.TabIndex = 1;
+            // 
             // FrmDemoSupperMenu
             // 
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.supperMenu1);
             this.FormBorderStyle = Gizmox.WebGUI.Forms.FormBorderStyle.Sizable;
             this.Size = new System.Drawing.Size(838, 466);
             this.Text = "FrmDemoSupperMenu";
             this.Load += new System.EventHandler(this.FrmDemoSupperMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -62,6 +74,7 @@ namespace Bronze.Controls.Examples
         #endregion
 
         private Bronze.Controls.Examples.SimpleMenu.SupperMenu supperMenu1;
+        private DataGridView dataGridView1;
 
 
     }
