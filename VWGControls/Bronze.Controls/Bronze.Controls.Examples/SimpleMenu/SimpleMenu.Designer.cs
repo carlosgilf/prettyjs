@@ -52,8 +52,6 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.label4 = new Gizmox.WebGUI.Forms.Label();
             this.menuButton3 = new Bronze.Controls.Examples.SimpleMenu.MenuButton();
             this.menuButton2 = new Bronze.Controls.Examples.SimpleMenu.MenuButton();
-            this.menuButton1 = new Bronze.Controls.Examples.SimpleMenu.MenuButton();
-            this.menuButton4 = new Bronze.Controls.Examples.SimpleMenu.MenuButton();
             this.panelBar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -247,32 +245,10 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.menuButton2.TabIndex = 7;
             this.menuButton2.Text = "MenuButton";
             // 
-            // menuButton1
-            // 
-            this.menuButton1.Animate = "dropDown,dropUp";
-            this.menuButton1.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.menuButton1.Location = new System.Drawing.Point(172, 4);
-            this.menuButton1.Name = "menuButton3";
-            this.menuButton1.Size = new System.Drawing.Size(118, 43);
-            this.menuButton1.TabIndex = 8;
-            this.menuButton1.Text = "MenuButton";
-            // 
-            // menuButton4
-            // 
-            this.menuButton4.Animate = "dropDown,dropUp";
-            this.menuButton4.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.menuButton4.Location = new System.Drawing.Point(73, 4);
-            this.menuButton4.Name = "menuButton2";
-            this.menuButton4.Size = new System.Drawing.Size(118, 43);
-            this.menuButton4.TabIndex = 7;
-            this.menuButton4.Text = "MenuButton";
-            // 
             // SimpleMenu
             // 
-            this.Controls.Add(this.menuButton1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.menuButton4);
             this.Controls.Add(this.panelBar);
             this.Size = new System.Drawing.Size(634, 523);
             this.Text = "SimpleMenu";
@@ -306,8 +282,6 @@ namespace Bronze.Controls.Examples.SimpleMenu
         private Label label4;
         private MenuButton menuButton2;
         private MenuButton menuButton3;
-        private MenuButton menuButton1;
-        private MenuButton menuButton4;
 
     }
 }
