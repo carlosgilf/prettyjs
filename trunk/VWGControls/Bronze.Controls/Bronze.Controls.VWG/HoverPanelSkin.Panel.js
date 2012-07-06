@@ -72,7 +72,12 @@ function vwg_showMenu(id,option,animate){
     if(obj.attr('showed')!='1'){
         obj.attr('showed',1);
         obj.find('.HoverPanelHidden').removeClass('HoverPanelHidden');
-//        obj[_option.animate](_option.duration,function(){});
+        $('[showed]').each(function(){
+            if ($(this).attr('id')!=obj.attr('id')) {
+                $(this).css('z-index',10000);
+            }
+            obj.css('z-index',200000);
+        })
         obj[_option.animate](_option);
     }
 };
