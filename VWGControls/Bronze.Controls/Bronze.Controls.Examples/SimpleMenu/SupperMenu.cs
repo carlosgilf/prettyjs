@@ -83,13 +83,11 @@ namespace Bronze.Controls.Examples.SimpleMenu
             string showAction = creator.GetButtonScript(true);
             string hideAction = creator.GetButtonScript(false);
 
-            //btn.ClientRectangle.Left
-
             var popup = creator.GetPopup(itemInfo.MenuContent);
             popup.Hidden = true;
             this.Form.Controls.Add(popup);
             popup.BringToFront();
-            popup.Top = location.Y + this.Height - 11;
+            popup.Top = location.Y + this.Height-1;
             popup.Left = location.X + pLeft.Left + buttonLayout.Left + btn.Left;
 
             string adjustLeftScript = "";// string.Format("$('#VWG_{0}').css('left',$('#VWG_{1}').css('left'));", popup.ID, btn.ID);

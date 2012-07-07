@@ -32,73 +32,64 @@ namespace Bronze.Controls.Examples.SimpleMenu
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupperMenu));
+            this.pLeft = new Gizmox.WebGUI.Forms.PictureBox();
+            this.pRight = new Gizmox.WebGUI.Forms.PictureBox();
             this.buttonLayout = new Gizmox.WebGUI.Forms.Panel();
-            this.pRight = new Gizmox.WebGUI.Forms.Panel();
-            this.pLeft = new Gizmox.WebGUI.Forms.Panel();
-            this.panelBar = new Gizmox.WebGUI.Forms.Panel();
-            this.panelBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRight)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonLayout
-            // 
-            this.buttonLayout.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
-            this.buttonLayout.DockPadding.Left = 15;
-            this.buttonLayout.DockPadding.Top = 4;
-            this.buttonLayout.Location = new System.Drawing.Point(0, 0);
-            this.buttonLayout.Name = "buttonLayout";
-            this.buttonLayout.Padding = new Gizmox.WebGUI.Forms.Padding(15, 4, 0, 0);
-            this.buttonLayout.Size = new System.Drawing.Size(682, 50);
-            this.buttonLayout.TabIndex = 1;
-            // 
-            // pRight
-            // 
-            this.pRight.BackgroundImage = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("pRight.BackgroundImage"));
-            this.pRight.BackgroundImageLayout = Gizmox.WebGUI.Forms.ImageLayout.Center;
-            this.pRight.Dock = Gizmox.WebGUI.Forms.DockStyle.Right;
-            this.pRight.Location = new System.Drawing.Point(691, 0);
-            this.pRight.Name = "pRight";
-            this.pRight.Size = new System.Drawing.Size(7, 52);
-            this.pRight.TabIndex = 0;
             // 
             // pLeft
             // 
-            this.pLeft.BackgroundImage = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("pLeft.BackgroundImage"));
-            this.pLeft.BackgroundImageLayout = Gizmox.WebGUI.Forms.ImageLayout.Center;
             this.pLeft.Dock = Gizmox.WebGUI.Forms.DockStyle.Left;
+            this.pLeft.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("pLeft.Image"));
             this.pLeft.Location = new System.Drawing.Point(0, 0);
             this.pLeft.Name = "pLeft";
-            this.pLeft.Size = new System.Drawing.Size(9, 52);
+            this.pLeft.Size = new System.Drawing.Size(9, 200);
+            this.pLeft.SizeMode = Gizmox.WebGUI.Forms.PictureBoxSizeMode.AutoSize;
             this.pLeft.TabIndex = 0;
+            this.pLeft.TabStop = false;
             // 
-            // panelBar
+            // pRight
             // 
-            this.panelBar.BackgroundImage = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("panelBar.BackgroundImage"));
-            this.panelBar.Controls.Add(this.buttonLayout);
-            this.panelBar.Controls.Add(this.pRight);
-            this.panelBar.Controls.Add(this.pLeft);
-            this.panelBar.Dock = Gizmox.WebGUI.Forms.DockStyle.Top;
-            this.panelBar.Location = new System.Drawing.Point(0, 0);
-            this.panelBar.Name = "panelBar";
-            this.panelBar.Size = new System.Drawing.Size(698, 50);
-            this.panelBar.TabIndex = 0;
+            this.pRight.Dock = Gizmox.WebGUI.Forms.DockStyle.Right;
+            this.pRight.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("pRight.Image"));
+            this.pRight.Location = new System.Drawing.Point(691, 0);
+            this.pRight.Name = "pRight";
+            this.pRight.Size = new System.Drawing.Size(7, 200);
+            this.pRight.SizeMode = Gizmox.WebGUI.Forms.PictureBoxSizeMode.AutoSize;
+            this.pRight.TabIndex = 1;
+            this.pRight.TabStop = false;
+            // 
+            // buttonLayout
+            // 
+            this.buttonLayout.BackgroundImage = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("buttonLayout.BackgroundImage"));
+            this.buttonLayout.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
+            this.buttonLayout.Location = new System.Drawing.Point(9, 0);
+            this.buttonLayout.Name = "buttonLayout";
+            this.buttonLayout.Size = new System.Drawing.Size(682, 200);
+            this.buttonLayout.TabIndex = 2;
             // 
             // SupperMenu
             // 
-            this.Controls.Add(this.panelBar);
-            this.Size = new System.Drawing.Size(698, 50);
+            this.Controls.Add(this.buttonLayout);
+            this.Controls.Add(this.pRight);
+            this.Controls.Add(this.pLeft);
+            this.Size = new System.Drawing.Size(698, 40);
             this.Text = "SupperMenu";
             this.Load += new System.EventHandler(this.SupperMenu_Load);
-            this.panelBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRight)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private PictureBox pLeft;
+        private PictureBox pRight;
         private Panel buttonLayout;
-        private Panel pRight;
-        private Panel pLeft;
-        private Panel panelBar;
+
 
 
     }

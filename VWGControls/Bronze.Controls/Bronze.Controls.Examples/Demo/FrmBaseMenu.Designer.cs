@@ -42,6 +42,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.label4 = new Gizmox.WebGUI.Forms.Label();
             this.groupBox1 = new Gizmox.WebGUI.Forms.GroupBox();
             this.monthCalendar1 = new Gizmox.WebGUI.Forms.MonthCalendar();
+            this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.panelBar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -125,6 +126,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label3);
@@ -143,6 +145,14 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.monthCalendar1.Size = new System.Drawing.Size(220, 180);
             this.monthCalendar1.TabIndex = 7;
             this.monthCalendar1.Value = new System.DateTime(2012, 7, 7, 0, 0, 0, 0);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(105, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
             // 
             // FrmBaseMenu
             // 
@@ -172,6 +182,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
         private Label label4;
         private GroupBox groupBox1;
         private MonthCalendar monthCalendar1;
+        private Button button1;
 
 
     }

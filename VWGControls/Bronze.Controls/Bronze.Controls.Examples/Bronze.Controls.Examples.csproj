@@ -67,15 +67,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
-    <Content Include="Resources\Images\MenuBlue\bar_bg.png" />
-    <Content Include="Resources\Images\MenuBlue\bar_left.png" />
-    <Content Include="Resources\Images\MenuBlue\bar_right.png" />
+    <Content Include="Resources\Images\MenuBlue\bar_bg.gif" />
+    <Content Include="Resources\Images\MenuBlue\bar_left.gif" />
+    <Content Include="Resources\Images\MenuBlue\bar_right.gif" />
     <Content Include="Resources\Images\MenuBlue\btn_center.png" />
     <Content Include="Resources\Images\MenuBlue\btn_left.png" />
     <Content Include="Resources\Images\MenuBlue\btn_right.png" />
-    <Content Include="Resources\Images\MenuBlue\menu_center.png" />
-    <Content Include="Resources\Images\MenuBlue\menu_left.png" />
-    <Content Include="Resources\Images\MenuBlue\menu_right.png" />
+    <Content Include="Resources\Images\MenuBlue\menu_left.gif" />
+    <Content Include="Resources\Images\MenuBlue\menu_right.gif" />
     <Content Include="Resources\Images\pool.jpg" />
   </ItemGroup>
   <ItemGroup>
