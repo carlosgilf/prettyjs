@@ -31,13 +31,21 @@ namespace Bronze.Controls.Examples
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.supperMenu1 = new Bronze.Controls.Examples.SimpleMenu.SupperMenu();
             this.SuspendLayout();
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(584, 357);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // supperMenu1
             // 
-            this.supperMenu1.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left)
-                        | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.supperMenu1.Animate = "dropDown,dropUp";
             this.supperMenu1.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.supperMenu1.Location = new System.Drawing.Point(9, 54);
@@ -49,6 +57,7 @@ namespace Bronze.Controls.Examples
             // FrmDemoSupperMenu
             // 
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.supperMenu1);
             this.FormBorderStyle = Gizmox.WebGUI.Forms.FormBorderStyle.Sizable;
             this.Size = new System.Drawing.Size(838, 466);
@@ -61,6 +70,7 @@ namespace Bronze.Controls.Examples
         #endregion
 
         private Bronze.Controls.Examples.SimpleMenu.SupperMenu supperMenu1;
+        private Button button1;
 
 
     }
