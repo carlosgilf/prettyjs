@@ -30,5 +30,14 @@ namespace Bronze.Controls.Examples
             this.supperMenu1.Add(new MenuItemInfo() { ButtonText = "DateTime Control", MenuContent = creactor.ItemDateTime,Width = 120});
             this.supperMenu1.Add(new MenuItemInfo() { ButtonText = "Data Controls", MenuContent = creactor.panel1, Width = 95 });
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.supperMenu1.Top += 20;
+
+            this.supperMenu1.Left += 20;
+
+            this.supperMenu1.Update();
+        }
     }
 }

@@ -65,15 +65,6 @@ namespace Bronze.Controls.Examples.SimpleMenu
         }
 
 
-        public string GetPopupScript(bool show)
-        {
-            return GetControlClientScript(show, this.hoverPopup);
-        }
-
-        public string GetGroupActionScript(bool show)
-        {
-            return GetControlClientScript(show, this.btnTop, this.btnMain, this.hoverPopup);
-        }
 
         public string GetControlClientScript(bool show, params Control[] controls)
         {
@@ -89,48 +80,30 @@ namespace Bronze.Controls.Examples.SimpleMenu
 
         public HoverPanel GetPopup(Control menuContent)
         {
-            var btn = hoverPopup;
+            var popup = hoverPopup;
             
             hoverPopup.Height = menuContent.Height + panelPopuBottom.Height;
             hoverPopup.Width = menuContent.Width;
             menuContent.Dock = DockStyle.Fill;
             panelMenuContanier.Controls.Clear();
             panelMenuContanier.Controls.Add(menuContent);
-            this.Controls.Remove(btn);
-            return btn;
+            this.Controls.Remove(popup);
+            return popup;
         }
 
-        public void SetMenu(Control menu)
-        {
-            if (menu != null)
-            {
-                this.hoverPopup.Height = menu.Height + panelPopuBottom.Height;
-                this.hoverPopup.Width = menu.Width;
-                menu.Dock = DockStyle.Fill;
-                panelMenuContanier.Controls.Clear();
-                panelMenuContanier.Controls.Add(menu);
-                this.Width = hoverPopup.Width;
-                this.Height = hoverPopup.Top + hoverPopup.Height ;
-            }
-        }
+        
 
         public void SetClientAction()
         {
 
-            this.hoverPopup.Hidden = true;
-            var showHide = Animate.Split(',');
-            var show = string.Format("vwg_showMenu('{0}',400,'{1}'); $('#VWG_{2}').show();$('#VWG_{3}').show();", 
-                this.hoverPopup.ID, showHide[0],this.btnTop.ID,this.btnMain.ID);
-            var hide = string.Format("vwg_hideMenu('{0}',300,'{1}',150);$('#VWG_{2}').hide();$('#VWG_{3}').hide();",
-                this.hoverPopup.ID, showHide[1], this.btnTop.ID, this.btnMain.ID);
-
-            this.hoverBtn.OnClientMouseOver = show;
-            this.hoverBtn.OnClientMouseLeave = hide;
-
-            this.hoverPopup.OnClientMouseOver = show;
-            this.hoverPopup.OnClientMouseLeave = hide;
-            this.Update();
+            
         }
 
+    }
+
+    public class ComponentSuit
+    {
+        public string Script { get; set; }
+        public HoverPanel Panel { get; set; }
     }
 }

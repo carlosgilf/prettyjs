@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
-
+using Bronze.Controls.VWG;
 using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms;
 
@@ -20,7 +20,10 @@ namespace Bronze.Controls.Examples.SimpleMenu
         {
             InitializeComponent();
             _items = new List<MenuItemInfo>();
+            _menuRelations = new List<MenuRelation>();
         }
+
+        private List<MenuRelation> _menuRelations;
 
         private List<MenuItemInfo> _items;
 
@@ -42,7 +45,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
 
         private Point GetRealLocation(Control c)
         {
-            Point point = new Point();
+            var point = new Point();
             int top = c.Top;
             int left = c.Left;
             var current = c.Parent;
@@ -61,8 +64,11 @@ namespace Bronze.Controls.Examples.SimpleMenu
 
             var creator = new MenuButton();
             var btn = creator.GetButton(itemInfo.ButtonText);
+            var popup = creator.GetPopup(itemInfo.MenuContent);
+
+
+
             btn.Width = itemInfo.Width;
-            //btn.Margin = new Padding(0, 0, 5, 0);
             btn.RenderRunClientMouseLeave = true;
 
             btn.Top = 4;
@@ -78,37 +84,69 @@ namespace Bronze.Controls.Examples.SimpleMenu
             }
             buttonLayout.Controls.Add(btn);
 
-            var location = GetRealLocation(this);
-
             string showAction = creator.GetButtonScript(true);
             string hideAction = creator.GetButtonScript(false);
 
-            var popup = creator.GetPopup(itemInfo.MenuContent);
+
             popup.Hidden = true;
             this.Form.Controls.Add(popup);
             popup.BringToFront();
-            popup.Top = location.Y + this.Height-1;
-            popup.Left = location.X + pLeft.Left + buttonLayout.Left + btn.Left;
 
             string adjustLeftScript = "";// string.Format("$('#VWG_{0}').css('left',$('#VWG_{1}').css('left'));", popup.ID, btn.ID);
             var showHide = Animate.Split(',');
-            showAction = adjustLeftScript + string.Format("vwg_showMenu('{0}',500,'{1}');", popup.ID, showHide[0]) + showAction;
+            showAction = adjustLeftScript + string.Format("vwg_showMenu('{0}',300,'{1}');", popup.ID, showHide[0]) + showAction;
 
-            hideAction = string.Format("vwg_hideMenu('{0}',250,'{1}',60);", popup.ID, showHide[1]) + hideAction;
+            hideAction = string.Format("vwg_hideMenu('{0}',120,'{1}',60);", popup.ID, showHide[1]) + hideAction;
             btn.OnClientMouseOver = showAction;
             btn.OnClientMouseLeave = hideAction;
 
-            //this.InvokeScript(string.Format("$('#{0}').css('left',$('#{1}').css('left'))", popup.ID,btn.ID));
 
             popup.OnClientMouseOver = showAction;
             popup.OnClientMouseLeave = hideAction;
-            creator.Dispose();
+
             Items.Add(itemInfo);
+
+            var relationItem = new MenuRelation() { Button = btn, Popup = popup };
+            this._menuRelations.Add(relationItem);
+            //SetPopupLocation(relationItem);
+
+            creator.Dispose();
         }
 
         private void SupperMenu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void SetPopupLocation(MenuRelation menuItem)
+        {
+            var location = GetRealLocation(this);
+            menuItem.Popup.Top = location.Y + this.Height - 1;
+            menuItem.Popup.Left = location.X + pLeft.Left + buttonLayout.Left + menuItem.Button.Left;
+
+            //popup和Menu的Anchor属性一致，当调整浏览器大小时重新布局，不影响Popup弹出的位置
+            menuItem.Popup.Anchor = this.Anchor;
+        }
+
+        public void UpdateMenu()
+        {
+            if (_menuRelations == null)
+            {
+                return;
+            }
+            foreach (var ctl in this._menuRelations)
+            {
+                ctl.Button.Update();
+                ctl.Popup.Update();
+
+                SetPopupLocation(ctl);
+            }
+        }
+
+        protected override void Render(Gizmox.WebGUI.Common.Interfaces.IContext objContext, Gizmox.WebGUI.Common.Interfaces.IResponseWriter objWriter, long lngRequestID)
+        {
+            base.Render(objContext, objWriter, lngRequestID);
+            UpdateMenu();
         }
     }
 
@@ -137,6 +175,14 @@ namespace Bronze.Controls.Examples.SimpleMenu
             get { return _width; }
             set { _width = value; }
         }
+    }
+
+
+    [Serializable]
+    public class MenuRelation
+    {
+        public HoverPanel Button;
+        public HoverPanel Popup;
     }
 
 }
