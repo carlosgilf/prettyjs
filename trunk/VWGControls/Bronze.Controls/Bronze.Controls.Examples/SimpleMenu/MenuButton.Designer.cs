@@ -43,6 +43,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.btn_left = new Gizmox.WebGUI.Forms.Panel();
             this.btnMain = new Gizmox.WebGUI.Forms.Panel();
             this.lbText = new Gizmox.WebGUI.Forms.Label();
+            this.panel1 = new Gizmox.WebGUI.Forms.Panel();
             this.hoverPopup.SuspendLayout();
             this.panelPopuBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -53,7 +54,6 @@ namespace Bronze.Controls.Examples.SimpleMenu
             // 
             // hoverPopup
             // 
-            this.hoverPopup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.hoverPopup.Controls.Add(this.panelMenuContanier);
             this.hoverPopup.Controls.Add(this.panelPopuBottom);
             this.hoverPopup.CustomStyle = "HoverPanelSkin";
@@ -71,6 +71,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             // 
             // panelMenuContanier
             // 
+            this.panelMenuContanier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.panelMenuContanier.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
             this.panelMenuContanier.DockPadding.Left = 10;
             this.panelMenuContanier.DockPadding.Right = 10;
@@ -78,18 +79,18 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.panelMenuContanier.Location = new System.Drawing.Point(0, 0);
             this.panelMenuContanier.Name = "panelMenuContanier";
             this.panelMenuContanier.Padding = new Gizmox.WebGUI.Forms.Padding(10, 10, 10, 0);
-            this.panelMenuContanier.Size = new System.Drawing.Size(200, 94);
+            this.panelMenuContanier.Size = new System.Drawing.Size(200, 103);
             this.panelMenuContanier.TabIndex = 1;
             // 
             // panelPopuBottom
             // 
-            this.panelPopuBottom.BackgroundImage = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("panelPopuBottom.BackgroundImage"));
+            this.panelPopuBottom.Controls.Add(this.panel1);
             this.panelPopuBottom.Controls.Add(this.pictureBox2);
             this.panelPopuBottom.Controls.Add(this.pictureBox1);
             this.panelPopuBottom.Dock = Gizmox.WebGUI.Forms.DockStyle.Bottom;
-            this.panelPopuBottom.Location = new System.Drawing.Point(0, 94);
+            this.panelPopuBottom.Location = new System.Drawing.Point(0, 103);
             this.panelPopuBottom.Name = "panelPopuBottom";
-            this.panelPopuBottom.Size = new System.Drawing.Size(200, 22);
+            this.panelPopuBottom.Size = new System.Drawing.Size(200, 13);
             this.panelPopuBottom.TabIndex = 0;
             // 
             // pictureBox2
@@ -98,7 +99,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.pictureBox2.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("pictureBox2.Image"));
             this.pictureBox2.Location = new System.Drawing.Point(189, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(11, 22);
+            this.pictureBox2.Size = new System.Drawing.Size(11, 13);
             this.pictureBox2.SizeMode = Gizmox.WebGUI.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -109,7 +110,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.pictureBox1.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("pictureBox1.Image"));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(13, 22);
+            this.pictureBox1.Size = new System.Drawing.Size(13, 13);
             this.pictureBox1.SizeMode = Gizmox.WebGUI.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -184,6 +185,15 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.lbText.Text = "Home";
             this.lbText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.panel1.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(13, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(176, 13);
+            this.panel1.TabIndex = 1;
+            // 
             // MenuButton
             // 
             this.Controls.Add(this.hoverPopup);
@@ -213,6 +223,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Panel panelMenuContanier;
+        private Panel panel1;
 
 
     }
