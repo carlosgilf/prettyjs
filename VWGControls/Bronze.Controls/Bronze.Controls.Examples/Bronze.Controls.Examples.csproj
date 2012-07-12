@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
+    <Content Include="Resources\Images\Logo.jpg" />
     <Content Include="Resources\Images\MenuBlue\bar_bg.gif" />
     <Content Include="Resources\Images\MenuBlue\bar_left.gif" />
     <Content Include="Resources\Images\MenuBlue\bar_right.gif" />
