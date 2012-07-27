@@ -37,18 +37,19 @@ namespace Bronze.Controls.Examples
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(72, 47);
+            this.panel1.CustomStyle = "HeaderedPanel";
+            this.panel1.Location = new System.Drawing.Point(41, 47);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 236);
+            this.panel1.Size = new System.Drawing.Size(231, 236);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Maroon;
             this.panel2.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(229, 120);
+            this.panel2.Location = new System.Drawing.Point(332, 75);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 100);
             this.panel2.TabIndex = 0;
