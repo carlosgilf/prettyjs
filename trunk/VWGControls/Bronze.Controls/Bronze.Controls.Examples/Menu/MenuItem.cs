@@ -22,6 +22,8 @@ namespace Bronze.Controls.Examples
             InitializeComponent();
             this.btnMain.BringToFront();
             this.lbText.BringToFront();
+
+            //this.hoverPopup.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102))))), 5, 5, 6);
         }
 
 
@@ -76,7 +78,7 @@ namespace Bronze.Controls.Examples
             //string action = show ? "show()" : "hide()";
             //string template = "$('#VWG_{0}').{1};";
             string action = show ? "visible" : "hidden";
-            string template = "$('#VWG_{0}').css('visibility','{1}');";
+            string template = "$('#VWG_{0}').children('div:first').removeClass('SupperPanel-VHidden');$('#VWG_{0}').css('visibility','{1}');";
             var sb = new StringBuilder();
             foreach (var c in controls)
             {
@@ -89,11 +91,11 @@ namespace Bronze.Controls.Examples
         {
             var popup = hoverPopup;
 
-            hoverPopup.Height = menuContent.Height + popupMain.Padding.Size.Height;
-            hoverPopup.Width = menuContent.Width;
+            hoverPopup.Height = menuContent.Height + hoverPopup.Padding.Size.Height;
+            hoverPopup.Width = menuContent.Width + hoverPopup.Padding.Size.Width;
             menuContent.Dock = DockStyle.Fill;
-            popupMain.Controls.Clear();
-            popupMain.Controls.Add(menuContent);
+            hoverPopup.Controls.Clear();
+            hoverPopup.Controls.Add(menuContent);
             this.Controls.Remove(popup);
             return popup;
         }

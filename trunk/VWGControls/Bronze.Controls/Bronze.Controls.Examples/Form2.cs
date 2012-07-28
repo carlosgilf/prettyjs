@@ -20,6 +20,12 @@ namespace Bronze.Controls.Examples
         public Form2()
         {
             InitializeComponent();
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            this.supperPanel1.BoxShadow = new VWG.BoxShadow(Color.Gray,10,10,10);
         }
     }
 }

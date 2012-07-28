@@ -24,7 +24,7 @@ namespace Bronze.Controls.VWG
         {
             if (objValue is string)
             {
-                string str = (string) objValue;
+                string str = (string)objValue;
                 if (!string.IsNullOrEmpty(str))
                 {
                     string[] strArray = str.Split(new char[] { ',' });
@@ -35,7 +35,7 @@ namespace Bronze.Controls.VWG
                     if (strArray.Length == 4)
                     {
                         //return new BoxShadow(int.Parse(strArray[0]), int.Parse(strArray[1]), int.Parse(strArray[2]), int.Parse(strArray[3]));
-                        var color=this.ConvertColor(strArray[0].ToString(),objCulture);
+                        var color = this.ConvertColor(strArray[0].ToString(), objCulture);
                         return new BoxShadow(color, int.Parse(strArray[1]), int.Parse(strArray[2]), int.Parse(strArray[3]));
                     }
                 }
@@ -53,15 +53,10 @@ namespace Bronze.Controls.VWG
             flag |= (objDestinationType == typeof(InstanceDescriptor)) && (objValue is BoxShadow);
             if (flag | ((objDestinationType == typeof(string)) && (objValue is BoxShadow)))
             {
-                BoxShadow objPadding = (BoxShadow) objValue;
+                BoxShadow objPadding = (BoxShadow)objValue;
                 if (objDestinationType == typeof(string))
                 {
-                    //if (objPadding.IsAll)
-                    //{
-                    //    return objPadding.All.ToString();
-                    //}
-
-                    var color = GetColorString(objPadding.Color,objCulture);
+                    var color = GetColorString(objPadding.Color, objCulture);
                     return string.Format("{0}, {1}, {2}, {3}", new object[] { color, objPadding.XOffset, objPadding.YOffset, objPadding.BlurSize });
                 }
                 if (objDestinationType == typeof(InstanceDescriptor))
@@ -74,24 +69,21 @@ namespace Bronze.Controls.VWG
 
         private object ConvertToInstanceDescriptor(ITypeDescriptorContext objContext, BoxShadow objPadding)
         {
-            Type[] typeArray;
-            //if (objPadding.ShouldSerializeAll())
-            //{
-            //    typeArray = new Type[] { typeof(int) };
-            //    return new InstanceDescriptor(typeof(BoxShadow).GetConstructor(typeArray), new object[] { objPadding.All });
-            //}
-            typeArray = new Type[] { typeof(Color), typeof(int), typeof(int), typeof(int) };
-            return new InstanceDescriptor(typeof(BoxShadow).GetConstructor(typeArray), new object[] { objPadding.Color, objPadding.XOffset, objPadding.YOffset, objPadding.BlurSize });
+            try
+            {
+                Type[] typeArray;
+                typeArray = new Type[] { typeof(Color), typeof(int), typeof(int), typeof(int) };
+                return new InstanceDescriptor(typeof(BoxShadow).GetConstructor(typeArray), new object[] { objPadding.Color, objPadding.XOffset, objPadding.YOffset, objPadding.BlurSize });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("³ö´íÀ²°®°®°®£¡£¡" + ex.Message, ex);
+            }
         }
 
         public override object CreateInstance(ITypeDescriptorContext objContext, IDictionary objPropertyValues)
         {
-            BoxShadow padding = (BoxShadow) objContext.PropertyDescriptor.GetValue(objContext.Instance);
-            //int intAll = (int) objPropertyValues["All"];
-            //if (padding.All != intAll)
-            //{
-            //    return new BoxShadow(intAll);
-            //}
+            BoxShadow padding = (BoxShadow)objContext.PropertyDescriptor.GetValue(objContext.Instance);
             var color = (Color)objPropertyValues["Color"];
             return new BoxShadow(color, (int)objPropertyValues["XOffset"], (int)objPropertyValues["YOffset"], (int)objPropertyValues["BlurSize"]);
         }
@@ -120,9 +112,9 @@ namespace Bronze.Controls.VWG
             return TypeDescriptor.GetConverter(typeof(Color)).ConvertToString(null, objCulture, objColor);
         }
 
-           private Color ConvertColor(string strColor, CultureInfo objCulture)
+        private Color ConvertColor(string strColor, CultureInfo objCulture)
         {
-            return (Color) TypeDescriptor.GetConverter(typeof(Color)).ConvertFromString(null, objCulture, strColor);
+            return (Color)TypeDescriptor.GetConverter(typeof(Color)).ConvertFromString(null, objCulture, strColor);
         }
     }
 }

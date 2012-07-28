@@ -1,28 +1,32 @@
-#region Using
-
-using System;
+Ôªøusing System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+using System.Linq;
+using System.Web;
 using Bronze.Controls.VWG;
-using Gizmox.WebGUI.Common;
-using Gizmox.WebGUI.Forms;
 using Bronze.Controls.Examples.SimpleMenu;
+using System.Drawing;
+using Gizmox.WebGUI.Forms;
 
-#endregion
-
-namespace Bronze.Controls.Examples
+namespace Bronze.Controls.Examples.Menu
 {
-    public partial class MenuBar : UserControl
+    public class MainMenu : SupperPanel
     {
-        public MenuBar()
+        public MainMenu()
         {
             InitializeComponent();
             _items = new List<MenuItemInfo>();
             _menuRelations = new List<MenuRelation>();
         }
+
+        private void InitializeComponent()
+        {
+            this.Height = 40;
+            this.BackgroundImage = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle("MenuBlue.bar_bg.gif");
+            this.BoxShadow = new Bronze.Controls.VWG.BoxShadow(Color.Gray, 2, 6, 11);
+            //this.BoxShadow = new Bronze.Controls.VWG.BoxShadow(ColorTranslator.FromHtml("#a1a1a1"), 2, 5, 8);
+            this.Radius = new Gizmox.WebGUI.Forms.CornerRadius(10);
+        }
+
 
         private List<MenuRelation> _menuRelations;
 
@@ -67,14 +71,13 @@ namespace Bronze.Controls.Examples
             var popup = creator.GetPopup(itemInfo.MenuContent);
 
 
-
             btn.Width = itemInfo.Width;
             btn.RenderRunClientMouseLeave = true;
 
             btn.Top = 5;
-            if (buttonLayout.Controls.Count > 0)
+            if (this.Controls.Count > 0)
             {
-                var lastControl = buttonLayout.Controls[buttonLayout.Controls.Count - 1];
+                var lastControl = this.Controls[this.Controls.Count - 1];
                 var left = lastControl.Left + lastControl.Width + 2;
                 btn.Left = left;
             }
@@ -82,7 +85,7 @@ namespace Bronze.Controls.Examples
             {
                 btn.Left = 15;
             }
-            buttonLayout.Controls.Add(btn);
+            this.Controls.Add(btn);
 
             string showAction = creator.GetButtonScript(true);
             string hideAction = creator.GetButtonScript(false);
@@ -92,11 +95,11 @@ namespace Bronze.Controls.Examples
             this.Form.Controls.Add(popup);
             popup.BringToFront();
 
-          
-            var showHide = Animate.Split(',');
-            showAction =   string.Format("vwg_showMenu('{0}',300,'{1}');", popup.ID, showHide[0])+showAction ;
 
-            hideAction = string.Format("vwg_hideMenu('{0}',250,'{1}',200);", popup.ID, showHide[1]) + hideAction;
+            var showHide = Animate.Split(',');
+            showAction = string.Format("vwg_showMenu('{0}',200,'{1}');", popup.ID, showHide[0]) + showAction;
+
+            hideAction = string.Format("vwg_hideMenu('{0}',200,'{1}',120);", popup.ID, showHide[1]) + hideAction;
             btn.OnClientMouseOver = showAction;
             btn.OnClientMouseLeave = hideAction;
 
@@ -114,18 +117,18 @@ namespace Bronze.Controls.Examples
             creator.Dispose();
         }
 
-        private void SupperMenu_Load(object sender, EventArgs e)
-        {
 
-        }
+
+
+
 
         private void SetPopupLocation(MenuRelation menuItem)
         {
             var location = GetRealLocation(this);
-            menuItem.Popup.Top = location.Y + this.Height-1;
-            menuItem.Popup.Left = location.X  + buttonLayout.Left + menuItem.Button.Left;
+            menuItem.Popup.Top = location.Y + this.Height - 1;
+            menuItem.Popup.Left = location.X + menuItem.Button.Left;
 
-            //popup∫ÕMenuµƒAnchor Ù–‘“ª÷¬£¨µ±µ˜’˚‰Ø¿¿∆˜¥Û–° ±÷ÿ–¬≤ºæ÷£¨≤ª”∞œÏPopupµØ≥ˆµƒŒª÷√
+            //popupÂíåMenuÁöÑAnchorÂ±ûÊÄß‰∏ÄËá¥ÔºåÂΩìË∞ÉÊï¥ÊµèËßàÂô®Â§ßÂ∞èÊó∂ÈáçÊñ∞Â∏ÉÂ±ÄÔºå‰∏çÂΩ±ÂìçPopupÂºπÂá∫ÁöÑ‰ΩçÁΩÆ
             menuItem.Popup.Anchor = this.Anchor;
         }
 
@@ -150,7 +153,4 @@ namespace Bronze.Controls.Examples
             UpdateMenu();
         }
     }
-
-  
-
 }

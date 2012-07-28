@@ -41,8 +41,12 @@ namespace Bronze.Controls.Examples
             this.panel1 = new Gizmox.WebGUI.Forms.Panel();
             this.listBox1 = new Gizmox.WebGUI.Forms.ListBox();
             this.dateTimePicker1 = new Gizmox.WebGUI.Forms.DateTimePicker();
+            this.supperPanel1 = new Bronze.Controls.VWG.SupperPanel();
+            this.textBox1 = new Gizmox.WebGUI.Forms.TextBox();
+            this.comboBox1 = new Gizmox.WebGUI.Forms.ComboBox();
             this.ItemHome.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.supperPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ItemDateTime
@@ -142,8 +146,39 @@ namespace Bronze.Controls.Examples
             this.dateTimePicker1.Size = new System.Drawing.Size(152, 21);
             this.dateTimePicker1.TabIndex = 0;
             // 
+            // supperPanel1
+            // 
+            this.supperPanel1.BackColor = System.Drawing.Color.White;
+            this.supperPanel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.supperPanel1.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
+            this.supperPanel1.Controls.Add(this.comboBox1);
+            this.supperPanel1.Controls.Add(this.textBox1);
+            this.supperPanel1.CustomStyle = "SupperPanelSkin";
+            this.supperPanel1.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
+            this.supperPanel1.Location = new System.Drawing.Point(98, 247);
+            this.supperPanel1.Name = "supperPanel1";
+            this.supperPanel1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(10);
+            this.supperPanel1.Size = new System.Drawing.Size(200, 161);
+            this.supperPanel1.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(35, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(35, 73);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
             // MenuItemCreator
             // 
+            this.Controls.Add(this.supperPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ItemHome);
             this.Controls.Add(this.ItemDateTime);
@@ -151,6 +186,7 @@ namespace Bronze.Controls.Examples
             this.Text = "MenuItemCreator";
             this.ItemHome.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.supperPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -167,6 +203,9 @@ namespace Bronze.Controls.Examples
         private ListBox listBox1;
         private DateTimePicker dateTimePicker1;
         private Button button1;
+        private ComboBox comboBox1;
+        private TextBox textBox1;
+        public VWG.SupperPanel supperPanel1;
 
 
     }

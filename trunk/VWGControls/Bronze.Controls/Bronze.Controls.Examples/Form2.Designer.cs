@@ -39,12 +39,11 @@ namespace Bronze.Controls.Examples
             this.supperPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.supperPanel1.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))), ((int)(((byte)(102))))));
             this.supperPanel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.supperPanel1.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64))))), 8, 8, 10);
             this.supperPanel1.CustomStyle = "SupperPanelSkin";
             this.supperPanel1.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
             this.supperPanel1.Location = new System.Drawing.Point(82, 67);
             this.supperPanel1.Name = "supperPanel1";
-            this.supperPanel1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(10);
+            this.supperPanel1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
             this.supperPanel1.Size = new System.Drawing.Size(200, 100);
             this.supperPanel1.TabIndex = 0;
             // 
@@ -54,6 +53,7 @@ namespace Bronze.Controls.Examples
             this.FormBorderStyle = Gizmox.WebGUI.Forms.FormBorderStyle.Sizable;
             this.Size = new System.Drawing.Size(419, 466);
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }

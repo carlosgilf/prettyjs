@@ -3,7 +3,7 @@ using Gizmox.WebGUI.Common;
 
 namespace Bronze.Controls.Examples.Demo
 {
-    partial class MenuBarTest
+    partial class MainMenuTest
     {
         /// <summary>
         /// Required designer variable.
@@ -31,33 +31,35 @@ namespace Bronze.Controls.Examples.Demo
         /// </summary>
         private void InitializeComponent()
         {
-            this.supperMenu1 = new Bronze.Controls.Examples.MenuBar();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuTest));
+            this.mainMenu1 = new Bronze.Controls.Examples.Menu.MainMenu();
             this.SuspendLayout();
             // 
-            // supperMenu1
+            // mainMenu1
             // 
-            this.supperMenu1.Animate = "dropDown,dropUp";
-            this.supperMenu1.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.supperMenu1.Location = new System.Drawing.Point(34, 27);
-            this.supperMenu1.Name = "supperMenu1";
-            this.supperMenu1.Size = new System.Drawing.Size(775, 40);
-            this.supperMenu1.TabIndex = 2;
-            this.supperMenu1.Text = "SupperMenu";
+            this.mainMenu1.Animate = "dropDown,dropUp";
+            this.mainMenu1.CustomStyle = "SupperPanelSkin";
+            this.mainMenu1.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
+            this.mainMenu1.Location = new System.Drawing.Point(31, 31);
+            this.mainMenu1.Name = "mainMenu1";
+            this.mainMenu1.Size = new System.Drawing.Size(634, 40);
+            this.mainMenu1.TabIndex = 0;
             // 
-            // MenuBarTest
+            // MainMenuTest
             // 
-            this.Controls.Add(this.supperMenu1);
+            this.Controls.Add(this.mainMenu1);
             this.FormBorderStyle = Gizmox.WebGUI.Forms.FormBorderStyle.Sizable;
-            this.Size = new System.Drawing.Size(852, 466);
-            this.Text = "MenuBarTest";
-            this.Load += new System.EventHandler(this.MenuBarTest_Load_1);
+            this.Size = new System.Drawing.Size(697, 466);
+            this.Text = "MainMenuTest";
+            this.Load += new System.EventHandler(this.MainMenuTest_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MenuBar supperMenu1;
+        private Menu.MainMenu mainMenu1;
+
 
 
     }

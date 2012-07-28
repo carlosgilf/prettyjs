@@ -37,7 +37,6 @@ namespace Bronze.Controls.Examples
             this.hoverPopup = new Bronze.Controls.VWG.HoverPanel();
             this.popupMain = new Bronze.Controls.VWG.SupperPanel();
             this.hoverBtn.SuspendLayout();
-            this.hoverPopup.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbText
@@ -55,15 +54,17 @@ namespace Bronze.Controls.Examples
             // hoverBtn
             // 
             this.hoverBtn.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(174))))));
+            this.hoverBtn.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.hoverBtn.Controls.Add(this.lbText);
             this.hoverBtn.Controls.Add(this.btnMain);
             this.hoverBtn.CustomStyle = "HoverPanelSkin";
-            this.hoverBtn.DisplayMode = VWG.DisplayMode.Normal;
+            this.hoverBtn.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
             this.hoverBtn.Location = new System.Drawing.Point(162, 45);
             this.hoverBtn.Name = "hoverBtn";
             this.hoverBtn.OnClientMouseLeave = null;
             this.hoverBtn.OnClientMouseOver = null;
             this.hoverBtn.Overable = true;
+            this.hoverBtn.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
             this.hoverBtn.RenderRunClientMouseLeave = false;
             this.hoverBtn.Size = new System.Drawing.Size(65, 35);
             this.hoverBtn.TabIndex = 2;
@@ -74,31 +75,40 @@ namespace Bronze.Controls.Examples
             this.btnMain.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(174))))));
             this.btnMain.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
             this.btnMain.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(1, 1, 1, 0);
+            this.btnMain.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.btnMain.CustomStyle = "HoverPanelSkin";
             this.btnMain.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
             this.btnMain.DockPadding.Left = 1;
             this.btnMain.DockPadding.Right = 1;
             this.btnMain.DockPadding.Top = 1;
-            this.btnMain.DisplayMode = VWG.DisplayMode.Normal;
             this.btnMain.Location = new System.Drawing.Point(0, 0);
             this.btnMain.Name = "btnMain";
             this.btnMain.Padding = new Gizmox.WebGUI.Forms.Padding(1, 1, 1, 0);
-            this.btnMain.Radius = new Gizmox.WebGUI.Forms.CornerRadius(12, 12, 0, 0);
+            this.btnMain.Radius = new Gizmox.WebGUI.Forms.CornerRadius(8, 8, 0, 0);
             this.btnMain.Size = new System.Drawing.Size(65, 35);
             this.btnMain.TabIndex = 5;
             // 
             // hoverPopup
             // 
-            this.hoverPopup.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.Transparent);
-            this.hoverPopup.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0);
-            this.hoverPopup.Controls.Add(this.popupMain);
+            this.hoverPopup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
+            this.hoverPopup.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(174))))));
+            this.hoverPopup.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.hoverPopup.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(1, 0, 1, 1);
+            this.hoverPopup.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.hoverPopup.CustomStyle = "HoverPanelSkin";
-            this.hoverPopup.DisplayMode = VWG.DisplayMode.Normal;
+            this.hoverPopup.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
+            this.hoverPopup.DockPadding.Bottom = 8;
+            this.hoverPopup.DockPadding.Left = 8;
+            this.hoverPopup.DockPadding.Right = 8;
+            this.hoverPopup.DockPadding.Top = 5;
+            this.hoverPopup.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(204)))));
             this.hoverPopup.Location = new System.Drawing.Point(58, 102);
             this.hoverPopup.Name = "hoverPopup";
             this.hoverPopup.OnClientMouseLeave = null;
             this.hoverPopup.OnClientMouseOver = null;
             this.hoverPopup.Overable = true;
+            this.hoverPopup.Padding = new Gizmox.WebGUI.Forms.Padding(8, 5, 8, 8);
+            this.hoverPopup.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0, 15, 15, 15);
             this.hoverPopup.RenderRunClientMouseLeave = false;
             this.hoverPopup.Size = new System.Drawing.Size(200, 116);
             this.hoverPopup.TabIndex = 3;
@@ -109,14 +119,14 @@ namespace Bronze.Controls.Examples
             this.popupMain.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(174))))));
             this.popupMain.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
             this.popupMain.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(1, 0, 1, 1);
+            this.popupMain.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.popupMain.CustomStyle = "HoverPanelSkin";
-            this.popupMain.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
+            this.popupMain.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
             this.popupMain.DockPadding.Bottom = 8;
             this.popupMain.DockPadding.Left = 8;
             this.popupMain.DockPadding.Right = 8;
             this.popupMain.DockPadding.Top = 5;
-            this.popupMain.DisplayMode = VWG.DisplayMode.Normal;
-            this.popupMain.Location = new System.Drawing.Point(0, 0);
+            this.popupMain.Location = new System.Drawing.Point(322, 146);
             this.popupMain.Name = "popupMain";
             this.popupMain.Padding = new Gizmox.WebGUI.Forms.Padding(8, 5, 8, 8);
             this.popupMain.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0, 0, 15, 15);
@@ -125,12 +135,12 @@ namespace Bronze.Controls.Examples
             // 
             // MenuItem
             // 
+            this.Controls.Add(this.popupMain);
             this.Controls.Add(this.hoverPopup);
             this.Controls.Add(this.hoverBtn);
-            this.Size = new System.Drawing.Size(391, 306);
+            this.Size = new System.Drawing.Size(565, 463);
             this.Text = "MenuItem";
             this.hoverBtn.ResumeLayout(false);
-            this.hoverPopup.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
