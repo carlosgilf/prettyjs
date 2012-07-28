@@ -64,7 +64,6 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.hoverPopup.OnClientMouseLeave = null;
             this.hoverPopup.OnClientMouseOver = null;
             this.hoverPopup.Overable = true;
-            this.hoverPopup.Radius = 0;
             this.hoverPopup.RenderRunClientMouseLeave = false;
             this.hoverPopup.Size = new System.Drawing.Size(200, 116);
             this.hoverPopup.TabIndex = 3;
@@ -128,7 +127,6 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.hoverBtn.OnClientMouseLeave = null;
             this.hoverBtn.OnClientMouseOver = null;
             this.hoverBtn.Overable = true;
-            this.hoverBtn.Radius = 0;
             this.hoverBtn.RenderRunClientMouseLeave = false;
             this.hoverBtn.Size = new System.Drawing.Size(65, 35);
             this.hoverBtn.TabIndex = 2;

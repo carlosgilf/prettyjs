@@ -111,6 +111,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Skin\BoxShadowValue.cs" />
     <Compile Include="Skin\CornerRadiusValue.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -121,8 +122,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Skin\Padding.cs" />
-    <Compile Include="Skin\PaddingConverter.cs" />
+    <Compile Include="Skin\BoxShadow.cs" />
+    <Compile Include="Skin\BoxShadowConverter.cs" />
     <Compile Include="SupperPanel.cs">
       <SubType>Component</SubType>
     </Compile>

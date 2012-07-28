@@ -48,12 +48,6 @@ namespace Bronze.Controls.VWG
             this.CustomStyle = "SupperPanelSkin";
         }
 
-        public BoxShadow Padding1
-        {
-            get;
-            set;
-        }
-
         public virtual BoxShadow BoxShadow
         {
             get
@@ -139,6 +133,13 @@ namespace Bronze.Controls.VWG
                 CornerRadiusValue rd = this.Radius;
                 string style = rd.GetStyle();
                 objWriter.WriteAttributeString("Radius", style);
+            }
+
+            if (this.BoxShadow!= this.DefaultBoxShadow)
+            {
+                BoxShadowValue bs = this.BoxShadow;
+                string style=bs.GetStyle();
+                objWriter.WriteAttributeString("BoxShadow", style);
             }
         }
 

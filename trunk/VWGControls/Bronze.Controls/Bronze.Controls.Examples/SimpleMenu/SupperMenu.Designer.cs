@@ -45,7 +45,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.pLeft.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("pLeft.Image"));
             this.pLeft.Location = new System.Drawing.Point(0, 0);
             this.pLeft.Name = "pLeft";
-            this.pLeft.Size = new System.Drawing.Size(9, 200);
+            this.pLeft.Size = new System.Drawing.Size(9, 40);
             this.pLeft.SizeMode = Gizmox.WebGUI.Forms.PictureBoxSizeMode.AutoSize;
             this.pLeft.TabIndex = 0;
             this.pLeft.TabStop = false;
@@ -56,7 +56,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.pRight.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("pRight.Image"));
             this.pRight.Location = new System.Drawing.Point(691, 0);
             this.pRight.Name = "pRight";
-            this.pRight.Size = new System.Drawing.Size(7, 200);
+            this.pRight.Size = new System.Drawing.Size(7, 40);
             this.pRight.SizeMode = Gizmox.WebGUI.Forms.PictureBoxSizeMode.AutoSize;
             this.pRight.TabIndex = 1;
             this.pRight.TabStop = false;
