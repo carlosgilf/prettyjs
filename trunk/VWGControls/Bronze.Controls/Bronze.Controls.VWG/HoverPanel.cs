@@ -40,7 +40,7 @@ namespace Bronze.Controls.VWG
     public class HoverPanel : Panel
     {
         private static SerializableProperty HoverBackColorProperty = SerializableProperty.Register("HoverBackColor", typeof(Color), typeof(HoverPanel), new SerializablePropertyMetadata());
-
+        private static SerializableProperty RadiusProperty = SerializableProperty.Register("Radius", typeof(CornerRadius), typeof(HoverPanel), new SerializablePropertyMetadata());
         ResourceHandle _overImage;
 
         public HoverPanel()
@@ -76,18 +76,19 @@ namespace Bronze.Controls.VWG
 
         private bool renderRunClientMouseOut = false;
 
-
+        [Description("鼠标经过的背景颜色")]
+        [DefaultValue(typeof(Color), "")]
         public virtual Color HoverBackColor
         {
             get
             {
                 // Return backcolor
-                return this.GetValue<Color>(HoverPanel.HoverBackColorProperty, this.DefaultForeColor);
+                return this.GetValue<Color>(HoverPanel.HoverBackColorProperty, Color.Empty);
             }
             set
             {
                 // Set the fore color and update the control if diffrent
-                if (this.SetValue<Color>(HoverPanel.HoverBackColorProperty, value, this.DefaultForeColor))
+                if (this.SetValue<Color>(HoverPanel.HoverBackColorProperty, value, Color.Empty))
                 {
                     // Update the control
                     this.Update();
@@ -109,13 +110,13 @@ namespace Bronze.Controls.VWG
             set;
         }
 
-        private int radius = 0;
-        
+
 
         public bool Hidden
         {
             get { return hidden; }
-            set { 
+            set
+            {
                 hidden = value;
                 this.Update();
             }
@@ -127,17 +128,50 @@ namespace Bronze.Controls.VWG
             set { renderRunClientMouseOut = value; }
         }
 
-        public int Radius
+
+
+
+
+
+        public virtual CornerRadius Radius
         {
-            get { return radius; }
-            set { radius = value; }
+            get
+            {
+                return base.GetValue<CornerRadius>(RadiusProperty, this.DefaultRadius);
+            }
+            set
+            {
+                if (base.SetValue<CornerRadius>(RadiusProperty, value, this.DefaultRadius))
+                {
+                    this.Update();
+                    base.FireObservableItemPropertyChanged("Radius");
+                }
+            }
         }
+
+
+
+        protected virtual CornerRadius DefaultRadius
+        {
+            get
+            {
+                return CornerRadius.Empty;
+            }
+        }
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        internal bool ShouldSerializeRadius()
+        {
+            return base.ContainsValue<CornerRadius>(RadiusProperty);
+        }
+
+     
 
         protected override void RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext objContext, Gizmox.WebGUI.Common.Interfaces.IAttributeWriter objWriter)
         {
             base.RenderAttributes(objContext, objWriter);
             objWriter.WriteAttributeString("Hidden", Hidden ? "1" : "0");
-        
+
 
             if (_overImage != null)
             {
@@ -147,17 +181,23 @@ namespace Bronze.Controls.VWG
             {
                 objWriter.WriteAttributeString("HoverImage", "");
             }
-            objWriter.WriteAttributeString("HoverColor", ColorTranslator.ToHtml(this.HoverBackColor));
+
+            if (this.HoverBackColor!= Color.Empty)
+            {
+                objWriter.WriteAttributeString("HoverColor", ColorTranslator.ToHtml(this.HoverBackColor));
+            }
+            
             objWriter.WriteAttributeString("Overable", this._overable ? "1" : "0");
             if (!string.IsNullOrEmpty(OnClientMouseOver))
             {
                 objWriter.WriteAttributeString("OverScript", OnClientMouseOver);
             }
-            this.InvokeScript(string.Format("HoverPanel_Init('{0}')", this.ID));
+            this.InvokeScript(string.Format("HoverPanel_Init('{0}');", this.ID));
+
             if (!string.IsNullOrEmpty(OnClientMouseLeave))
             {
                 objWriter.WriteAttributeString("LeaveScript", OnClientMouseLeave);
-                
+
                 if (RenderRunClientMouseLeave)
                 {
                     this.InvokeScript(OnClientMouseLeave);
@@ -170,9 +210,13 @@ namespace Bronze.Controls.VWG
                 this.InvokeScript(string.Format("$('#VWG_{0}').hide()", this.ID));
             }
 
-            if (Radius>0)
+            if (Radius != CornerRadius.Empty)
             {
-                objWriter.WriteAttributeString("Radius", "Radius");
+                CornerRadiusValue rd = this.Radius;
+                string style = rd.GetStyle();
+                objWriter.WriteAttributeString("Radius", style);
+                //var htc=new AssemblyResourceHandle(this.GetType(), "Bronze.Controls.VWG.OtherResources.PIE.htc");
+                //var htcFile=htc.ToString();
             }
 
 
@@ -180,6 +224,9 @@ namespace Bronze.Controls.VWG
 
 
     }
+
+
+
 
 }
 

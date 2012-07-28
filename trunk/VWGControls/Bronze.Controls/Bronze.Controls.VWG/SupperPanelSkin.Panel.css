@@ -1,0 +1,20 @@
+﻿.Panel-Control
+{
+	[Skin.Border];
+	[Skin.Background];
+}
+
+.SupperPane-Radius
+{
+   behavior: url(/PIE.htc);
+}
+
+.SupperPane-Hidden
+{
+    display:none;
+}
+
+.SupperPane-VHidden
+{
+     visibility:hidden;
+}
