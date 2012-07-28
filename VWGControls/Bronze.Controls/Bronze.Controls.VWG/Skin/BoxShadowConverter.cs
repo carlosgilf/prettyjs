@@ -5,6 +5,7 @@ namespace Bronze.Controls.VWG
     using System.ComponentModel;
     using System.ComponentModel.Design.Serialization;
     using System.Globalization;
+    using System.Drawing;
 
     [Serializable]
     public class BoxShadowConverter : TypeConverter
@@ -27,13 +28,15 @@ namespace Bronze.Controls.VWG
                 if (!string.IsNullOrEmpty(str))
                 {
                     string[] strArray = str.Split(new char[] { ',' });
-                    if (strArray.Length == 1)
-                    {
-                        return new BoxShadow(int.Parse(strArray[0]));
-                    }
+                    //if (strArray.Length == 1)
+                    //{
+                    //    return new BoxShadow(int.Parse(strArray[0]));
+                    //}
                     if (strArray.Length == 4)
                     {
-                        return new BoxShadow(int.Parse(strArray[0]), int.Parse(strArray[1]), int.Parse(strArray[2]), int.Parse(strArray[3]));
+                        //return new BoxShadow(int.Parse(strArray[0]), int.Parse(strArray[1]), int.Parse(strArray[2]), int.Parse(strArray[3]));
+                        var color=this.ConvertColor(strArray[0].ToString(),objCulture);
+                        return new BoxShadow(color, int.Parse(strArray[1]), int.Parse(strArray[2]), int.Parse(strArray[3]));
                     }
                 }
             }
@@ -53,11 +56,13 @@ namespace Bronze.Controls.VWG
                 BoxShadow objPadding = (BoxShadow) objValue;
                 if (objDestinationType == typeof(string))
                 {
-                    if (objPadding.IsAll)
-                    {
-                        return objPadding.All.ToString();
-                    }
-                    return string.Format("{0}, {1}, {2}, {3}", new object[] { objPadding.Color, objPadding.XOffset, objPadding.YOffset, objPadding.BlurSize });
+                    //if (objPadding.IsAll)
+                    //{
+                    //    return objPadding.All.ToString();
+                    //}
+
+                    var color = GetColorString(objPadding.Color,objCulture);
+                    return string.Format("{0}, {1}, {2}, {3}", new object[] { color, objPadding.XOffset, objPadding.YOffset, objPadding.BlurSize });
                 }
                 if (objDestinationType == typeof(InstanceDescriptor))
                 {
@@ -70,24 +75,25 @@ namespace Bronze.Controls.VWG
         private object ConvertToInstanceDescriptor(ITypeDescriptorContext objContext, BoxShadow objPadding)
         {
             Type[] typeArray;
-            if (objPadding.ShouldSerializeAll())
-            {
-                typeArray = new Type[] { typeof(int) };
-                return new InstanceDescriptor(typeof(BoxShadow).GetConstructor(typeArray), new object[] { objPadding.All });
-            }
-            typeArray = new Type[] { typeof(int), typeof(int), typeof(int), typeof(int) };
+            //if (objPadding.ShouldSerializeAll())
+            //{
+            //    typeArray = new Type[] { typeof(int) };
+            //    return new InstanceDescriptor(typeof(BoxShadow).GetConstructor(typeArray), new object[] { objPadding.All });
+            //}
+            typeArray = new Type[] { typeof(Color), typeof(int), typeof(int), typeof(int) };
             return new InstanceDescriptor(typeof(BoxShadow).GetConstructor(typeArray), new object[] { objPadding.Color, objPadding.XOffset, objPadding.YOffset, objPadding.BlurSize });
         }
 
         public override object CreateInstance(ITypeDescriptorContext objContext, IDictionary objPropertyValues)
         {
             BoxShadow padding = (BoxShadow) objContext.PropertyDescriptor.GetValue(objContext.Instance);
-            int intAll = (int) objPropertyValues["All"];
-            if (padding.All != intAll)
-            {
-                return new BoxShadow(intAll);
-            }
-            return new BoxShadow((int) objPropertyValues["Color"], (int) objPropertyValues["XOffset"], (int) objPropertyValues["YOffset"], (int) objPropertyValues["BlurSize"]);
+            //int intAll = (int) objPropertyValues["All"];
+            //if (padding.All != intAll)
+            //{
+            //    return new BoxShadow(intAll);
+            //}
+            var color = (Color)objPropertyValues["Color"];
+            return new BoxShadow(color, (int)objPropertyValues["XOffset"], (int)objPropertyValues["YOffset"], (int)objPropertyValues["BlurSize"]);
         }
 
         public override bool GetCreateInstanceSupported(ITypeDescriptorContext objContext)
@@ -98,13 +104,25 @@ namespace Bronze.Controls.VWG
         public override PropertyDescriptorCollection GetProperties(ITypeDescriptorContext objContext, object objValue, Attribute[] arrAttributes)
         {
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(BoxShadow), arrAttributes);
-            string[] names = new string[] { "All", "Color", "XOffset", "YOffset", "BlurSize" };
+            string[] names = new string[] {
+                //"All", 
+                "Color", "XOffset", "YOffset", "BlurSize" };
             return properties.Sort(names);
         }
 
         public override bool GetPropertiesSupported(ITypeDescriptorContext objContext)
         {
             return true;
+        }
+
+        private object GetColorString(Color objColor, CultureInfo objCulture)
+        {
+            return TypeDescriptor.GetConverter(typeof(Color)).ConvertToString(null, objCulture, objColor);
+        }
+
+           private Color ConvertColor(string strColor, CultureInfo objCulture)
+        {
+            return (Color) TypeDescriptor.GetConverter(typeof(Color)).ConvertFromString(null, objCulture, strColor);
         }
     }
 }

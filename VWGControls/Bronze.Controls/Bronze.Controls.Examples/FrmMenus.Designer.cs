@@ -367,10 +367,10 @@ namespace Bronze.Controls.Examples
             this.hoverPanel1.OnClientMouseLeave = null;
             this.hoverPanel1.OnClientMouseOver = null;
             this.hoverPanel1.Overable = true;
-            this.hoverPanel1.Radius = 5;
             this.hoverPanel1.RenderRunClientMouseLeave = false;
             this.hoverPanel1.Size = new System.Drawing.Size(218, 223);
             this.hoverPanel1.TabIndex = 5;
+            this.hoverPanel1.Radius = new CornerRadius(6);
             // 
             // button2
             // 

@@ -69,6 +69,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PIE.htc" />
+    <Content Include="PIE1.js" />
     <Content Include="Readme.txt" />
     <Content Include="Resources\Images\Logo.jpg" />
     <Content Include="Resources\Images\MenuBlue\bar_bg.gif" />
@@ -80,13 +82,20 @@
     <Content Include="Resources\Images\MenuBlue\menu_left.gif" />
     <Content Include="Resources\Images\MenuBlue\menu_right.gif" />
     <Content Include="Resources\Images\pool.jpg" />
+    <Content Include="test.htm" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Demo\MenuBarTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Demo\MenuBarTest.Designer.cs">
+      <DependentUpon>MenuBarTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmImageProcessor.cs">
       <SubType>Form</SubType>
@@ -111,6 +120,18 @@
     </Compile>
     <Compile Include="Demo\FrmDemoSupperMenu.Designer.cs">
       <DependentUpon>FrmDemoSupperMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\MenuBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuBar.Designer.cs">
+      <DependentUpon>MenuBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\MenuItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuItem.Designer.cs">
+      <DependentUpon>MenuItem.cs</DependentUpon>
     </Compile>
     <Compile Include="SimpleMenu\MenuButton.cs">
       <SubType>UserControl</SubType>
@@ -139,8 +160,12 @@
     <Compile Include="UcMenu.Designer.cs">
       <DependentUpon>UcMenu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Demo\MenuBarTest.resx">
+      <DependentUpon>MenuBarTest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImageProcessor.resx">
@@ -158,6 +183,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Demo\FrmDemoSupperMenu.resx">
       <DependentUpon>FrmDemoSupperMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\MenuBar.resx">
+      <DependentUpon>MenuBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\MenuItem.resx">
+      <DependentUpon>MenuItem.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleMenu\MenuButton.resx">
@@ -187,6 +220,7 @@
       <Name>Bronze.Controls.VWG</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v10.0\Gizmox.VWGApplication.targets" />

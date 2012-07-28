@@ -8,10 +8,10 @@
     <xsl:variable name ="hiddenClass" >
       <xsl:choose>
         <xsl:when test="@Hidden='1'">
-          <xsl:value-of select="'SupperPane-Hidden '"/>
+          <xsl:value-of select="'SupperPanel-Hidden '"/>
         </xsl:when>
         <xsl:when test="@Hidden='2'">
-          <xsl:value-of select="'SupperPane-VHidden '"/>
+          <xsl:value-of select="'SupperPanel-VHidden '"/>
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="''"/>
@@ -25,7 +25,7 @@
           <xsl:value-of select="''"/>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:value-of select="'SupperPane-Radius'"/>
+          <xsl:value-of select="'SupperPanel-Radius'"/>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>

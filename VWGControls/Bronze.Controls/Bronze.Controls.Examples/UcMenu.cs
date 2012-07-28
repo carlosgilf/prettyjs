@@ -31,7 +31,7 @@ namespace Bronze.Controls.Examples
         public UcMenu()
         {
             InitializeComponent();
-            this.hoverPopup.Radius = 5;
+            //this.hoverPopup.Radius = 5;
 
            
 //            string show = string.Format(

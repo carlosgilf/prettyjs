@@ -4,17 +4,17 @@
 	[Skin.Background];
 }
 
-.SupperPane-Radius
+.SupperPanel-Radius
 {
    behavior: url(/PIE.htc);
 }
 
-.SupperPane-Hidden
+.SupperPanel-Hidden
 {
     display:none;
 }
 
-.SupperPane-VHidden
+.SupperPanel-VHidden
 {
      visibility:hidden;
 }

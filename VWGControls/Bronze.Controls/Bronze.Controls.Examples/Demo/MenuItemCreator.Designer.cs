@@ -37,10 +37,10 @@ namespace Bronze.Controls.Examples
             this.label3 = new Gizmox.WebGUI.Forms.Label();
             this.label4 = new Gizmox.WebGUI.Forms.Label();
             this.ItemHome = new Gizmox.WebGUI.Forms.GroupBox();
+            this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.panel1 = new Gizmox.WebGUI.Forms.Panel();
             this.listBox1 = new Gizmox.WebGUI.Forms.ListBox();
             this.dateTimePicker1 = new Gizmox.WebGUI.Forms.DateTimePicker();
-            this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.ItemHome.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +49,9 @@ namespace Bronze.Controls.Examples
             // 
             this.ItemDateTime.Location = new System.Drawing.Point(225, 17);
             this.ItemDateTime.Name = "ItemDateTime";
+            this.ItemDateTime.SelectionEnd = new System.DateTime(2012, 7, 7, 0, 0, 0, 0);
+            this.ItemDateTime.SelectionRange = new Gizmox.WebGUI.Forms.SelectionRange(new System.DateTime(2012, 7, 7, 0, 0, 0, 0), new System.DateTime(2012, 7, 7, 0, 0, 0, 0));
+            this.ItemDateTime.SelectionStart = new System.DateTime(2012, 7, 7, 0, 0, 0, 0);
             this.ItemDateTime.Size = new System.Drawing.Size(220, 180);
             this.ItemDateTime.TabIndex = 7;
             this.ItemDateTime.Value = new System.DateTime(2012, 7, 7, 0, 0, 0, 0);
@@ -101,6 +104,15 @@ namespace Bronze.Controls.Examples
             this.ItemHome.TabIndex = 6;
             this.ItemHome.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(85, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -129,15 +141,6 @@ namespace Bronze.Controls.Examples
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(152, 21);
             this.dateTimePicker1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(85, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MenuItemCreator
             // 

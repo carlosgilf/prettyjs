@@ -8,6 +8,15 @@ function SupperPanel_Init(id,img) {
         if(radius) {
             var newStyle=layer1.attr("style")+";"+radius
             layer1.attr("style",newStyle);
+            $(control).addClass("SupperPanel-Radius");
+            var pStyle=$(control).attr("style")+";"+radius;
+            $(control).attr("style",pStyle);
+        }
+
+        var boxShadow=Xml_GetAttribute(objNode,"BoxShadow");
+        if(boxShadow) {
+            var newStyle=$(control).attr("style")+";"+boxShadow
+            $(control).attr("style",newStyle);
         }
     }
 }

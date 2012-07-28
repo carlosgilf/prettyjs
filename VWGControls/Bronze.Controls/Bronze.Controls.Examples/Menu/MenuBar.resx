@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="pLeft.Image" xml:space="preserve">
-    <value>MenuBlue.bar_left.gif</value>
-  </data>
-  <data name="pRight.Image" xml:space="preserve">
-    <value>MenuBlue.bar_right.gif</value>
-  </data>
   <data name="buttonLayout.BackgroundImage" xml:space="preserve">
     <value>MenuBlue.bar_bg.gif</value>
   </data>
