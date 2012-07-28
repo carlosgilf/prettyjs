@@ -38,9 +38,10 @@ namespace Bronze.Controls.Examples
             // buttonLayout
             // 
             this.buttonLayout.BackgroundImage = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("buttonLayout.BackgroundImage"));
+            this.buttonLayout.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64))))), 5, 5, 10);
             this.buttonLayout.CustomStyle = "HoverPanelSkin";
+            this.buttonLayout.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
             this.buttonLayout.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
-            this.buttonLayout.DisplayMode = VWG.DisplayMode.Normal;
             this.buttonLayout.Location = new System.Drawing.Point(0, 0);
             this.buttonLayout.Name = "buttonLayout";
             this.buttonLayout.Radius = new Gizmox.WebGUI.Forms.CornerRadius(10);
