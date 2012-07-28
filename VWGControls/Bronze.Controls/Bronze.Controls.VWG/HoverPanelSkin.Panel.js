@@ -1,10 +1,20 @@
 function HoverPanel_Init(strGuid) {
-    var objImage=Web_GetElementByDataId(strGuid);
+	var objImage = Web_GetElementByDataId(strGuid);
+    var objNode = Data_GetNode(strGuid);
+    var layer1 = $(objImage).children("div:first");
+    var radius = Xml_GetAttribute(objNode, "Radius");
+
+    if(radius){
+        var newStyle = layer1.attr("style") + ";" + radius
+        layer1.attr("style", newStyle);
+    }
+
     $(objImage).bind("mouseenter", function () {
-        var objNode = Data_GetNode(strGuid);
+       
         if (objNode) {
             //debugger;
-            var layer = $(objImage);
+            var layer = $(objImage).children("div:first");
+
             if (!objImage.tempStyle) {
                 objImage.tempStyle = layer.attr("style");
             }
@@ -37,8 +47,9 @@ function HoverPanel_Init(strGuid) {
     });
     $(objImage).bind("mouseleave", function () {
         var objNode = Data_GetNode(strGuid);
+         var layer = $(objImage).children("div:first");
         if (objImage.tempStyle) {
-            $(objImage).attr("style", objImage.tempStyle);
+            layer.attr("style", objImage.tempStyle);
         }
         var leaveScript = Xml_GetAttribute(objNode, "LeaveScript");
         if (leaveScript) {
@@ -132,6 +143,7 @@ function isNumber(n) {
                 if(cfg.callback)cfg.callback();
             }
         });
+        
 	};
 
 	$.fn.dropUp = function(arg,callback){
@@ -146,6 +158,7 @@ function isNumber(n) {
         css('top',0).
         animate({
             top:0-obj.height()
+            , opacity: 1
         },
         {
             queue : false,

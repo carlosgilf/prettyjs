@@ -117,107 +117,77 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.css" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.css" xml:space="preserve">
     <value>StyleSheetResource</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.css:CompilerActions" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.css:CompilerActions" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.css:FileName" xml:space="preserve">
-    <value>HoverPanelSkin.Panel.css</value>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.css:FileName" xml:space="preserve">
+    <value>SupperPanelSkin.Panel.css</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.css:ContentType" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.css:ContentType" xml:space="preserve">
     <value />
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>HoverPanelSkin.Panel.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SupperPanelSkin.Panel.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.css:PresentationRole" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.css:PresentationRole" xml:space="preserve">
     <value>102</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.css:PresentationEngine" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.css:PresentationEngine" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.css:Presentation" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.css:Presentation" xml:space="preserve">
     <value>100</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.xslt" xml:space="preserve">
     <value>TemplateResource</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:CompilerActions" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.xslt:CompilerActions" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:FileName" xml:space="preserve">
-    <value>HoverPanelSkin.Panel.xslt</value>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.xslt:FileName" xml:space="preserve">
+    <value>SupperPanelSkin.Panel.xslt</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:ContentType" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.xslt:ContentType" xml:space="preserve">
     <value />
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>HoverPanelSkin.Panel.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SupperPanelSkin.Panel.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:PresentationRole" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.xslt:PresentationRole" xml:space="preserve">
     <value>103</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:PresentationEngine" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.xslt:PresentationEngine" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:Presentation" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.xslt:Presentation" xml:space="preserve">
     <value>100</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.js" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.js" xml:space="preserve">
     <value>ScriptResource</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.js:CompilerActions" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.js:CompilerActions" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.js:FileName" xml:space="preserve">
-    <value>HoverPanelSkin.Panel.js</value>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.js:FileName" xml:space="preserve">
+    <value>SupperPanelSkin.Panel.js</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.js:ContentType" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.js:ContentType" xml:space="preserve">
     <value />
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>HoverPanelSkin.Panel.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SupperPanelSkin.Panel.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.js:PresentationRole" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.js:PresentationRole" xml:space="preserve">
     <value>101</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.js:PresentationEngine" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.js:PresentationEngine" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.js:Presentation" xml:space="preserve">
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.js:Presentation" xml:space="preserve">
     <value>100</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js" xml:space="preserve">
-    <value>ScriptResource</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:CompilerActions" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:FileName" xml:space="preserve">
-    <value>HoverPanelSkin.jquery.easing.js</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:ContentType" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>HoverPanelSkin.jquery.easing.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:PresentationRole" xml:space="preserve">
-    <value>101</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:PresentationEngine" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:jquery.easing.js:Presentation" xml:space="preserve">
-    <value>100</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Radius" xml:space="preserve">
-    <value>ValueResource:Bronze.Controls.VWG.CornerRadiusValue, Bronze.Controls.VWG</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Radius:Value" xml:space="preserve">
-    <value>10</value>
   </data>
 </root>
