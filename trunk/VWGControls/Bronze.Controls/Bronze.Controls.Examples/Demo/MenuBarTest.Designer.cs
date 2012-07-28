@@ -31,25 +31,8 @@ namespace Bronze.Controls.Examples.Demo
         /// </summary>
         private void InitializeComponent()
         {
-            this.hoverPanel1 = new Bronze.Controls.VWG.HoverPanel();
             this.supperMenu1 = new Bronze.Controls.Examples.MenuBar();
             this.SuspendLayout();
-            // 
-            // hoverPanel1
-            // 
-            this.hoverPanel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.hoverPanel1.CustomStyle = "HoverPanelSkin";
-            this.hoverPanel1.Hidden = false;
-            this.hoverPanel1.HoverBackColor = System.Drawing.Color.Black;
-            this.hoverPanel1.Location = new System.Drawing.Point(34, 205);
-            this.hoverPanel1.Name = "hoverPanel1";
-            this.hoverPanel1.OnClientMouseLeave = null;
-            this.hoverPanel1.OnClientMouseOver = null;
-            this.hoverPanel1.Overable = true;
-            this.hoverPanel1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(20);
-            this.hoverPanel1.RenderRunClientMouseLeave = false;
-            this.hoverPanel1.Size = new System.Drawing.Size(192, 192);
-            this.hoverPanel1.TabIndex = 1;
             // 
             // supperMenu1
             // 
@@ -64,7 +47,6 @@ namespace Bronze.Controls.Examples.Demo
             // MenuBarTest
             // 
             this.Controls.Add(this.supperMenu1);
-            this.Controls.Add(this.hoverPanel1);
             this.FormBorderStyle = Gizmox.WebGUI.Forms.FormBorderStyle.Sizable;
             this.Size = new System.Drawing.Size(852, 466);
             this.Text = "MenuBarTest";
@@ -75,7 +57,6 @@ namespace Bronze.Controls.Examples.Demo
 
         #endregion
 
-        private VWG.HoverPanel hoverPanel1;
         private MenuBar supperMenu1;
 
 

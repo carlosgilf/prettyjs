@@ -64,7 +64,7 @@ namespace Bronze.Controls.Examples
         public void SetClientAction()
         {
 
-            this.hoverPopup.Hidden = true;
+            this.hoverPopup.DisplayMode = VWG.DisplayMode.Hidden;
             var showHide = Animate.Split(',');
             var show = string.Format("vwg_showMenu('{0}',400,'{1}')", this.hoverPopup.ID, showHide[0]);
             var hide = string.Format("vwg_hideMenu('{0}',300,'{1}',50)", this.hoverPopup.ID, showHide[1]);

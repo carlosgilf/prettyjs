@@ -59,7 +59,7 @@
             this.hoverPopup.Controls.Add(this.label6);
             this.hoverPopup.Controls.Add(this.label5);
             this.hoverPopup.CustomStyle = "HoverPanelSkin";
-            this.hoverPopup.Hidden = false;
+            this.hoverPopup.DisplayMode = VWG.DisplayMode.Normal;
             this.hoverPopup.HoverBackColor = System.Drawing.Color.Transparent;
             this.hoverPopup.Location = new System.Drawing.Point(39, 57);
             this.hoverPopup.Name = "hoverPopup";
@@ -105,7 +105,7 @@
             this.hoverBtn.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
             this.hoverBtn.Controls.Add(this.菜单);
             this.hoverBtn.CustomStyle = "HoverPanelSkin";
-            this.hoverBtn.Hidden = false;
+            this.hoverBtn.DisplayMode = VWG.DisplayMode.Normal;
             this.hoverBtn.HoverBackColor = System.Drawing.Color.Gainsboro;
             this.hoverBtn.Location = new System.Drawing.Point(39, 21);
             this.hoverBtn.Name = "hoverBtn";

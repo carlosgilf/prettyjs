@@ -57,7 +57,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.hoverPopup.Controls.Add(this.panelMenuContanier);
             this.hoverPopup.Controls.Add(this.panelPopuBottom);
             this.hoverPopup.CustomStyle = "HoverPanelSkin";
-            this.hoverPopup.Hidden = true;
+            this.hoverPopup.DisplayMode = VWG.DisplayMode.Normal;
             this.hoverPopup.HoverBackColor = System.Drawing.Color.Transparent;
             this.hoverPopup.Location = new System.Drawing.Point(0, 60);
             this.hoverPopup.Name = "hoverPopup";
@@ -120,7 +120,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.hoverBtn.Controls.Add(this.btnMain);
             this.hoverBtn.Controls.Add(this.lbText);
             this.hoverBtn.CustomStyle = "HoverPanelSkin";
-            this.hoverBtn.Hidden = false;
+            this.hoverBtn.DisplayMode = VWG.DisplayMode.Normal;
             this.hoverBtn.HoverBackColor = System.Drawing.Color.Transparent;
             this.hoverBtn.Location = new System.Drawing.Point(0, 0);
             this.hoverBtn.Name = "hoverBtn";
