@@ -41,7 +41,7 @@ namespace Bronze.Controls.Examples
             // 
             this.hoverPopup.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0);
             this.hoverPopup.CustomStyle = "HoverPanelSkin";
-            this.hoverPopup.Hidden = false;
+            this.hoverPopup.DisplayMode = VWG.DisplayMode.Normal;
             this.hoverPopup.HoverBackColor = System.Drawing.Color.Transparent;
             this.hoverPopup.Location = new System.Drawing.Point(0, 26);
             this.hoverPopup.Name = "hoverPopup";
@@ -57,7 +57,7 @@ namespace Bronze.Controls.Examples
             this.hoverBtn.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
             this.hoverBtn.Controls.Add(this.²Ëµ¥);
             this.hoverBtn.CustomStyle = "HoverPanelSkin";
-            this.hoverBtn.Hidden = false;
+            this.hoverBtn.DisplayMode = VWG.DisplayMode.Normal;
             this.hoverBtn.HoverBackColor = System.Drawing.Color.Gainsboro;
             this.hoverBtn.Location = new System.Drawing.Point(0, 0);
             this.hoverBtn.Name = "hoverBtn";

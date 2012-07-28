@@ -23,7 +23,7 @@ namespace Bronze.Controls.Examples
 
         private void FrmHoverPanel_Load(object sender, EventArgs e)
         {
-            this.hoverPopup.Hidden = true;
+            this.hoverPopup.DisplayMode = VWG.DisplayMode.Hidden;
             string show = string.Format(
             @"
 var obj=$('#VWG_{0}');

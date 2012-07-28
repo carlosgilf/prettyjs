@@ -32,7 +32,7 @@ namespace Bronze.Controls.Examples
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuBar));
-            this.buttonLayout = new Bronze.Controls.VWG.HoverPanel();
+            this.buttonLayout = new Bronze.Controls.VWG.SupperPanel();
             this.SuspendLayout();
             // 
             // buttonLayout
@@ -40,14 +40,10 @@ namespace Bronze.Controls.Examples
             this.buttonLayout.BackgroundImage = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("buttonLayout.BackgroundImage"));
             this.buttonLayout.CustomStyle = "HoverPanelSkin";
             this.buttonLayout.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
-            this.buttonLayout.Hidden = false;
+            this.buttonLayout.DisplayMode = VWG.DisplayMode.Normal;
             this.buttonLayout.Location = new System.Drawing.Point(0, 0);
             this.buttonLayout.Name = "buttonLayout";
-            this.buttonLayout.OnClientMouseLeave = null;
-            this.buttonLayout.OnClientMouseOver = null;
-            this.buttonLayout.Overable = true;
             this.buttonLayout.Radius = new Gizmox.WebGUI.Forms.CornerRadius(10);
-            this.buttonLayout.RenderRunClientMouseLeave = false;
             this.buttonLayout.Size = new System.Drawing.Size(698, 40);
             this.buttonLayout.TabIndex = 2;
             // 
@@ -63,7 +59,7 @@ namespace Bronze.Controls.Examples
 
         #endregion
 
-        private Bronze.Controls.VWG.HoverPanel buttonLayout;
+        private Bronze.Controls.VWG.SupperPanel buttonLayout;
 
 
 

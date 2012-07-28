@@ -88,7 +88,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             string hideAction = creator.GetButtonScript(false);
 
 
-            popup.Hidden = true;
+            popup.DisplayMode = VWG.DisplayMode.Hidden;
             this.Form.Controls.Add(popup);
             popup.BringToFront();
 

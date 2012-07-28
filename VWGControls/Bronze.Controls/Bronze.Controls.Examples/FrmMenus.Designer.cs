@@ -360,7 +360,7 @@ namespace Bronze.Controls.Examples
             this.hoverPanel1.Controls.Add(this.textBox5);
             this.hoverPanel1.Controls.Add(this.button2);
             this.hoverPanel1.CustomStyle = "HoverPanelSkin";
-            this.hoverPanel1.Hidden = false;
+            this.hoverPanel1.DisplayMode = VWG.DisplayMode.Normal;
             this.hoverPanel1.HoverBackColor = System.Drawing.Color.Transparent;
             this.hoverPanel1.Location = new System.Drawing.Point(563, 98);
             this.hoverPanel1.Name = "hoverPanel1";

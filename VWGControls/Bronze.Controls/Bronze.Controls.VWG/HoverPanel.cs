@@ -37,10 +37,9 @@ namespace Bronze.Controls.VWG
     /// </summary>
     [Skin(typeof(HoverPanelSkin))]
     [Serializable()]
-    public class HoverPanel : Panel
+    public class HoverPanel : SupperPanel
     {
         private static SerializableProperty HoverBackColorProperty = SerializableProperty.Register("HoverBackColor", typeof(Color), typeof(HoverPanel), new SerializablePropertyMetadata());
-        private static SerializableProperty RadiusProperty = SerializableProperty.Register("Radius", typeof(CornerRadius), typeof(HoverPanel), new SerializablePropertyMetadata());
         ResourceHandle _overImage;
 
         public HoverPanel()
@@ -111,67 +110,16 @@ namespace Bronze.Controls.VWG
         }
 
 
-
-        public bool Hidden
-        {
-            get { return hidden; }
-            set
-            {
-                hidden = value;
-                this.Update();
-            }
-        }
-
         public bool RenderRunClientMouseLeave
         {
             get { return renderRunClientMouseOut; }
             set { renderRunClientMouseOut = value; }
         }
 
-
-
-
-
-
-        public virtual CornerRadius Radius
-        {
-            get
-            {
-                return base.GetValue<CornerRadius>(RadiusProperty, this.DefaultRadius);
-            }
-            set
-            {
-                if (base.SetValue<CornerRadius>(RadiusProperty, value, this.DefaultRadius))
-                {
-                    this.Update();
-                    base.FireObservableItemPropertyChanged("Radius");
-                }
-            }
-        }
-
-
-
-        protected virtual CornerRadius DefaultRadius
-        {
-            get
-            {
-                return CornerRadius.Empty;
-            }
-        }
-
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        internal bool ShouldSerializeRadius()
-        {
-            return base.ContainsValue<CornerRadius>(RadiusProperty);
-        }
-
-     
-
         protected override void RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext objContext, Gizmox.WebGUI.Common.Interfaces.IAttributeWriter objWriter)
         {
             base.RenderAttributes(objContext, objWriter);
-            objWriter.WriteAttributeString("Hidden", Hidden ? "1" : "0");
-
+           
 
             if (_overImage != null)
             {
@@ -192,6 +140,7 @@ namespace Bronze.Controls.VWG
             {
                 objWriter.WriteAttributeString("OverScript", OnClientMouseOver);
             }
+
             this.InvokeScript(string.Format("HoverPanel_Init('{0}');", this.ID));
 
             if (!string.IsNullOrEmpty(OnClientMouseLeave))
@@ -202,21 +151,6 @@ namespace Bronze.Controls.VWG
                 {
                     this.InvokeScript(OnClientMouseLeave);
                 }
-            }
-
-            if (Hidden)
-            {
-                //通过XLST重写只能设置第二层div的样式，所以还需要通过js隐藏最外层的div
-                this.InvokeScript(string.Format("$('#VWG_{0}').hide()", this.ID));
-            }
-
-            if (Radius != CornerRadius.Empty)
-            {
-                CornerRadiusValue rd = this.Radius;
-                string style = rd.GetStyle();
-                objWriter.WriteAttributeString("Radius", style);
-                //var htc=new AssemblyResourceHandle(this.GetType(), "Bronze.Controls.VWG.OtherResources.PIE.htc");
-                //var htcFile=htc.ToString();
             }
 
 

@@ -3,7 +3,14 @@
 
   <!-- The custom style Panel match template -->
   <xsl:template match="WC:Tags.Panel[@Attr.CustomStyle='SupperPanelSkin']" mode="modContent">
+    <xsl:call-template name="tplDrawNewPanelAPI" />
+  </xsl:template>
 
+
+  <!-- Main API for drawing the control -->
+  <xsl:template name="tplDrawNewPanelAPI">
+    <xsl:param name="prmControlClass" select="'Panel-Control'" />
+    <xsl:param name="prmControlInitScript" select="''" />
 
     <xsl:variable name ="hiddenClass" >
       <xsl:choose>
@@ -31,10 +38,12 @@
     </xsl:variable>
 
     <xsl:call-template name="tplDrawPanelAPI">
-      <xsl:with-param name="prmControlClass" select="concat('Panel-Control ',$hiddenClass,$radiusClass)"/>
+      <xsl:with-param name="prmControlClass" select="concat($prmControlClass,' ',$hiddenClass,$radiusClass)"/>
     </xsl:call-template>
 
-    <img style="visibility:hidden;height:0;width:0" src="Resources.Gizmox.WebGUI.Forms.Skins.CommonSkin.Empty.gif.wgx" onload="SupperPanel_Init('{@Attr.Id}',this)" >
+    <img style="visibility:hidden;height:0;width:0" src="Resources.Gizmox.WebGUI.Forms.Skins.CommonSkin.Empty.gif.wgx" onload="SupperPanel_Init('{@Attr.Id}',this);{$prmControlInitScript}" >
     </img>
   </xsl:template>
+  
+  
 </xsl:stylesheet>
