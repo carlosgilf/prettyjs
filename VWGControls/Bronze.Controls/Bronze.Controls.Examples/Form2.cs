@@ -25,7 +25,21 @@ namespace Bronze.Controls.Examples
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            this.supperPanel1.BoxShadow = new VWG.BoxShadow(Color.Gray,10,10,10);
+            this.supperPanel1.BackColor = ColorTranslator.FromHtml("#e5e6f0");
+
+            
+            this.supperPanel1.BoxShadow = new VWG.BoxShadow(Color.Gray,2,2,3);
+            var node = new NodeF();
+            this.treeView1.Nodes.Add(new NodeF());
+            ListView list = new ListView();
+            ListViewItem item = new ListViewItem();
+            item.SubItems.Add(
         }
+
+    }
+
+    public class NodeF : TreeNode
+    {
+
     }
 }
