@@ -83,6 +83,8 @@
     <Content Include="Resources\Images\MenuBlue\menu_right.gif" />
     <Content Include="Resources\Images\pool.jpg" />
     <Content Include="test.htm" />
+    <Content Include="test2.html" />
+    <Content Include="test3.htm" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Demo\MainMenuTest.cs">
