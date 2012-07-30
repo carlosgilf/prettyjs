@@ -31,9 +31,7 @@ namespace Bronze.Controls.Examples
             this.supperPanel1.BoxShadow = new VWG.BoxShadow(Color.Gray,2,2,3);
             var node = new NodeF();
             this.treeView1.Nodes.Add(new NodeF());
-            ListView list = new ListView();
-            ListViewItem item = new ListViewItem();
-            item.SubItems.Add(
+         
         }
 
     }
