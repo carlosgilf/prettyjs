@@ -124,6 +124,7 @@
     </Compile>
     <Compile Include="Skin\BoxShadow.cs" />
     <Compile Include="Skin\BoxShadowConverter.cs" />
+    <Compile Include="Skin\LinearGradient.cs" />
     <Compile Include="SupperPanel.cs">
       <SubType>Component</SubType>
     </Compile>
