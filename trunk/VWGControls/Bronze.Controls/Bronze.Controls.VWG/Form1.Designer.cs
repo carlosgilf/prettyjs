@@ -83,7 +83,7 @@
             this.mobjImageProcessor.ImagePath = null;
             this.mobjImageProcessor.Location = new System.Drawing.Point(23, 9);
             this.mobjImageProcessor.Name = "mobjImageProcessor";
-            this.mobjImageProcessor.Selection = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.mobjImageProcessor.Selection = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.mobjImageProcessor.Size = new System.Drawing.Size(464, 316);
             this.mobjImageProcessor.TabIndex = 0;
             // 
