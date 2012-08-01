@@ -39,6 +39,8 @@ namespace Bronze.Controls.Examples
             this.treeNode6 = new Gizmox.WebGUI.Forms.TreeNode();
             this.treeNode2 = new Gizmox.WebGUI.Forms.TreeNode();
             this.treeNode3 = new Gizmox.WebGUI.Forms.TreeNode();
+            this.supperPanel2 = new Bronze.Controls.VWG.SupperPanel();
+            this.supperPanel3 = new Bronze.Controls.VWG.SupperPanel();
             this.supperPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@ namespace Bronze.Controls.Examples
             this.supperPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.supperPanel1.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.Gray);
             this.supperPanel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.supperPanel1.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Gray, 0, 0, 50);
+            this.supperPanel1.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.supperPanel1.Controls.Add(this.treeView1);
             this.supperPanel1.CustomStyle = "SupperPanelSkin";
             this.supperPanel1.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
@@ -114,10 +116,37 @@ namespace Bronze.Controls.Examples
             this.treeNode3.Text = "treeNode3";
             this.treeNode3.ToolTipText = "";
             // 
+            // supperPanel2
+            // 
+            this.supperPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.supperPanel2.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.supperPanel2.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Gray, 5, 5, 5);
+            this.supperPanel2.CustomStyle = "SupperPanelSkin";
+            this.supperPanel2.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
+            this.supperPanel2.Location = new System.Drawing.Point(387, 93);
+            this.supperPanel2.Name = "supperPanel2";
+            this.supperPanel2.Radius = new Gizmox.WebGUI.Forms.CornerRadius(5);
+            this.supperPanel2.Size = new System.Drawing.Size(200, 100);
+            this.supperPanel2.TabIndex = 1;
+            // 
+            // supperPanel3
+            // 
+            this.supperPanel3.BackColor = System.Drawing.Color.DarkGray;
+            this.supperPanel3.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.supperPanel3.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Teal, 0, 0, 3);
+            this.supperPanel3.CustomStyle = "SupperPanelSkin";
+            this.supperPanel3.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
+            this.supperPanel3.Location = new System.Drawing.Point(387, 262);
+            this.supperPanel3.Name = "supperPanel3";
+            this.supperPanel3.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
+            this.supperPanel3.Size = new System.Drawing.Size(200, 100);
+            this.supperPanel3.TabIndex = 2;
+            // 
             // Form2
             // 
+            this.Controls.Add(this.supperPanel3);
+            this.Controls.Add(this.supperPanel2);
             this.Controls.Add(this.supperPanel1);
-            this.FormBorderStyle = Gizmox.WebGUI.Forms.FormBorderStyle.Sizable;
             this.Size = new System.Drawing.Size(694, 568);
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -136,6 +165,8 @@ namespace Bronze.Controls.Examples
         private TreeNode treeNode6;
         private TreeNode treeNode2;
         private TreeNode treeNode3;
+        private VWG.SupperPanel supperPanel2;
+        private VWG.SupperPanel supperPanel3;
 
 
     }

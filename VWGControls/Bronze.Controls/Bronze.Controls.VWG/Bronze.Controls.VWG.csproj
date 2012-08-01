@@ -111,6 +111,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HtcFileLoader.cs" />
     <Compile Include="Skin\BoxShadowValue.cs" />
     <Compile Include="Skin\CornerRadiusValue.cs">
       <SubType>Code</SubType>
