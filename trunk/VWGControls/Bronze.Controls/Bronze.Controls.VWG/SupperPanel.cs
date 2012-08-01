@@ -111,30 +111,6 @@ namespace Bronze.Controls.VWG
             }
         }
 
-        protected override Gizmox.WebGUI.Common.Interfaces.IGatewayHandler ProcessGatewayRequest(System.Web.HttpContext objHttpContext, string strAction)
-        {
-            if (strAction.StartsWith("HTC"))
-            {
-                string strFilename = strAction.Substring(3) + ".htc";
-                using (System.IO.Stream stream = Assembly.GetExecutingAssembly()
-                               .GetManifestResourceStream("Bronze.Controls.VWG.OtherResources.PIE.htc"))
-                using (StreamReader reader = new StreamReader(stream))
-                {
-                    char[] objBuffer = new char[stream.Length];
-                    reader.ReadBlock(objBuffer, 0, (int)stream.Length);
-                    objHttpContext.Response.Expires = 10000;
-                    objHttpContext.Response.Cache.SetExpires(DateTime.Now.AddYears(1));
-                    objHttpContext.Response.Cache.SetCacheability(System.Web.HttpCacheability.Public);
-                    objHttpContext.Response.ContentType = "text/x-component";
-                    objHttpContext.Response.Write(objBuffer, 0, objBuffer.Length);
-                    objHttpContext.Response.Flush();
-                }
-                return null;
-            }
-            else return base.ProcessGatewayRequest(objHttpContext, strAction);
-        }
-
-  
 
         protected override void RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext objContext, Gizmox.WebGUI.Common.Interfaces.IAttributeWriter objWriter)
         {
@@ -152,13 +128,10 @@ namespace Bronze.Controls.VWG
                     //通过XLST重写只能设置第二层div的样式，所以还需要通过js隐藏最外层的div
                     this.InvokeScript(string.Format("$('#VWG_{0}').css('visibility','hidden')", this.ID));
                 }
-
-                //$("<style type='text/css'> .SupperPanel-Radius{ color:#f00; font-weight:bold;} </style>").appendTo("head");
             }
 
-            var htcUrl = (new Gizmox.WebGUI.Common.Gateways.GatewayReference(this, "HTC", true)).ToString();
-
-            var uuu=new Gizmox.WebGUI.Common.Resources.AssemblyResourceHandle(this.GetType(), "Bronze.Controls.VWG.OtherResources.PIE.htc");
+            string url = new Gizmox.WebGUI.Common.Resources.StaticGatewayResourceHandle("Bronze.Controls.VWG.HtcFileLoader", typeof(Bronze.Controls.VWG.HtcFileLoader)).ToString();
+            //var uuu=new Gizmox.WebGUI.Common.Resources.AssemblyResourceHandle(this.GetType(), "Bronze.Controls.VWG.OtherResources.PIE.htc");
             if (Radius != CornerRadius.Empty)
             {
                 CornerRadiusValue rd = this.Radius;
@@ -173,8 +146,6 @@ namespace Bronze.Controls.VWG
                 objWriter.WriteAttributeString("BoxShadow", style);
             }
         }
-
-
     }
 
     public enum DisplayMode

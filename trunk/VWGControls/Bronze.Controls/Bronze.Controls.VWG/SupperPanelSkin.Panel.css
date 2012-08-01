@@ -6,7 +6,8 @@
 
 .SupperPanel-Radius
 {
-   behavior: url(/PIE.htc);
+	behavior: url(Static.Bronze.Controls.VWG.HtcFileLoader.wgx);
+   /*behavior: url(/PIE.htc);*/
 }
 
 .SupperPanel-Hidden
