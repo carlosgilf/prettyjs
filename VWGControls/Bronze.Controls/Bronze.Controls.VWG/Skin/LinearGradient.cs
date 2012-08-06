@@ -7,5 +7,6 @@ namespace Bronze.Controls.VWG.Skin
 {
     public class LinearGradient
     {
+
     }
 }

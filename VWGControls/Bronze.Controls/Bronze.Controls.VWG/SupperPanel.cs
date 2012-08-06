@@ -28,6 +28,7 @@ using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms.Skins;
 using System.Reflection;
 using System.IO;
+using Gizmox.WebGUI;
 
 #endregion Using
 
@@ -66,6 +67,27 @@ namespace Bronze.Controls.VWG
             }
         }
 
+        private int mobjOpacity = 100;
+        [EditorBrowsable(EditorBrowsableState.Always)]
+        public int Opacity
+        {
+            get
+            {
+                return mobjOpacity;
+            }
+            set
+            {
+                mobjOpacity = value;
+                if (value >= 0 && value <= 100)
+                {
+                    mobjOpacity = value;
+                }
+                else
+                {
+                    throw new Exception("You must supply values between 1 and 100.");
+                }
+            }
+        }
 
         protected virtual BoxShadow DefaultBoxShadow
         {
@@ -139,11 +161,16 @@ namespace Bronze.Controls.VWG
                 objWriter.WriteAttributeString("Radius", style);
             }
 
-            if (this.BoxShadow!= this.DefaultBoxShadow)
+            if (this.BoxShadow != this.DefaultBoxShadow)
             {
                 BoxShadowValue bs = this.BoxShadow;
-                string style=bs.GetStyle();
+                string style = bs.GetStyle();
                 objWriter.WriteAttributeString("BoxShadow", style);
+            }
+            if (mobjOpacity != 1)
+            {
+                OpacityValue op = new OpacityValue(mobjOpacity);
+                objWriter.WriteAttributeString(WGAttributes.Opacity, op.GetValue(objContext));
             }
         }
     }
