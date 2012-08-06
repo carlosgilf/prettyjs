@@ -53,9 +53,6 @@ namespace Bronze.Controls.Examples
             // 
             this.ItemDateTime.Location = new System.Drawing.Point(225, 17);
             this.ItemDateTime.Name = "ItemDateTime";
-            this.ItemDateTime.SelectionEnd = new System.DateTime(2012, 7, 7, 0, 0, 0, 0);
-            this.ItemDateTime.SelectionRange = new Gizmox.WebGUI.Forms.SelectionRange(new System.DateTime(2012, 7, 7, 0, 0, 0, 0), new System.DateTime(2012, 7, 7, 0, 0, 0, 0));
-            this.ItemDateTime.SelectionStart = new System.DateTime(2012, 7, 7, 0, 0, 0, 0);
             this.ItemDateTime.Size = new System.Drawing.Size(220, 180);
             this.ItemDateTime.TabIndex = 7;
             this.ItemDateTime.Value = new System.DateTime(2012, 7, 7, 0, 0, 0, 0);
