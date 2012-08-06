@@ -331,9 +331,6 @@ namespace Bronze.Controls.Examples
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(10, 105);
             this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.SelectionEnd = new System.DateTime(2011, 7, 5, 13, 45, 51, 984);
-            this.monthCalendar1.SelectionRange = new Gizmox.WebGUI.Forms.SelectionRange(new System.DateTime(2011, 7, 5, 0, 0, 0, 0), new System.DateTime(2011, 7, 5, 0, 0, 0, 0));
-            this.monthCalendar1.SelectionStart = new System.DateTime(2011, 7, 5, 13, 45, 51, 984);
             this.monthCalendar1.Size = new System.Drawing.Size(269, 155);
             this.monthCalendar1.TabIndex = 3;
             this.monthCalendar1.Value = new System.DateTime(2011, 7, 5, 13, 45, 51, 984);

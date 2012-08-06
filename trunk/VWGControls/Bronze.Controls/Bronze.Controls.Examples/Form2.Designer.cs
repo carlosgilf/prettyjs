@@ -194,7 +194,7 @@ namespace Bronze.Controls.Examples
             this.supperPanel4.Location = new System.Drawing.Point(281, 20);
             this.supperPanel4.Name = "supperPanel4";
             this.supperPanel4.Opacity = 50;
-            this.supperPanel4.Radius = new Gizmox.WebGUI.Forms.CornerRadius(5);
+            this.supperPanel4.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
             this.supperPanel4.Size = new System.Drawing.Size(200, 100);
             this.supperPanel4.TabIndex = 3;
             // 
