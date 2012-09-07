@@ -47,6 +47,8 @@ namespace Bronze.Controls.Examples
             this.menuItem3 = new Gizmox.WebGUI.Forms.MenuItem();
             this.menuItem4 = new Gizmox.WebGUI.Forms.MenuItem();
             this.supperPanel4 = new Bronze.Controls.VWG.SupperPanel();
+            this.button1 = new Gizmox.WebGUI.Forms.Button();
+            this.button2 = new Gizmox.WebGUI.Forms.Button();
             this.supperPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,9 +200,29 @@ namespace Bronze.Controls.Examples
             this.supperPanel4.Size = new System.Drawing.Size(200, 100);
             this.supperPanel4.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(530, 79);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(530, 128);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "button2";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form2
             // 
             this.BackColor = System.Drawing.Color.Thistle;
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.supperPanel4);
             this.Controls.Add(this.supperPanel3);
             this.Controls.Add(this.supperPanel2);
@@ -232,6 +254,8 @@ namespace Bronze.Controls.Examples
         private Gizmox.WebGUI.Forms.MenuItem menuItem3;
         private Gizmox.WebGUI.Forms.MenuItem menuItem4;
         private VWG.SupperPanel supperPanel4;
+        private Button button1;
+        private Button button2;
 
 
     }

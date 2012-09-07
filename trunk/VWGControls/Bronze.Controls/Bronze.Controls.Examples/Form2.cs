@@ -10,6 +10,7 @@ using System.Text;
 
 using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms;
+using Gizmox.WebGUI.Common.Interfaces;
 
 #endregion
 
@@ -32,6 +33,21 @@ namespace Bronze.Controls.Examples
             var node = new NodeF();
             this.treeView1.Nodes.Add(new NodeF());
          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = new Form2();
+            form.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //var invoker = this.Context as IContextMethodInvoker;
+            //invoker.InvokeMethod(this, InvokationUniqueness.Global, "Forms_CloseInlineWindow", this.ID);
+            this.InvokeMethod("Forms_CloseInlineWindow", this.ID);
+            //string name = invoker.GetMethodName(this,"Forms_CloseInlineWindow");
+            //this.InvokeScript(string.Format("{0}({1},event,window)", name,this.ID));
         }
 
     }
