@@ -142,30 +142,6 @@
   <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.css:Presentation" xml:space="preserve">
     <value>100</value>
   </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt" xml:space="preserve">
-    <value>TemplateResource</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:CompilerActions" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:FileName" xml:space="preserve">
-    <value>HoverPanelSkin.Panel.xslt</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:ContentType" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>HoverPanelSkin.Panel.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:PresentationRole" xml:space="preserve">
-    <value>103</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:PresentationEngine" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.xslt:Presentation" xml:space="preserve">
-    <value>100</value>
-  </data>
   <data name="Skin:Bronze.Controls.VWG.HoverPanelSkin:Panel.js" xml:space="preserve">
     <value>ScriptResource</value>
   </data>

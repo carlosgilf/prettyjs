@@ -27,6 +27,7 @@ using Gizmox.WebGUI.Forms;
 using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms.Skins;
 using Gizmox.WebGUI.Common.Resources;
+using Gizmox.WebGUI.Common.Interfaces;
 
 #endregion Using
 
@@ -141,7 +142,11 @@ namespace Bronze.Controls.VWG
                 objWriter.WriteAttributeString("OverScript", OnClientMouseOver);
             }
 
-            this.InvokeScript(string.Format("HoverPanel_Init('{0}');", this.ID));
+            var invoker = objContext as IContextMethodInvoker;
+            string methodName = invoker.GetMethodName(this, "HoverPanel_Init");
+            //this.InvokeScript(string.Format("{0}({1},event,window)", name,this.ID));
+
+            this.InvokeScript(string.Format("{0}('{1}');", methodName,this.ID));
 
             if (!string.IsNullOrEmpty(OnClientMouseLeave))
             {

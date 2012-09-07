@@ -95,7 +95,7 @@ function vwg_showMenu(id,option,animate) {
                 $(this).css('z-index',10000);
             }
             obj.css('z-index',200000);
-        })
+        });
         obj[_option.animate](_option);
     }
 };
@@ -109,7 +109,7 @@ function vwg_hideMenu(id,option,animate,hideTimeout) {
         _option.animate=animate;
     }
     if(hideTimeout) {
-        _option.hideTimeout=hideTimeout
+        _option.hideTimeout=hideTimeout;
     }
     var obj=$(Web_GetElementByDataId(id));
 
@@ -155,7 +155,7 @@ function isNumber(n) {
 
     $.fn.dropUp=function (arg,callback) {
         var cfg={ duration: 500,callback: null };
-        if(isNumber(arg)) cfg.duration=arg
+        if(isNumber(arg)) cfg.duration=arg;
         else cfg=$.extend(cfg,arg);
         if(callback) {
             cfg.callback=callback;
