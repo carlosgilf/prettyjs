@@ -14,7 +14,7 @@ namespace Bronze.Controls.VWG
     /// Panel Skin
     /// </summary>
     [Serializable()]
-    public class HoverPanelSkin : Gizmox.WebGUI.Forms.Skins.PanelSkin
+    public class HoverPanelSkin : SupperPanelSkin
     {
         private void InitializeComponent()
         {
