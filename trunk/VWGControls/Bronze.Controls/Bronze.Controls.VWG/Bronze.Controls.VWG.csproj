@@ -66,9 +66,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HoverPanelSkin.HoverPanel.xslt">
-      <DependentUpon>HoverPanelSkin.cs</DependentUpon>
-    </Content>
     <Content Include="HoverPanelSkin.jquery.easing.js">
       <DependentUpon>HoverPanelSkin.cs</DependentUpon>
     </Content>
@@ -76,6 +73,9 @@
       <DependentUpon>HoverPanelSkin.cs</DependentUpon>
     </Content>
     <Content Include="HoverPanelSkin.Panel.js">
+      <DependentUpon>HoverPanelSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="HoverPanelSkin.Panel.xslt">
       <DependentUpon>HoverPanelSkin.cs</DependentUpon>
     </Content>
     <Content Include="ImageProcessor.bmp" />

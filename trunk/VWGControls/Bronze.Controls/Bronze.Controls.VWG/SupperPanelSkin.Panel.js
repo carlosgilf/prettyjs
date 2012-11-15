@@ -4,6 +4,11 @@ function SupperPanel_Init(id, img) {
         var control = Web_GetElementByDataId(id);
         var objNode = Data_GetNode(id);
         var layer1 = $(control).children("div:first");
+
+        //must found the div who have the class attribute
+        if (!layer1.attr("class")) {
+            layer1=layer1.children("div:first");
+        }
         var radius = Xml_GetAttribute(objNode, "Radius");
         var boxShadow = Xml_GetAttribute(objNode, "BoxShadow");
         if (radius) {
