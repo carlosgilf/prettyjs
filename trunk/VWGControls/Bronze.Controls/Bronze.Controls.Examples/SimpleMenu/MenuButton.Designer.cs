@@ -46,8 +46,6 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.panel1 = new Gizmox.WebGUI.Forms.Panel();
             this.hoverPopup.SuspendLayout();
             this.panelPopuBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.hoverBtn.SuspendLayout();
             this.btnTop.SuspendLayout();
             this.SuspendLayout();
@@ -200,8 +198,6 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.Text = "MenuButton";
             this.hoverPopup.ResumeLayout(false);
             this.panelPopuBottom.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.hoverBtn.ResumeLayout(false);
             this.btnTop.ResumeLayout(false);
             this.ResumeLayout(false);

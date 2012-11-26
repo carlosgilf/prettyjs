@@ -35,8 +35,6 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.pLeft = new Gizmox.WebGUI.Forms.PictureBox();
             this.pRight = new Gizmox.WebGUI.Forms.PictureBox();
             this.buttonLayout = new Gizmox.WebGUI.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRight)).BeginInit();
             this.SuspendLayout();
             // 
             // pLeft
@@ -78,8 +76,6 @@ namespace Bronze.Controls.Examples.SimpleMenu
             this.Size = new System.Drawing.Size(698, 40);
             this.Text = "SupperMenu";
             this.Load += new System.EventHandler(this.SupperMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRight)).EndInit();
             this.ResumeLayout(false);
 
         }
