@@ -1,0 +1,48 @@
+.divtxt
+{
+    padding-right: 3px;
+    padding-left: 3px;
+    font-size: 12px;
+    min-height: 22px;
+    padding-bottom: 3px;
+    overflow: auto;
+    width: 100%;
+    cursor:pointer;
+    line-height: 20px;
+    padding-top: 3px;
+    overflow: auto !important;
+}
+.divtxt .one
+{
+    float: left;
+    white-space: nowrap;
+    height: 20px;
+     margin-left:5px;
+}
+.divtxt .one B
+{
+    font-weight: 300;
+}
+
+.divtxt .one.select
+{
+    color:#fff;
+    background-color: #545f59;
+}
+.divtxt .one.over
+{
+    background-color: #cfd4d1;
+}
+.divtxt INPUT
+{
+    border-top-width: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-left-width: 0px;
+    font-size: 12px;
+    border-bottom-width: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+    padding-top: 0px;
+    border-right-width: 0px;
+}

@@ -5,6 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bronze.Controls.VWG", "Bron
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bronze.Controls.Examples", "Bronze.Controls.Examples\Bronze.Controls.Examples.csproj", "{BA335756-912E-4351-AEB9-2FF3F2EB9485}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RefrenceDlls", "RefrenceDlls", "{3DEA4F66-6D36-4447-BCC7-5D50691532BA}"
+	ProjectSection(SolutionItems) = preProject
+		RefrenceDlls\Bronze.Core.dll = RefrenceDlls\Bronze.Core.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
