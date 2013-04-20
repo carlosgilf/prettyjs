@@ -5,7 +5,6 @@ function selector_Init(id, img) {
         var objNode = Data_GetNode(id);
         var code = Xml_GetAttribute(objNode, "Attr.Code");
         var items = JSON.parse(code);
-        //var obj = $(control);
 
         var obj = $(img).parent();
         obj.VWG_Id = id;
@@ -16,7 +15,6 @@ function selector_Init(id, img) {
             var item = items[i];
             selector_addItem(obj, item, false);
         }
-
     }
 }
 
@@ -58,13 +56,6 @@ var selector_raiseEvent = function (obj, item, isRemove) {
         items.push({ Id: id, Text: text, Value: v, Tooltip: title });
     });
 
-    // Set event values attribuet
-    //    Events_SetEventAttribute(objEvent, "ItemId", item.Id);
-    //    Events_SetEventAttribute(objEvent, "Text", item.Text);
-    //    Events_SetEventAttribute(objEvent, "Value", item.Value);
-    //    Events_SetEventAttribute(objEvent, "Tooltip", item.Tooltip);
-    //    Events_SetEventAttribute(objEvent, "IsRemove", isRemove);
-
     var json = JSON.stringify(items);
     Events_SetEventAttribute(objEvent, "items", json);
 
@@ -81,16 +72,15 @@ function selector_bindItemEvent(obj, uid) {
         hover
         (
             function (e) {
-                $(this).not(".select").not(".in").addClass("over")
+                $(this).not(".select").not(".in").addClass("over");
             },
-            function () { $(this).removeClass("over") }
+            function () { $(this).removeClass("over"); }
         ).
         click(
             function (a) {
                 a.stopPropagation();
                 $(".divtxt .select").removeClass("select");
                 $(this).not(".in").removeClass("over").addClass("select");
-                addBind(obj)
             }
         ).
         dblclick(function (b) {
