@@ -31,18 +31,9 @@ namespace Bronze.Controls.Examples
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.selectorTextBox1 = new Bronze.Controls.VWG.SelectorTextBox();
+            this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(66, 201);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // selectorTextBox1
             // 
@@ -52,8 +43,17 @@ namespace Bronze.Controls.Examples
             this.selectorTextBox1.CustomStyle = "SelectorTextBoxSkin";
             this.selectorTextBox1.Location = new System.Drawing.Point(48, 21);
             this.selectorTextBox1.Name = "selectorTextBox1";
-            this.selectorTextBox1.Size = new System.Drawing.Size(467, 106);
+            this.selectorTextBox1.Size = new System.Drawing.Size(467, 214);
             this.selectorTextBox1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(106, 260);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // SelectorTextBoxFrm
             // 

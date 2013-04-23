@@ -67,73 +67,84 @@ namespace Bronze.Controls.VWG
             }
         }
 
+        [DefaultValue(null)]
+        public string DisplayFormat
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// The SelectionChanged event registration.
+        /// </summary>
+        private static readonly SerializableEvent SelectionChangedEvent = SerializableEvent.Register("SelectionChanged", typeof(EventHandler), typeof(ImageProcessor));
+
+
+
+        /// <summary>
+        /// Occurs when selection changed.
+        /// </summary>
+        public event EventHandler SelectionChanged
+        {
+            add
+            {
+                this.AddHandler(SelectorTextBox.SelectionChangedEvent, value);
+            }
+            remove
+            {
+                this.RemoveHandler(SelectorTextBox.SelectionChangedEvent, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets the hanlder for the SelectionChanged event.
+        /// </summary>
+        private EventHandler SelectionChangedHandler
+        {
+            get
+            {
+                return (EventHandler)this.GetHandler(SelectorTextBox.SelectionChangedEvent);
+            }
+        }
+
+        protected override EventTypes GetCriticalEvents()
+        {
+            EventTypes enmTypes = base.GetCriticalEvents();
+            if (SelectionChangedHandler != null) enmTypes |= EventTypes.SelectionChange;
+            return enmTypes;
+        }
+
         protected override void RenderAttributes(IContext context, IAttributeWriter objWriter)
         {
             base.RenderAttributes(context, objWriter);
             string json = "";
             json = Newtonsoft.Json.JsonConvert.SerializeObject(this.Items);
             objWriter.WriteAttributeString(WGAttributes.Code, json);
+            if (!string.IsNullOrWhiteSpace(DisplayFormat))
+            {
+                 objWriter.WriteAttributeString(WGAttributes.Format, DisplayFormat);
+            }
+        }
+
+        protected virtual void OnSelectionChange(EventArgs objArgs)
+        {
+            if (SelectionChangedHandler != null)
+            {
+                SelectionChangedHandler(this, objArgs);
+            }
         }
 
         protected override void FireEvent(IEvent objEvent)
         {
             if (objEvent.Type == "ItemsChanged")
             {
-
                 var json = objEvent["items"];
                 var items = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Selector>>(json);
                 if (items != null)
                 {
                     this.mobjItems = items;
+                    OnSelectionChange(EventArgs.Empty);
                 }
-
-                //    var id = objEvent["ItemId"];
-                //    var isRemove=objEvent["IsRemove"];
-                //    if (string.IsNullOrEmpty(id))
-                //    {
-                //        return;
-                //    }
-
-
-                //    Selector findItem = null;
-                //    foreach (var item in this.Items)
-                //    {
-                //        if (item.Id.ToString() == id)
-                //        {
-                //            findItem = item;
-                //        }
-                //    }
-                //    if (isRemove == "1" )
-                //    {
-                //        if (findItem!=null)
-                //        {
-                //            this.Items.Remove(findItem);
-                //        }
-                //    }
-                //    else
-                //    {
-                //        var item = new Selector();
-
-                //        item.Id = id;
-                //        if (objEvent["Text"] != null)
-                //        {
-                //            item.Text = objEvent["Text"];
-                //        }
-
-                //        if (objEvent["Value"] != null)
-                //        {
-                //            item.Value = objEvent["Value"];
-                //        }
-
-                //        if (objEvent["Tooltip"] != null)
-                //        {
-                //            item.Tooltip = objEvent["Tooltip"];
-                //        }
-                //        this.Items.Add(item);
-                //    }
-
-                //}
-
             }
 
 
@@ -700,7 +711,7 @@ namespace Bronze.Controls.VWG
                 set { this.value = value; }
             }
 
-            //[Newtonsoft.Json.JsonProperty(PropertyName="uid")]
+           
             public object Id
             {
                 get;
