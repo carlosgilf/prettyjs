@@ -21,8 +21,9 @@ namespace Bronze.Controls.Examples.Menu
         private void InitializeComponent()
         {
             this.Height = 40;
+            //this.BackColor = ColorTranslator.FromHtml("#a1a1a1");
             this.BackgroundImage = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle("MenuBlue.bar_bg.gif");
-            this.BoxShadow = new Bronze.Controls.VWG.BoxShadow(Color.Gray, 2, 6, 11);
+            //this.BoxShadow = new Bronze.Controls.VWG.BoxShadow(Color.Gray, 2, 6, 11);
             //this.BoxShadow = new Bronze.Controls.VWG.BoxShadow(ColorTranslator.FromHtml("#a1a1a1"), 2, 5, 8);
             this.Radius = new Gizmox.WebGUI.Forms.CornerRadius(10);
         }
