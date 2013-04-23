@@ -2,37 +2,57 @@
 {
     padding-right: 3px;
     padding-left: 3px;
+    padding-top: 3px;
     font-size: 12px;
     min-height: 22px;
+    line-height: 20px;
     padding-bottom: 3px;
     overflow: auto;
     width: 100%;
-    cursor:pointer;
-    line-height: 20px;
-    padding-top: 3px;
+    cursor: text;
     overflow: auto !important;
+    display: inline-block!important;
 }
+
 .divtxt .one
 {
+    cursor: pointer;
     float: left;
     white-space: nowrap;
     height: 20px;
-     margin-left:5px;
+    margin-right: 4px;
+    margin-left: 4px;
+    color:Black;
 }
+
+
+.divtxt .one.select
+{
+    background-color: #55798C;
+    color: #ffffff!important;
+}
+
+.divtxt .one.select * 
+{
+    color:#ffffff!important;
+}
+
+.divtxt .one.over
+{
+    background-color: #cfd4d1;
+}
+
+.divtxt .one.placeholder
+{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
 .divtxt .one B
 {
     font-weight: 300;
 }
 
-.divtxt .one.select
-{
-    color:#fff;
-    background-color: #545f59;
-}
-.divtxt .one.over
-{
-    background-color: #cfd4d1;
-}
 .divtxt INPUT
 {
     border-top-width: 0px;
@@ -45,4 +65,12 @@
     margin: 0px;
     padding-top: 0px;
     border-right-width: 0px;
+    height: 14px;
+    display: inline-block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    width: 100%;
 }
