@@ -41,9 +41,11 @@ namespace Bronze.Controls.Examples
             this.selectorTextBox1.BackColor = System.Drawing.Color.White;
             this.selectorTextBox1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
             this.selectorTextBox1.CustomStyle = "SelectorTextBoxSkin";
+            this.selectorTextBox1.Editable = true;
             this.selectorTextBox1.Location = new System.Drawing.Point(48, 21);
             this.selectorTextBox1.Name = "selectorTextBox1";
             this.selectorTextBox1.Size = new System.Drawing.Size(467, 214);
+            this.selectorTextBox1.SplitString = ",;";
             this.selectorTextBox1.TabIndex = 0;
             // 
             // button1

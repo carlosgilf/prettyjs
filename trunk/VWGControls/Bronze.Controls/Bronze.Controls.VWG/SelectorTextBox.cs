@@ -53,6 +53,38 @@ namespace Bronze.Controls.VWG
         private List<Selector> mobjItems = null;
 
 
+        private bool editable = false;
+
+        /// <summary>
+        /// ÊÇ·ñ¿É±à¼­
+        /// </summary>
+        [DefaultValue(false)]
+        public bool Editable
+        {
+            get { return editable; }
+            set
+            {
+                editable = value;
+                this.Update();
+            }
+        }
+
+        private string splitStr;
+
+        /// <summary>
+        /// ·Ö¸ô×Ö·û
+        /// </summary>
+        [DefaultValue(null)]
+        public string SplitString
+        {
+            get { return splitStr; }
+            set
+            {
+                splitStr = value;
+                this.Update();
+            }
+        }
+
         [Browsable(false)]
         [DefaultValue(null)]
         public List<Selector> Items
@@ -142,7 +174,7 @@ namespace Bronze.Controls.VWG
             objWriter.WriteAttributeString(WGAttributes.Code, json);
             if (!string.IsNullOrWhiteSpace(DisplayFormat))
             {
-                 objWriter.WriteAttributeString(WGAttributes.Format, DisplayFormat);
+                objWriter.WriteAttributeString(WGAttributes.Format, DisplayFormat);
             }
             if (!string.IsNullOrWhiteSpace(this.VaildExpression))
             {
@@ -151,6 +183,11 @@ namespace Bronze.Controls.VWG
             if (!string.IsNullOrWhiteSpace(this.VaildExpressionMsg))
             {
                 objWriter.WriteAttributeString(WGAttributes.InValidateMessage, VaildExpressionMsg);
+            }
+            objWriter.WriteAttributeString(WGAttributes.LabelEdit, this.Editable ? "1" : "0");
+            if (!string.IsNullOrEmpty(SplitString))
+            {
+                objWriter.WriteAttributeString("SplitStr", this.SplitString);
             }
         }
 
@@ -739,7 +776,7 @@ namespace Bronze.Controls.VWG
                 set { this.value = value; }
             }
 
-           
+
             public object Id
             {
                 get;
