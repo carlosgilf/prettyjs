@@ -106,6 +106,14 @@ namespace Bronze.Controls.VWG
             set;
         }
 
+        [DefaultValue(null)]
+        public string ClientInputDisplayFormat
+        {
+            get;
+            set;
+        }
+
+
         /// <summary>
         /// 验证的表达式
         /// </summary>
@@ -175,6 +183,10 @@ namespace Bronze.Controls.VWG
             if (!string.IsNullOrWhiteSpace(DisplayFormat))
             {
                 objWriter.WriteAttributeString(WGAttributes.Format, DisplayFormat);
+            }
+            if (!string.IsNullOrWhiteSpace(ClientInputDisplayFormat))
+            {
+                objWriter.WriteAttributeString("ClientInputDisplayFormat", ClientInputDisplayFormat);
             }
             if (!string.IsNullOrWhiteSpace(this.VaildExpression))
             {
@@ -784,6 +796,15 @@ namespace Bronze.Controls.VWG
             }
 
             public string Tooltip
+            {
+                get;
+                set;
+            }
+
+            /// <summary>
+            /// 来自客户端用户自行输入
+            /// </summary>
+            public bool FromClient
             {
                 get;
                 set;

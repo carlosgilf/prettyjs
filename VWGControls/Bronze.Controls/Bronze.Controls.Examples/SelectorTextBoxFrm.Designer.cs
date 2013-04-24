@@ -42,9 +42,9 @@ namespace Bronze.Controls.Examples
             this.selectorTextBox1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
             this.selectorTextBox1.CustomStyle = "SelectorTextBoxSkin";
             this.selectorTextBox1.Editable = true;
-            this.selectorTextBox1.Location = new System.Drawing.Point(48, 21);
+            this.selectorTextBox1.Location = new System.Drawing.Point(9, 21);
             this.selectorTextBox1.Name = "selectorTextBox1";
-            this.selectorTextBox1.Size = new System.Drawing.Size(467, 214);
+            this.selectorTextBox1.Size = new System.Drawing.Size(662, 214);
             this.selectorTextBox1.SplitString = ",;";
             this.selectorTextBox1.TabIndex = 0;
             // 
@@ -61,7 +61,7 @@ namespace Bronze.Controls.Examples
             // 
             this.Controls.Add(this.button1);
             this.Controls.Add(this.selectorTextBox1);
-            this.Size = new System.Drawing.Size(596, 466);
+            this.Size = new System.Drawing.Size(692, 466);
             this.Text = "SelectorTextBoxFrm";
             this.Load += new System.EventHandler(this.SelectorTextBoxFrm_Load);
             this.ResumeLayout(false);
