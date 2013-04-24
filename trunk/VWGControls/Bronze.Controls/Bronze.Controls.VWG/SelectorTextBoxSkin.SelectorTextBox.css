@@ -25,6 +25,11 @@
     color:Black;
 }
 
+.divtxt .one.error
+{
+    color:Red;
+}
+
 
 .divtxt .one.select
 {
