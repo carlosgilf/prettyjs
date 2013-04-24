@@ -1,4 +1,19 @@
 ﻿(function ($) {
+    $.fn.getCursorPosition = function() {
+        var input = this.get(0);
+        if (!input) return; // No (input) element found
+        if ('selectionStart' in input) {
+            // Standard-compliant browsers
+            return input.selectionStart;
+        } else if (document.selection) {
+            // IE
+            input.focus();
+            var sel = document.selection.createRange();
+            var selLen = document.selection.createRange().text.length;
+            sel.moveStart('character', -input.value.length);
+            return sel.text.length - selLen;
+        }
+    };
 
     $.fn.autoGrowInput = function (o) {
 
@@ -81,43 +96,71 @@ function selector_Init(id, img) {
         obj.click(function (e) {
             e.stopPropagation();
 
-            var lastEl = findPrevItem(obj,e);
-            if (lastEl) {
-                $(".divtxt .select").removeClass("select");
+            if (e.srcElement.type == "text" ) {
+                e.srcElement.focus();
+                return;
+            }
+            var x = e.clientX; var y = e.clientY;
+            var lastEl = null;
+            var firstY_ele = null;
+            //找到鼠标点击点的上个对应的item
+            obj.find(".one").each(function (i, val) {
+                var offset = $(val).offset();
+                if (y >= offset.top && y <= offset.top + 20) {
+                    if (offset.left < x) {
+                        lastEl = val;
+                    }
+                    if (firstY_ele==null) {
+                        firstY_ele = val;
+                    }
+                }
+            });
 
+            $(".divtxt .select").removeClass("select");
+
+            var boxWidth = $.browser.msie ? 15 : 80;
+
+			var placeHolder = $("<div uid='" + uid + "' class='one placeholder' style='width:" + boxWidth + "px;'><input vwgfocuselement='1' vwgeditable='1' type='input' tabindex='1' autocomplete='off'><b unselectable='on'>&nbsp</b></div>");
+            if(lastEl){
                 var uid = $(lastEl).attr("uid");
                 if (uid == $('.placeholder').attr("uid")) {
                     $('.placeholder input').focus();
                     return;
                 }
                 $('.placeholder').remove();
-
-                var boxWidth = $.browser.msie ? 15 : 80;
-
-
-                $("<div uid='" + uid + "' class='one placeholder' style='width:" + boxWidth + "px;'><input vwgfocuselement='1' vwgeditable='1' type='input' tabindex='1' autocomplete='off'><b unselectable='on'>&nbsp</b></div>")
-                    .insertAfter(lastEl);
-                $('.placeholder').mousedown(function (ev) { ev.stopPropagation(); })
-                    .click(function (ev) { ev.stopPropagation(); $(".divtxt .select").removeClass("select"); });
-
-                $('.placeholder input').focus().autoGrowInput({
-                    comfortZone: 10,
-                    minWidth: boxWidth,
-                    maxWidth: 260,
-                    callback: function (w) { $('.placeholder').width(w); }
-                })
-                .blur(function (eve) {
-                    var inputText = $(this).val();
-                    if ($.trim(inputText).length > 0) {
-                        selector_addItem(obj, { Text: inputText, Id: inputText }, false, lastEl);
-                        $('.placeholder').remove();
-                    }
-                });
-
+                placeHolder.insertAfter(lastEl);
             }
-        });
+            else if(firstY_ele){
+                $('.placeholder').remove();
+                placeHolder.insertBefore(firstY_ele);
+            }
+            else if($(".divtxt .one").length==0){
+                $('.placeholder').remove();
+                placeHolder.appendTo(obj);
+            }
 
-        
+            $('.placeholder').mousedown(function (ev) { ev.stopPropagation(); })
+                .click(function (ev) { ev.stopPropagation(); $(".divtxt .select").removeClass("select"); });
+
+            $('.placeholder input').focus().autoGrowInput({
+                comfortZone: 10,
+                minWidth: boxWidth,
+                maxWidth: 260,
+                callback: function (w) { $('.placeholder').width(w); }
+            }).keydown(function(ev){
+                if (ev.keyCode==37) {
+                    var pos=$(this).getCursorPosition();
+                    //alert(pos);
+                }
+            })
+            .blur(function (eve) {
+                var inputText = $(this).val();
+                if ($.trim(inputText).length > 0) {
+                    selector_addItem(obj, { Text: inputText, Id: inputText }, false, lastEl);
+                    $('.placeholder').remove();
+                }
+            });
+        });
 
         selector_addBindKey(obj);
         for (var i = 0; i < items.length; i++) {
@@ -125,35 +168,6 @@ function selector_Init(id, img) {
             selector_addItem(obj, item, false);
         }
     }
-}
-
-//找到鼠标点击点的上个对应的项目
-function findPrevItem(obj,e) {
-    if (e.srcElement.type == "text" ) {
-        e.srcElement.focus();
-        return;
-    }
-    var x = e.clientX; var y = e.clientY;
-    var lastEl = null;
-    var lastY_ele = null;
-    obj.find(".one").each(function (i, val) {
-        var offset = $(val).offset();
-        if (y >= offset.top && y <= offset.top + 20) {
-            if (offset.left < x) {
-                lastEl = val;
-            }
-            lastY_ele = val;
-        }
-    });
-
-    if (!lastEl) {
-        lastEl = lastY_ele;
-    }
-//    if (!lastEl) {
-//        lastEl = obj.find(".one").not(".placeholder").last();
-//    }
-
-    return lastEl;
 }
 
 //用于外部js调用
