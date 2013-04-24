@@ -75,6 +75,26 @@ namespace Bronze.Controls.VWG
         }
 
         /// <summary>
+        /// 验证的表达式
+        /// </summary>
+        [DefaultValue(null)]
+        public string VaildExpression
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 验证失败现实的消息
+        /// </summary>
+        [DefaultValue(null)]
+        public string VaildExpressionMsg
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// The SelectionChanged event registration.
         /// </summary>
         private static readonly SerializableEvent SelectionChangedEvent = SerializableEvent.Register("SelectionChanged", typeof(EventHandler), typeof(ImageProcessor));
@@ -123,6 +143,14 @@ namespace Bronze.Controls.VWG
             if (!string.IsNullOrWhiteSpace(DisplayFormat))
             {
                  objWriter.WriteAttributeString(WGAttributes.Format, DisplayFormat);
+            }
+            if (!string.IsNullOrWhiteSpace(this.VaildExpression))
+            {
+                objWriter.WriteAttributeString(WGAttributes.ValueValidationExpression, VaildExpression);
+            }
+            if (!string.IsNullOrWhiteSpace(this.VaildExpressionMsg))
+            {
+                objWriter.WriteAttributeString(WGAttributes.InValidateMessage, VaildExpressionMsg);
             }
         }
 
