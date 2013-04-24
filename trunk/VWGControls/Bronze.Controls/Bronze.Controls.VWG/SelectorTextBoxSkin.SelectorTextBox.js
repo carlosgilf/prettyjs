@@ -96,11 +96,14 @@ function selector_Init(id, img) {
         var validExpMsg = Xml_GetAttribute(objNode, "Attr.InValidateMessage");
         var canEdit = Xml_GetAttribute(objNode, "Attr.LabelEdit") == "1";
         var splitStr = Xml_GetAttribute(objNode, "SplitStr");
+        var clientInputDisplayFormat = Xml_GetAttribute(objNode, "ClientInputDisplayFormat");
+
 
         var items = JSON.parse(code);
 
         var obj = $(img).parent();
         obj.splitChar = splitStr;
+        obj.clientInputDisplayFormat = clientInputDisplayFormat;
         obj.VWG_Id = id;
         obj.displayFormat = displayFormat;
         if (validExp) {
@@ -167,7 +170,7 @@ function selector_Init(id, img) {
 function insertPlaceHoler(obj, element, action) {
 
     var boxWidth = $.browser.msie ? 8 : 80;
-    
+
     var placeHolder = $("<div class='one placeholder' style='width:" + boxWidth + "px;'><input vwgfocuselement='1' vwgeditable='1' type='input' tabindex='1' autocomplete='off'><b unselectable='on'>&nbsp</b></div>");
     if (element == null) {
         if (last.length > 0) {
@@ -219,7 +222,7 @@ function insertPlaceHoler(obj, element, action) {
 
 
     $('.placeholder input').focus().autoGrowInput({
-        comfortZone: 8,
+        comfortZone: 12,
         minWidth: boxWidth,
         maxWidth: 260,
         callback: function (w) {
@@ -274,7 +277,7 @@ function insertPlaceHoler(obj, element, action) {
         if (obj.splitChar.indexOf(pressChar) >= 0) {
             var inputText = $(this).val();
             if ($.trim(inputText).length > 0) {
-                var item = selector_addItem(obj, { Text: inputText, Value: inputText, Id: inputText }, false, element);
+                var item = selector_addItem(obj, { FromClient: true, Text: inputText, Value: inputText, Id: inputText }, false, element);
                 event.preventDefault();
                 if (item && item.length > 0) {
                     removePlaceHolder()
@@ -288,11 +291,11 @@ function insertPlaceHoler(obj, element, action) {
         var input = $(this);
         setTimeout(function () {
             //TODO 处理点击divtxt的情况
-//            var target = eve.explicitOriginalTarget || document.activeElement;
-//            if ($(target).attr('class') == 'divtxt') {
-//                input.focus();
-//                return;
-//            }
+            //            var target = eve.explicitOriginalTarget || document.activeElement;
+            //            if ($(target).attr('class') == 'divtxt') {
+            //                input.focus();
+            //                return;
+            //            }
 
             if ($('.placeholder').attr('move') == 1) {
                 $('.placeholder').attr('move', 0);
@@ -301,7 +304,7 @@ function insertPlaceHoler(obj, element, action) {
             }
 
             if ($.trim(inputText).length > 0) {
-                var item = selector_addItem(obj, { Text: inputText, Value: inputText, Id: inputText }, false, element);
+                var item = selector_addItem(obj, { FromClient: true, Text: inputText, Value: inputText, Id: inputText }, false, element);
                 if (item && item.length > 0) {
                     removePlaceHolder();
                 }
@@ -337,6 +340,10 @@ function selector_addItem(obj, item, isInit, insertAfterEle) {
     text = item.Text || "";
     var displayText = text;
     var displayFormat = obj.displayFormat;
+    if (item.FromClient) {
+        displayFormat = obj.clientInputDisplayFormat;
+    }
+
 
     //判断insertAfterEle对象是否存在dom中
     if ($(insertAfterEle).parent().length == 0)
@@ -373,7 +380,7 @@ function selector_addItem(obj, item, isInit, insertAfterEle) {
         if (!isValid) {
             className = className + " error";
         }
-        var itemHtml = "<div class='" + className + "' txt='" + text + "' val='" + value + "' uid='" + uid + "' title='" + title + "'>" + displayText + "<a href='javascript:;' class='addr_del' name='del'></a></div>";
+        var itemHtml = "<div class='" + className + "' client='" + (item.FromClient?1:0) +"' txt='" + text + "' val='" + value + "' uid='" + uid + "' title='" + title + "'>" + displayText + "<a href='javascript:;' class='addr_del' name='del'></a></div>";
         if (insertAfterEle) {
             $(itemHtml).insertAfter(insertAfterEle);
         }
@@ -401,7 +408,12 @@ var selector_raiseEvent = function (obj, item, isRemove) {
         var text = $(val).attr("txt");
         var id = $(val).attr("uid");
         var title = $(val).attr("title");
-        items.push({ Id: id, Text: text, Value: v, Tooltip: title });
+        var fromClient = $(val).attr("client");
+        var serverObject = { Id: id, Text: text, Value: v, Tooltip: title };
+        if (fromClient == "1") {
+            serverObject.FromClient = true;
+        }
+        items.push(serverObject);
     });
 
     var json = JSON.stringify(items);
@@ -471,7 +483,7 @@ function selector_addBindKey(obj) {
 
 }
 
-function selector_removeItem(obj, item,doNotInsertPlaceHoldler) {
+function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
     var curr = null;
     if (item instanceof jQuery) {
         if (item.length == 0) {
@@ -495,7 +507,7 @@ function selector_removeItem(obj, item,doNotInsertPlaceHoldler) {
                 insertPlaceHoler(obj, prev, "after");
             }
         }
-       
+
         selector_raiseEvent(obj, { Id: uid }, true);
         return true;
     }
