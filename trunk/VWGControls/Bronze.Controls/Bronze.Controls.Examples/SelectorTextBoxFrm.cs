@@ -24,7 +24,7 @@ namespace Bronze.Controls.Examples
 
         private void SelectorTextBoxFrm_Load(object sender, EventArgs e)
         {
-            selectorTextBox1.SplitString = ",\r;\n";
+            selectorTextBox1.SplitString = ",，;；\r;\n";
             selectorTextBox1.VaildExpression = @"^\d+$";
             selectorTextBox1.VaildExpressionMsg = "格式不正确，号码必须为数字";
             selectorTextBox1.DisplayFormat = "{Text}<span style='color: #666666'><{Value}>,</span>";
