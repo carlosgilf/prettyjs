@@ -1,4 +1,5 @@
 ﻿//## jqyery plugins
+
 (function ($) {
     $.fn.getCursorPosition = function () {
         var input = this.get(0);
@@ -96,8 +97,11 @@ function selector_Init(id, img) {
         var validExpMsg = Xml_GetAttribute(objNode, "Attr.InValidateMessage");
         var canEdit = Xml_GetAttribute(objNode, "Attr.LabelEdit") == "1";
         var splitStr = Xml_GetAttribute(objNode, "SplitStr");
-        var clientInputDisplayFormat = Xml_GetAttribute(objNode, "ClientInputDisplayFormat");
+        if (splitStr) {
+            splitStr = splitStr.replace(/\r?\n/g, "\r\n");
+        }
 
+        var clientInputDisplayFormat = Xml_GetAttribute(objNode, "ClientInputDisplayFormat");
 
         var items = JSON.parse(code);
 
@@ -168,13 +172,13 @@ function selector_Init(id, img) {
 
 
 function insertPlaceHoler(obj, element, action) {
-
     var boxWidth = $.browser.msie ? 8 : 80;
 
     var placeHolder = $("<div class='one placeholder' style='width:" + boxWidth + "px;'><input vwgfocuselement='1' vwgeditable='1' type='input' tabindex='1' autocomplete='off'><b unselectable='on'>&nbsp</b></div>");
+
     if (element == null) {
+        var last = $(".divtxt .one").last();
         if (last.length > 0) {
-            var last = $(".divtxt .one").last();
             if (last.attr('class') == 'one placeholder') {
                 $('.placeholder input').focus();
                 return;
@@ -192,7 +196,7 @@ function insertPlaceHoler(obj, element, action) {
             var prevEle = $('.placeholder').prev();
             if (prevEle.length > 0 && prevEle[0] == element) {
                 $('.placeholder input').focus();
-                alert(11);
+                //alert(11);
                 return;
             }
             removePlaceHolder()
@@ -257,7 +261,7 @@ function insertPlaceHoler(obj, element, action) {
             if (pos == 0) {
                 ev.preventDefault();
                 var prev = $('.placeholder').prev();
-                var done = selector_removeItem(obj, prev);
+                var done = selector_removeItem(obj, prev, true);
             }
         }
         else if (ev.keyCode == 46) {
@@ -269,26 +273,42 @@ function insertPlaceHoler(obj, element, action) {
             }
         }
 
-    }).keypress(function (event) {
-        if (obj.splitChar == null) {
-            return;
-        }
-        var pressChar = String.fromCharCode(event.which);
-        if (obj.splitChar.indexOf(pressChar) >= 0) {
-            var inputText = $(this).val();
-            if ($.trim(inputText).length > 0) {
-                var item = selector_addItem(obj, { FromClient: true, Text: inputText, Value: inputText, Id: inputText }, false, element);
-                event.preventDefault();
-                if (item && item.length > 0) {
-                    removePlaceHolder()
-                    insertPlaceHoler(obj, item, "after");
+    })
+     .keypress(function (event) {
+            if (obj.splitChar == null) {
+                return;
+            }
+            var pressChar = String.fromCharCode(event.which);
+            if (obj.splitChar.indexOf(pressChar) >= 0) {
+                var inputText = $(this).val();
+                if ($.trim(inputText).length > 0) {
+                    var item = selector_addItem(obj, { FromClient: true, Text: inputText, Value: inputText, Id: inputText }, false, element);
+                    event.preventDefault();
+                    if (item && item.length > 0) {
+                        removePlaceHolder()
+                        insertPlaceHoler(obj, item, "after");
+                    }
                 }
             }
-        }
-    }).blur(function (eve) {
+     })
+    .blur(function (eve) {
         eve.stopPropagation();
         var inputText = $(this).val();
         var input = $(this);
+
+        if ($('.placeholder').attr('move') == 1) {
+            $('.placeholder').attr('move', 0);
+            $('.placeholder input').focus();
+            return;
+        }
+
+        if ($.trim(inputText).length > 0) {
+            var item = selector_addItem(obj, { FromClient: true, Text: inputText, Value: inputText, Id: inputText }, false, element);
+            if (item && item.length > 0) {
+                removePlaceHolder();
+            }
+        }
+
         setTimeout(function () {
             //TODO 处理点击divtxt的情况
             //            var target = eve.explicitOriginalTarget || document.activeElement;
@@ -297,18 +317,7 @@ function insertPlaceHoler(obj, element, action) {
             //                return;
             //            }
 
-            if ($('.placeholder').attr('move') == 1) {
-                $('.placeholder').attr('move', 0);
-                $('.placeholder input').focus();
-                return;
-            }
 
-            if ($.trim(inputText).length > 0) {
-                var item = selector_addItem(obj, { FromClient: true, Text: inputText, Value: inputText, Id: inputText }, false, element);
-                if (item && item.length > 0) {
-                    removePlaceHolder();
-                }
-            }
 
         }, 1);
 
