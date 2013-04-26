@@ -13,13 +13,12 @@ using Gizmox.WebGUI.Forms;
 
 #endregion
 
-namespace Bronze.Controls.Examples
+namespace Bronze.Controls.VWG
 {
-    public partial class FormTestHoverPanel : Form
+    public partial class Form2 : Form
     {
-        public FormTestHoverPanel()
+        public Form2()
         {
-
             InitializeComponent();
         }
     }

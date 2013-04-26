@@ -48,7 +48,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             }
         }
 
-        public  HoverPanel GetButton(string text)
+        public  SupperHoverPanel GetButton(string text)
         {
             var btn = this.hoverBtn;
             if (text!=null)
@@ -78,7 +78,7 @@ namespace Bronze.Controls.Examples.SimpleMenu
             return sb.ToString();
         }
 
-        public HoverPanel GetPopup(Control menuContent)
+        public SupperHoverPanel GetPopup(Control menuContent)
         {
             var popup = hoverPopup;
             
@@ -104,6 +104,6 @@ namespace Bronze.Controls.Examples.SimpleMenu
     public class ComponentSuit
     {
         public string Script { get; set; }
-        public HoverPanel Panel { get; set; }
+        public SupperHoverPanel Panel { get; set; }
     }
 }

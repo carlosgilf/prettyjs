@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHoverPanel));
             this.label1 = new Gizmox.WebGUI.Forms.Label();
-            this.hoverPopup = new Bronze.Controls.VWG.HoverPanel();
+            this.hoverPopup = new Bronze.Controls.VWG.SupperHoverPanel();
             this.button2 = new Gizmox.WebGUI.Forms.Button();
             this.label6 = new Gizmox.WebGUI.Forms.Label();
             this.label5 = new Gizmox.WebGUI.Forms.Label();
-            this.hoverBtn = new Bronze.Controls.VWG.HoverPanel();
+            this.hoverBtn = new Bronze.Controls.VWG.SupperHoverPanel();
             this.菜单 = new Gizmox.WebGUI.Forms.Label();
             this.label3 = new Gizmox.WebGUI.Forms.Label();
             this.label4 = new Gizmox.WebGUI.Forms.Label();
@@ -170,9 +170,9 @@
 
         #endregion
 
-        private VWG.HoverPanel hoverPopup;
+        private VWG.SupperHoverPanel hoverPopup;
         private Gizmox.WebGUI.Forms.Label label1;
-        private VWG.HoverPanel hoverBtn;
+        private VWG.SupperHoverPanel hoverBtn;
         private Gizmox.WebGUI.Forms.Label 菜单;
         private Gizmox.WebGUI.Forms.Label label3;
         private Gizmox.WebGUI.Forms.Label label4;
