@@ -14,7 +14,7 @@ namespace Bronze.Controls.VWG
     /// Panel Skin
     /// </summary>
     [Serializable()]
-    public class HoverPanelSkin : SupperPanelSkin
+    public class SupperHoverPanelSkin : SupperPanelSkin
     {
         private void InitializeComponent()
         {

@@ -32,12 +32,12 @@ namespace Bronze.Controls.Examples.SimpleMenu
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuButton));
-            this.hoverPopup = new Bronze.Controls.VWG.HoverPanel();
+            this.hoverPopup = new Bronze.Controls.VWG.SupperHoverPanel();
             this.panelMenuContanier = new Gizmox.WebGUI.Forms.Panel();
             this.panelPopuBottom = new Gizmox.WebGUI.Forms.Panel();
             this.pictureBox2 = new Gizmox.WebGUI.Forms.PictureBox();
             this.pictureBox1 = new Gizmox.WebGUI.Forms.PictureBox();
-            this.hoverBtn = new Bronze.Controls.VWG.HoverPanel();
+            this.hoverBtn = new Bronze.Controls.VWG.SupperHoverPanel();
             this.btnTop = new Gizmox.WebGUI.Forms.Panel();
             this.panel3 = new Gizmox.WebGUI.Forms.Panel();
             this.btn_left = new Gizmox.WebGUI.Forms.Panel();
@@ -210,9 +210,9 @@ namespace Bronze.Controls.Examples.SimpleMenu
         private Panel panel3;
         private Panel btn_left;
         private Panel btnMain;
-        private VWG.HoverPanel hoverBtn;
+        private VWG.SupperHoverPanel hoverBtn;
         private Label lbText;
-        private VWG.HoverPanel hoverPopup;
+        private VWG.SupperHoverPanel hoverPopup;
         private Panel panelPopuBottom;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;

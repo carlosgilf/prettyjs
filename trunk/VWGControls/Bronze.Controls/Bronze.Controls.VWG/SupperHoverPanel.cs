@@ -36,16 +36,16 @@ namespace Bronze.Controls.VWG
     /// <summary>
     /// A Panel control
     /// </summary>
-    [Skin(typeof(HoverPanelSkin))]
+    [Skin(typeof(SupperHoverPanelSkin))]
     [Serializable()]
-    public class HoverPanel : SupperPanel
+    public class SupperHoverPanel : SupperPanel
     {
-        private static SerializableProperty HoverBackColorProperty = SerializableProperty.Register("HoverBackColor", typeof(Color), typeof(HoverPanel), new SerializablePropertyMetadata());
+        private static SerializableProperty HoverBackColorProperty = SerializableProperty.Register("HoverBackColor", typeof(Color), typeof(SupperHoverPanel), new SerializablePropertyMetadata());
         ResourceHandle _overImage;
 
-        public HoverPanel()
+        public SupperHoverPanel()
         {
-            this.CustomStyle = "HoverPanelSkin";
+            this.CustomStyle = "SupperHoverPanelSkin";
         }
 
         private bool _overable = true;
@@ -83,12 +83,12 @@ namespace Bronze.Controls.VWG
             get
             {
                 // Return backcolor
-                return this.GetValue<Color>(HoverPanel.HoverBackColorProperty, Color.Empty);
+                return this.GetValue<Color>(SupperHoverPanel.HoverBackColorProperty, Color.Empty);
             }
             set
             {
                 // Set the fore color and update the control if diffrent
-                if (this.SetValue<Color>(HoverPanel.HoverBackColorProperty, value, Color.Empty))
+                if (this.SetValue<Color>(SupperHoverPanel.HoverBackColorProperty, value, Color.Empty))
                 {
                     // Update the control
                     this.Update();
@@ -143,7 +143,7 @@ namespace Bronze.Controls.VWG
             }
 
             var invoker = objContext as IContextMethodInvoker;
-            string methodName = invoker.GetMethodName(this, "HoverPanel_Init");
+            string methodName = invoker.GetMethodName(this, "SupperHoverPanel_Init");
             //this.InvokeScript(string.Format("{0}({1},event,window)", name,this.ID));
 
             this.InvokeScript(string.Format("{0}('{1}');", methodName,this.ID));

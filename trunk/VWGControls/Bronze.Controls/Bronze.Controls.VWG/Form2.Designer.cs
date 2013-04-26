@@ -1,9 +1,9 @@
 using Gizmox.WebGUI.Forms;
 using Gizmox.WebGUI.Common;
 
-namespace Bronze.Controls.Examples
+namespace Bronze.Controls.VWG
 {
-    partial class FormTestHoverPanel
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -36,35 +36,32 @@ namespace Bronze.Controls.Examples
             // 
             // hoverPanel1
             // 
-            this.hoverPanel1.BackColor = System.Drawing.Color.Maroon;
-            this.hoverPanel1.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.Navy);
-            this.hoverPanel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
             this.hoverPanel1.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.hoverPanel1.CustomStyle = "SupperHoverPanelSkin";
             this.hoverPanel1.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
-            this.hoverPanel1.Location = new System.Drawing.Point(46, 43);
+            this.hoverPanel1.Location = new System.Drawing.Point(79, 87);
             this.hoverPanel1.Name = "hoverPanel1";
             this.hoverPanel1.OnClientMouseLeave = null;
             this.hoverPanel1.OnClientMouseOver = null;
             this.hoverPanel1.Opacity = 100;
             this.hoverPanel1.Overable = true;
-            this.hoverPanel1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(12);
+            this.hoverPanel1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
             this.hoverPanel1.RenderRunClientMouseLeave = false;
-            this.hoverPanel1.Size = new System.Drawing.Size(200, 255);
+            this.hoverPanel1.Size = new System.Drawing.Size(233, 174);
             this.hoverPanel1.TabIndex = 0;
             // 
-            // FormTestHoverPanel
+            // Form2
             // 
             this.Controls.Add(this.hoverPanel1);
             this.Size = new System.Drawing.Size(419, 466);
-            this.Text = "FormTestHoverPanel";
+            this.Text = "Form2";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private VWG.SupperHoverPanel hoverPanel1;
+        private SupperHoverPanel hoverPanel1;
 
 
     }

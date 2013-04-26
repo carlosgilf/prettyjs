@@ -1,4 +1,4 @@
-function HoverPanel_Init(strGuid) {
+function SupperHoverPanel_Init(strGuid) {
     var objImage=Web_GetElementByDataId(strGuid);
     var objNode=Data_GetNode(strGuid);
     //    var layer1 = $(objImage).children("div:first");

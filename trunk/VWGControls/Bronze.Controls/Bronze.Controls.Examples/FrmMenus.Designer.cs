@@ -58,7 +58,7 @@ namespace Bronze.Controls.Examples
             this.panel3 = new Gizmox.WebGUI.Forms.Panel();
             this.monthCalendar1 = new Gizmox.WebGUI.Forms.MonthCalendar();
             this.comboBox1 = new Gizmox.WebGUI.Forms.ComboBox();
-            this.hoverPanel1 = new Bronze.Controls.VWG.HoverPanel();
+            this.hoverPanel1 = new Bronze.Controls.VWG.SupperHoverPanel();
             this.button2 = new Gizmox.WebGUI.Forms.Button();
             this.textBox5 = new Gizmox.WebGUI.Forms.TextBox();
             this.label18 = new Gizmox.WebGUI.Forms.Label();
@@ -511,7 +511,7 @@ namespace Bronze.Controls.Examples
         private Label label9;
         private Label label8;
         private UcMenu ucMenu4;
-        private VWG.HoverPanel hoverPanel1;
+        private VWG.SupperHoverPanel hoverPanel1;
         private TextBox textBox6;
         private Label label19;
         private Label label18;

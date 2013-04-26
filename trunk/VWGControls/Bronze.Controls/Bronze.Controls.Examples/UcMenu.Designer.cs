@@ -31,8 +31,8 @@ namespace Bronze.Controls.Examples
         /// </summary>
         private void InitializeComponent()
         {
-            this.hoverPopup = new Bronze.Controls.VWG.HoverPanel();
-            this.hoverBtn = new Bronze.Controls.VWG.HoverPanel();
+            this.hoverPopup = new Bronze.Controls.VWG.SupperHoverPanel();
+            this.hoverBtn = new Bronze.Controls.VWG.SupperHoverPanel();
             this.²Ëµ¥ = new Gizmox.WebGUI.Forms.Label();
             this.hoverBtn.SuspendLayout();
             this.SuspendLayout();
@@ -91,9 +91,9 @@ namespace Bronze.Controls.Examples
 
         #endregion
 
-        private VWG.HoverPanel hoverPopup;
+        private VWG.SupperHoverPanel hoverPopup;
         private Label ²Ëµ¥;
-        private VWG.HoverPanel hoverBtn;
+        private VWG.SupperHoverPanel hoverBtn;
 
 
     }

@@ -181,8 +181,8 @@ namespace Bronze.Controls.Examples.SimpleMenu
     [Serializable]
     public class MenuRelation
     {
-        public HoverPanel Button;
-        public HoverPanel Popup;
+        public SupperHoverPanel Button;
+        public SupperHoverPanel Popup;
     }
 
 }
