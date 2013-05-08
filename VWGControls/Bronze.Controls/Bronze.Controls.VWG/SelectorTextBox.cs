@@ -134,6 +134,17 @@ namespace Bronze.Controls.VWG
             set;
         }
 
+
+        /// <summary>
+        /// 客户端删除的事件
+        /// </summary>
+        [DefaultValue(null)]
+        public string OnClientRemoveScript
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// The SelectionChanged event registration.
         /// </summary>
@@ -200,6 +211,11 @@ namespace Bronze.Controls.VWG
             if (!string.IsNullOrEmpty(SplitString))
             {
                 objWriter.WriteAttributeString("SplitStr", this.SplitString);
+            }
+
+            if (!string.IsNullOrWhiteSpace(OnClientRemoveScript))
+            {
+                objWriter.WriteAttributeString("OnRemove", this.OnClientRemoveScript);
             }
         }
 
