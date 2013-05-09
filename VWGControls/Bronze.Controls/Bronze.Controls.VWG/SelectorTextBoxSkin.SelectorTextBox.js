@@ -176,10 +176,7 @@ function selector_Init(id, img) {
         });
 
         selector_addBindKey(obj);
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i];
-            selector_addItem(obj, item, false);
-        }
+        selector_addItems(obj, items, true);
     }
 }
 
@@ -373,13 +370,21 @@ function selector_addTexts(mstrControlId, items, isInit) {
         var control = Web_GetElementByDataId(mstrControlId);
         var divtxt = $(control).find('.divtxt');
         copyFileds(divtxt, initData);
-        for (var i = 0; i < items.length; i++) {
-            selector_addItem(divtxt, items[i], isInit);
-        }
+        selector_addItems(divtxt, items, isInit);
     }
 }
 
-function selector_addItem(obj, item, isInit, insertAfterEle) {
+function selector_addItems(obj, items, isInit) {
+    for (var i = 0; i < items.length; i++) {
+        selector_addItem(obj, items[i], true, null, true);
+    }
+    if (!isInit) {
+        selector_raiseEvent(obj, null, false);
+    }
+    selector_bindItemEvent(obj);
+}
+
+function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
     isInit = isInit || false;
 
     var value = item.Value == null ? "" : item.Value;
@@ -394,7 +399,7 @@ function selector_addItem(obj, item, isInit, insertAfterEle) {
 
 
     //判断insertAfterEle对象是否存在dom中
-    if ($(insertAfterEle).parent().length == 0)
+    if (insertAfterEle && $(insertAfterEle).parent().length == 0)
         insertAfterEle = null;
 
     if (displayFormat) {
@@ -418,11 +423,8 @@ function selector_addItem(obj, item, isInit, insertAfterEle) {
         }
     }
 
-    var isFind = false;
-    obj.find(".one").each(function (i, val) {
-        if ($(val).attr("uid") == uid)
-            isFind = true;
-    });
+    var isFind = obj.find(".one[uid='" + uid + "']").length>0
+
     if (!isFind) {
         var className = "one";
         if (!isValid) {
@@ -435,11 +437,17 @@ function selector_addItem(obj, item, isInit, insertAfterEle) {
         else {
             obj.append(itemHtml);
         }
-        selector_bindItemEvent(obj, uid);
-        if (!isInit) {
+
+        if (!isInit && !isBatch) {
             selector_raiseEvent(obj, item, false);
         }
-        return $(".divtxt .one[uid='" + uid + "']");
+        if (isBatch==true) {
+            return null;
+        }
+        else {
+            selector_bindItemEvent(obj, uid);
+        }
+        return obj.find(".one[uid='" + uid + "']");
     }
 };
 
@@ -476,7 +484,13 @@ var selector_raiseEvent = function (obj, item, isRemove) {
 
 
 function selector_bindItemEvent(obj, uid) {
-    $(".divtxt .one[uid='" + uid + "']").
+    //$(".divtxt .one[uid='" + uid + "']").
+    var selector = ".one";
+    if (uid) {
+        selector += "[uid = '" + uid + "']";
+    }
+
+    var textItem = obj.find(selector).unbind().
 		hover
 		(
 			function (e) {
@@ -498,7 +512,7 @@ function selector_bindItemEvent(obj, uid) {
 		});
 
 
-    $(".divtxt .one[uid='" + uid + "'] .addr_del").blur(function () {
+    textItem.find(".addr_del").unbind().blur(function () {
         $(".divtxt .select").removeClass("select");
         $(this).not(".in").removeClass("over").addClass("select");
     });

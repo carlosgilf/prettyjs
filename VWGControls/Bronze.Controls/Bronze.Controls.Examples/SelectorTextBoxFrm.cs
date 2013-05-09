@@ -43,6 +43,7 @@ namespace Bronze.Controls.Examples
         {
             //this.selectorTextBox1.Items.Add(new Bronze.Controls.VWG.SelectorTextBox.Selector { Text = "小李", Value ="", Id = Guid.NewGuid().ToString(), Tooltip = "描述信息11"  });
             //this.selectorTextBox1.Update();
+            this.selectorTextBox1.Editable = true;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -52,7 +53,17 @@ namespace Bronze.Controls.Examples
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.InvokeScript(string.Format("selector_addText({0},{{Id:11111111,Text:'jrtjrt',Value:11111111}},false)", this.selectorTextBox1.ID));
+            this.InvokeScript(string.Format(@"
+            var items=[];
+            for(var i=0;i<300;i++){{
+                items.push({{Id:i,Text:'jrtjrt'+i,Value:i}});
+                
+            }}
+            selector_addTexts({0},items,false);
+", this.selectorTextBox1.ID));
+
+
+
         }
     }
 }
