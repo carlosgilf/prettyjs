@@ -31,22 +31,10 @@ namespace Bronze.Controls.Examples
         /// </summary>
         private void InitializeComponent()
         {
-            this.selectorTextBox1 = new Bronze.Controls.VWG.SelectorTextBox();
             this.button1 = new Gizmox.WebGUI.Forms.Button();
+            this.button2 = new Gizmox.WebGUI.Forms.Button();
+            this.selectorTextBox1 = new Bronze.Controls.VWG.SelectorTextBox();
             this.SuspendLayout();
-            // 
-            // selectorTextBox1
-            // 
-            this.selectorTextBox1.AutoScroll = true;
-            this.selectorTextBox1.BackColor = System.Drawing.Color.White;
-            this.selectorTextBox1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.selectorTextBox1.CustomStyle = "SelectorTextBoxSkin";
-            this.selectorTextBox1.Editable = true;
-            this.selectorTextBox1.Location = new System.Drawing.Point(9, 21);
-            this.selectorTextBox1.Name = "selectorTextBox1";
-            this.selectorTextBox1.Size = new System.Drawing.Size(662, 214);
-            this.selectorTextBox1.SplitString = ",;";
-            this.selectorTextBox1.TabIndex = 0;
             // 
             // button1
             // 
@@ -57,8 +45,30 @@ namespace Bronze.Controls.Examples
             this.button1.Text = "button1";
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(251, 259);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Add Item By ClientScript";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // selectorTextBox1
+            // 
+            this.selectorTextBox1.AutoScroll = true;
+            this.selectorTextBox1.BackColor = System.Drawing.Color.White;
+            this.selectorTextBox1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.selectorTextBox1.CustomStyle = "SelectorTextBoxSkin";
+            this.selectorTextBox1.Location = new System.Drawing.Point(9, 21);
+            this.selectorTextBox1.Name = "selectorTextBox1";
+            this.selectorTextBox1.Size = new System.Drawing.Size(662, 214);
+            this.selectorTextBox1.SplitString = ",;";
+            this.selectorTextBox1.TabIndex = 0;
+            // 
             // SelectorTextBoxFrm
             // 
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.selectorTextBox1);
             this.Size = new System.Drawing.Size(692, 466);
@@ -72,6 +82,7 @@ namespace Bronze.Controls.Examples
 
         private VWG.SelectorTextBox selectorTextBox1;
         private Button button1;
+        private Button button2;
 
 
 
