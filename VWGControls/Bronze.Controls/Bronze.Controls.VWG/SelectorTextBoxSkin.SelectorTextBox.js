@@ -102,27 +102,31 @@ function selector_Init(id, img) {
         }
 
         var onRemoveScript = Xml_GetAttribute(objNode, "OnRemove"); ;
-
-
         var clientInputDisplayFormat = Xml_GetAttribute(objNode, "ClientInputDisplayFormat");
+
 
         var items = JSON.parse(code);
 
-        var obj = $(img).parent();
-        obj.splitChar = splitStr;
-        obj.clientInputDisplayFormat = clientInputDisplayFormat;
-        obj.VWG_Id = id;
-        obj.displayFormat = displayFormat;
-        obj.canEdit = canEdit;
-        if (onRemoveScript) {
-            obj.onRemove = onRemoveScript;
-        }
 
+        var initData = {};
+        initData.splitChar = splitStr;
+        initData.clientInputDisplayFormat = clientInputDisplayFormat;
+        initData.VWG_Id = id;
+        initData.displayFormat = displayFormat;
+        initData.canEdit = canEdit;
+        if (onRemoveScript) {
+            initData.onRemove = onRemoveScript;
+        }
 
         if (validExp) {
-            obj.validExp = new RegExp(validExp);
-            obj.validExpMsg = validExpMsg;
+            initData.validExp = new RegExp(validExp);
+            initData.validExpMsg = validExpMsg;
         }
+
+        window["selector_" + id] = initData;
+
+        var obj = $(img).parent();
+        copyFileds(obj, initData);
 
 
         obj.addClass("divtxt").attr('vwgeditable', 1).attr('vwgfocuselement', 1);
@@ -344,24 +348,34 @@ function removePlaceHolder() {
 
 //用于外部js调用
 function selector_removeText(mstrControlId, itemId) {
-    var control = Web_GetElementByDataId(mstrControlId);
-    var divtxt = $(control).find('.divtxt');
-    //var item = { Id: itemId };
-    selector_removeItem(divtxt, itemId, true);
+    var initData = window["selector_" + mstrControlId];
+    if (initData) {
+        var control = Web_GetElementByDataId(mstrControlId);
+        var divtxt = $(control).find('.divtxt');
+        copyFileds(divtxt, initData);
+        selector_removeItem(divtxt, itemId, true);
+    }
 }
 
 function selector_addText(mstrControlId, item, isInit) {
-    var control = Web_GetElementByDataId(mstrControlId);
-    var divtxt = $(control).find('.divtxt');
-    var item = selector_addItem(divtxt, item, isInit);
+    var initData = window["selector_" + mstrControlId];
+    if (initData) {
+        var control = Web_GetElementByDataId(mstrControlId);
+        var divtxt = $(control).find('.divtxt');
+        copyFileds(divtxt, initData);
+        var item = selector_addItem(divtxt, item, isInit);
+    }
 }
 
 function selector_addTexts(mstrControlId, items, isInit) {
-    var control = Web_GetElementByDataId(mstrControlId);
-    var divtxt = $(control).find('.divtxt');
-
-    for (var i = 0; i < items.length; i++) {
-        selector_addItem(divtxt, items[i], isInit);
+    var initData = window["selector_" + mstrControlId];
+    if (initData) {
+        var control = Web_GetElementByDataId(mstrControlId);
+        var divtxt = $(control).find('.divtxt');
+        copyFileds(divtxt, initData);
+        for (var i = 0; i < items.length; i++) {
+            selector_addItem(divtxt, items[i], isInit);
+        }
     }
 }
 
@@ -563,3 +577,9 @@ function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
 }
 
 
+function copyFileds(toObj, fromObj) {
+    for (var i in fromObj) {
+        toObj[i] = fromObj[i];
+    }
+    return toObj;
+}
