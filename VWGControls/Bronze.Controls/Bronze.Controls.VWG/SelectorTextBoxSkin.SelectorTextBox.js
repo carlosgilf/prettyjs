@@ -114,6 +114,7 @@ function selector_Init(id, img) {
         initData.VWG_Id = id;
         initData.displayFormat = displayFormat;
         initData.canEdit = canEdit;
+        initData.items = [];
         if (onRemoveScript) {
             initData.onRemove = onRemoveScript;
         }
@@ -423,9 +424,17 @@ function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
         }
     }
 
-    var isFind = obj.find(".one[uid='" + uid + "']").length>0
+    //    var isFind = obj.find(".one[uid='" + uid + "']").length>0
+    var isFind = false;
+    var initData = window["selector_" + obj.VWG_Id];
+    if (initData) {
+        if (initData.items && $.inArray(uid, initData.items)>-1) {
+            isFind = true;
+        }
+    }
 
     if (!isFind) {
+        initData.items.push(uid);
         var className = "one";
         if (!isValid) {
             className = className + " error";
@@ -566,6 +575,14 @@ function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
     if (curr.html() != null) {
         var uid = curr.attr("uid");
         var prev = curr.prev();
+
+        var initData = window["selector_" + obj.VWG_Id];
+        if (initData) {
+            var idx = initData.items.indexOf(uid);
+            if (idx != -1) {
+                initData.items.splice(idx, 1);
+            }
+        }
         curr.remove();
         if (obj.canEdit) {
             if (!doNotInsertPlaceHoldler) {
