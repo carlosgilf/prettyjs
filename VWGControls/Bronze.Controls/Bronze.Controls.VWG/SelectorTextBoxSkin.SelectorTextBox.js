@@ -83,6 +83,20 @@
     };
 
 })(jQuery);
+
+function copyFileds(toObj, fromObj) {
+    for (var i in fromObj) {
+        toObj[i] = fromObj[i];
+    }
+    return toObj;
+}
+
+Array.prototype.remove = function (item) {
+    var idx = this.indexOf(item);
+    if (idx != -1) {
+        this.splice(idx, 1);
+    }
+}
 //#end
 
 function selector_Init(id, img) {
@@ -104,10 +118,7 @@ function selector_Init(id, img) {
         var onRemoveScript = Xml_GetAttribute(objNode, "OnRemove"); ;
         var clientInputDisplayFormat = Xml_GetAttribute(objNode, "ClientInputDisplayFormat");
 
-
         var items = JSON.parse(code);
-
-
         var initData = {};
         initData.splitChar = splitStr;
         initData.clientInputDisplayFormat = clientInputDisplayFormat;
@@ -225,9 +236,15 @@ function selector_addTexts(mstrControlId, items, isInit) {
 }
 
 function selector_addItems(obj, items, isInit) {
+    var htmls = "";
     for (var i = 0; i < items.length; i++) {
-        selector_addItem(obj, items[i], true, null, true);
+        var itemHtm = selector_addItem(obj, items[i], true, null, true);
+        if (itemHtm) {
+            htmls += itemHtm;
+        }
     }
+    obj.append(htmls);
+
     if (!isInit) {
         selector_raiseEvent(obj, null, false);
     }
@@ -247,7 +264,6 @@ function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
         displayFormat = obj.clientInputDisplayFormat;
     }
 
-
     //判断insertAfterEle对象是否存在dom中
     if (insertAfterEle && $(insertAfterEle).parent().length == 0)
         insertAfterEle = null;
@@ -265,7 +281,6 @@ function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
         if (!testStr) {
             testStr = uid;
         }
-
         var matches = obj.validExp.exec(testStr);
         isValid = (matches != null && testStr == matches[0]);
         if (!isValid) {
@@ -273,7 +288,6 @@ function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
         }
     }
 
-    //var isFind = obj.find(".one[uid='" + uid + "']").length>0
     var isFind = false;
     var initData = window["selector_" + obj.VWG_Id];
     if (initData) {
@@ -289,23 +303,23 @@ function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
             className = className + " error";
         }
         var itemHtml = "<div class='" + className + "' client='" + (item.FromClient ? 1 : 0) + "' txt='" + text + "' val='" + value + "' uid='" + uid + "' title='" + title + "'>" + displayText + "<a href='javascript:;' class='addr_del' name='del'></a></div>";
-        if (insertAfterEle) {
-            $(itemHtml).insertAfter(insertAfterEle);
-        }
-        else {
-            obj.append(itemHtml);
-        }
-
-        if (!isInit && !isBatch) {
-            selector_raiseEvent(obj, item, false);
-        }
+        
         if (isBatch==true) {
-            return null;
+            return itemHtml;
         }
         else {
+            if (insertAfterEle) {
+                $(itemHtml).insertAfter(insertAfterEle);
+            }
+            else {
+                obj.append(itemHtml);
+            }
+            if (!isInit) {
+                selector_raiseEvent(obj, item, false);
+            }
             selector_bindItemEvent(obj, uid);
+            return obj.find(".one[uid='" + uid + "']");
         }
-        return obj.find(".one[uid='" + uid + "']");
     }
 };
 
@@ -363,9 +377,8 @@ function selector_bindItemEvent(obj, uid) {
 		    b.stopPropagation();
 		    selector_removeItem(obj);
 		});
-
-
-    textItem.find(".addr_del").unbind().blur(function () {
+   
+    obj.find(selector + " .addr_del").unbind().blur(function () {
         $(".divtxt .select").removeClass("select");
         $(this).not(".in").removeClass("over").addClass("select");
     });
@@ -585,7 +598,7 @@ function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
             realGlobal.Text = curr.attr("txt");
             realGlobal.Value = curr.attr("val");
         }
-        curr.remove();
+       
         if (obj.canEdit) {
             if (!doNotInsertPlaceHoldler) {
                 var prev = curr.prev();
@@ -594,7 +607,7 @@ function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
                 }
             }
         }
-
+        curr.remove();
         if (obj.onRemove) {
             //改变上下文eval
             (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
@@ -604,8 +617,6 @@ function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
     }
     return false;
 }
-
-
 
 //批量删除
 function selector_removeItems(obj, arrayItemIds,isCallOnRemove) {
@@ -634,18 +645,4 @@ function selector_removeItems(obj, arrayItemIds,isCallOnRemove) {
         }
     }
     selector_raiseEvent(obj);
-}
-
-function copyFileds(toObj, fromObj) {
-    for (var i in fromObj) {
-        toObj[i] = fromObj[i];
-    }
-    return toObj;
-}
-
-Array.prototype.remove =function(item) {
-    var idx = this.indexOf(item);
-    if (idx != -1) {
-        this.splice(idx, 1);
-    }
 }
