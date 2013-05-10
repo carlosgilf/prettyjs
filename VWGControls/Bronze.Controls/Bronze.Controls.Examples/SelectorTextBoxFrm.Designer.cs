@@ -33,6 +33,7 @@ namespace Bronze.Controls.Examples
         {
             this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.button2 = new Gizmox.WebGUI.Forms.Button();
+            this.button3 = new Gizmox.WebGUI.Forms.Button();
             this.selectorTextBox1 = new Bronze.Controls.VWG.SelectorTextBox();
             this.SuspendLayout();
             // 
@@ -49,10 +50,19 @@ namespace Bronze.Controls.Examples
             // 
             this.button2.Location = new System.Drawing.Point(251, 259);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 23);
+            this.button2.Size = new System.Drawing.Size(199, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Add Item By ClientScript";
+            this.button2.Text = "Add items by clientScript";
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(251, 299);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(199, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "remove items by client script";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // selectorTextBox1
             // 
@@ -68,6 +78,7 @@ namespace Bronze.Controls.Examples
             // 
             // SelectorTextBoxFrm
             // 
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.selectorTextBox1);
@@ -83,6 +94,7 @@ namespace Bronze.Controls.Examples
         private VWG.SelectorTextBox selectorTextBox1;
         private Button button1;
         private Button button2;
+        private Button button3;
 
 
 
