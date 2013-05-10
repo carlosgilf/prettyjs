@@ -181,6 +181,196 @@ function selector_Init(id, img) {
     }
 }
 
+//用于外部js调用
+function selector_removeText(mstrControlId, itemId) {
+    var initData = window["selector_" + mstrControlId];
+    if (initData) {
+        var control = Web_GetElementByDataId(mstrControlId);
+        var divtxt = $(control).find('.divtxt');
+        copyFileds(divtxt, initData);
+        selector_removeItem(divtxt, itemId, true);
+    }
+}
+
+//批量删除
+function selector_removeTexts(mstrControlId, arrayItemIds, isCallOnRemove) {
+    var initData = window["selector_" + mstrControlId];
+    if (initData) {
+        var control = Web_GetElementByDataId(mstrControlId);
+        var divtxt = $(control).find('.divtxt');
+        copyFileds(divtxt, initData);
+        selector_removeItems(divtxt, arrayItemIds, isCallOnRemove);
+    }
+}
+
+function selector_addText(mstrControlId, item, isInit) {
+    var initData = window["selector_" + mstrControlId];
+    if (initData) {
+        var control = Web_GetElementByDataId(mstrControlId);
+        var divtxt = $(control).find('.divtxt');
+        copyFileds(divtxt, initData);
+        var item = selector_addItem(divtxt, item, isInit);
+    }
+}
+
+//批量添加
+function selector_addTexts(mstrControlId, items, isInit) {
+    var initData = window["selector_" + mstrControlId];
+    if (initData) {
+        var control = Web_GetElementByDataId(mstrControlId);
+        var divtxt = $(control).find('.divtxt');
+        copyFileds(divtxt, initData);
+        selector_addItems(divtxt, items, isInit);
+    }
+}
+
+function selector_addItems(obj, items, isInit) {
+    for (var i = 0; i < items.length; i++) {
+        selector_addItem(obj, items[i], true, null, true);
+    }
+    if (!isInit) {
+        selector_raiseEvent(obj, null, false);
+    }
+    selector_bindItemEvent(obj);
+}
+
+function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
+    isInit = isInit || false;
+
+    var value = item.Value == null ? "" : item.Value;
+    var uid = (item.Id == null ? "" : item.Id);
+    var title = item.Tooltip || "";
+    text = item.Text || "";
+    var displayText = text;
+    var displayFormat = obj.displayFormat;
+    if (item.FromClient) {
+        displayFormat = obj.clientInputDisplayFormat;
+    }
+
+
+    //判断insertAfterEle对象是否存在dom中
+    if (insertAfterEle && $(insertAfterEle).parent().length == 0)
+        insertAfterEle = null;
+
+    if (displayFormat) {
+        displayText = displayFormat.replace("{Text}", text);
+        displayText = displayText.replace("{Value}", value);
+        displayText = displayText.replace("{Id}", uid);
+        displayText = displayText.replace("{Title}", title);
+    }
+
+    var isValid = true;
+    if (obj.validExp) {
+        var testStr = value + "";
+        if (!testStr) {
+            testStr = uid;
+        }
+
+        var matches = obj.validExp.exec(testStr);
+        isValid = (matches != null && testStr == matches[0]);
+        if (!isValid) {
+            title = obj.validExpMsg;
+        }
+    }
+
+    //var isFind = obj.find(".one[uid='" + uid + "']").length>0
+    var isFind = false;
+    var initData = window["selector_" + obj.VWG_Id];
+    if (initData) {
+        if (initData.items && $.inArray(uid, initData.items)>-1) {
+            isFind = true;
+        }
+    }
+
+    if (!isFind) {
+        initData.items.push(uid);
+        var className = "one";
+        if (!isValid) {
+            className = className + " error";
+        }
+        var itemHtml = "<div class='" + className + "' client='" + (item.FromClient ? 1 : 0) + "' txt='" + text + "' val='" + value + "' uid='" + uid + "' title='" + title + "'>" + displayText + "<a href='javascript:;' class='addr_del' name='del'></a></div>";
+        if (insertAfterEle) {
+            $(itemHtml).insertAfter(insertAfterEle);
+        }
+        else {
+            obj.append(itemHtml);
+        }
+
+        if (!isInit && !isBatch) {
+            selector_raiseEvent(obj, item, false);
+        }
+        if (isBatch==true) {
+            return null;
+        }
+        else {
+            selector_bindItemEvent(obj, uid);
+        }
+        return obj.find(".one[uid='" + uid + "']");
+    }
+};
+
+var selector_raiseEvent = function (obj) {
+    var mstrControlId = obj.VWG_Id;
+    // Create event
+    var objEvent = Events_CreateEvent(mstrControlId, "ItemsChanged", null, true);
+
+    var items = [];
+    obj.find(".one").not(".error").not(".placeholder").each(function (i, val) {
+        var v = $(val).attr("val");
+        var text = $(val).attr("txt");
+        var id = $(val).attr("uid");
+        var title = $(val).attr("title");
+        var fromClient = $(val).attr("client");
+        var serverObject = { Id: id, Text: text, Value: v, Tooltip: title };
+        if (fromClient == "1") {
+            serverObject.FromClient = true;
+        }
+        items.push(serverObject);
+    });
+
+    var json = JSON.stringify(items);
+    Events_SetEventAttribute(objEvent, "items", json);
+
+    if (Data_IsCriticalEvent(mstrControlId, mcntEventSelectionChangeId)) {
+        // Raise event if critical
+        Events_RaiseEvents();
+    }
+};
+
+function selector_bindItemEvent(obj, uid) {
+    var selector = ".one";
+    if (uid) {
+        selector += "[uid = '" + uid + "']";
+    }
+
+    var textItem = obj.find(selector).unbind().
+		hover
+		(
+			function (e) {
+			    $(this).not(".select").not(".in").addClass("over");
+			},
+			function () { $(this).removeClass("over"); }
+		).
+		click(
+			function (a) {
+			    a.stopPropagation();
+			    $(".divtxt .select").removeClass("select");
+			    $(this).not(".in").removeClass("over").addClass("select");
+			    $(".divtxt .select .addr_del").focus();
+			}
+		).
+		dblclick(function (b) {
+		    b.stopPropagation();
+		    selector_removeItem(obj);
+		});
+
+
+    textItem.find(".addr_del").unbind().blur(function () {
+        $(".divtxt .select").removeClass("select");
+        $(this).not(".in").removeClass("over").addClass("select");
+    });
+
+}
 
 function insertPlaceHoler(obj, element, action) {
     var boxWidth = $.browser.msie ? 8 : 80;
@@ -327,205 +517,14 @@ function insertPlaceHoler(obj, element, action) {
             //                input.focus();
             //                return;
             //            }
-
-
-
         }, 1);
-
-
-
     });
 
     setTimeout(function () { $('.placeholder input').focus() }, 150);
-
 }
 
 function removePlaceHolder() {
     $('.placeholder').remove();
-}
-
-//用于外部js调用
-function selector_removeText(mstrControlId, itemId) {
-    var initData = window["selector_" + mstrControlId];
-    if (initData) {
-        var control = Web_GetElementByDataId(mstrControlId);
-        var divtxt = $(control).find('.divtxt');
-        copyFileds(divtxt, initData);
-        selector_removeItem(divtxt, itemId, true);
-    }
-}
-
-function selector_addText(mstrControlId, item, isInit) {
-    var initData = window["selector_" + mstrControlId];
-    if (initData) {
-        var control = Web_GetElementByDataId(mstrControlId);
-        var divtxt = $(control).find('.divtxt');
-        copyFileds(divtxt, initData);
-        var item = selector_addItem(divtxt, item, isInit);
-    }
-}
-
-function selector_addTexts(mstrControlId, items, isInit) {
-    var initData = window["selector_" + mstrControlId];
-    if (initData) {
-        var control = Web_GetElementByDataId(mstrControlId);
-        var divtxt = $(control).find('.divtxt');
-        copyFileds(divtxt, initData);
-        selector_addItems(divtxt, items, isInit);
-    }
-}
-
-function selector_addItems(obj, items, isInit) {
-    for (var i = 0; i < items.length; i++) {
-        selector_addItem(obj, items[i], true, null, true);
-    }
-    if (!isInit) {
-        selector_raiseEvent(obj, null, false);
-    }
-    selector_bindItemEvent(obj);
-}
-
-function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
-    isInit = isInit || false;
-
-    var value = item.Value == null ? "" : item.Value;
-    var uid = (item.Id == null ? "" : item.Id);
-    var title = item.Tooltip || "";
-    text = item.Text || "";
-    var displayText = text;
-    var displayFormat = obj.displayFormat;
-    if (item.FromClient) {
-        displayFormat = obj.clientInputDisplayFormat;
-    }
-
-
-    //判断insertAfterEle对象是否存在dom中
-    if (insertAfterEle && $(insertAfterEle).parent().length == 0)
-        insertAfterEle = null;
-
-    if (displayFormat) {
-        displayText = displayFormat.replace("{Text}", text);
-        displayText = displayText.replace("{Value}", value);
-        displayText = displayText.replace("{Id}", uid);
-        displayText = displayText.replace("{Title}", title);
-    }
-
-    var isValid = true;
-    if (obj.validExp) {
-        var testStr = value + "";
-        if (!testStr) {
-            testStr = uid;
-        }
-
-        var matches = obj.validExp.exec(testStr);
-        isValid = (matches != null && testStr == matches[0]);
-        if (!isValid) {
-            title = obj.validExpMsg;
-        }
-    }
-
-    //    var isFind = obj.find(".one[uid='" + uid + "']").length>0
-    var isFind = false;
-    var initData = window["selector_" + obj.VWG_Id];
-    if (initData) {
-        if (initData.items && $.inArray(uid, initData.items)>-1) {
-            isFind = true;
-        }
-    }
-
-    if (!isFind) {
-        initData.items.push(uid);
-        var className = "one";
-        if (!isValid) {
-            className = className + " error";
-        }
-        var itemHtml = "<div class='" + className + "' client='" + (item.FromClient ? 1 : 0) + "' txt='" + text + "' val='" + value + "' uid='" + uid + "' title='" + title + "'>" + displayText + "<a href='javascript:;' class='addr_del' name='del'></a></div>";
-        if (insertAfterEle) {
-            $(itemHtml).insertAfter(insertAfterEle);
-        }
-        else {
-            obj.append(itemHtml);
-        }
-
-        if (!isInit && !isBatch) {
-            selector_raiseEvent(obj, item, false);
-        }
-        if (isBatch==true) {
-            return null;
-        }
-        else {
-            selector_bindItemEvent(obj, uid);
-        }
-        return obj.find(".one[uid='" + uid + "']");
-    }
-};
-
-var selector_raiseEvent = function (obj, item, isRemove) {
-    var mstrControlId = obj.VWG_Id;
-    //debugger;
-    isRemove = (isRemove == true ? "1" : "0");
-    // Create event
-    var objEvent = Events_CreateEvent(mstrControlId, "ItemsChanged", null, true);
-
-    var items = [];
-    obj.find(".one").not(".error").not(".placeholder").each(function (i, val) {
-        var v = $(val).attr("val");
-        var text = $(val).attr("txt");
-        var id = $(val).attr("uid");
-        var title = $(val).attr("title");
-        var fromClient = $(val).attr("client");
-        var serverObject = { Id: id, Text: text, Value: v, Tooltip: title };
-        if (fromClient == "1") {
-            serverObject.FromClient = true;
-        }
-        items.push(serverObject);
-    });
-
-    var json = JSON.stringify(items);
-    Events_SetEventAttribute(objEvent, "items", json);
-
-    if (Data_IsCriticalEvent(mstrControlId, mcntEventSelectionChangeId)) {
-        // Raise event if critical
-        Events_RaiseEvents();
-    }
-};
-
-
-
-function selector_bindItemEvent(obj, uid) {
-    //$(".divtxt .one[uid='" + uid + "']").
-    var selector = ".one";
-    if (uid) {
-        selector += "[uid = '" + uid + "']";
-    }
-
-    var textItem = obj.find(selector).unbind().
-		hover
-		(
-			function (e) {
-			    $(this).not(".select").not(".in").addClass("over");
-			},
-			function () { $(this).removeClass("over"); }
-		).
-		click(
-			function (a) {
-			    a.stopPropagation();
-			    $(".divtxt .select").removeClass("select");
-			    $(this).not(".in").removeClass("over").addClass("select");
-			    $(".divtxt .select .addr_del").focus();
-			}
-		).
-		dblclick(function (b) {
-		    b.stopPropagation();
-		    selector_removeItem(obj);
-		});
-
-
-    textItem.find(".addr_del").unbind().blur(function () {
-        $(".divtxt .select").removeClass("select");
-        $(this).not(".in").removeClass("over").addClass("select");
-    });
-
 }
 
 function selector_addBindKey(obj) {
@@ -554,11 +553,9 @@ function selector_addBindKey(obj) {
 
 }
 
-
-
-
 function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
     var curr = null;
+    var uid = null;
     if (item instanceof jQuery) {
         if (item.length == 0) {
             return;
@@ -567,25 +564,31 @@ function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
     }
     else if (item) {
         curr = obj.find(".one[uid='" + item + "'] ");
+        uid = item;
     }
     else {
         curr = obj.find(".select");
     }
 
     if (curr.html() != null) {
-        var uid = curr.attr("uid");
-        var prev = curr.prev();
-
+        if (!uid) {
+            uid = curr.attr("uid");
+        }
         var initData = window["selector_" + obj.VWG_Id];
         if (initData) {
-            var idx = initData.items.indexOf(uid);
-            if (idx != -1) {
-                initData.items.splice(idx, 1);
-            }
+            initData.items.remove(uid);
+        }
+
+        var realGlobal = {};
+        if (obj.onRemove) {
+            realGlobal.Id = uid;
+            realGlobal.Text = curr.attr("txt");
+            realGlobal.Value = curr.attr("val");
         }
         curr.remove();
         if (obj.canEdit) {
             if (!doNotInsertPlaceHoldler) {
+                var prev = curr.prev();
                 if (prev.length > 0) {
                     insertPlaceHoler(obj, prev, "after");
                 }
@@ -593,24 +596,56 @@ function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
         }
 
         if (obj.onRemove) {
-            var realGlobal = {};
-            realGlobal.Id = uid;
-            realGlobal.Text = curr.attr("txt");
-            realGlobal.Value = curr.attr("val");
-
             //改变上下文eval
             (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
         }
-        selector_raiseEvent(obj, { Id: uid }, true);
+        selector_raiseEvent(obj);
         return true;
     }
     return false;
 }
 
 
+
+//批量删除
+function selector_removeItems(obj, arrayItemIds,isCallOnRemove) {
+    var initData = window["selector_" + obj.VWG_Id];
+    if (!initData) {
+        return;
+    }
+    var items = obj.find(".one");
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var curr = $(item);
+        var uid = curr.attr("uid");
+        if (arrayItemIds.indexOf(uid) >= 0) {
+            var realGlobal = {};
+            if (isCallOnRemove &&  obj.onRemove) {
+                realGlobal.Id = uid;
+                realGlobal.Text = curr.attr("txt");
+                realGlobal.Value = curr.attr("val");
+            }
+            curr.remove();
+            initData.items.remove(uid);
+            if (isCallOnRemove && obj.onRemove) {
+                //改变上下文eval
+                (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
+            }
+        }
+    }
+    selector_raiseEvent(obj);
+}
+
 function copyFileds(toObj, fromObj) {
     for (var i in fromObj) {
         toObj[i] = fromObj[i];
     }
     return toObj;
+}
+
+Array.prototype.remove =function(item) {
+    var idx = this.indexOf(item);
+    if (idx != -1) {
+        this.splice(idx, 1);
+    }
 }
