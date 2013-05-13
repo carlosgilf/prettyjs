@@ -142,6 +142,7 @@ function selector_Init(id, img) {
 
 
         obj.addClass("divtxt").attr('vwgeditable', 1).attr('vwgfocuselement', 1);
+        selector_bindItemEvent(obj);
 
         obj.mousedown(function (event) {
             event.stopPropagation();
@@ -151,7 +152,9 @@ function selector_Init(id, img) {
         });
         obj.click(function (e) {
             e.stopPropagation();
-
+            if (e.target != this) {
+                return;
+            }
             if (!canEdit) {
                 return;
             }
@@ -159,6 +162,7 @@ function selector_Init(id, img) {
                 e.srcElement.focus();
                 return;
             }
+
             var x = e.clientX; var y = e.clientY;
             var lastEl = null;
             var firstY_ele = null;
@@ -244,11 +248,9 @@ function selector_addItems(obj, items, isInit) {
         }
     }
     obj.append(htmls);
-
     if (!isInit) {
         selector_raiseEvent(obj, null, false);
     }
-    selector_bindItemEvent(obj);
 }
 
 function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
@@ -317,17 +319,93 @@ function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
             if (!isInit) {
                 selector_raiseEvent(obj, item, false);
             }
-            selector_bindItemEvent(obj, uid);
             return obj.find(".one[uid='" + uid + "']");
         }
     }
 };
 
-var selector_raiseEvent = function (obj) {
-    var mstrControlId = obj.VWG_Id;
-    // Create event
-    var objEvent = Events_CreateEvent(mstrControlId, "ItemsChanged", null, true);
+function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
+    var curr = null;
+    var uid = null;
+    if (item instanceof jQuery) {
+        if (item.length == 0) {
+            return;
+        }
+        curr = item;
+    }
+    else if (item) {
+        curr = obj.find(".one[uid='" + item + "'] ");
+        uid = item;
+    }
+    else {
+        curr = obj.find(".select");
+    }
 
+    if (curr.html() != null) {
+        if (!uid) {
+            uid = curr.attr("uid");
+        }
+        var initData = window["selector_" + obj.VWG_Id];
+        if (initData) {
+            initData.items.remove(uid);
+        }
+
+        var realGlobal = {};
+        if (obj.onRemove) {
+            realGlobal.Id = uid;
+            realGlobal.Text = curr.attr("txt");
+            realGlobal.Value = curr.attr("val");
+        }
+
+        if (obj.canEdit) {
+            if (!doNotInsertPlaceHoldler) {
+                var prev = curr.prev();
+                if (prev.length > 0) {
+                    insertPlaceHoler(obj, prev, "after");
+                }
+            }
+        }
+        curr.remove();
+        if (obj.onRemove) {
+            //改变上下文eval
+            (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
+        }
+        selector_raiseEvent(obj);
+        return true;
+    }
+    return false;
+}
+
+//批量删除
+function selector_removeItems(obj, arrayItemIds, isCallOnRemove) {
+    var initData = window["selector_" + obj.VWG_Id];
+    if (!initData) {
+        return;
+    }
+    var items = obj.find(".one");
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var curr = $(item);
+        var uid = curr.attr("uid");
+        if (arrayItemIds.indexOf(uid) >= 0) {
+            var realGlobal = {};
+            if (isCallOnRemove && obj.onRemove) {
+                realGlobal.Id = uid;
+                realGlobal.Text = curr.attr("txt");
+                realGlobal.Value = curr.attr("val");
+            }
+            curr.remove();
+            initData.items.remove(uid);
+            if (isCallOnRemove && obj.onRemove) {
+                //改变上下文eval
+                (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
+            }
+        }
+    }
+    selector_raiseEvent(obj);
+}
+
+var selector_raiseEvent = function (obj) {
     var items = [];
     obj.find(".one").not(".error").not(".placeholder").each(function (i, val) {
         var v = $(val).attr("val");
@@ -335,16 +413,21 @@ var selector_raiseEvent = function (obj) {
         var id = $(val).attr("uid");
         var title = $(val).attr("title");
         var fromClient = $(val).attr("client");
-        var serverObject = { Id: id, Text: text, Value: v, Tooltip: title };
+        var serverObject = { Id: id, Text: text, Value: v };
+        if (title && title!="") {
+            serverObject.Tooltip = title;
+        }
         if (fromClient == "1") {
             serverObject.FromClient = true;
         }
         items.push(serverObject);
     });
-
     var json = JSON.stringify(items);
-    Events_SetEventAttribute(objEvent, "items", json);
 
+    var mstrControlId = obj.VWG_Id;
+    // Create event
+    var objEvent = Events_CreateEvent(mstrControlId, "ItemsChanged", null, true);
+    Events_SetEventAttribute(objEvent, "items", json);
     if (Data_IsCriticalEvent(mstrControlId, mcntEventSelectionChangeId)) {
         // Raise event if critical
         Events_RaiseEvents();
@@ -352,37 +435,31 @@ var selector_raiseEvent = function (obj) {
 };
 
 function selector_bindItemEvent(obj, uid) {
-    var selector = ".one";
-    if (uid) {
-        selector += "[uid = '" + uid + "']";
-    }
+    obj.delegate(".one:not('.placeholder')", "hover click dblclick", function (event) {
+        if (event.type === 'mouseover') {
+            $(this).not(".select").not(".in").addClass("over");
+        }
+        else if (event.type === 'mouseout') {
+            $(this).removeClass("over");
+        }
+        else if (event.type === "click") {
+            event.stopPropagation();
+            $(this).find(".addr_del").focus();
+            obj.find(".select").removeClass("select");
+            $(this).not(".in").removeClass("over").addClass("select");
+        }
+        else if (event.type === "dblclick") {
+            event.stopPropagation();
+            selector_removeItem(obj);
+            return false;
+        }
+        return false;
+    });
 
-    var textItem = obj.find(selector).unbind().
-		hover
-		(
-			function (e) {
-			    $(this).not(".select").not(".in").addClass("over");
-			},
-			function () { $(this).removeClass("over"); }
-		).
-		click(
-			function (a) {
-			    a.stopPropagation();
-			    $(".divtxt .select").removeClass("select");
-			    $(this).not(".in").removeClass("over").addClass("select");
-			    $(".divtxt .select .addr_del").focus();
-			}
-		).
-		dblclick(function (b) {
-		    b.stopPropagation();
-		    selector_removeItem(obj);
-		});
-   
-    obj.find(selector + " .addr_del").unbind().blur(function () {
+    obj.delegate(".one .addr_del", "blur", function () {
         $(".divtxt .select").removeClass("select");
         $(this).not(".in").removeClass("over").addClass("select");
     });
-
 }
 
 function insertPlaceHoler(obj, element, action) {
@@ -564,85 +641,4 @@ function selector_addBindKey(obj) {
         }
     });
 
-}
-
-function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
-    var curr = null;
-    var uid = null;
-    if (item instanceof jQuery) {
-        if (item.length == 0) {
-            return;
-        }
-        curr = item;
-    }
-    else if (item) {
-        curr = obj.find(".one[uid='" + item + "'] ");
-        uid = item;
-    }
-    else {
-        curr = obj.find(".select");
-    }
-
-    if (curr.html() != null) {
-        if (!uid) {
-            uid = curr.attr("uid");
-        }
-        var initData = window["selector_" + obj.VWG_Id];
-        if (initData) {
-            initData.items.remove(uid);
-        }
-
-        var realGlobal = {};
-        if (obj.onRemove) {
-            realGlobal.Id = uid;
-            realGlobal.Text = curr.attr("txt");
-            realGlobal.Value = curr.attr("val");
-        }
-       
-        if (obj.canEdit) {
-            if (!doNotInsertPlaceHoldler) {
-                var prev = curr.prev();
-                if (prev.length > 0) {
-                    insertPlaceHoler(obj, prev, "after");
-                }
-            }
-        }
-        curr.remove();
-        if (obj.onRemove) {
-            //改变上下文eval
-            (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
-        }
-        selector_raiseEvent(obj);
-        return true;
-    }
-    return false;
-}
-
-//批量删除
-function selector_removeItems(obj, arrayItemIds,isCallOnRemove) {
-    var initData = window["selector_" + obj.VWG_Id];
-    if (!initData) {
-        return;
-    }
-    var items = obj.find(".one");
-    for (var i = 0; i < items.length; i++) {
-        var item = items[i];
-        var curr = $(item);
-        var uid = curr.attr("uid");
-        if (arrayItemIds.indexOf(uid) >= 0) {
-            var realGlobal = {};
-            if (isCallOnRemove &&  obj.onRemove) {
-                realGlobal.Id = uid;
-                realGlobal.Text = curr.attr("txt");
-                realGlobal.Value = curr.attr("val");
-            }
-            curr.remove();
-            initData.items.remove(uid);
-            if (isCallOnRemove && obj.onRemove) {
-                //改变上下文eval
-                (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
-            }
-        }
-    }
-    selector_raiseEvent(obj);
 }

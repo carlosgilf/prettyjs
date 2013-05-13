@@ -67,7 +67,7 @@ namespace Bronze.Controls.Examples
         {
             this.InvokeScript(@"
             var items=[];
-            for(var i=50;i<1000;i++){
+            for(var i=0;i<1000;i++){
                 items.push(i);
             }
             selector_removeTexts(" + this.selectorTextBox1.ID + ",items,false);"
