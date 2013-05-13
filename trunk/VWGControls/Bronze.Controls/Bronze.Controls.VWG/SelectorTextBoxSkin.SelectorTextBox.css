@@ -10,8 +10,10 @@
     overflow: auto;
     width: 100%;
     cursor: text;
-    overflow: auto !important;
+    overflow-y: auto !important;
+    overflow-x:hidden !important;
     display: inline-block!important;
+    text-align: left;
 }
 
 .divtxt .one
@@ -23,6 +25,7 @@
     margin-right: 4px;
     margin-left: 4px;
     color:Black;
+    display:inline-block;
 }
 
 .divtxt .one.error
