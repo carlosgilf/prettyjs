@@ -58,7 +58,7 @@
 
 				    // Calculate new width + whether to change
 				    var testerWidth = testSubject.width(),
-						newWidth = (testerWidth + o.comfortZone) >= minWidth ? testerWidth + o.comfortZone : minWidth,
+						newWidth = (testerWidth + o.comfortZone) >= minWidth ? (testerWidth + o.comfortZone) : minWidth,
 						currentWidth = input.width(),
 						isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
 											 || (newWidth > minWidth && newWidth < o.maxWidth);
@@ -218,6 +218,16 @@ function selector_removeTexts(mstrControlId, arrayItemIds, isCallOnRemove) {
     }
 }
 
+function selector_clean(mstrControlId) {
+    var initData = window["selector_" + mstrControlId];
+    if (initData) {
+        var control = Web_GetElementByDataId(mstrControlId);
+        var divtxt = $(control).find('.divtxt');
+        divtxt.empty();
+        initData.items = [];
+    }
+}
+
 function selector_addText(mstrControlId, item, isInit) {
     var initData = window["selector_" + mstrControlId];
     if (initData) {
@@ -253,7 +263,7 @@ function selector_addItems(obj, items, isInit) {
     }
 }
 
-function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
+function selector_addItem(obj, item, isInit, insertAfterEle, isBatch) {
     isInit = isInit || false;
 
     var value = item.Value == null ? "" : item.Value;
@@ -293,7 +303,7 @@ function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
     var isFind = false;
     var initData = window["selector_" + obj.VWG_Id];
     if (initData) {
-        if (initData.items && $.inArray(uid, initData.items)>-1) {
+        if (initData.items && $.inArray(uid, initData.items) > -1) {
             isFind = true;
         }
     }
@@ -304,9 +314,9 @@ function selector_addItem(obj, item, isInit, insertAfterEle,isBatch) {
         if (!isValid) {
             className = className + " error";
         }
-        var itemHtml = "<div class='" + className + "' client='" + (item.FromClient ? 1 : 0) + "' txt='" + text + "' val='" + value + "' uid='" + uid + "' title='" + title + "'>" + displayText + "<a href='javascript:;' class='addr_del' name='del'></a></div>";
-        
-        if (isBatch==true) {
+        var itemHtml = "<div class='" + className + "' client='" + (item.FromClient ? 1 : 0) + "' txt='" + text + "' val='" + value + "' uid='" + uid + "' title='" + title + "'><span class='tagText'>" + displayText + "</span><a href='javascript:;' class='selector_close'><span class='text-icon'>×</span></a><a href='javascript:;' class='selctor_focus'></a></div>";
+
+        if (isBatch == true) {
             return itemHtml;
         }
         else {
@@ -407,21 +417,25 @@ function selector_removeItems(obj, arrayItemIds, isCallOnRemove) {
 
 var selector_raiseEvent = function (obj) {
     var items = [];
-    obj.find(".one").not(".error").not(".placeholder").each(function (i, val) {
-        var v = $(val).attr("val");
-        var text = $(val).attr("txt");
-        var id = $(val).attr("uid");
-        var title = $(val).attr("title");
-        var fromClient = $(val).attr("client");
-        var serverObject = { Id: id, Text: text, Value: v };
-        if (title && title!="") {
+    var texts = obj.find(".one").not(".error").not(".placeholder");
+ 
+    for (var i = 0; i < texts.length; i++) {
+        var item = texts[i];
+        var vl = item.getAttribute("val");
+        var text = item.getAttribute("txt");
+        var id = item.getAttribute("uid");
+        var title = item.getAttribute("title");
+        var fromClient = item.getAttribute("client");
+        var serverObject = { Id: id, Text: text, Value: vl };
+        if (title && title != "") {
             serverObject.Tooltip = title;
         }
         if (fromClient == "1") {
             serverObject.FromClient = true;
         }
         items.push(serverObject);
-    });
+    }
+
     var json = JSON.stringify(items);
 
     var mstrControlId = obj.VWG_Id;
@@ -444,7 +458,7 @@ function selector_bindItemEvent(obj, uid) {
         }
         else if (event.type === "click") {
             event.stopPropagation();
-            $(this).find(".addr_del").focus();
+            $(this).find(".selctor_focus").focus();
             obj.find(".select").removeClass("select");
             $(this).not(".in").removeClass("over").addClass("select");
         }
@@ -456,14 +470,20 @@ function selector_bindItemEvent(obj, uid) {
         return false;
     });
 
-    obj.delegate(".one .addr_del", "blur", function () {
+    obj.delegate(".one .selctor_focus", "blur", function () {
         $(".divtxt .select").removeClass("select");
         $(this).not(".in").removeClass("over").addClass("select");
+    });
+
+
+    obj.delegate(".one .selector_close", "click", function () {
+        var item = $(this).parent();
+        selector_removeItem(obj, item, true);
     });
 }
 
 function insertPlaceHoler(obj, element, action) {
-    var boxWidth = $.browser.msie ? 8 : 80;
+    var boxWidth = $.browser.msie ? 4 : 80;
 
     var placeHolder = $("<div class='one placeholder' style='width:" + boxWidth + "px;'><input vwgfocuselement='1' vwgeditable='1' type='input' tabindex='1' autocomplete='off'><b unselectable='on'>&nbsp</b></div>");
 
@@ -517,7 +537,7 @@ function insertPlaceHoler(obj, element, action) {
 
 
     $('.placeholder input').focus().autoGrowInput({
-        comfortZone: 12,
+        comfortZone: 10,
         minWidth: boxWidth,
         maxWidth: 260,
         callback: function (w) {
