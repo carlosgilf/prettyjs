@@ -1,0 +1,16 @@
+﻿.Panel-Control
+{
+	[Skin.Border];
+	[Skin.Background];
+}
+
+.HoverPanelHidden
+{
+	display:none;
+	/*visibility:hidden;*/
+}
+
+.HoverPanelRadius
+{
+   behavior: url(/PIE.htc);
+}

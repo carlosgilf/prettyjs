@@ -1,0 +1,21 @@
+﻿.Panel-Control
+{
+	[Skin.Border];
+	[Skin.Background];
+}
+
+.SupperPanel-Radius
+{
+	behavior: url(Static.Bronze.Controls.VWG.HtcFileLoader.wgx);
+   /*behavior: url(/PIE.htc);*/
+}
+
+.SupperPanel-Hidden
+{
+    display:none;
+}
+
+.SupperPanel-VHidden
+{
+     visibility:hidden;
+}
