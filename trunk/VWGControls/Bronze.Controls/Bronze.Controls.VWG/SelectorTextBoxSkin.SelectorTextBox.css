@@ -3,16 +3,17 @@
     padding-right: 3px;
     padding-left: 3px;
     padding-top: 3px;
-    font-size: 12px;
-    min-height: 22px;
-    line-height: 20px;
     padding-bottom: 3px;
+    font-size: 12px;
+    min-height: 23px;
+    line-height: 23px;
+   
     overflow: auto;
     width: 100%;
     cursor: text;
     overflow-y: auto !important;
-    overflow-x:hidden !important;
-    display: inline-block!important;
+    overflow-x: hidden !important;
+    display: inline-block !important;
     text-align: left;
 }
 
@@ -21,28 +22,34 @@
     cursor: pointer;
     float: left;
     white-space: nowrap;
-    height: 20px;
-    margin-right: 4px;
-    margin-left: 4px;
-    color:Black;
-    display:inline-block;
+    height: 23px;
+    margin-left: 5px;
+    margin-bottom: 4px;
+    color: Black;
+    display: inline-block;
+    background-color: #DEE7F8;
+    border: 1px solid #CAD8F3;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding-right:4px;
 }
 
 .divtxt .one.error
 {
-    color:Red;
+    color: Red;
 }
 
 
 .divtxt .one.select
 {
     background-color: #55798C;
-    color: #ffffff!important;
+    color: #ffffff !important;
 }
 
-.divtxt .one.select * 
+.divtxt .one.select *
 {
-    color:#ffffff!important;
+    color: #ffffff !important;
 }
 
 .divtxt .one.over
@@ -52,8 +59,11 @@
 
 .divtxt .one.placeholder
 {
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: -5px;
+    margin-left: 2px;
+    background:none;
+    border: none;
+    padding:0;
 }
 
 .divtxt .one B
@@ -81,4 +91,35 @@
     outline: none;
     -webkit-appearance: none;
     width: 100%;
+}
+
+.divtxt .tagText
+{
+    display: inline;
+    padding-left:4px;
+    /*vertical-align:top;*/
+}
+
+a.selector_close
+{
+    text-decoration: none;
+    cursor: pointer;
+    right: .4em;
+    top: 50%;
+    margin-top: -8px;
+    color: #777;
+}
+
+a.selector_close:hover
+{
+    color: #222;
+}
+
+.selector_close .text-icon
+{
+    display: inline;
+    font-family: arial, sans-serif;
+    font-size: 16px;
+    height:15px;
+    line-height: 15px;
 }
