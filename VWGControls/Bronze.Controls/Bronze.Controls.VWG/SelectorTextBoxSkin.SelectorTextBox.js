@@ -150,6 +150,11 @@ function selector_Init(id, img) {
                 event.preventDefault();
             }
         });
+
+        obj.scroll(function () {
+            //isScrolledIntoView();
+        });
+
         obj.click(function (e) {
             e.stopPropagation();
             if (e.target != this) {
@@ -661,4 +666,14 @@ function selector_addBindKey(obj) {
         }
     });
 
+}
+
+function isScrolledIntoView($elem,$contanier) {
+    var docViewTop = $contanier.scrollTop();
+    var docViewBottom = docViewTop + $contanier.height();
+
+    var elemTop = $elem.offset().top;
+    var elemBottom = elemTop + $elem.height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
