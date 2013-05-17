@@ -74,5 +74,10 @@ namespace Bronze.Controls.Examples
             selector_removeTexts(" + this.selectorTextBox1.ID + ",items,false);"
                  );
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.panel1.Visible = !this.panel1.Visible;
+        }
     }
 }

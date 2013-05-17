@@ -35,6 +35,11 @@ namespace Bronze.Controls.Examples
             this.button2 = new Gizmox.WebGUI.Forms.Button();
             this.button3 = new Gizmox.WebGUI.Forms.Button();
             this.selectorTextBox1 = new Bronze.Controls.VWG.SelectorTextBox();
+            this.button4 = new Gizmox.WebGUI.Forms.Button();
+            this.panel1 = new Gizmox.WebGUI.Forms.Panel();
+            this.label1 = new Gizmox.WebGUI.Forms.Label();
+            this.htmlBox1 = new Gizmox.WebGUI.Forms.HtmlBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -76,8 +81,51 @@ namespace Bronze.Controls.Examples
             this.selectorTextBox1.SplitString = ",;";
             this.selectorTextBox1.TabIndex = 0;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(74, 334);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "button4";
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(251, 334);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(47, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // htmlBox1
+            // 
+            this.htmlBox1.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.htmlBox1.ContentType = "text/html";
+            this.htmlBox1.Expires = -1;
+            this.htmlBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.htmlBox1.Html = "<div id=\"xxt_smsTips\" class=\"smsTips\">ddddd</div>";
+            this.htmlBox1.IsWindowless = true;
+            this.htmlBox1.Location = new System.Drawing.Point(121, 437);
+            this.htmlBox1.Name = "htmlBox1";
+            this.htmlBox1.Size = new System.Drawing.Size(442, 20);
+            this.htmlBox1.TabIndex = 28;
+            // 
             // SelectorTextBoxFrm
             // 
+            this.Controls.Add(this.htmlBox1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -85,6 +133,7 @@ namespace Bronze.Controls.Examples
             this.Size = new System.Drawing.Size(692, 466);
             this.Text = "SelectorTextBoxFrm";
             this.Load += new System.EventHandler(this.SelectorTextBoxFrm_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -95,6 +144,10 @@ namespace Bronze.Controls.Examples
         private Button button1;
         private Button button2;
         private Button button3;
+        private Button button4;
+        private Panel panel1;
+        private Label label1;
+        private HtmlBox htmlBox1;
 
 
 
