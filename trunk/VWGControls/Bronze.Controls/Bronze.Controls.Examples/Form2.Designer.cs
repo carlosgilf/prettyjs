@@ -54,10 +54,10 @@ namespace Bronze.Controls.Examples
             // 
             // supperPanel1
             // 
+            this.supperPanel1.ArrowStart = ((uint)(10u));
             this.supperPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.supperPanel1.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.Gray);
             this.supperPanel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.supperPanel1.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.supperPanel1.Controls.Add(this.treeView1);
             this.supperPanel1.CustomStyle = "SupperPanelSkin";
             this.supperPanel1.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
@@ -127,12 +127,12 @@ namespace Bronze.Controls.Examples
             // 
             // supperPanel2
             // 
+            this.supperPanel2.ArrowStart = ((uint)(10u));
             this.supperPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.supperPanel2.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.supperPanel2.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Gray, 5, 5, 5);
             this.supperPanel2.CustomStyle = "SupperPanelSkin";
             this.supperPanel2.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
-            this.supperPanel2.Location = new System.Drawing.Point(286, 99);
+            this.supperPanel2.Location = new System.Drawing.Point(344, 141);
             this.supperPanel2.Name = "supperPanel2";
             this.supperPanel2.Opacity = 100;
             this.supperPanel2.Radius = new Gizmox.WebGUI.Forms.CornerRadius(5);
@@ -141,14 +141,14 @@ namespace Bronze.Controls.Examples
             // 
             // supperPanel3
             // 
-            this.supperPanel3.BackColor = System.Drawing.Color.DarkGray;
+            this.supperPanel3.ArrowStart = ((uint)(10u));
+            this.supperPanel3.BackColor = System.Drawing.Color.Silver;
             this.supperPanel3.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.supperPanel3.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Teal, 0, 0, 3);
             this.supperPanel3.CustomStyle = "SupperPanelSkin";
             this.supperPanel3.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
             this.supperPanel3.Location = new System.Drawing.Point(387, 262);
             this.supperPanel3.Name = "supperPanel3";
-            this.supperPanel3.Opacity = 30;
+            this.supperPanel3.Opacity = 100;
             this.supperPanel3.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
             this.supperPanel3.Size = new System.Drawing.Size(200, 100);
             this.supperPanel3.TabIndex = 2;
@@ -188,21 +188,21 @@ namespace Bronze.Controls.Examples
             // 
             // supperPanel4
             // 
-            this.supperPanel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.supperPanel4.ArrowStart = ((uint)(10u));
+            this.supperPanel4.BackColor = System.Drawing.Color.DimGray;
             this.supperPanel4.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.supperPanel4.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.supperPanel4.CustomStyle = "SupperPanelSkin";
             this.supperPanel4.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
-            this.supperPanel4.Location = new System.Drawing.Point(281, 20);
+            this.supperPanel4.Location = new System.Drawing.Point(344, 9);
             this.supperPanel4.Name = "supperPanel4";
-            this.supperPanel4.Opacity = 50;
+            this.supperPanel4.Opacity = 100;
             this.supperPanel4.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
             this.supperPanel4.Size = new System.Drawing.Size(200, 100);
             this.supperPanel4.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(530, 79);
+            this.button1.Location = new System.Drawing.Point(567, 66);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -211,7 +211,7 @@ namespace Bronze.Controls.Examples
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(530, 128);
+            this.button2.Location = new System.Drawing.Point(567, 127);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -220,13 +220,13 @@ namespace Bronze.Controls.Examples
             // 
             // Form2
             // 
-            this.BackColor = System.Drawing.Color.Thistle;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.supperPanel1);
+            this.Controls.Add(this.supperPanel3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.supperPanel4);
-            this.Controls.Add(this.supperPanel3);
             this.Controls.Add(this.supperPanel2);
-            this.Controls.Add(this.supperPanel1);
+            this.Controls.Add(this.supperPanel4);
             this.Menu = this.mainMenu1;
             this.Size = new System.Drawing.Size(694, 568);
             this.Text = "Form2";

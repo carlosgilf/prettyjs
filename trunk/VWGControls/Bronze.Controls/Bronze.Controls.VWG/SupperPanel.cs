@@ -122,6 +122,31 @@ namespace Bronze.Controls.VWG
             }
         }
 
+        private ArrowPosition arrowPosition = ArrowPosition.None;
+        [DefaultValue(ArrowPosition.None)]
+        public ArrowPosition ArrowPosition
+        {
+            get { return arrowPosition; }
+            set
+            {
+                arrowPosition = value;
+                this.Update();
+            }
+        }
+
+        private uint arrowStart = 10;
+
+        [DefaultValue(10)]
+        public uint ArrowStart
+        {
+            get { return arrowStart; }
+            set
+            {
+                arrowStart = value;
+                this.Update();
+            }
+        }
+
         private DisplayMode displayMode = DisplayMode.Normal;
         public DisplayMode DisplayMode
         {
@@ -172,6 +197,11 @@ namespace Bronze.Controls.VWG
                 OpacityValue op = new OpacityValue(mobjOpacity);
                 objWriter.WriteAttributeString(WGAttributes.Opacity, op.GetValue(objContext));
             }
+            if (ArrowPosition != VWG.ArrowPosition.None)
+            {
+                objWriter.WriteAttributeString("ArrowPosition", ArrowPosition.ToString().ToLower());
+                objWriter.WriteAttributeString("ArrowStart", this.ArrowStart);
+            }
         }
     }
 
@@ -180,6 +210,16 @@ namespace Bronze.Controls.VWG
         Normal = 0,
         Hidden = 1,
         VisibilityHidden = 2
+    }
+
+    public enum ArrowPosition
+    {
+        None = 0,
+        Top = 1,
+        Right = 2,
+        Bottom = 4,
+        Left = 7
+
     }
 
 }
