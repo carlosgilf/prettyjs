@@ -202,6 +202,21 @@ function selector_Init(id, img) {
 }
 
 //用于外部js调用
+function selector_getItemCount(mstrControlId) {
+    try {
+        var initData = window["selector_" + mstrControlId];
+        if (initData) {
+            return initData.items.length;
+        }
+    } catch (e) {
+
+    }
+    return 0;
+//    var control = Web_GetElementByDataId(mstrControlId);
+//    var texts = obj.find(".one").not(".error").not(".placeholder");
+//    return texts.length;
+}
+
 function selector_removeText(mstrControlId, itemId) {
     var initData = window["selector_" + mstrControlId];
     if (initData) {
