@@ -13,9 +13,9 @@ using Gizmox.WebGUI.Common;
 namespace Bronze.Controls.VWG
 {
     /// <summary>
-    /// Summary description for SelectorTextBoxSkin
+    /// Summary description for TreeViewExSkin
     /// </summary>   
-    public class SelectorTextBoxSkin : Gizmox.WebGUI.Forms.Skins.TreeViewSkin
+    public class TreeViewExSkin : TreeViewSkin
     {
         private void InitializeComponent()
         {

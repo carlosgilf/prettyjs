@@ -115,7 +115,8 @@ function selector_Init(id, img) {
             splitStr = splitStr.replace(/\r?\n/g, "\r\n");
         }
 
-        var onRemoveScript = Xml_GetAttribute(objNode, "OnRemove"); ;
+        var onRemoveScript = Xml_GetAttribute(objNode, "OnRemove");
+        var onChangedScript = Xml_GetAttribute(objNode, "OnChanged");
         var clientInputDisplayFormat = Xml_GetAttribute(objNode, "ClientInputDisplayFormat");
 
         var items = JSON.parse(code);
@@ -128,6 +129,9 @@ function selector_Init(id, img) {
         initData.items = [];
         if (onRemoveScript) {
             initData.onRemove = onRemoveScript;
+        }
+        if (onChangedScript) {
+            initData.onChanged = onChangedScript;
         }
 
         if (validExp) {
@@ -198,6 +202,7 @@ function selector_Init(id, img) {
 
         selector_addBindKey(obj);
         selector_addItems(obj, items, true);
+        selector_fireOnChanged(obj);
     }
 }
 
@@ -438,7 +443,7 @@ function selector_removeItems(obj, arrayItemIds, isCallOnRemove) {
 var selector_raiseEvent = function (obj) {
     var items = [];
     var texts = obj.find(".one").not(".error").not(".placeholder");
- 
+
     for (var i = 0; i < texts.length; i++) {
         var item = texts[i];
         var vl = item.getAttribute("val");
@@ -457,7 +462,6 @@ var selector_raiseEvent = function (obj) {
     }
 
     var json = JSON.stringify(items);
-
     var mstrControlId = obj.VWG_Id;
     // Create event
     var objEvent = Events_CreateEvent(mstrControlId, "ItemsChanged", null, true);
@@ -466,7 +470,22 @@ var selector_raiseEvent = function (obj) {
         // Raise event if critical
         Events_RaiseEvents();
     }
+
+    selector_fireOnChanged(obj);
+
 };
+
+ function selector_fireOnChanged(obj) {
+    //执行onChanged事件
+    if (obj.onChanged) {
+        var realGlobal = {};
+        realGlobal.Id = obj.VWG_Id;
+        realGlobal.Items = obj.items;
+
+        //改变上下文eval
+        (new Function("with(this) { " + obj.onChanged + "}")).call(realGlobal);
+    }
+}
 
 function selector_bindItemEvent(obj, uid) {
     obj.delegate(".one:not('.placeholder')", "hover click dblclick", function (event) {

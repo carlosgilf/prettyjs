@@ -26,6 +26,7 @@ namespace Bronze.Controls.Examples
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            this.treeNode1.Expand();
             this.supperPanel1.BackColor = ColorTranslator.FromHtml("#e5e6f0");
             this.supperPanel1.ArrowPosition = VWG.ArrowPosition.Top;
             this.supperPanel1.ArrowStart = (uint)(this.supperPanel1.Width / 2)-4;
