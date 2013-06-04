@@ -49,6 +49,7 @@ namespace Bronze.Controls.Examples
             this.supperPanel4 = new Bronze.Controls.VWG.SupperPanel();
             this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.button2 = new Gizmox.WebGUI.Forms.Button();
+            this.jrtLabel1 = new Bronze.Controls.VWG.JrtLabel();
             this.supperPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@ namespace Bronze.Controls.Examples
             this.supperPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.supperPanel1.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.Gray);
             this.supperPanel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.supperPanel1.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.supperPanel1.Controls.Add(this.treeView1);
             this.supperPanel1.CustomStyle = "SupperPanelSkin";
             this.supperPanel1.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
@@ -76,6 +78,8 @@ namespace Bronze.Controls.Examples
             this.treeNode1,
             this.treeNode2,
             this.treeNode3});
+            this.treeView1.ShowLines = false;
+            this.treeView1.ShowPlusMinus = false;
             this.treeView1.Size = new System.Drawing.Size(266, 409);
             this.treeView1.TabIndex = 0;
             // 
@@ -130,6 +134,7 @@ namespace Bronze.Controls.Examples
             this.supperPanel2.ArrowStart = ((uint)(10u));
             this.supperPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.supperPanel2.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.supperPanel2.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.supperPanel2.CustomStyle = "SupperPanelSkin";
             this.supperPanel2.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
             this.supperPanel2.Location = new System.Drawing.Point(344, 141);
@@ -143,7 +148,8 @@ namespace Bronze.Controls.Examples
             // 
             this.supperPanel3.ArrowStart = ((uint)(10u));
             this.supperPanel3.BackColor = System.Drawing.Color.Silver;
-            this.supperPanel3.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.supperPanel3.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.Dashed;
+            this.supperPanel3.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.supperPanel3.CustomStyle = "SupperPanelSkin";
             this.supperPanel3.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
             this.supperPanel3.Location = new System.Drawing.Point(387, 262);
@@ -191,6 +197,7 @@ namespace Bronze.Controls.Examples
             this.supperPanel4.ArrowStart = ((uint)(10u));
             this.supperPanel4.BackColor = System.Drawing.Color.DimGray;
             this.supperPanel4.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.supperPanel4.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
             this.supperPanel4.CustomStyle = "SupperPanelSkin";
             this.supperPanel4.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
             this.supperPanel4.Location = new System.Drawing.Point(344, 9);
@@ -218,9 +225,22 @@ namespace Bronze.Controls.Examples
             this.button2.Text = "button2";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // jrtLabel1
+            // 
+            this.jrtLabel1.AutoEllipsis = true;
+            this.jrtLabel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.Dashed;
+            this.jrtLabel1.CustomStyle = "JrtLabelSkin";
+            this.jrtLabel1.Location = new System.Drawing.Point(421, 409);
+            this.jrtLabel1.Name = "jrtLabel1";
+            this.jrtLabel1.Size = new System.Drawing.Size(123, 46);
+            this.jrtLabel1.TabIndex = 7;
+            this.jrtLabel1.Text = "今天你在四大皆空分角色读看来飞机昆仑山大家分开了速度加快立法集散地立刻飞机昆仑加速度看来飞机昆仑山大家克服了速度加快立法集散地山大家快乐飞哪儿我都要找到你呢今天你" +
+    "在哪儿我都要找到你呢今天你在哪儿我都要找到你呢";
+            // 
             // Form2
             // 
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.jrtLabel1);
             this.Controls.Add(this.supperPanel1);
             this.Controls.Add(this.supperPanel3);
             this.Controls.Add(this.button2);
@@ -228,7 +248,7 @@ namespace Bronze.Controls.Examples
             this.Controls.Add(this.supperPanel2);
             this.Controls.Add(this.supperPanel4);
             this.Menu = this.mainMenu1;
-            this.Size = new System.Drawing.Size(694, 568);
+            this.Size = new System.Drawing.Size(771, 567);
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.supperPanel1.ResumeLayout(false);
@@ -256,6 +276,7 @@ namespace Bronze.Controls.Examples
         private VWG.SupperPanel supperPanel4;
         private Button button1;
         private Button button2;
+        private VWG.JrtLabel jrtLabel1;
 
 
     }

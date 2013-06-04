@@ -89,6 +89,15 @@
     <Content Include="ImageProcessorSkin.Jcrop.xslt">
       <DependentUpon>ImageProcessorSkin.cs</DependentUpon>
     </Content>
+    <Content Include="JrtLabelSkin.Label.css">
+      <DependentUpon>JrtLabelSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="JrtLabelSkin.Label.js">
+      <DependentUpon>JrtLabelSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="JrtLabelSkin.Label.xslt">
+      <DependentUpon>JrtLabelSkin.cs</DependentUpon>
+    </Content>
     <Content Include="SelectorTextBox.bmp" />
     <Content Include="SelectorTextBoxSkin.json2.js">
       <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
@@ -123,11 +132,31 @@
     <Content Include="SupperPanelSkin.Panel.xslt">
       <DependentUpon>SupperPanelSkin.cs</DependentUpon>
     </Content>
+    <Content Include="TreeViewExSkin.TreeView0.gif">
+      <DependentUpon>TreeViewExSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="TreeViewExSkin.TreeView1.gif">
+      <DependentUpon>TreeViewExSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="TreeViewExSkin.TreeViewEx.css">
+      <DependentUpon>TreeViewExSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="TreeViewExSkin.TreeViewEx.js">
+      <DependentUpon>TreeViewExSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="TreeViewExSkin.TreeViewEx.xslt">
+      <DependentUpon>TreeViewExSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
     <EmbeddedResource Include="FlyTreeSkin.resx">
       <DependentUpon>FlyTreeSkin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JrtLabelSkin.resx">
+      <DependentUpon>JrtLabelSkin.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherResources\PIE.htc" />
@@ -139,6 +168,9 @@
     <EmbeddedResource Include="SupperPanelSkin.resx">
       <DependentUpon>SupperPanelSkin.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeViewExSkin.resx">
+      <DependentUpon>TreeViewExSkin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +190,12 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="HtcFileLoader.cs" />
+    <Compile Include="JrtLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="JrtLabelSkin.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SelectorTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -185,6 +223,15 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SupperPanelSkin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeViewEx.designer.cs">
+      <DependentUpon>TreeViewEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeViewExSkin.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Form1.resx">

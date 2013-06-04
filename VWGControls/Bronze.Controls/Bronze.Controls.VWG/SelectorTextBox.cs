@@ -146,6 +146,16 @@ namespace Bronze.Controls.VWG
         }
 
         /// <summary>
+        /// 客户端删除的事件
+        /// </summary>
+        [DefaultValue(null)]
+        public string OnClientChanagedScript
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// The SelectionChanged event registration.
         /// </summary>
         private static readonly SerializableEvent SelectionChangedEvent = SerializableEvent.Register("SelectionChanged", typeof(EventHandler), typeof(ImageProcessor));
@@ -216,6 +226,11 @@ namespace Bronze.Controls.VWG
             if (!string.IsNullOrWhiteSpace(OnClientRemoveScript))
             {
                 objWriter.WriteAttributeString("OnRemove", this.OnClientRemoveScript);
+            }
+
+            if (!string.IsNullOrWhiteSpace(OnClientChanagedScript))
+            {
+                objWriter.WriteAttributeString("OnChanged", this.OnClientChanagedScript);
             }
         }
 

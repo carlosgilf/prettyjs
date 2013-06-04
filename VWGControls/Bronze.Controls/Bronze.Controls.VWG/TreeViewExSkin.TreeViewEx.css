@@ -1,0 +1,19 @@
+.TreeView-RowContainer_Selected .TreeView-TextContainer
+{
+	[Skin.TreeNodeSelectedStyle];
+}
+
+
+.TreeView-TextContainer_Selected
+{
+	[Skin.TreeNodeSelectedStyle];
+}
+
+.TreeView-TextContainer
+{
+	height:100%;
+	padding:3px 0px 0px 0px;
+}
+
+
+
