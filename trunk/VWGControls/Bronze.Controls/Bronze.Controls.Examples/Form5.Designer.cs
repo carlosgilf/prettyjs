@@ -37,6 +37,7 @@ namespace Bronze.Controls.Examples
             this.lbClose = new Gizmox.WebGUI.Forms.Label();
             this.label1 = new Gizmox.WebGUI.Forms.Label();
             this.button1 = new Gizmox.WebGUI.Forms.Button();
+            this.htmlBox1 = new Gizmox.WebGUI.Forms.HtmlBox();
             this.popup.SuspendLayout();
             this.popupInner.SuspendLayout();
             this.popupTop.SuspendLayout();
@@ -134,10 +135,21 @@ namespace Bronze.Controls.Examples
             this.button1.Text = "button1";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // htmlBox1
+            // 
+            this.htmlBox1.ContentType = "text/html";
+            this.htmlBox1.Expires = -1;
+            this.htmlBox1.Html = "<HTML><div>ddssfs<div></HTML>";
+            this.htmlBox1.Location = new System.Drawing.Point(491, 354);
+            this.htmlBox1.Name = "htmlBox1";
+            this.htmlBox1.Size = new System.Drawing.Size(250, 250);
+            this.htmlBox1.TabIndex = 7;
+            // 
             // Form5
             // 
             this.Controls.Add(this.button1);
             this.Controls.Add(this.popup);
+            this.Controls.Add(this.htmlBox1);
             this.Size = new System.Drawing.Size(750, 636);
             this.Text = "Form5";
             this.popup.ResumeLayout(false);
@@ -155,6 +167,7 @@ namespace Bronze.Controls.Examples
         private Label label1;
         private Panel popupTop;
         private Label lbClose;
+        private HtmlBox htmlBox1;
 
 
 
