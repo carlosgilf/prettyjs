@@ -20,6 +20,20 @@ namespace Bronze.Controls.Examples
         public Form5()
         {
             InitializeComponent();
+            this.popup.DisplayMode = VWG.DisplayMode.Hidden;
+
+
+            lbClose.RegisterClientAction(string.Format("$('#VWG_{0}').hide();null;", popup.ID));
+        }
+
+     
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var script = string.Format("vwg_showMenu('{0}',{{ duration: 500,showManyTimes:true }},'{1}');", popup.ID, "bubbleUp");
+            this.InvokeScript(script);
         }
     }
 }
