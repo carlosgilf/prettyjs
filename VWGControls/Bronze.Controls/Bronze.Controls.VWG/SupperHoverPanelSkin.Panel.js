@@ -21,6 +21,7 @@ function SupperHoverPanel_Init(strGuid) {
             var strOverImage=Xml_GetAttribute(objNode,"HoverImage");
             var strOverColor=Xml_GetAttribute(objNode,"HoverColor");
             var imgLayout=Xml_GetAttribute(objNode,"Attr.BackgroundImageLayout");
+            var overScript = Xml_GetAttribute(objNode, "OverScript");
 
             var strBgImage=Xml_GetAttribute(objNode,"Attr.BackgroundImage");
 
@@ -42,7 +43,7 @@ function SupperHoverPanel_Init(strGuid) {
                 }
             }
 
-            var overScript=Xml_GetAttribute(objNode,"OverScript");
+            
             if(overScript) {
                 eval(overScript)
             }
@@ -78,18 +79,19 @@ function vwg_showMenu(id,option,animate) {
     if(animate) {
         _option.animate=animate;
     }
+     
 
     var obj=$(Web_GetElementByDataId(id));
 
     var delayTimer=obj.attr('delayTimer');
     window.clearInterval(delayTimer);
-    if(obj.attr('showed')!='1') {
+    if(option.showManyTimes || obj.attr('showed')!='1') {
         obj.attr('showed',1);
 
         //确保该div显示
         obj.find('.SupperPanel-Hidden').removeClass('SupperPanel-Hidden');
         obj.find('.SupperPanel-VHidden').removeClass('SupperPanel-VHidden');
-
+        obj.css('visibility', 'visible');
         $('[showed]').each(function () {
             if($(this).attr('id')!=obj.attr('id')) {
                 $(this).css('z-index',10000);
@@ -111,6 +113,7 @@ function vwg_hideMenu(id,option,animate,hideTimeout) {
     if(hideTimeout) {
         _option.hideTimeout=hideTimeout;
     }
+    option.showManyTimes=false;
     var obj=$(Web_GetElementByDataId(id));
 
     var delayTimer=obj.attr('delayTimer');
@@ -178,6 +181,96 @@ function isNumber(n) {
         });
     };
 
+
+     $.fn.showUp=function (arg,callback) {
+        var cfg={ duration: 500,callback: null };
+        if(isNumber(arg)) cfg.duration=arg
+        else cfg=$.extend(cfg,arg);
+        if(callback) {
+            cfg.callback=callback;
+        }
+
+        var obj=$(this);
+
+        //obj.children().css('top',-obj.height());
+        obj.css('display','block').children().
+        stop().css('top',obj.height()*2).
+        animate({ top: 0 },{
+            queue: false,
+            duration: cfg.duration,
+            easing: cfg.easing||'',
+            complete: function () {
+                if(cfg.callback) cfg.callback();
+            }
+        });
+
+    };
+
+
+
+    $.fn.bubbleUp=function (arg,callback) {
+        var cfg={ duration: 500,callback: null };
+        if(isNumber(arg)) cfg.duration=arg
+        else cfg=$.extend(cfg,arg);
+        if(callback) {
+            cfg.callback=callback;
+        }
+
+        var obj=$(this);
+
+        var oldBottom= obj.css("bottom");
+        obj.css('display','block').stop().css('bottom', 0 -  obj.height()).
+        animate({ bottom: oldBottom },{
+            queue: false,
+            duration: cfg.duration,
+            easing: cfg.easing||'',
+            complete: function () {
+                if(cfg.callback) cfg.callback();
+            }
+        });
+     };
+
+
+	$.fn.watch = function(props, callback, timeout){
+        if( ! timeout)
+            timeout = 10;
+        return this.each(function(){
+            var el = $(this), func = function(){
+                __check.call(this, el)
+            }, data = 
+            {
+                props : props.split(","), func : callback,
+                vals : []
+            };
+            $.each(data.props, function(i){
+                data.vals[i] = el.css(data.props[i]);
+            });
+            el.data(data);
+            if(typeof(this.onpropertychange) == "object"){
+                el.bind("propertychange", callback);
+            }
+            else if($.browser.mozilla){
+                el.bind("DOMAttrModified", callback);
+            }
+            else{
+                setInterval(func, timeout);
+            }
+        });
+        function __check(el){
+            var data = el.data(), changed = false, temp = "";
+            for(var i = 0; i < data.props.length; i ++ ){
+                temp = el.css(data.props[i]);
+                if(data.vals[i] != temp){
+                    data.vals[i] = temp;
+                    changed = true;
+                    break;
+                }
+            }
+            if(changed && data.func){
+                data.func.call(el, data);
+            }
+        }
+    };
 
 
 })(jQuery);

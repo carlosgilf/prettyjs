@@ -168,12 +168,12 @@ namespace Bronze.Controls.VWG
                 if (DisplayMode == VWG.DisplayMode.Hidden)
                 {
                     //通过XLST重写只能设置第二层div的样式，所以还需要通过js隐藏最外层的div
-                    this.InvokeScript(string.Format("$('#VWG_{0}').css('display','none')", this.ID));
+                    this.InvokeScript(string.Format("$('#VWG_{0}').attr('vwgvisible',0);$('#VWG_{0}').css('display','none')", this.ID));
                 }
                 else if (DisplayMode == VWG.DisplayMode.VisibilityHidden)
                 {
                     //通过XLST重写只能设置第二层div的样式，所以还需要通过js隐藏最外层的div
-                    this.InvokeScript(string.Format("$('#VWG_{0}').css('visibility','hidden')", this.ID));
+                    this.InvokeScript(string.Format("$('#VWG_{0}').attr('vwgvisible',0);$('#VWG_{0}').css('visibility','hidden')", this.ID));
                 }
             }
 

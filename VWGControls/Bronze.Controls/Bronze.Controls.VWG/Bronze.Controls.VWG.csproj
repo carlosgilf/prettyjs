@@ -131,6 +131,7 @@
     </Content>
     <Content Include="SupperPanelSkin.Panel.xslt">
       <DependentUpon>SupperPanelSkin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="TreeViewExSkin.TreeView0.gif">
       <DependentUpon>TreeViewExSkin.cs</DependentUpon>
