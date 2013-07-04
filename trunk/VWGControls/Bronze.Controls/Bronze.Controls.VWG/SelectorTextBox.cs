@@ -155,6 +155,14 @@ namespace Bronze.Controls.VWG
             set;
         }
 
+        private string emptyMsg;
+        [DefaultValue(null)]
+        public string EmptyMessage
+        {
+            get { return emptyMsg; }
+            set { emptyMsg = value; }
+        }
+
         /// <summary>
         /// The SelectionChanged event registration.
         /// </summary>
@@ -232,6 +240,17 @@ namespace Bronze.Controls.VWG
             {
                 objWriter.WriteAttributeString("OnChanged", this.OnClientChanagedScript);
             }
+
+            if (!string.IsNullOrWhiteSpace(EmptyMessage))
+            {
+                objWriter.WriteAttributeString(WGAttributes.LoadingMessage, this.EmptyMessage);
+                if (this.Items.Count == 0)
+                {
+                    objWriter.WriteAttributeString("ShowEmptyMsg", "1");
+                }
+            }
+
+
         }
 
         protected virtual void OnSelectionChange(EventArgs objArgs)
