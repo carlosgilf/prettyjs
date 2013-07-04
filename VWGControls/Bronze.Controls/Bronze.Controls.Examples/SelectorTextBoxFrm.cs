@@ -30,10 +30,11 @@ namespace Bronze.Controls.Examples
             selectorTextBox1.VaildExpressionMsg = "格式不正确，号码必须为数字";
             selectorTextBox1.DisplayFormat = "{Text}<span style='color: #666666'><{Value}></span>";
             selectorTextBox1.ClientInputDisplayFormat = "{Text}<span style='color: #666666'></span>";
-            for (long i = 13578778700; i < 13578778720; i++)
-            {
-                this.selectorTextBox1.Items.Add(new Bronze.Controls.VWG.SelectorTextBox.Selector { Text = "张三枫", Value = i, Id = i, Tooltip = "描述信息" + i });
-            }
+            selectorTextBox1.EmptyMessage = "请选择右边的联系人";
+            //for (long i = 13578778700; i < 13578778720; i++)
+            //{
+            //    this.selectorTextBox1.Items.Add(new Bronze.Controls.VWG.SelectorTextBox.Selector { Text = "张三枫", Value = i, Id = i, Tooltip = "描述信息" + i });
+            //}
             
         }
 

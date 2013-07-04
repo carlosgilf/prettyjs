@@ -162,11 +162,18 @@ function selector_Init(id, img) {
         obj.click(function (e) {
             e.stopPropagation();
             if (e.target != this) {
-                return;
+                if (e.target.tagName.toLowerCase() == "td" || e.target.tagName.toLowerCase() == "table") {
+
+                }
+                else {
+                    return;
+                }
             }
             if (!canEdit) {
                 return;
             }
+
+            obj.find('.EmptyMsg').css("display", "none");
             if (e.srcElement.type == "text") {
                 e.srcElement.focus();
                 return;
@@ -248,7 +255,9 @@ function selector_clean(mstrControlId) {
     if (initData) {
         var control = Web_GetElementByDataId(mstrControlId);
         var divtxt = $(control).find('.divtxt');
+        var emptyMsg = divtxt.find('.EmptyMsg').clone();
         divtxt.empty();
+        divtxt.append(emptyMsg);
         initData.items = [];
     }
 }
@@ -442,7 +451,15 @@ function selector_removeItems(obj, arrayItemIds, isCallOnRemove) {
 
 var selector_raiseEvent = function (obj) {
     var items = [];
-    var texts = obj.find(".one").not(".error").not(".placeholder");
+    var actualTexts = obj.find(".one").not(".placeholder");
+    if (actualTexts.length > 0) {
+        obj.find('.EmptyMsg').css("display","none");
+    }
+    else {
+        obj.find('.EmptyMsg').css("display","block");
+    }
+
+    var texts = actualTexts.not(".error");
 
     for (var i = 0; i < texts.length; i++) {
         var item = texts[i];
