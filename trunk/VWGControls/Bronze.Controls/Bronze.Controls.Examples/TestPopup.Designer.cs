@@ -3,7 +3,7 @@ using Gizmox.WebGUI.Common;
 
 namespace Bronze.Controls.Examples
 {
-    partial class Form5
+    partial class TestPopup
     {
         /// <summary>
         /// Required designer variable.

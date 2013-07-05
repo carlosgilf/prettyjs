@@ -39,7 +39,6 @@ namespace Bronze.Controls.Examples.Demo
             // 
             this.mainMenu1.Animate = "dropDown,dropUp";
             this.mainMenu1.CustomStyle = "SupperPanelSkin";
-            this.mainMenu1.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
             this.mainMenu1.Location = new System.Drawing.Point(31, 31);
             this.mainMenu1.Name = "mainMenu1";
             this.mainMenu1.Size = new System.Drawing.Size(634, 40);
