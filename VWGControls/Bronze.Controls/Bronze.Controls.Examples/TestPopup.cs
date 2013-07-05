@@ -15,9 +15,9 @@ using Gizmox.WebGUI.Forms;
 
 namespace Bronze.Controls.Examples
 {
-    public partial class Form5 : Form
+    public partial class TestPopup : Form
     {
-        public Form5()
+        public TestPopup()
         {
             InitializeComponent();
             this.popup.DisplayMode = VWG.DisplayMode.Hidden;

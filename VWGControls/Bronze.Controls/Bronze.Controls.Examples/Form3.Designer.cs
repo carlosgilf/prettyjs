@@ -31,85 +31,76 @@ namespace Bronze.Controls.Examples
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new Gizmox.WebGUI.Forms.Button();
-            this.selectorTextBox1 = new Bronze.Controls.VWG.SelectorTextBox();
-            this.label1 = new Gizmox.WebGUI.Forms.Label();
-            this.panel1 = new Gizmox.WebGUI.Forms.Panel();
-            this.panel2 = new Gizmox.WebGUI.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            this.supperPictureBox1 = new Bronze.Controls.VWG.SupperPictureBox();
+            this.pictureBox1 = new Gizmox.WebGUI.Forms.PictureBox();
+            this.textBox2 = new Gizmox.WebGUI.Forms.TextBox();
+            this.supperPanel1 = new Bronze.Controls.VWG.SupperPanel();
             this.SuspendLayout();
             // 
-            // button1
+            // supperPictureBox1
             // 
-            this.button1.Location = new System.Drawing.Point(33, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 23);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "button1";
+            this.supperPictureBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.supperPictureBox1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.supperPictureBox1.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128))))), 0, 0, 5);
+            this.supperPictureBox1.CustomStyle = "SupperPictureBox";
+            this.supperPictureBox1.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("supperPictureBox1.Image"));
+            this.supperPictureBox1.Location = new System.Drawing.Point(66, 126);
+            this.supperPictureBox1.Name = "supperPictureBox1";
+            this.supperPictureBox1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(5);
+            this.supperPictureBox1.Size = new System.Drawing.Size(240, 64);
+            this.supperPictureBox1.SizeMode = Gizmox.WebGUI.Forms.PictureBoxSizeMode.StretchImage;
+            this.supperPictureBox1.TabIndex = 0;
+            this.supperPictureBox1.TabStop = false;
             // 
-            // selectorTextBox1
+            // pictureBox1
             // 
-            this.selectorTextBox1.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.selectorTextBox1.AutoScroll = true;
-            this.selectorTextBox1.BackColor = System.Drawing.Color.White;
-            this.selectorTextBox1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.selectorTextBox1.CustomStyle = "SelectorTextBoxSkin";
-            this.selectorTextBox1.Editable = true;
-            this.selectorTextBox1.Location = new System.Drawing.Point(21, 212);
-            this.selectorTextBox1.Name = "selectorTextBox1";
-            this.selectorTextBox1.Size = new System.Drawing.Size(573, 165);
-            this.selectorTextBox1.SplitString = ",;";
-            this.selectorTextBox1.TabIndex = 0;
+            this.pictureBox1.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("pictureBox1.Image"));
+            this.pictureBox1.Location = new System.Drawing.Point(80, 371);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(210, 50);
+            this.pictureBox1.SizeMode = Gizmox.WebGUI.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // textBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.textBox2.Location = new System.Drawing.Point(97, 286);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 21);
+            this.textBox2.TabIndex = 1;
             // 
-            // panel1
+            // supperPanel1
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(144, 413);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(130, 62);
-            this.panel1.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.selectorTextBox1);
-            this.panel2.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(624, 553);
-            this.panel2.TabIndex = 31;
+            this.supperPanel1.ArrowStart = ((uint)(10u));
+            this.supperPanel1.BoxShadow = new Bronze.Controls.VWG.BoxShadow(System.Drawing.Color.Empty, 0, 0, 0);
+            this.supperPanel1.CustomStyle = "SupperPanelSkin";
+            this.supperPanel1.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
+            this.supperPanel1.Location = new System.Drawing.Point(97, 9);
+            this.supperPanel1.Name = "supperPanel1";
+            this.supperPanel1.Opacity = 100;
+            this.supperPanel1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
+            this.supperPanel1.Size = new System.Drawing.Size(200, 100);
+            this.supperPanel1.TabIndex = 4;
             // 
             // Form3
             // 
-            this.Controls.Add(this.panel2);
-            this.Size = new System.Drawing.Size(624, 553);
+            this.Controls.Add(this.supperPanel1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.supperPictureBox1);
+            this.Size = new System.Drawing.Size(419, 466);
             this.Text = "Form3";
-            this.Load += new System.EventHandler(this.Form3_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Button button1;
-        private VWG.SelectorTextBox selectorTextBox1;
-        private Label label1;
-        private Panel panel1;
-        private Panel panel2;
+        private VWG.SupperPictureBox supperPictureBox1;
+        private PictureBox pictureBox1;
+        private TextBox textBox2;
+        private VWG.SupperPanel supperPanel1;
 
 
     }
