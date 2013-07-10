@@ -158,6 +158,13 @@ namespace Bronze.Controls.VWG
             }
         }
 
+        [Browsable(false)]
+        public LinearGradient LinearGradient
+        {
+            get;
+            set;
+        }
+
 
         protected override void RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext objContext, Gizmox.WebGUI.Common.Interfaces.IAttributeWriter objWriter)
         {
@@ -201,6 +208,11 @@ namespace Bronze.Controls.VWG
             {
                 objWriter.WriteAttributeString("ArrowPosition", ArrowPosition.ToString().ToLower());
                 objWriter.WriteAttributeString("ArrowStart", this.ArrowStart);
+            }
+
+            if (LinearGradient != null)
+            {
+                objWriter.WriteAttributeString("Linear", LinearGradient.ToString());
             }
         }
     }
