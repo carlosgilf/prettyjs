@@ -13,8 +13,14 @@
         
         var radius = Xml_GetAttribute(objNode, "Radius");
         var boxShadow = Xml_GetAttribute(objNode, "BoxShadow");
+        var linearGradient = Xml_GetAttribute(objNode, "Linear");
         if (radius) {
             var newStyle = layer1.attr("style") + ";" + radius
+            layer1.attr("style", newStyle);
+        }
+
+        if (linearGradient) {
+            var newStyle = layer1.attr("style") + ";" + linearGradient
             layer1.attr("style", newStyle);
         }
 
@@ -88,3 +94,23 @@
         }
     }
 }
+
+//run server method
+function runServer(method, param){
+    var objEvent = Events_CreateEvent(mstrWindowGuid, "RunServerMethod");
+    if (method) {
+        var args = Array.prototype.slice.call(arguments);
+        var json = JSON.stringify(args);
+        Events_SetEventAttribute(objEvent, "params", json);
+        Events_RaiseEvents();
+    }
+}
+
+var _json_stringify = JSON.stringify;
+JSON.stringify = function (value) {
+    var _array_tojson = Array.prototype.toJSON;
+    delete Array.prototype.toJSON;
+    var r = _json_stringify(value);
+    Array.prototype.toJSON = _array_tojson;
+    return r;
+};
