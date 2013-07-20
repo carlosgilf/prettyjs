@@ -34,6 +34,7 @@ namespace Bronze.Controls.Examples
             this.supperPanel1.Radius = new CornerRadius(10);
             var node = new NodeF();
             this.treeView1.Nodes.Add(new NodeF());
+            this.supperPanel3.LinearGradient = new VWG.LinearGradient("top","#fafafa", "#eaeaea");
          
         }
 

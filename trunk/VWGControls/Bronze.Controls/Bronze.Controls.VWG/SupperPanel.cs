@@ -199,7 +199,7 @@ namespace Bronze.Controls.VWG
                 string style = bs.GetStyle();
                 objWriter.WriteAttributeString("BoxShadow", style);
             }
-            if (mobjOpacity != 1)
+            if (mobjOpacity != 100)
             {
                 OpacityValue op = new OpacityValue(mobjOpacity);
                 objWriter.WriteAttributeString(WGAttributes.Opacity, op.GetValue(objContext));
