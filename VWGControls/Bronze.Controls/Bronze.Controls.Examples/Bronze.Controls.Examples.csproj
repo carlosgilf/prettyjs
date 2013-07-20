@@ -165,7 +165,7 @@
       <DependentUpon>Mainfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu\MainMenu.cs">
-      <SubType>Form</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Menu\MenuBar.cs">
       <SubType>UserControl</SubType>

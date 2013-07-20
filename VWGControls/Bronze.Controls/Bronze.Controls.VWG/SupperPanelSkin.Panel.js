@@ -4,39 +4,45 @@
         var control = Web_GetElementByDataId(id);
         var objNode = Data_GetNode(id);
         var $ctl = $(control);
-        var layer1 = $ctl.children("div:first");
+        var $inner = $ctl.children("div:first");
+
+        function conactStyle(style1, style2) {
+            if (!/;$/.test(style1)) {
+                style1 += ";";
+            }
+            return style1 + style2;
+        }
 
         //must found the div who have the class attribute
-        if (!layer1.attr("class")) {
-            layer1 = layer1.children("div:first");
+        if (!$inner.attr("class")) {
+            $inner = $inner.children("div:first");
         }
         
         var radius = Xml_GetAttribute(objNode, "Radius");
         var boxShadow = Xml_GetAttribute(objNode, "BoxShadow");
         var linearGradient = Xml_GetAttribute(objNode, "Linear");
+        var innerStyle = '';
         if (radius) {
-            var newStyle = layer1.attr("style") + ";" + radius
-            layer1.attr("style", newStyle);
+            innerStyle = conactStyle(innerStyle, radius);
         }
 
         if (linearGradient) {
-            var newStyle = layer1.attr("style") + ";" + linearGradient
-            layer1.attr("style", newStyle);
+            innerStyle = conactStyle(innerStyle, linearGradient);
         }
 
         var opacity = Xml_GetAttribute(objNode, "Attr.Opacity");
         if (opacity) {
-            var _style = layer1.attr("style");
-            if (!/;$/.test(_style)) {
-                _style += ";";
-            }
-            var newStyle = _style + opacity
-            layer1.attr("style", newStyle);
+            innerStyle= conactStyle(innerStyle, opacity);
         }
+
+        if (innerStyle && innerStyle != "") {
+            $inner.attr("style", conactStyle($inner.attr("style"), innerStyle));
+        }
+        
 
         if (boxShadow) {
             $ctl.addClass("SupperPanel-Radius");
-            var newStyle = $(control).attr("style") + ";" + boxShadow + ";" + radius || "";
+            var newStyle = $ctl.attr("style") + ";" + boxShadow + ";" + radius || "";
             $ctl.attr("style", newStyle);
         }
 
@@ -68,32 +74,34 @@
             if (pos == "bottom") {
                 $arrow.css("top", $ctl.height()).css("left",arrowStart);
                 $in.css("top", $ctl.height() - 1).css("left", arrowStart);
-                layer1.height($ctl.height() );
+                $inner.height($ctl.height() );
             }
             else if (pos == "top") {
                 $arrow.css("top", 0).css("left", arrowStart);
                 $in.css("top", 1).css("left", arrowStart);
-                layer1.height($ctl.height());
+                $inner.height($ctl.height());
             }
             else if (pos == "right") {
                 $arrow.css("left", $ctl.width()).css("top", arrowStart);
                 $in.css("left", $ctl.width() - 1).css("top", arrowStart);
-                layer1.width($ctl.width());
+                $inner.width($ctl.width());
             }
             else if (pos == "left") {
                 $arrow.css("left", 0).css("top", arrowStart);
                 $in.css("left", 1).css("top", arrowStart);
-                layer1.width($ctl.width());
+                $inner.width($ctl.width());
             }
 
 
-            $arrow.css("border-" + anti_pos + "-color", layer1.css("border-" + pos + "-color"));
-            $in.css("border-" + anti_pos + "-color", layer1.css("background-color"));
+            $arrow.css("border-" + anti_pos + "-color", $inner.css("border-" + pos + "-color"));
+            $in.css("border-" + anti_pos + "-color", $inner.css("background-color"));
 
             
         }
     }
 }
+
+
 
 //run server method
 function runServer(method, param){
