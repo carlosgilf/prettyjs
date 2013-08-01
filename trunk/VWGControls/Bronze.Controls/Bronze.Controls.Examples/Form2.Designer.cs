@@ -229,14 +229,25 @@ namespace Bronze.Controls.Examples
             // jrtLabel1
             // 
             this.jrtLabel1.AutoEllipsis = true;
+            this.jrtLabel1.BackColor = System.Drawing.Color.Red;
             this.jrtLabel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.Dashed;
+            this.jrtLabel1.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0);
             this.jrtLabel1.CustomStyle = "JrtLabelSkin";
-            this.jrtLabel1.Location = new System.Drawing.Point(421, 409);
+            this.jrtLabel1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
+            this.jrtLabel1.ForeColor = System.Drawing.Color.White;
+            this.jrtLabel1.HoverBackColor = System.Drawing.Color.DarkCyan;
+            this.jrtLabel1.HoverFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
+            this.jrtLabel1.HoverForeColor = System.Drawing.Color.White;
+            this.jrtLabel1.HoverLinearGradient = null;
+            this.jrtLabel1.LinearGradient = null;
+            this.jrtLabel1.Location = new System.Drawing.Point(400, 369);
             this.jrtLabel1.Name = "jrtLabel1";
-            this.jrtLabel1.Size = new System.Drawing.Size(123, 46);
+            this.jrtLabel1.Padding = new Gizmox.WebGUI.Forms.Padding(2, 2, 2, 3);
+            this.jrtLabel1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(5);
+            this.jrtLabel1.Size = new System.Drawing.Size(123, 50);
             this.jrtLabel1.TabIndex = 7;
-            this.jrtLabel1.Text = "今天你在四大皆空分角色读看来飞机昆仑山大家分开了速度加快立法集散地立刻飞机昆仑加速度看来飞机昆仑山大家克服了速度加快立法集散地山大家快乐飞哪儿我都要找到你呢今天你" +
-    "在哪儿我都要找到你呢今天你在哪儿我都要找到你呢";
+            this.jrtLabel1.Text = "你好，张同学";
+            this.jrtLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form2
             // 
