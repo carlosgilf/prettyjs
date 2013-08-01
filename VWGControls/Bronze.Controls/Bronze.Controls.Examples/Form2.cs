@@ -35,7 +35,8 @@ namespace Bronze.Controls.Examples
             var node = new NodeF();
             this.treeView1.Nodes.Add(new NodeF());
             this.supperPanel3.LinearGradient = new VWG.LinearGradient("top","#fafafa", "#eaeaea");
-         
+            this.jrtLabel1.LinearGradient = new VWG.LinearGradient("top", "#8add6d", "#60b044");
+            this.jrtLabel1.HoverLinearGradient=new VWG.LinearGradient("top", "#79d858", "#569e3d");
         }
 
         private void button1_Click(object sender, EventArgs e)
