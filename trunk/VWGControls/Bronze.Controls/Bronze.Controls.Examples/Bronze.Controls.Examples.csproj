@@ -83,6 +83,7 @@
     <Content Include="Resources\Images\MenuBlue\menu_right.gif" />
     <Content Include="Resources\Images\photo_hb.jpg" />
     <Content Include="Resources\Images\pool.jpg" />
+    <Content Include="Resources\Images\table.png" />
     <Content Include="Resources\Images\tree\arrow.gif" />
     <Content Include="Resources\Images\tree\arrow_ltr.gif" />
     <Content Include="Resources\Images\tree\calendar.gif" />

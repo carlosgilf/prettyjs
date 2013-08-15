@@ -31,6 +31,7 @@ namespace Bronze.Controls.Examples
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.supperPanel1 = new Bronze.Controls.VWG.SupperPanel();
             this.treeView1 = new Gizmox.WebGUI.Forms.TreeView();
             this.treeNode1 = new Gizmox.WebGUI.Forms.TreeNode();
@@ -50,6 +51,8 @@ namespace Bronze.Controls.Examples
             this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.button2 = new Gizmox.WebGUI.Forms.Button();
             this.jrtLabel1 = new Bronze.Controls.VWG.JrtLabel();
+            this.jrtLabel2 = new Bronze.Controls.VWG.JrtLabel();
+            this.label1 = new Bronze.Controls.VWG.JrtLabel();
             this.supperPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -242,6 +245,7 @@ namespace Bronze.Controls.Examples
             this.jrtLabel1.LinearGradient = null;
             this.jrtLabel1.Location = new System.Drawing.Point(400, 369);
             this.jrtLabel1.Name = "jrtLabel1";
+            this.jrtLabel1.Overable = true;
             this.jrtLabel1.Padding = new Gizmox.WebGUI.Forms.Padding(2, 2, 2, 3);
             this.jrtLabel1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(5);
             this.jrtLabel1.Size = new System.Drawing.Size(123, 50);
@@ -249,9 +253,60 @@ namespace Bronze.Controls.Examples
             this.jrtLabel1.Text = "你好，张同学";
             this.jrtLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // jrtLabel2
+            // 
+            this.jrtLabel2.AutoEllipsis = true;
+            this.jrtLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.jrtLabel2.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.Green);
+            this.jrtLabel2.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.jrtLabel2.CustomStyle = "JrtLabelSkin";
+            this.jrtLabel2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
+            this.jrtLabel2.ForeColor = System.Drawing.Color.White;
+            this.jrtLabel2.HoverBackColor = System.Drawing.Color.DarkCyan;
+            this.jrtLabel2.HoverFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
+            this.jrtLabel2.HoverForeColor = System.Drawing.Color.White;
+            this.jrtLabel2.HoverLinearGradient = null;
+            this.jrtLabel2.LinearGradient = null;
+            this.jrtLabel2.Location = new System.Drawing.Point(567, 369);
+            this.jrtLabel2.Name = "jrtLabel2";
+            this.jrtLabel2.Overable = true;
+            this.jrtLabel2.Padding = new Gizmox.WebGUI.Forms.Padding(2, 2, 2, 3);
+            this.jrtLabel2.Radius = new Gizmox.WebGUI.Forms.CornerRadius(5);
+            this.jrtLabel2.Size = new System.Drawing.Size(123, 50);
+            this.jrtLabel2.TabIndex = 7;
+            this.jrtLabel2.Text = "你好，张同学";
+            this.jrtLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoEllipsis = false;
+            this.label1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.label1.CustomStyle = "JrtLabelSkin";
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.label1.HoverBackColor = System.Drawing.Color.Transparent;
+            this.label1.HoverFont = new System.Drawing.Font("Tahoma", 9F);
+            this.label1.HoverForeColor = System.Drawing.Color.Lime;
+            this.label1.HoverImage = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("label1.HoverImage"));
+            this.label1.HoverLinearGradient = null;
+            this.label1.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("label1.Image"));
+            this.label1.ImageLabelSpace = 15;
+            this.label1.ImagePostionOfText = Bronze.Controls.VWG.ArrowPosition.Left;
+            this.label1.LinearGradient = null;
+            this.label1.Location = new System.Drawing.Point(307, 449);
+            this.label1.Name = "label1";
+            this.label1.Overable = true;
+            this.label1.Padding = new Gizmox.WebGUI.Forms.Padding(50, 0, 0, 0);
+            this.label1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
+            this.label1.Size = new System.Drawing.Size(395, 94);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "label1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form2
             // 
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.jrtLabel2);
             this.Controls.Add(this.jrtLabel1);
             this.Controls.Add(this.supperPanel1);
             this.Controls.Add(this.supperPanel3);
@@ -289,6 +344,8 @@ namespace Bronze.Controls.Examples
         private Button button1;
         private Button button2;
         private VWG.JrtLabel jrtLabel1;
+        private VWG.JrtLabel jrtLabel2;
+        private VWG.JrtLabel label1;
 
 
     }

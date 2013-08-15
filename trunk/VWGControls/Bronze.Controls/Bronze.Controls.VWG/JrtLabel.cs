@@ -168,7 +168,7 @@ namespace Bronze.Controls.VWG
         {
             get
             {
-                
+
                 // Return backcolor
                 return this.GetValue<Color>(HoverBackColorProperty, this.DefaultBackColor);
             }
@@ -183,6 +183,41 @@ namespace Bronze.Controls.VWG
             }
         }
 
+        private bool _overable = true;
+        public bool Overable
+        {
+            get
+            {
+                return _overable;
+            }
+            set
+            {
+                _overable = value;
+                this.Update();
+            }
+        }
+
+        private ArrowPosition imagePostionOfText = ArrowPosition.None;
+
+        [DefaultValue(ArrowPosition.None)]
+        public ArrowPosition ImagePostionOfText
+        {
+            get { return imagePostionOfText; }
+            set { imagePostionOfText = value; }
+        }
+
+        private int labelSpaceWidth = 3;
+
+        /// <summary>
+        /// 图片和文本的间隔
+        /// </summary>
+        [DefaultValue(3)]
+        [Description("图片和文本的间隔")]
+        public int ImageLabelSpace
+        {
+            get { return labelSpaceWidth; }
+            set { labelSpaceWidth = value; }
+        }
 
         protected override void RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext objContext, Gizmox.WebGUI.Common.Interfaces.IAttributeWriter objWriter)
         {
@@ -223,6 +258,14 @@ namespace Bronze.Controls.VWG
             {
                 objWriter.WriteAttributeString("HoverLinear", HoverLinearGradient.ToString());
             }
+            objWriter.WriteAttributeString("Overable", this._overable ? "1" : "0");
+
+            if (this.ImagePostionOfText != ArrowPosition.None)
+            {
+                objWriter.WriteAttributeString("ImgPS", this.ImagePostionOfText.ToString());
+            }
+            objWriter.WriteAttributeString("ImgSpace", this.ImageLabelSpace);
+
         }
 
 
@@ -267,6 +310,18 @@ namespace Bronze.Controls.VWG
             return strFont;
         }
 
+        /// <summary>
+        /// 颜色反转
+        /// </summary>
+        /// <param name="ColorToInvert"></param>
+        /// <returns></returns>
+        Color InvertColor(Color ColorToInvert)
+        {
+
+            return Color.FromArgb((byte)~ColorToInvert.R, (byte)~ColorToInvert.G, (byte)~ColorToInvert.B);
+        }
+
     }
+
 
 }
