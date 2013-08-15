@@ -224,9 +224,9 @@ function selector_getItemCount(mstrControlId) {
 
     }
     return 0;
-//    var control = Web_GetElementByDataId(mstrControlId);
-//    var texts = obj.find(".one").not(".error").not(".placeholder");
-//    return texts.length;
+    //    var control = Web_GetElementByDataId(mstrControlId);
+    //    var texts = obj.find(".one").not(".error").not(".placeholder");
+    //    return texts.length;
 }
 
 function selector_removeText(mstrControlId, itemId) {
@@ -337,13 +337,13 @@ function selector_addItem(obj, item, isInit, insertAfterEle, isBatch) {
     var isFind = false;
     var initData = window["selector_" + obj.VWG_Id];
     if (initData) {
-        if (initData.items && $.inArray(uid, initData.items) > -1) {
+        if (initData.items && initData.items._indexOf(uid) > -1) {
             isFind = true;
         }
     }
 
     if (!isFind) {
-        initData.items.push(uid);
+        initData.items.push(item);
         var className = "one";
         if (!isValid) {
             className = className + " error";
@@ -391,7 +391,7 @@ function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
         }
         var initData = window["selector_" + obj.VWG_Id];
         if (initData) {
-            initData.items.remove(uid);
+            initData.items._remove(uid);
         }
 
         var realGlobal = {};
@@ -439,7 +439,7 @@ function selector_removeItems(obj, arrayItemIds, isCallOnRemove) {
                 realGlobal.Value = curr.attr("val");
             }
             curr.remove();
-            initData.items.remove(uid);
+            initData.items._remove(uid);
             if (isCallOnRemove && obj.onRemove) {
                 //改变上下文eval
                 (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
@@ -453,10 +453,10 @@ var selector_raiseEvent = function (obj) {
     var items = [];
     var actualTexts = obj.find(".one").not(".placeholder");
     if (actualTexts.length > 0) {
-        obj.find('.EmptyMsg').css("display","none");
+        obj.find('.EmptyMsg').css("display", "none");
     }
     else {
-        obj.find('.EmptyMsg').css("display","block");
+        obj.find('.EmptyMsg').css("display", "block");
     }
 
     var texts = actualTexts.not(".error");
@@ -492,7 +492,7 @@ var selector_raiseEvent = function (obj) {
 
 };
 
- function selector_fireOnChanged(obj) {
+function selector_fireOnChanged(obj) {
     //执行onChanged事件
     if (obj.onChanged) {
         var realGlobal = {};
@@ -719,7 +719,7 @@ function selector_addBindKey(obj) {
 
 }
 
-function isScrolledIntoView($elem,$contanier) {
+function isScrolledIntoView($elem, $contanier) {
     var docViewTop = $contanier.scrollTop();
     var docViewBottom = docViewTop + $contanier.height();
 
@@ -727,4 +727,37 @@ function isScrolledIntoView($elem,$contanier) {
     var elemBottom = elemTop + $elem.height();
 
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+
+Array.prototype._indexOf = function (id, prop) {
+    for (var i = 0; i < this.length; i++) {
+        var item = this[i];
+
+        if (prop) {
+            if (item[prop] == id)
+                return i;
+        }
+        else {
+            if (item.Id == id)
+                return i;
+        }
+        return -1;
+    }
+}
+
+Array.prototype._remove = function (id, prop) {
+    for (var i = 0; i < this.length; i++) {
+        var item = this[i];
+
+        if (prop) {
+            if (item[prop] == id)
+                this.splice(i, 1);
+        }
+        else {
+            if (item.Id == id)
+                this.splice(i, 1);
+        }
+        return -1;
+    }
 }
