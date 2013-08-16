@@ -66,6 +66,10 @@ function JrtLabel_MouseOver(strGuid, objImage) {
             objImage.tempInnerStyle = $ctl.attr("style");
         }
 
+        var strOverBgImage = Xml_GetAttribute(objNode, "HoverBgImg");
+        var strBgImage = Xml_GetAttribute(objNode, "Attr.BackgroundImage");
+        var imgLayout = Xml_GetAttribute(objNode, "Attr.BackgroundImageLayout");
+
         var strOverImage = Xml_GetAttribute(objNode, "HoverImage");
         var strOverForeColor = Xml_GetAttribute(objNode, "HoverFore");
         var strOverFont = Xml_GetAttribute(objNode, "HoverFont");
@@ -89,6 +93,7 @@ function JrtLabel_MouseOver(strGuid, objImage) {
         }
         $ctl.css("background-color", hoverBgColor);
 
+    
         var hoverLinearGradient = Xml_GetAttribute(objNode, "HoverLinear");
         var innerStyle = '';
 
@@ -98,6 +103,20 @@ function JrtLabel_MouseOver(strGuid, objImage) {
 
         if (innerStyle && innerStyle != "") {
             $ctl.attr("style", conactStyle($ctl.attr("style"), innerStyle));
+        }
+
+        if (strOverBgImage && strOverBgImage != "") {
+            $ctl.css("background-image", "url(" + strOverBgImage + ")");
+        }
+        if (strBgImage == null || strBgImage == "") {
+            if (imgLayout * 1 == 2) {
+                $ctl.css("background-repeat", "no-repeat");
+                $ctl.css("background-position", "center center");
+            }
+            else if (imgLayout * 1 == 0) {
+                $ctl.css("background-repeat", "no-repeat");
+                $ctl.css("background-position", "top left");
+            }
         }
     }
 }

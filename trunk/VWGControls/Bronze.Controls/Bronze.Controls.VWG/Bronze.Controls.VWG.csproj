@@ -92,7 +92,13 @@
     <Content Include="JrtLabelSkin.Label.css">
       <DependentUpon>JrtLabelSkin.cs</DependentUpon>
     </Content>
+    <Content Include="JrtLabelSkin.Label.IE.xslt">
+      <DependentUpon>JrtLabelSkin.cs</DependentUpon>
+    </Content>
     <Content Include="JrtLabelSkin.Label.js">
+      <DependentUpon>JrtLabelSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="JrtLabelSkin.Label.moz.xslt">
       <DependentUpon>JrtLabelSkin.cs</DependentUpon>
     </Content>
     <Content Include="JrtLabelSkin.Label.xslt">

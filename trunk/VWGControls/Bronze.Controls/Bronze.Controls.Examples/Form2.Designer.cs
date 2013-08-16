@@ -233,6 +233,7 @@ namespace Bronze.Controls.Examples
             // 
             this.jrtLabel1.AutoEllipsis = true;
             this.jrtLabel1.BackColor = System.Drawing.Color.Red;
+            this.jrtLabel1.BackgroundImageLayout = Gizmox.WebGUI.Forms.ImageLayout.Tile;
             this.jrtLabel1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.Dashed;
             this.jrtLabel1.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0);
             this.jrtLabel1.CustomStyle = "JrtLabelSkin";
@@ -257,6 +258,7 @@ namespace Bronze.Controls.Examples
             // 
             this.jrtLabel2.AutoEllipsis = true;
             this.jrtLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.jrtLabel2.BackgroundImageLayout = Gizmox.WebGUI.Forms.ImageLayout.Tile;
             this.jrtLabel2.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.Green);
             this.jrtLabel2.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
             this.jrtLabel2.CustomStyle = "JrtLabelSkin";
@@ -280,6 +282,7 @@ namespace Bronze.Controls.Examples
             // label1
             // 
             this.label1.AutoEllipsis = false;
+            this.label1.BackgroundImageLayout = Gizmox.WebGUI.Forms.ImageLayout.Tile;
             this.label1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
             this.label1.CustomStyle = "JrtLabelSkin";
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F);
@@ -289,14 +292,13 @@ namespace Bronze.Controls.Examples
             this.label1.HoverImage = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("label1.HoverImage"));
             this.label1.HoverLinearGradient = null;
             this.label1.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("label1.Image"));
-            this.label1.ImageLabelSpace = 15;
-            this.label1.ImagePostionOfText = Bronze.Controls.VWG.ArrowPosition.Left;
+            this.label1.ImageLabelSpace = 0;
+            this.label1.ImagePostionOfText = Bronze.Controls.VWG.ArrowPosition.Top;
             this.label1.LinearGradient = null;
             this.label1.Location = new System.Drawing.Point(307, 449);
             this.label1.Name = "label1";
             this.label1.Overable = true;
-            this.label1.Padding = new Gizmox.WebGUI.Forms.Padding(50, 0, 0, 0);
-            this.label1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
+            this.label1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(5);
             this.label1.Size = new System.Drawing.Size(395, 94);
             this.label1.TabIndex = 8;
             this.label1.Text = "label1";

@@ -190,4 +190,52 @@
   <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.js:Presentation" xml:space="preserve">
     <value>100</value>
   </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.IE.xslt" xml:space="preserve">
+    <value>TemplateResource</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.IE.xslt:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.IE.xslt:FileName" xml:space="preserve">
+    <value>JrtLabelSkin.Label.IE.xslt</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.IE.xslt:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.IE.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>JrtLabelSkin.Label.IE.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.IE.xslt:PresentationRole" xml:space="preserve">
+    <value>103</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.IE.xslt:PresentationEngine" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.IE.xslt:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.moz.xslt" xml:space="preserve">
+    <value>TemplateResource</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.moz.xslt:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.moz.xslt:FileName" xml:space="preserve">
+    <value>JrtLabelSkin.Label.moz.xslt</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.moz.xslt:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.moz.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>JrtLabelSkin.Label.moz.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.moz.xslt:PresentationRole" xml:space="preserve">
+    <value>103</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.moz.xslt:PresentationEngine" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.JrtLabelSkin:Label.moz.xslt:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
 </root>

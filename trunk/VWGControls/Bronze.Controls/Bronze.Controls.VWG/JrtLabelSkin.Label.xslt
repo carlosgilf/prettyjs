@@ -2,17 +2,10 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:WC="wgcontrols">
 
   <!-- The default style Label match template -->
-  <xsl:template match="WC:Tags.Label[@Attr.CustomStyle='JrtLabelSkin']" mode="modContent"> 
-    <xsl:if test="not(@Attr.Enabled='0') and not(@Overable='0')">
-      <xsl:attribute name="onmouseout">
-        JrtLabel_MouseLeave('<xsl:value-of select="@Attr.Id" />',this);
-      </xsl:attribute>
-      <xsl:attribute name="onmouseover">
-        JrtLabel_MouseOver('<xsl:value-of select="@Attr.Id" />',this);
-      </xsl:attribute>
-    </xsl:if>
+  <xsl:template match="WC:Tags.Label[@Attr.CustomStyle='JrtLabelSkin']" mode="modContent">
+    <xsl:call-template name="SetLabelMouseEvent"/>
     <xsl:call-template name="tplDrawLabelAPI"/>
-   
+
   </xsl:template>
   <!-- The Main API for drawing the control -->
   <xsl:template name="tplDrawLabelAPI">
@@ -80,15 +73,31 @@
       <xsl:if test="$varImage and @ImgPS">
         <img class="label_icon">
           <xsl:attribute name="style">
-            margin-right:<xsl:value-of select="@ImgSpace"/>px;vertical-align:middle;margin-top: -2px;
+            margin-right:<xsl:value-of select="@ImgSpace"/>px;
+            vertical-align:middle;
+            <xsl:if  test="@ImgPS='Left' or @ImgPS='Right'">
+              margin-right:<xsl:value-of select="@ImgSpace"/>px;
+              margin-top: -2px;
+            </xsl:if>
+            <xsl:if  test="@ImgPS='Bottom'">
+              margin-Top:<xsl:value-of select="@ImgSpace"/>px;
+            </xsl:if>
+            
+            <xsl:if test="@Attr.ImageWidth">
+              width:<xsl:value-of select="@Attr.ImageWidth"/>px;
+            </xsl:if>
+            <xsl:if test="@Attr.ImageHeight">
+              height:<xsl:value-of select="@Attr.ImageHeight"/>px;
+            </xsl:if>
           </xsl:attribute>
-          
+
           <xsl:attribute name="src">
             <xsl:value-of select="$varImage"/>
           </xsl:attribute>
+
         </img>
       </xsl:if>
-      
+
       <xsl:call-template name="tplDrawLabelContentElement">
         <xsl:with-param name="prmText" select="$prmText" />
         <xsl:with-param name="prmApplyFontStyles" select="$prmApplyFontStyles"/>
@@ -103,7 +112,7 @@
     <xsl:param name="prmApplyFontStyles" select="1"/>
     <xsl:param name="prmContentClass"/>
     <xsl:param name="prmWrapContents" select="1"/>
-    
+
     <xsl:if test="$prmWrapContents='1'">
       <span dir="{$dir}">
         <xsl:call-template name="tplDrawLabelContent">
@@ -139,6 +148,10 @@
         <xsl:call-template name="tplApplyFontStyles"/>;
       </xsl:if>
       <xsl:call-template name="tplApplyCursorStyle" />;
+
+      <xsl:if test="@Attr.Image and (@ImgPS='Top')">
+        display:block;
+      </xsl:if>
     </xsl:attribute>
     <xsl:call-template name="tplDecodeTextAsHtml">
       <xsl:with-param name="prmText" select="$prmText" />
