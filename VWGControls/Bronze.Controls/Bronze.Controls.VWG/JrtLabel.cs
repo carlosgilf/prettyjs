@@ -48,6 +48,7 @@ namespace Bronze.Controls.VWG
         private static SerializableProperty HoverForeColorProperty = SerializableProperty.Register("HoverForeColor", typeof(Color), typeof(JrtLabel), new SerializablePropertyMetadata());
         private static SerializableProperty HoverBackColorProperty = SerializableProperty.Register("HoverBackColor", typeof(Color), typeof(JrtLabel), new SerializablePropertyMetadata());
         ResourceHandle _overImage;
+        ResourceHandle _overBackgroundImage;
 
         public JrtLabel()
         {
@@ -111,6 +112,69 @@ namespace Bronze.Controls.VWG
             set;
         }
 
+        private int imgWidth;
+        [System.ComponentModel.DefaultValue(0)]
+        public int ImageWidth
+        {
+            get { return imgWidth; }
+            set { imgWidth = value; }
+        }
+
+        private int imgHeight;
+        [System.ComponentModel.DefaultValue(0)]
+        public int ImageHeight
+        {
+            get { return imgHeight; }
+            set { imgHeight = value; }
+        }
+
+
+        /// <summary>
+        /// Gets or sets the background image displayed in the control.
+        /// </summary>
+        /// <value></value>
+
+
+
+
+        [System.ComponentModel.DefaultValue(null)]
+        [Category("CatAppearance")]
+        [System.ComponentModel.Localizable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible), EditorBrowsable(EditorBrowsableState.Always), Browsable(true)]
+        public override ResourceHandle BackgroundImage
+        {
+            get
+            {
+                return base.BackgroundImage;
+            }
+            set
+            {
+                base.BackgroundImage = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the background image layout as defined in the <see cref="T:Gizmox.WebGUI.Forms.ImageLayout"></see> enumeration.
+        /// </summary>
+        /// <value></value>
+        /// <returns>One of the values of <see cref="T:Gizmox.WebGUI.Forms.ImageLayout"></see> (<see cref="F:Gizmox.WebGUI.Forms.ImageLayout.Center"></see> , <see cref="F:Gizmox.WebGUI.Forms.ImageLayout.None"></see>, <see cref="F:Gizmox.WebGUI.Forms.ImageLayout.Stretch"></see>, <see cref="F:Gizmox.WebGUI.Forms.ImageLayout.Tile"></see>, or <see cref="F:Gizmox.WebGUI.Forms.ImageLayout.Zoom"></see>). <see cref="F:Gizmox.WebGUI.Forms.ImageLayout.Tile"></see> is the default value.</returns>
+
+        [System.ComponentModel.DefaultValue(null)]
+        [Category("CatAppearance")]
+        [System.ComponentModel.Localizable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible), EditorBrowsable(EditorBrowsableState.Always), Browsable(true)]
+        public override ImageLayout BackgroundImageLayout
+        {
+            get
+            {
+                return base.BackgroundImageLayout;
+            }
+            set
+            {
+                base.BackgroundImageLayout = value;
+            }
+        }
+
 
         /// <summary>
         /// Gets or sets the font of the text displayed by the control.
@@ -132,6 +196,17 @@ namespace Bronze.Controls.VWG
                     this.Update();
                 }
             }
+        }
+
+
+        [Category("Hover")]
+        [System.ComponentModel.DefaultValue(null)]
+        [System.ComponentModel.Localizable(true)]
+        [Description("Sets the background image to be used when the cursor enters the label")]
+        public ResourceHandle HoverBackgroundImage
+        {
+            get { return _overBackgroundImage; }
+            set { _overBackgroundImage = value; }
         }
 
         [Category("Hover")]
@@ -266,6 +341,23 @@ namespace Bronze.Controls.VWG
             }
             objWriter.WriteAttributeString("ImgSpace", this.ImageLabelSpace);
 
+
+            if (_overBackgroundImage != null)
+            {
+                objWriter.WriteAttributeString("HoverBgImg", this._overBackgroundImage.ToString());
+            }
+            else
+            {
+                objWriter.WriteAttributeString("HoverBgImg", "");
+            }
+            if (ImageWidth>0)
+            {
+                objWriter.WriteAttributeString(WGAttributes.ImageWidth, ImageWidth);
+            }
+            if (ImageHeight > 0)
+            {
+                objWriter.WriteAttributeString(WGAttributes.ImageHeight, ImageHeight);
+            }
         }
 
 
