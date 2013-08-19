@@ -165,6 +165,29 @@ namespace Bronze.Controls.VWG
             set;
         }
 
+        public new bool VScroll
+        {
+            get
+            {
+                return base.VScroll;
+            }
+            set
+            {
+                base.VScroll = value;
+            }
+        }
+
+        public new bool HScroll
+        {
+            get
+            {
+                return base.HScroll;
+            }
+            set
+            {
+                base.HScroll = value;
+            }
+        }
 
         protected override void RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext objContext, Gizmox.WebGUI.Common.Interfaces.IAttributeWriter objWriter)
         {
