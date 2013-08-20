@@ -129,6 +129,9 @@
     <Content Include="SupperHoverPanelSkin.Panel.xslt">
       <DependentUpon>SupperHoverPanelSkin.cs</DependentUpon>
     </Content>
+    <Content Include="SupperPanelSkin.jquery.livequery.min.js">
+      <DependentUpon>SupperPanelSkin.cs</DependentUpon>
+    </Content>
     <Content Include="SupperPanelSkin.Panel.css">
       <DependentUpon>SupperPanelSkin.cs</DependentUpon>
     </Content>

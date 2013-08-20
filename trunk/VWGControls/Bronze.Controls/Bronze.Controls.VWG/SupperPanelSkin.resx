@@ -190,4 +190,28 @@
   <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:Panel.js:Presentation" xml:space="preserve">
     <value>100</value>
   </data>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:jquery.livequery.min.js" xml:space="preserve">
+    <value>ScriptResource</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:jquery.livequery.min.js:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:jquery.livequery.min.js:FileName" xml:space="preserve">
+    <value>SupperPanelSkin.jquery.livequery.min.js</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:jquery.livequery.min.js:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:jquery.livequery.min.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SupperPanelSkin.jquery.livequery.min.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:jquery.livequery.min.js:PresentationRole" xml:space="preserve">
+    <value>101</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:jquery.livequery.min.js:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SupperPanelSkin:jquery.livequery.min.js:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
 </root>
