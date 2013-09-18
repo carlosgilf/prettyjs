@@ -214,4 +214,52 @@
   <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:SelectorTextBox.css:Presentation" xml:space="preserve">
     <value>100</value>
   </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:lz-string.js" xml:space="preserve">
+    <value>ScriptResource</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:lz-string.js:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:lz-string.js:FileName" xml:space="preserve">
+    <value>SelectorTextBoxSkin.lz-string.js</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:lz-string.js:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:lz-string.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SelectorTextBoxSkin.lz-string.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:lz-string.js:PresentationRole" xml:space="preserve">
+    <value>101</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:lz-string.js:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:lz-string.js:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:base64.min.js" xml:space="preserve">
+    <value>ScriptResource</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:base64.min.js:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:base64.min.js:FileName" xml:space="preserve">
+    <value>SelectorTextBoxSkin.base64.min.js</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:base64.min.js:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:base64.min.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SelectorTextBoxSkin.base64.min.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:base64.min.js:PresentationRole" xml:space="preserve">
+    <value>101</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:base64.min.js:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:base64.min.js:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
 </root>

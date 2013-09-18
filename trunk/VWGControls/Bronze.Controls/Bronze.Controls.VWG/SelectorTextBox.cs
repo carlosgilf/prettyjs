@@ -18,6 +18,7 @@ using Gizmox.WebGUI.Common.Extensibility;
 using System.Collections;
 using System.Globalization;
 using System.Drawing.Design;
+using Bronze.Controls.VWG.Common;
 
 
 #endregion
@@ -266,7 +267,10 @@ namespace Bronze.Controls.VWG
             if (objEvent.Type == "ItemsChanged")
             {
                 var json = objEvent["items"];
-                var items = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Selector>>(json);
+                
+                var strJson = LZStringCompress.DecompressFromBase64(json);
+                var items = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Selector>>(strJson);
+
                 if (items != null)
                 {
                     this.mobjItems = items;
@@ -274,10 +278,7 @@ namespace Bronze.Controls.VWG
                 }
             }
 
-
             /*
-
-
             /// <summary>
             /// Gets an object representing the collection of the items contained in this <see cref="T:Gizmox.WebGUI.Forms.ComboBox"></see>.
             /// </summary>
