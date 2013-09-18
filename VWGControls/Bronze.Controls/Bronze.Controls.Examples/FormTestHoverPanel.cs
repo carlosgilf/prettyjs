@@ -10,6 +10,7 @@ using System.Text;
 
 using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms;
+using System.Threading;
 
 #endregion
 
@@ -21,6 +22,18 @@ namespace Bronze.Controls.Examples
         {
 
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Thread.Sleep(30*1000);
+            //SevenZip.SevenZipExtractor sz=new SevenZip.SevenZipExtractor();
+            
+            //SevenZip.LzmaEncodeStream lz = new SevenZip.LzmaEncodeStream();
+            //SharpLZW.LZWDecoder lzw = new SharpLZW.LZWDecoder();
+            //lzw.Decode();
+
+            //Bronze.Controls.VWG.Common.LZW.Compress("testÄãºÃ");
         }
     }
 }

@@ -38,6 +38,9 @@
     <Reference Include="Bronze.Core">
       <HintPath>..\RefrenceDlls\Bronze.Core.dll</HintPath>
     </Reference>
+    <Reference Include="SevenZipSharp">
+      <HintPath>..\RefrenceDlls\SevenZipSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
@@ -105,7 +108,13 @@
       <DependentUpon>JrtLabelSkin.cs</DependentUpon>
     </Content>
     <Content Include="SelectorTextBox.bmp" />
+    <Content Include="SelectorTextBoxSkin.base64.min.js">
+      <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
+    </Content>
     <Content Include="SelectorTextBoxSkin.json2.js">
+      <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="SelectorTextBoxSkin.lz-string.js">
       <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
     </Content>
     <Content Include="SelectorTextBoxSkin.SelectorTextBox.css">
@@ -190,6 +199,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\lzw\LZStringDecompress.cs" />
+    <Compile Include="Common\lzw\Extensions.cs" />
+    <Compile Include="Common\lzw\LZStringCompress.cs" />
+    <Compile Include="HotfixExtender.cs" />
     <Compile Include="FlyTree.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -393,7 +393,7 @@ function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
         if (initData) {
             initData.items._remove(uid);
         }
-
+        obj.items = initData.items;
         var realGlobal = {};
         if (obj.onRemove) {
             realGlobal.Id = uid;
@@ -411,6 +411,7 @@ function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
         }
         curr.remove();
         if (obj.onRemove) {
+            realGlobal.Items = initData.items;
             //改变上下文eval
             (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
         }
@@ -440,7 +441,9 @@ function selector_removeItems(obj, arrayItemIds, isCallOnRemove) {
             }
             curr.remove();
             initData.items._remove(uid);
+            obj.items = initData.items;
             if (isCallOnRemove && obj.onRemove) {
+                realGlobal.Items = initData.items;
                 //改变上下文eval
                 (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
             }
@@ -479,10 +482,13 @@ var selector_raiseEvent = function (obj) {
     }
 
     var json = JSON.stringify(items);
+    var compressed = LZString.compressToBase64(json);
+    //var resultData=Base64.encode(compressed);
+
     var mstrControlId = obj.VWG_Id;
     // Create event
     var objEvent = Events_CreateEvent(mstrControlId, "ItemsChanged", null, true);
-    Events_SetEventAttribute(objEvent, "items", json);
+    Events_SetEventAttribute(objEvent, "items", compressed);
     if (Data_IsCriticalEvent(mstrControlId, mcntEventSelectionChangeId)) {
         // Raise event if critical
         Events_RaiseEvents();
@@ -742,8 +748,8 @@ Array.prototype._indexOf = function (id, prop) {
             if (item.Id == id)
                 return i;
         }
-        return -1;
     }
+    return -1;
 }
 
 Array.prototype._remove = function (id, prop) {
@@ -758,6 +764,6 @@ Array.prototype._remove = function (id, prop) {
             if (item.Id == id)
                 this.splice(i, 1);
         }
-        return -1;
     }
+    return -1;
 }

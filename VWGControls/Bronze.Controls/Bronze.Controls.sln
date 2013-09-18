@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RefrenceDlls", "RefrenceDlls", "{3DEA4F66-6D36-4447-BCC7-5D50691532BA}"
 	ProjectSection(SolutionItems) = preProject
 		RefrenceDlls\Bronze.Core.dll = RefrenceDlls\Bronze.Core.dll
+		RefrenceDlls\SevenZipSharp.dll = RefrenceDlls\SevenZipSharp.dll
 	EndProjectSection
 EndProject
 Global

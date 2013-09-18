@@ -38,6 +38,9 @@
     <Reference Include="Gizmox.WebGUI.Forms.Extended, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=85eae29607c9f5f3, processorArchitecture=MSIL" />
     <Reference Include="Gizmox.WebGUI.Forms.Office, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=d50c2c7452ba77d9, processorArchitecture=MSIL" />
     <Reference Include="Gizmox.WebGUI.Forms.Professional, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=6b5c571512bede7c, processorArchitecture=MSIL" />
+    <Reference Include="SevenZipSharp">
+      <HintPath>..\RefrenceDlls\SevenZipSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
