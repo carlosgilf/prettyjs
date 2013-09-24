@@ -22,6 +22,11 @@ namespace Bronze.Controls.VWG.Common
             return new String(codePoints, 0, codePoints.Length);
         }
 
+        public static String fromCharCode(int code)
+        {
+            return fromCharCode(new char[] { (char)code });
+        }
+
         public static char f(int code)
         {
             return Convert.ToChar(code);
@@ -370,7 +375,6 @@ namespace Bronze.Controls.VWG.Common
 
             return Decompress(output);
         }
-
 
     }
 }

@@ -483,8 +483,7 @@ var selector_raiseEvent = function (obj) {
 
     var json = JSON.stringify(items);
     var compressed = LZString.compressToBase64(json);
-    //var resultData=Base64.encode(compressed);
-
+    
     var mstrControlId = obj.VWG_Id;
     // Create event
     var objEvent = Events_CreateEvent(mstrControlId, "ItemsChanged", null, true);

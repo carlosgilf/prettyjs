@@ -32,6 +32,22 @@ namespace Bronze.Controls.VWG
         {
             return str[i];
         }
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
         
     }
 }
