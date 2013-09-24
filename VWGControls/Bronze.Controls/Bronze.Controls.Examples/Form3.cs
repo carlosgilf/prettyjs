@@ -10,6 +10,8 @@ using System.Text;
 
 using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms;
+using System.Threading;
+using System.Web;
 
 #endregion
 
@@ -32,6 +34,19 @@ namespace Bronze.Controls.Examples
                 MessageBox.Show(paramters);
             }
             base.FireEvent(objEvent);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Thread.Sleep(10*1000);
+            MessageBox.Show("show me:"+DateTime.Now.ToLongTimeString());
+            this.textBox2.Text = "i changed the text";
+            //this.Context.Terminate(false);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.textBox2.Text = "ddd";
         }
     }
 }
