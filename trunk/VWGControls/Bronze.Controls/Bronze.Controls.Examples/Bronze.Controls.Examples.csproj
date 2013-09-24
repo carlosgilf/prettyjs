@@ -25,6 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <StartPageUrl>Form1.wgx</StartPageUrl>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -334,6 +335,10 @@
       <Project>{551801BB-5BBF-4487-A659-1232A09B2EFE}</Project>
       <Name>Bronze.Controls.VWG</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Bronze.WebGui.Skin\Bronze.WebGui.Skin.csproj">
+      <Project>{8AC58E57-C1ED-4CC5-905B-4B56C78E7667}</Project>
+      <Name>Bronze.WebGui.Skin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -351,7 +356,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2052</DevelopmentServerPort>
+          <DevelopmentServerPort>14316</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

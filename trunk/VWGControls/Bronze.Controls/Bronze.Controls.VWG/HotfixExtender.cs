@@ -22,7 +22,7 @@ namespace Bronze.Controls.VWG
             IAttributeExtender objAttributeExtender = objComponent as IAttributeExtender;
             if (objAttributeExtender != null)
             {
-                objAttributeExtender.SetAttribute("XhrTime", timeoutSeconds.ToString());
+                objAttributeExtender.SetAttribute("XhrTM", timeoutSeconds.ToString());
             }
         }
 
@@ -38,7 +38,7 @@ namespace Bronze.Controls.VWG
             IAttributeExtender objAttributeExtender = objComponent as IAttributeExtender;
             if (objAttributeExtender != null)
             {
-                int.TryParse(objAttributeExtender.GetAttribute("XhrTime"), out result);
+                int.TryParse(objAttributeExtender.GetAttribute("XhrTM"), out result);
             }
             return result;
         }
