@@ -108,9 +108,6 @@
       <DependentUpon>JrtLabelSkin.cs</DependentUpon>
     </Content>
     <Content Include="SelectorTextBox.bmp" />
-    <Content Include="SelectorTextBoxSkin.base64.min.js">
-      <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
-    </Content>
     <Content Include="SelectorTextBoxSkin.json2.js">
       <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
     </Content>

@@ -267,7 +267,7 @@ namespace Bronze.Controls.VWG
             if (objEvent.Type == "ItemsChanged")
             {
                 var strJson = objEvent["items"];
-
+               
                 strJson = LZStringCompress.DecompressFromBase64(strJson);
                 var items = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Selector>>(strJson);
 
