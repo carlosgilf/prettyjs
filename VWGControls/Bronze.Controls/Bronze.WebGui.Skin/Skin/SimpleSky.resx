@@ -1,0 +1,1117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ListServices.js" xml:space="preserve">
+    <value>ScriptResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ListServices.js:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ListServices.js:FileName" xml:space="preserve">
+    <value>SimpleSky.CommonSkin.ListServices.js</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ListServices.js:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ListServices.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.CommonSkin.ListServices.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ListServices.js:PresentationRole" xml:space="preserve">
+    <value>101</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ListServices.js:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ListServices.js:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ButtonSkin:Button.css" xml:space="preserve">
+    <value>StyleSheetResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ButtonSkin:Button.css:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ButtonSkin:Button.css:FileName" xml:space="preserve">
+    <value>SimpleSky.ButtonSkin.Button.css</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ButtonSkin:Button.css:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ButtonSkin:Button.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ButtonSkin.Button.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ButtonSkin:Button.css:PresentationRole" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ButtonSkin:Button.css:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ButtonSkin:Button.css:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.css" xml:space="preserve">
+    <value>StyleSheetResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.css:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.css:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.ListView.css</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.css:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.ListView.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.css:PresentationRole" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.css:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.css:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.js" xml:space="preserve">
+    <value>ScriptResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.js:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.js:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.ListView.js</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.js:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.ListView.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.js:PresentationRole" xml:space="preserve">
+    <value>101</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.js:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.js:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.xslt" xml:space="preserve">
+    <value>TemplateResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.xslt:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.xslt:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.ListView.xslt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.xslt:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.ListView.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.xslt:PresentationRole" xml:space="preserve">
+    <value>103</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.xslt:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.xslt:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingBG.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingBG.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingBG.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.PagingBG.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingBG.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingBG.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.PagingBG.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Layout.xslt" xml:space="preserve">
+    <value>TemplateResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Layout.xslt:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Layout.xslt:FileName" xml:space="preserve">
+    <value>SimpleSky.CommonSkin.Common.Layout.xslt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Layout.xslt:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Layout.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.CommonSkin.Common.Layout.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Layout.xslt:PresentationRole" xml:space="preserve">
+    <value>103</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Layout.xslt:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Layout.xslt:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowArrowLTR.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowArrowLTR.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowArrowLTR.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.ArrowArrowLTR.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowArrowLTR.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowArrowLTR.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.ArrowArrowLTR.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowArrowRTL.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowArrowRTL.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowArrowRTL.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.ArrowArrowRTL.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowArrowRTL.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowArrowRTL.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.ArrowArrowRTL.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowLTR.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowLTR.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowLTR.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.ArrowLTR.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowLTR.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowLTR.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.ArrowLTR.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowRTL.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowRTL.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowRTL.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.ArrowRTL.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowRTL.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ArrowRTL.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.ArrowRTL.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.css" xml:space="preserve">
+    <value>StyleSheetResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.css:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.css:FileName" xml:space="preserve">
+    <value>SimpleSky.CommonSkin.Common.css</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.css:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.CommonSkin.Common.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.css:PresentationRole" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.css:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.css:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.ie.xslt" xml:space="preserve">
+    <value>TemplateResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.ie.xslt:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.ie.xslt:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.ListView.ie.xslt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.ie.xslt:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.ie.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.ListView.ie.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.ie.xslt:PresentationRole" xml:space="preserve">
+    <value>103</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.ie.xslt:PresentationEngine" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.ie.xslt:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.moz.xslt" xml:space="preserve">
+    <value>TemplateResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.moz.xslt:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.moz.xslt:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.ListView.moz.xslt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.moz.xslt:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.moz.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.ListView.moz.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.moz.xslt:PresentationRole" xml:space="preserve">
+    <value>103</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.moz.xslt:PresentationEngine" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:ListView.moz.xslt:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Font" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Font:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarButtonSkin:ToolBarButton.xslt" xml:space="preserve">
+    <value>TemplateResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarButtonSkin:ToolBarButton.xslt:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarButtonSkin:ToolBarButton.xslt:FileName" xml:space="preserve">
+    <value>SimpleSky.ToolBarButtonSkin.ToolBarButton.xslt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarButtonSkin:ToolBarButton.xslt:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarButtonSkin:ToolBarButton.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ToolBarButtonSkin.ToolBarButton.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarButtonSkin:ToolBarButton.xslt:PresentationRole" xml:space="preserve">
+    <value>103</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarButtonSkin:ToolBarButton.xslt:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarButtonSkin:ToolBarButton.xslt:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabPageSkin:HeaderFont" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabPageSkin:HeaderFont:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.NavigationTabSkin:HeaderFont" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.NavigationTabSkin:HeaderFont:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.WorkspaceTabSkin:HeaderFont" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.WorkspaceTabSkin:HeaderFont:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabSelectedLTRStyle.Font" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabSelectedLTRStyle.Font:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabSelectedRTLStyle.Font" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabSelectedRTLStyle.Font:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabNormalLTRStyle.Font" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabNormalLTRStyle.Font:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabNormalRTLStyle.Font" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabNormalRTLStyle.Font:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabHoverLTRStyle.Font" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabHoverLTRStyle.Font:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.xslt" xml:space="preserve">
+    <value>TemplateResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.xslt:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.xslt:FileName" xml:space="preserve">
+    <value>SimpleSky.FormSkin.Form.xslt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.xslt:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.FormSkin.Form.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.xslt:PresentationRole" xml:space="preserve">
+    <value>103</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.xslt:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.xslt:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.css" xml:space="preserve">
+    <value>StyleSheetResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.css:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.css:FileName" xml:space="preserve">
+    <value>SimpleSky.FormSkin.Form.css</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.css:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.FormSkin.Form.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.css:PresentationRole" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.css:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.css:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderBackground.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderBackground.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderBackground.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.HeaderedPanelSkin.HeaderBackground.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderBackground.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderBackground.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.HeaderedPanelSkin.HeaderBackground.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.Font" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.Font:Value" xml:space="preserve">
+    <value>Arial, 10pt, style=Bold</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.ForeColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.ForeColor:Value" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:TopFrameHeight" xml:space="preserve">
+    <value>ValueResource:System.Int32, mscorlib</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:TopFrameHeight:Value" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.Padding" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.PaddingValue, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.Padding:Value" xml:space="preserve">
+    <value>5, 5, 5, 0</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.BorderWidth" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderWidth, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.BorderWidth:Value" xml:space="preserve">
+    <value>0, 0, 0, 1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ControlSkin:BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ControlSkin:BorderColor:Value" xml:space="preserve">
+    <value>137, 189, 225</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:BorderColor:Value" xml:space="preserve">
+    <value>137, 189, 225</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.BorderColor:Value" xml:space="preserve">
+    <value>White White White 137, 189, 225</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:LeftBottomStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:LeftBottomStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>[Empty]</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:LeftStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:LeftStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>[Empty]</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:LeftTopStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:LeftTopStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>[Empty]</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:TopStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:TopStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>[Empty]</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:RightTopStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:RightTopStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>[Empty]</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:RightStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:RightStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>[Empty]</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:RightBottomStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:RightBottomStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>[Empty]</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:BottomStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:BottomStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>[Empty]</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterFrame.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterFrame.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterFrame.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.ToolBarSkin.CenterFrame.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterFrame.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterFrame.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ToolBarSkin.CenterFrame.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:Height" xml:space="preserve">
+    <value>ValueResource:System.Int32, mscorlib</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:Height:Value" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterStyle.BorderStyle" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderStyle, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterStyle.BorderStyle:Value" xml:space="preserve">
+    <value>FixedSingle</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:Padding" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.PaddingValue, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:Padding:Value" xml:space="preserve">
+    <value>5, 3, 3, 3</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:ForeColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:ForeColor:Value" xml:space="preserve">
+    <value>14, 75, 135</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarButtonSkin:Padding" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.PaddingValue, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarButtonSkin:Padding:Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:GridLinesColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:GridLinesColor:Value" xml:space="preserve">
+    <value>237, 237, 237</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterFrame.jpg" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterFrame.jpg:ImageFormat" xml:space="preserve">
+    <value>Jpeg</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterFrame.jpg:FileName" xml:space="preserve">
+    <value>SimpleSky.ToolBarSkin.CenterFrame.jpg</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterFrame.jpg:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterFrame.jpg:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ToolBarSkin.CenterFrame.jpg;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>Name=CenterFrame.jpg;Namespace=Gizmox.WebGUI.Forms.Skins.ToolBarSkin</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:BottomActiveDialogWindow.png" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:BottomActiveDialogWindow.png:ImageFormat" xml:space="preserve">
+    <value>Png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:BottomActiveDialogWindow.png:FileName" xml:space="preserve">
+    <value>SimpleSky.FormSkin.BottomActiveDialogWindow.png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:BottomActiveDialogWindow.png:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:BottomActiveDialogWindow.png:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.FormSkin.BottomActiveDialogWindow.png;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftActiveDialogWindow.png" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftActiveDialogWindow.png:ImageFormat" xml:space="preserve">
+    <value>Png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftActiveDialogWindow.png:FileName" xml:space="preserve">
+    <value>SimpleSky.FormSkin.LeftActiveDialogWindow.png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftActiveDialogWindow.png:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftActiveDialogWindow.png:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.FormSkin.LeftActiveDialogWindow.png;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftTopActiveDialogWindow.png" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftTopActiveDialogWindow.png:ImageFormat" xml:space="preserve">
+    <value>Png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftTopActiveDialogWindow.png:FileName" xml:space="preserve">
+    <value>SimpleSky.FormSkin.LeftTopActiveDialogWindow.png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftTopActiveDialogWindow.png:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftTopActiveDialogWindow.png:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.FormSkin.LeftTopActiveDialogWindow.png;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftBottomActiveDialogWindow.png" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftBottomActiveDialogWindow.png:ImageFormat" xml:space="preserve">
+    <value>Png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftBottomActiveDialogWindow.png:FileName" xml:space="preserve">
+    <value>SimpleSky.FormSkin.LeftBottomActiveDialogWindow.png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftBottomActiveDialogWindow.png:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftBottomActiveDialogWindow.png:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.FormSkin.LeftBottomActiveDialogWindow.png;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightActiveDialogWindow.png" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightActiveDialogWindow.png:ImageFormat" xml:space="preserve">
+    <value>Png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightActiveDialogWindow.png:FileName" xml:space="preserve">
+    <value>SimpleSky.FormSkin.RightActiveDialogWindow.png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightActiveDialogWindow.png:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightActiveDialogWindow.png:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.FormSkin.RightActiveDialogWindow.png;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightBottomActiveDialogWindow.png" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightBottomActiveDialogWindow.png:ImageFormat" xml:space="preserve">
+    <value>Png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightBottomActiveDialogWindow.png:FileName" xml:space="preserve">
+    <value>SimpleSky.FormSkin.RightBottomActiveDialogWindow.png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightBottomActiveDialogWindow.png:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightBottomActiveDialogWindow.png:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.FormSkin.RightBottomActiveDialogWindow.png;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightTopActiveDialogWindow.png" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightTopActiveDialogWindow.png:ImageFormat" xml:space="preserve">
+    <value>Png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightTopActiveDialogWindow.png:FileName" xml:space="preserve">
+    <value>SimpleSky.FormSkin.RightTopActiveDialogWindow.png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightTopActiveDialogWindow.png:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightTopActiveDialogWindow.png:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.FormSkin.RightTopActiveDialogWindow.png;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:TopActiveDialogWindow.png" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:TopActiveDialogWindow.png:ImageFormat" xml:space="preserve">
+    <value>Png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:TopActiveDialogWindow.png:FileName" xml:space="preserve">
+    <value>SimpleSky.FormSkin.TopActiveDialogWindow.png</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:TopActiveDialogWindow.png:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:TopActiveDialogWindow.png:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.FormSkin.TopActiveDialogWindow.png;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightOverlayActiveDialogWindowStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:RightOverlayActiveDialogWindowStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>Name=RightActiveDialogWindow.png;Namespace=Gizmox.WebGUI.Forms.Skins.FormSkin</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftOverlayActiveDialogWindowStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:LeftOverlayActiveDialogWindowStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>Name=LeftActiveDialogWindow.png;Namespace=Gizmox.WebGUI.Forms.Skins.FormSkin</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:BoxesBarFooterStyle.BackColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:BoxesBarFooterStyle.BackColor:Value" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:WindowModalMaskOpacity" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.OpacityValue, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:WindowModalMaskOpacity:Value" xml:space="preserve">
+    <value>30%</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:ForeColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:ForeColor:Value" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:DialogWindowCaptionStyle.Font" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:DialogWindowCaptionStyle.Font:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:DialogWindowCaptionStyle.ForeColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:DialogWindowCaptionStyle.ForeColor:Value" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:DialogWindowCaptionStyle.Padding" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.PaddingValue, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:DialogWindowCaptionStyle.Padding:Value" xml:space="preserve">
+    <value>5, 11, 0, 1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabHoverLTR.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabHoverLTR.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabHoverLTR.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.TabControlSkin.LeftTabHoverLTR.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabHoverLTR.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabHoverLTR.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.TabControlSkin.LeftTabHoverLTR.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabSelected.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabSelected.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabSelected.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.TabControlSkin.CenterTabSelected.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabSelected.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabSelected.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.TabControlSkin.CenterTabSelected.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabNormal.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabNormal.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabNormal.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.TabControlSkin.CenterTabNormal.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabNormal.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabNormal.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.TabControlSkin.CenterTabNormal.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabHover.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabHover.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabHover.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.TabControlSkin.CenterTabHover.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabHover.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTabHover.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.TabControlSkin.CenterTabHover.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabNormalLTR.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabNormalLTR.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabNormalLTR.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.TabControlSkin.LeftTabNormalLTR.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabNormalLTR.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabNormalLTR.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.TabControlSkin.LeftTabNormalLTR.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabSelectedLTR.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabSelectedLTR.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabSelectedLTR.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.TabControlSkin.LeftTabSelectedLTR.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabSelectedLTR.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabSelectedLTR.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.TabControlSkin.LeftTabSelectedLTR.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabHoverLTR.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabHoverLTR.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabHoverLTR.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.TabControlSkin.RightTabHoverLTR.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabHoverLTR.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabHoverLTR.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.TabControlSkin.RightTabHoverLTR.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabNormalLTR.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabNormalLTR.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabNormalLTR.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.TabControlSkin.RightTabNormalLTR.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabNormalLTR.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabNormalLTR.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.TabControlSkin.RightTabNormalLTR.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabSelectedLTR.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabSelectedLTR.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabSelectedLTR.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.TabControlSkin.RightTabSelectedLTR.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabSelectedLTR.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:RightTabSelectedLTR.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.TabControlSkin.RightTabSelectedLTR.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabPageSkin:ForeColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabPageSkin:ForeColor:Value" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabPageSkin:HeaderForeColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabPageSkin:HeaderForeColor:Value" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabNormalLTRStyle.ForeColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabNormalLTRStyle.ForeColor:Value" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:TabsTopContainerStyle.ForeColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:TabsTopContainerStyle.ForeColor:Value" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabSelectedLTRStyle.ForeColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabSelectedLTRStyle.ForeColor:Value" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabHoverLTRStyle.ForeColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:CenterTopTabHoverLTRStyle.ForeColor:Value" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:TabHeight" xml:space="preserve">
+    <value>ValueResource:System.Int32, mscorlib</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:TabHeight:Value" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.OpenFileDialogSkin:OpenFileDialog.SWFUpload.swf" xml:space="preserve">
+    <value>BinaryResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.OpenFileDialogSkin:OpenFileDialog.SWFUpload.swf:FileName" xml:space="preserve">
+    <value>SimpleSky.OpenFileDialogSkin.OpenFileDialog.SWFUpload.swf</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.OpenFileDialogSkin:OpenFileDialog.SWFUpload.swf:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.OpenFileDialogSkin:OpenFileDialog.SWFUpload.swf:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.OpenFileDialogSkin.OpenFileDialog.SWFUpload.swf;Gizmox.WebGUI.Forms.Skins.Resources.BinaryContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ajax-loader.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ajax-loader.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ajax-loader.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.CommonSkin.ajax-loader.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ajax-loader.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ajax-loader.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.CommonSkin.ajax-loader.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Events.js" xml:space="preserve">
+    <value>ScriptResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Events.js:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Events.js:FileName" xml:space="preserve">
+    <value>SimpleSky.CommonSkin.Common.Events.js</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Events.js:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Events.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.CommonSkin.Common.Events.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Events.js:PresentationRole" xml:space="preserve">
+    <value>101</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Events.js:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Events.js:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+</root>

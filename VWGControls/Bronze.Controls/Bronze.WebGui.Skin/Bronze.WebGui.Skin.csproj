@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8AC58E57-C1ED-4CC5-905B-4B56C78E7667}</ProjectGuid>
+    <ProjectTypeGuids>{563295b5-8906-4a76-be2d-ff8e711c1204};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bronze.WebGui.Skin</RootNamespace>
+    <AssemblyName>Bronze.WebGui.Skin</AssemblyName>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <UseIISExpress>true</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gizmox.WebGUI.Forms.Extended, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=85eae29607c9f5f3, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Server, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=3de6eb684226c24d">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms.Design, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=dd2a1fd4d120c769">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Skin\Blue.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Skin\SimpleSky.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Skin\Blue.resx">
+      <DependentUpon>Blue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Skin\SimpleSky.resx">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Skin\Blue.ButtonSkin.Button.css">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.CommonSkin.Common.css">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.CommonSkin.Common.Layout.xslt">
+      <DependentUpon>Blue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\Blue.CommonSkin.ListServices.js">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.FormSkin.Form.css">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.FormSkin.Form.xslt">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.ListViewSkin.ArrowArrowLTR.gif">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.ListViewSkin.ArrowArrowRTL.gif">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.ListViewSkin.ArrowLTR.gif">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.ListViewSkin.ArrowRTL.gif">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.ListViewSkin.ListView.css">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.ListViewSkin.ListView.ie.xslt">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.ListViewSkin.ListView.js">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.ListViewSkin.ListView.moz.xslt">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.ListViewSkin.ListView.xslt">
+      <DependentUpon>Blue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\Blue.ListViewSkin.PagingBG.gif">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\Blue.ToolBarButtonSkin.ToolBarButton.xslt">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ButtonSkin.Button.css">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.CommonSkin.ajax-loader.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.CommonSkin.Common.css">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.CommonSkin.Common.Events.js">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.CommonSkin.Common.Layout.xslt">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\SimpleSky.CommonSkin.ListServices.js">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.BottomActiveDialogWindow.png">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.Form.css">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.Form.xslt">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.LeftActiveDialogWindow.png">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.LeftBottomActiveDialogWindow.png">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.LeftTopActiveDialogWindow.png">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.RightActiveDialogWindow.png">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.RightBottomActiveDialogWindow.png">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.RightTopActiveDialogWindow.png">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.TopActiveDialogWindow.png">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.HeaderedPanelSkin.HeaderBackground.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.ArrowArrowLTR.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.ArrowArrowRTL.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.ArrowLTR.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.ArrowRTL.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.ListView.css">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.ListView.ie.xslt">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.ListView.js">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.ListView.moz.xslt">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.ListView.xslt">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.PagingBG.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.OpenFileDialogSkin.OpenFileDialog.SWFUpload.swf">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.TabControlSkin.CenterTabHover.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.TabControlSkin.CenterTabNormal.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.TabControlSkin.CenterTabSelected.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.TabControlSkin.LeftTabHoverLTR.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.TabControlSkin.LeftTabNormalLTR.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.TabControlSkin.LeftTabSelectedLTR.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.TabControlSkin.RightTabHoverLTR.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.TabControlSkin.RightTabNormalLTR.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.TabControlSkin.RightTabSelectedLTR.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ToolBarButtonSkin.ToolBarButton.xslt">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ToolBarSkin.CenterFrame.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ToolBarSkin.CenterFrame.jpg">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>F:\VSS\学业指导平台\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>F:\VSS\学业指导平台\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Bronze.SchoolWorkGuide.Web">
+      <HintPath>F:\VSS\学业指导平台\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Bronze.SchoolWorkGuide.Web.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>E:\学业\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>F:\VSS\学业指导平台\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>F:\VSS\学业指导平台\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Gizmox.WebGUI.Forms">
+      <HintPath>F:\VSS\学业指导平台\BronzeServicePlatform\Bronze.SchoolWorkGuide.Web\bin\Gizmox.WebGUI.Forms.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v10.0\Gizmox.VWGApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>4027</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57335/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
