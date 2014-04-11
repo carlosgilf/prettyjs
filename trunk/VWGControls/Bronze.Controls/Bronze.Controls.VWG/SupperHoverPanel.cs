@@ -38,7 +38,7 @@ namespace Bronze.Controls.VWG
     /// </summary>
     [Skin(typeof(SupperHoverPanelSkin))]
     [Serializable()]
-    public class SupperHoverPanel : SupperPanel
+    public class SupperHoverPanel : SupperPanel, Bronze.Controls.VWG.IHoverControl
     {
         private static SerializableProperty HoverBackColorProperty = SerializableProperty.Register("HoverBackColor", typeof(Color), typeof(SupperHoverPanel), new SerializablePropertyMetadata());
         ResourceHandle _overImage;

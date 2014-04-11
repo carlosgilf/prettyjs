@@ -164,6 +164,13 @@ namespace Bronze.Controls.VWG
             set { emptyMsg = value; }
         }
 
+        [DefaultValue(null)]
+        public string OtherInfo
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// The SelectionChanged event registration.
         /// </summary>
@@ -276,6 +283,11 @@ namespace Bronze.Controls.VWG
                     this.mobjItems = items;
                     OnSelectionChange(EventArgs.Empty);
                 }
+            }
+            else if (objEvent.Type == "SaveOtherInfo")
+            {
+                var info = objEvent["info"];
+                this.OtherInfo = info;
             }
 
             /*

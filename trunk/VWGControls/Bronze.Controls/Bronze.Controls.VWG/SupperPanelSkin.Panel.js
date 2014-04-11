@@ -11,7 +11,7 @@
                 style1 += ";";
             }
             return style1 + style2;
-        }
+        };
 
         //must found the div who have the class attribute
         if (!$inner.attr("class")) {

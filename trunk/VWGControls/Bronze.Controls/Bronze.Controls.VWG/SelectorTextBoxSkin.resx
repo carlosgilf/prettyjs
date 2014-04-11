@@ -238,4 +238,52 @@
   <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:lz-string.js:Presentation" xml:space="preserve">
     <value>100</value>
   </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_IE.css" xml:space="preserve">
+    <value>StyleSheetResource</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_IE.css:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_IE.css:FileName" xml:space="preserve">
+    <value>SelectorTextBoxSkin.Selector_IE.css</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_IE.css:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_IE.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SelectorTextBoxSkin.Selector_IE.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_IE.css:PresentationRole" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_IE.css:PresentationEngine" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_IE.css:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_Webkit.css" xml:space="preserve">
+    <value>StyleSheetResource</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_Webkit.css:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_Webkit.css:FileName" xml:space="preserve">
+    <value>SelectorTextBoxSkin.Selector_Webkit.css</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_Webkit.css:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_Webkit.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SelectorTextBoxSkin.Selector_Webkit.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_Webkit.css:PresentationRole" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_Webkit.css:PresentationEngine" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.SelectorTextBoxSkin:Selector_Webkit.css:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
 </root>
