@@ -18,7 +18,7 @@ namespace Bronze.Controls.VWG
             {
                 char[] objBuffer = new char[stream.Length];
                 reader.ReadBlock(objBuffer, 0, (int)stream.Length);
-                objContext.HttpContext.Response.Expires = 100000;
+                objContext.HttpContext.Response.Expires = 60*24*370;
                 objContext.HttpContext.Response.Cache.SetExpires(DateTime.Now.AddYears(1));
                 objContext.HttpContext.Response.Cache.SetCacheability(System.Web.HttpCacheability.Public);
                 objContext.HttpContext.Response.ContentType = "text/x-component";

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Bronze.Controls.VWG
+namespace Bronze.Controls.VWG.Common
 {
     public static class Extensions
     {

@@ -283,6 +283,17 @@ function selector_addTexts(mstrControlId, items, isInit) {
     }
 }
 
+function selector_saveOtherInfo(obj, info) {
+    var mstrControlId = obj.VWG_Id;
+    // Create event
+    var objEvent = Events_CreateEvent(mstrControlId, "SaveOtherInfo", null, true);
+    Events_SetEventAttribute(objEvent, "info", info);
+    if (Data_IsCriticalEvent(mstrControlId, mcntEventSelectionChangeId)) {
+        // Raise event if critical
+        Events_RaiseEvents();
+    }
+}
+
 function selector_addItems(obj, items, isInit) {
     var htmls = "";
     for (var i = 0; i < items.length; i++) {
@@ -412,6 +423,7 @@ function selector_removeItem(obj, item, doNotInsertPlaceHoldler) {
         curr.remove();
         if (obj.onRemove) {
             realGlobal.Items = initData.items;
+            realGlobal.context = obj;
             //改变上下文eval
             (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
         }
@@ -444,6 +456,7 @@ function selector_removeItems(obj, arrayItemIds, isCallOnRemove) {
             obj.items = initData.items;
             if (isCallOnRemove && obj.onRemove) {
                 realGlobal.Items = initData.items;
+                realGlobal.context = obj;
                 //改变上下文eval
                 (new Function("with(this) { " + obj.onRemove + "}")).call(realGlobal);
             }
@@ -503,7 +516,7 @@ function selector_fireOnChanged(obj) {
         var realGlobal = {};
         realGlobal.Id = obj.VWG_Id;
         realGlobal.Items = obj.items;
-
+        realGlobal.context = obj;
         //改变上下文eval
         (new Function("with(this) { " + obj.onChanged + "}")).call(realGlobal);
     }

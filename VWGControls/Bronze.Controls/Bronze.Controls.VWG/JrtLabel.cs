@@ -40,7 +40,7 @@ namespace Bronze.Controls.VWG
     /// </summary>
     [Skin(typeof(JrtLabelSkin))]
     [Serializable()]
-    public class JrtLabel : Label
+    public class JrtLabel : Label, IHoverControl
     {
         private static SerializableProperty RadiusProperty = SerializableProperty.Register("Radius", typeof(CornerRadius), typeof(JrtLabel), new SerializablePropertyMetadata());
 
@@ -294,6 +294,28 @@ namespace Bronze.Controls.VWG
             set { labelSpaceWidth = value; }
         }
 
+
+        [Description("鼠标经过的javascript脚本")]
+        public string OnClientMouseOver
+        {
+            get;
+            set;
+        }
+
+        [Description("鼠标离开时的javascript脚本")]
+        public string OnClientMouseLeave
+        {
+            get;
+            set;
+        }
+
+        private bool renderRunClientMouseOut = false;
+        public bool RenderRunClientMouseLeave
+        {
+            get { return renderRunClientMouseOut; }
+            set { renderRunClientMouseOut = value; }
+        }
+
         protected override void RenderAttributes(Gizmox.WebGUI.Common.Interfaces.IContext objContext, Gizmox.WebGUI.Common.Interfaces.IAttributeWriter objWriter)
         {
             base.RenderAttributes(objContext, objWriter);
@@ -324,7 +346,7 @@ namespace Bronze.Controls.VWG
             }
             objWriter.WriteAttributeString("HoverFore", ColorTranslator.ToHtml(this.HoverForeColor));
             objWriter.WriteAttributeString("HoverBgColor", ColorTranslator.ToHtml(this.HoverBackColor));
-
+            objWriter.WriteAttributeString("Overable", this._overable ? "1" : "0");
             if (LinearGradient != null)
             {
                 objWriter.WriteAttributeString("Linear", LinearGradient.ToString());
@@ -333,7 +355,6 @@ namespace Bronze.Controls.VWG
             {
                 objWriter.WriteAttributeString("HoverLinear", HoverLinearGradient.ToString());
             }
-            objWriter.WriteAttributeString("Overable", this._overable ? "1" : "0");
 
             if (this.ImagePostionOfText != ArrowPosition.None)
             {
@@ -357,6 +378,20 @@ namespace Bronze.Controls.VWG
             if (ImageHeight > 0)
             {
                 objWriter.WriteAttributeString(WGAttributes.ImageHeight, ImageHeight);
+            }
+
+            if (!string.IsNullOrEmpty(OnClientMouseOver))
+            {
+                objWriter.WriteAttributeString("OverScript", OnClientMouseOver);
+            }
+            if (!string.IsNullOrEmpty(OnClientMouseLeave))
+            {
+                objWriter.WriteAttributeString("LeaveScript", OnClientMouseLeave);
+
+                if (RenderRunClientMouseLeave)
+                {
+                    this.InvokeScript(OnClientMouseLeave);
+                }
             }
         }
 

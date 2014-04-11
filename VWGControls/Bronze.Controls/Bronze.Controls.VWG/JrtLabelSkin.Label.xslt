@@ -73,14 +73,16 @@
       <xsl:if test="$varImage and @ImgPS">
         <img class="label_icon">
           <xsl:attribute name="style">
-            margin-right:<xsl:value-of select="@ImgSpace"/>px;
             vertical-align:middle;
             <xsl:if  test="@ImgPS='Left' or @ImgPS='Right'">
               margin-right:<xsl:value-of select="@ImgSpace"/>px;
               margin-top: -2px;
             </xsl:if>
             <xsl:if  test="@ImgPS='Bottom'">
-              margin-Top:<xsl:value-of select="@ImgSpace"/>px;
+              margin-top:<xsl:value-of select="@ImgSpace"/>px;
+            </xsl:if>
+            <xsl:if  test="@ImgPS='Top' ">
+              margin-bottom:<xsl:value-of select="@ImgSpace"/>px;
             </xsl:if>
             
             <xsl:if test="@Attr.ImageWidth">

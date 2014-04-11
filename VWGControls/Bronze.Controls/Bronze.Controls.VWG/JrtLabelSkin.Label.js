@@ -56,6 +56,11 @@ function JrtLabel_Init(controlId, sender) {
 function JrtLabel_MouseOver(strGuid, objImage) {
     var objNode = Data_GetNode(strGuid);
     if (objNode) {
+        var overable = Xml_GetAttribute(objNode, "Overable");
+        if (overable == '0') {
+            return;
+        }
+
         var $ctl = $(objImage);
         var label = $ctl.find(".Common-Unselectable");
         if (!objImage.tempStyle) {
@@ -93,7 +98,7 @@ function JrtLabel_MouseOver(strGuid, objImage) {
         }
         $ctl.css("background-color", hoverBgColor);
 
-    
+
         var hoverLinearGradient = Xml_GetAttribute(objNode, "HoverLinear");
         var innerStyle = '';
 
@@ -118,35 +123,45 @@ function JrtLabel_MouseOver(strGuid, objImage) {
                 $ctl.css("background-position", "top left");
             }
         }
+
+        var overScript = Xml_GetAttribute(objNode, "OverScript");
+        if (overScript) {
+            eval(overScript);
+        }
     }
 }
 
 function JrtLabel_MouseLeave(strGuid, objImage) {
     var objNode = Data_GetNode(strGuid);
-    var strOverImage = Xml_GetAttribute(objNode, "Attr.Image");
-    var linearGradient = Xml_GetAttribute(objNode, "Linear");
-    var $ctl = $(objImage);
-    if (strOverImage && strOverImage != "") {
-        var imgPostion = Xml_GetAttribute(objNode, "ImgPS");
-        if (!imgPostion) {
-            objImage.childNodes[0].style.backgroundImage = "url(" + strOverImage + ")";
+    var overable = Xml_GetAttribute(objNode, "Overable");
+    if (overable != '0') {
+        var strOverImage = Xml_GetAttribute(objNode, "Attr.Image");
+        var linearGradient = Xml_GetAttribute(objNode, "Linear");
+        var $ctl = $(objImage);
+        if (strOverImage && strOverImage != "") {
+            var imgPostion = Xml_GetAttribute(objNode, "ImgPS");
+            if (!imgPostion) {
+                objImage.childNodes[0].style.backgroundImage = "url(" + strOverImage + ")";
+            }
+            else {
+                $ctl.find(".label_icon").attr("src", strOverImage);
+            }
         }
-        else {
-            $ctl.find(".label_icon").attr("src", strOverImage);
+
+
+        var label = $ctl.find(".Common-Unselectable");
+
+        if (objImage.tempStyle != null) {
+            label.attr("style", objImage.tempStyle);
+        }
+
+        if (objImage.tempInnerStyle != null) {
+            $ctl.attr("style", objImage.tempInnerStyle);
+        }
+
+        var leaveScript = Xml_GetAttribute(objNode, "LeaveScript");
+        if (leaveScript) {
+            eval(leaveScript);
         }
     }
-
-
-    var label = $ctl.find(".Common-Unselectable");
-
-    if (objImage.tempStyle != null) {
-        label.attr("style", objImage.tempStyle);
-    }
-
-    if (objImage.tempInnerStyle != null) {
-        $ctl.attr("style", objImage.tempInnerStyle);
-    }
-
-
-
 }

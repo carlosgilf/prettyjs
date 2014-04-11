@@ -108,6 +108,15 @@
       <DependentUpon>JrtLabelSkin.cs</DependentUpon>
     </Content>
     <Content Include="SelectorTextBox.bmp" />
+    <Content Include="SelectorTextboxListSkin.SelectorList.css">
+      <DependentUpon>SelectorTextboxListSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="SelectorTextboxListSkin.SelectorList.js">
+      <DependentUpon>SelectorTextboxListSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="SelectorTextboxListSkin.SelectorList.xslt">
+      <DependentUpon>SelectorTextboxListSkin.cs</DependentUpon>
+    </Content>
     <Content Include="SelectorTextBoxSkin.json2.js">
       <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
     </Content>
@@ -121,6 +130,12 @@
       <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
     </Content>
     <Content Include="SelectorTextBoxSkin.SelectorTextBox.xslt">
+      <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="SelectorTextBoxSkin.Selector_IE.css">
+      <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="SelectorTextBoxSkin.Selector_Webkit.css">
       <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
     </Content>
     <Content Include="SupperHoverPanelSkin.jquery.easing.js">
@@ -180,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OtherResources\PIE.htc" />
     <Content Include="Resources\Images\pool.jpg" />
+    <EmbeddedResource Include="SelectorTextboxListSkin.resx">
+      <DependentUpon>SelectorTextboxListSkin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectorTextBoxSkin.resx">
       <DependentUpon>SelectorTextBoxSkin.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -216,6 +234,7 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="HtcFileLoader.cs" />
+    <Compile Include="IHoverControl.cs" />
     <Compile Include="JrtLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -227,6 +246,15 @@
     </Compile>
     <Compile Include="SelectorTextBox.designer.cs">
       <DependentUpon>SelectorTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectorTextboxList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SelectorTextboxList.designer.cs">
+      <DependentUpon>SelectorTextboxList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectorTextboxListSkin.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SelectorTextBoxSkin.cs">
       <SubType>Component</SubType>
