@@ -173,6 +173,42 @@
     <Content Include="Skin\SimpleSky.FormSkin.BottomActiveDialogWindow.png">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowCloseButtonDisabled.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowCloseButtonHover.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowCloseButtonNormal.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowMaximizeButtonDisabled.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowMaximizeButtonHover.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowMaximizeButtonNormal.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowMinimizeButtonDisabled.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowMinimizeButtonHover.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowMinimizeButtonNormal.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowRestoreButtonDisabled.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowRestoreButtonHover.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.DialogWindowRestoreButtonNormal.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
     <Content Include="Skin\SimpleSky.FormSkin.Form.css">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>

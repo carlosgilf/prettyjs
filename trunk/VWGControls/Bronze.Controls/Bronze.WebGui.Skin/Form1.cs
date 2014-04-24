@@ -29,11 +29,12 @@ namespace Bronze.WebGui.Skin
             //Thread.Sleep(25 * 1000);
 
             //button1.SetLoadingMessage("撒旦解放开绿灯撒看见法律监督所");
+            new Form1().Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            new Form1().ShowDialog();
         }
     }
 }
