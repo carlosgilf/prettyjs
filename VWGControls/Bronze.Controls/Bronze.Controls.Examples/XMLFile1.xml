@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<WG:R LR="635085669024106763" AF="5" xmlns:WC="wgcontrols" Ext=".ashx" V="6.4.0 Release c" InlineWindows="1" xmlns:WG="http://www.gizmox.com/webgui">
-  <WG:F MP="0" H="400" W="400" L="100" T="10" RD="1" TX="Form3" TP="MainWindow" FBS="4" WS="0" S="0" MXE="1" MNE="1" Id="5" TI="0" TT="">
-    <WC:P Id="4" ES="SupperPanelSkin" TT="" BG="Silver" PA="4" TX="" Radius="border-radius:8px 8px 8px 8px;-webkit-border-radius:8px 8px 8px 8px;-moz-border-radius:8px 8px 8px 8px;" OP="opacity:1" L="176" T="92" H="115" W="116" A="LT" />
-    <WC:PBX Id="3" TT="" L="320" T="284" H="107" W="108" A="LT" IMS="0" IM="Images.photo_hb.jpg.ashx" />
-    <WC:PBX Id="2" ES="SupperPictureBox" TT="" L="425" T="92" H="115" W="100" A="LT" IMS="0" IM="Images.pool.jpg.ashx" />
-  </WG:F>
-  <CMDS />
-</WG:R>

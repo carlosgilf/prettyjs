@@ -1,5 +1,0 @@
-E:\jrt\Add-in开发\JrtCoder\AddinCustomAction\bin\Debug\AddinInstaller.dll
-E:\jrt\Add-in开发\JrtCoder\AddinCustomAction\bin\Debug\AddinInstaller.pdb
-E:\jrt\Add-in开发\JrtCoder\AddinCustomAction\obj\Debug\ResolveAssemblyReference.cache
-E:\jrt\Add-in开发\JrtCoder\AddinCustomAction\obj\Debug\AddinInstaller.dll
-E:\jrt\Add-in开发\JrtCoder\AddinCustomAction\obj\Debug\AddinInstaller.pdb
