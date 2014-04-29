@@ -33,10 +33,10 @@ namespace Bronze.Controls.Examples
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupperPanelTest));
             this.pictureBox1 = new Gizmox.WebGUI.Forms.PictureBox();
+            this.supperPanel3 = new Bronze.Controls.VWG.SupperPanel();
+            this.supperPictureBox1 = new Bronze.Controls.VWG.SupperPictureBox();
             this.supperPanel2 = new Bronze.Controls.VWG.SupperPanel();
             this.supperPanel1 = new Bronze.Controls.VWG.SupperPanel();
-            this.supperPictureBox1 = new Bronze.Controls.VWG.SupperPictureBox();
-            this.supperPanel3 = new Bronze.Controls.VWG.SupperPanel();
             this.supperPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +49,33 @@ namespace Bronze.Controls.Examples
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // supperPanel3
+            // 
+            this.supperPanel3.ArrowStart = ((uint)(10u));
+            this.supperPanel3.BackColor = System.Drawing.Color.Silver;
+            this.supperPanel3.CustomStyle = "SupperPanelSkin";
+            this.supperPanel3.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
+            this.supperPanel3.DockPadding.All = 4;
+            this.supperPanel3.LinearGradient = null;
+            this.supperPanel3.Location = new System.Drawing.Point(296, 116);
+            this.supperPanel3.Name = "supperPanel2";
+            this.supperPanel3.Opacity = 60;
+            this.supperPanel3.Padding = new Gizmox.WebGUI.Forms.Padding(4);
+            this.supperPanel3.Radius = new Gizmox.WebGUI.Forms.CornerRadius(8);
+            this.supperPanel3.Size = new System.Drawing.Size(202, 203);
+            this.supperPanel3.TabIndex = 0;
+            // 
+            // supperPictureBox1
+            // 
+            this.supperPictureBox1.CustomStyle = "SupperPictureBox";
+            this.supperPictureBox1.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("supperPictureBox1.Image"));
+            this.supperPictureBox1.Location = new System.Drawing.Point(425, 92);
+            this.supperPictureBox1.Name = "supperPictureBox1";
+            this.supperPictureBox1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
+            this.supperPictureBox1.Size = new System.Drawing.Size(100, 115);
+            this.supperPictureBox1.TabIndex = 1;
+            this.supperPictureBox1.TabStop = false;
+            // 
             // supperPanel2
             // 
             this.supperPanel2.ArrowStart = ((uint)(10u));
@@ -57,6 +84,7 @@ namespace Bronze.Controls.Examples
             this.supperPanel2.CustomStyle = "SupperPanelSkin";
             this.supperPanel2.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
             this.supperPanel2.DockPadding.All = 4;
+            this.supperPanel2.LinearGradient = null;
             this.supperPanel2.Location = new System.Drawing.Point(176, 92);
             this.supperPanel2.Name = "supperPanel2";
             this.supperPanel2.Opacity = 100;
@@ -73,6 +101,7 @@ namespace Bronze.Controls.Examples
             this.supperPanel1.CustomStyle = "SupperPanelSkin";
             this.supperPanel1.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
             this.supperPanel1.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
+            this.supperPanel1.LinearGradient = null;
             this.supperPanel1.Location = new System.Drawing.Point(4, 4);
             this.supperPanel1.Name = "supperPanel1";
             this.supperPanel1.Opacity = 100;
@@ -80,37 +109,11 @@ namespace Bronze.Controls.Examples
             this.supperPanel1.Size = new System.Drawing.Size(108, 107);
             this.supperPanel1.TabIndex = 0;
             // 
-            // supperPictureBox1
-            // 
-            this.supperPictureBox1.CustomStyle = "SupperPictureBox";
-            this.supperPictureBox1.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("supperPictureBox1.Image"));
-            this.supperPictureBox1.Location = new System.Drawing.Point(425, 92);
-            this.supperPictureBox1.Name = "supperPictureBox1";
-            this.supperPictureBox1.Radius = new Gizmox.WebGUI.Forms.CornerRadius(0);
-            this.supperPictureBox1.Size = new System.Drawing.Size(100, 115);
-            this.supperPictureBox1.TabIndex = 1;
-            this.supperPictureBox1.TabStop = false;
-            // 
-            // supperPanel3
-            // 
-            this.supperPanel3.ArrowStart = ((uint)(10u));
-            this.supperPanel3.BackColor = System.Drawing.Color.Silver;
-            this.supperPanel3.CustomStyle = "SupperPanelSkin";
-            this.supperPanel3.DisplayMode = Bronze.Controls.VWG.DisplayMode.Normal;
-            this.supperPanel3.DockPadding.All = 4;
-            this.supperPanel3.Location = new System.Drawing.Point(176, 92);
-            this.supperPanel3.Name = "supperPanel2";
-            this.supperPanel3.Opacity = 100;
-            this.supperPanel3.Padding = new Gizmox.WebGUI.Forms.Padding(4);
-            this.supperPanel3.Radius = new Gizmox.WebGUI.Forms.CornerRadius(8);
-            this.supperPanel3.Size = new System.Drawing.Size(116, 115);
-            this.supperPanel3.TabIndex = 0;
-            // 
             // SupperPanelTest
             // 
+            this.Controls.Add(this.supperPanel3);
             this.Controls.Add(this.supperPictureBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.supperPanel3);
             this.Size = new System.Drawing.Size(624, 553);
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
