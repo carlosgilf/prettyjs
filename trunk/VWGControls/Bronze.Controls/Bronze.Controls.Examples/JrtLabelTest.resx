@@ -144,25 +144,4 @@
   <data name="jrtLabel5.Image" xml:space="preserve">
     <value>table.png</value>
   </data>
-  <data name="jrtLabel2.HoverImage" xml:space="preserve">
-    <value>table.png</value>
-  </data>
-  <data name="jrtLabel2.Image" xml:space="preserve">
-    <value>table.png</value>
-  </data>
-  <data name="jrtLabel1.HoverImage" xml:space="preserve">
-    <value>table.png</value>
-  </data>
-  <data name="jrtLabel1.Image" xml:space="preserve">
-    <value>table.png</value>
-  </data>
-  <data name="label1.BackgroundImage" xml:space="preserve">
-    <value>Logo.jpg</value>
-  </data>
-  <data name="label1.HoverImage" xml:space="preserve">
-    <value>table.png</value>
-  </data>
-  <data name="label1.Image" xml:space="preserve">
-    <value>table.png</value>
-  </data>
 </root>

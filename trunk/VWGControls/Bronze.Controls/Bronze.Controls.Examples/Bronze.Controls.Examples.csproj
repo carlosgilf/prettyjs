@@ -127,11 +127,23 @@
     <Compile Include="JrtLabelTest.Designer.cs">
       <DependentUpon>JrtLabelTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectorTextboxListTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectorTextboxListTest.Designer.cs">
+      <DependentUpon>SelectorTextboxListTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="SupperPanelTest.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SupperPanelTest.Designer.cs">
       <DependentUpon>SupperPanelTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testFuck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testFuck.Designer.cs">
+      <DependentUpon>testFuck.cs</DependentUpon>
     </Compile>
     <Compile Include="TestPopup.cs">
       <SubType>Form</SubType>
@@ -255,8 +267,16 @@
       <DependentUpon>JrtLabelTest.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SelectorTextboxListTest.resx">
+      <DependentUpon>SelectorTextboxListTest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SupperPanelTest.resx">
       <DependentUpon>SupperPanelTest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testFuck.resx">
+      <DependentUpon>testFuck.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TestPopup.resx">

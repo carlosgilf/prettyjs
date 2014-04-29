@@ -20,7 +20,7 @@ namespace Bronze.Controls.Examples
         public JrtLabelTest()
         {
             InitializeComponent();
-            this.label1.HoverLinearGradient = new VWG.LinearGradient("top", "#ddf7ff", "#b5e2f5");
+            //this.label1.HoverLinearGradient = new VWG.LinearGradient("top", "#ddf7ff", "#b5e2f5");
         }
     }
 }
