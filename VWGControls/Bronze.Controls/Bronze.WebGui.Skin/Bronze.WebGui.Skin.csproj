@@ -154,6 +154,9 @@
     <Content Include="Skin\SimpleSky.ButtonSkin.Button.css">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
+    <Content Include="Skin\SimpleSky.ComboBoxSkin.ComboBox.css">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
     <Content Include="Skin\SimpleSky.CommonSkin.ajax-loader.gif">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
@@ -298,6 +301,9 @@
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
     <Content Include="Skin\SimpleSky.TabControlSkin.RightTabSelectedLTR.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.TextBoxSkin.TextBox.css">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
     <Content Include="Skin\SimpleSky.ToolBarButtonSkin.ToolBarButton.xslt">
@@ -446,7 +452,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
-          <DevelopmentServerPort>4027</DevelopmentServerPort>
+          <DevelopmentServerPort>4029</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:57335/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -33,6 +33,8 @@ namespace Bronze.WebGui.Skin
         {
             this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.button2 = new Gizmox.WebGUI.Forms.Button();
+            this.textBox1 = new Gizmox.WebGUI.Forms.TextBox();
+            this.textBox2 = new Gizmox.WebGUI.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -53,8 +55,24 @@ namespace Bronze.WebGui.Skin
             this.button2.Text = "button2";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(66, 196);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(199, 23);
+            this.textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(66, 243);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(199, 23);
+            this.textBox2.TabIndex = 3;
+            // 
             // Form1
             // 
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Size = new System.Drawing.Size(419, 466);
@@ -67,6 +85,8 @@ namespace Bronze.WebGui.Skin
 
         private Button button1;
         private Button button2;
+        private TextBox textBox1;
+        private TextBox textBox2;
 
 
     }
