@@ -57,73 +57,70 @@ function JrtLabel_MouseOver(strGuid, objImage) {
     var objNode = Data_GetNode(strGuid);
     if (objNode) {
         var overable = Xml_GetAttribute(objNode, "Overable");
-        if (overable == '0') {
-            return;
-        }
-
-        var $ctl = $(objImage);
-        var label = $ctl.find(".Common-Unselectable");
-        if (!objImage.tempStyle) {
-            objImage.tempStyle = label.attr("style");
-        }
-
-        if (!objImage.tempInnerStyle) {
-            objImage.tempInnerStyle = $ctl.attr("style");
-        }
-
-        var strOverBgImage = Xml_GetAttribute(objNode, "HoverBgImg");
-        var strBgImage = Xml_GetAttribute(objNode, "Attr.BackgroundImage");
-        var imgLayout = Xml_GetAttribute(objNode, "Attr.BackgroundImageLayout");
-
-        var strOverImage = Xml_GetAttribute(objNode, "HoverImage");
-        var strOverForeColor = Xml_GetAttribute(objNode, "HoverFore");
-        var strOverFont = Xml_GetAttribute(objNode, "HoverFont");
-
-        var hoverBgColor = Xml_GetAttribute(objNode, "HoverBgColor");
-
-        if (strOverImage && strOverImage != "") {
-            //objImage.childNodes[0].style.backgroundImage = "url(" + strOverImage + ")";
-            var imgPostion = Xml_GetAttribute(objNode, "ImgPS");
-            if (!imgPostion) {
-                objImage.childNodes[0].style.backgroundImage = "url(" + strOverImage + ")";
+        if (overable != '0') {
+            var $ctl = $(objImage);
+            var label = $ctl.find(".Common-Unselectable");
+            if (!objImage.tempStyle) {
+                objImage.tempStyle = label.attr("style");
             }
-            else {
-                $ctl.find(".label_icon").attr("src", strOverImage);
+
+            if (!objImage.tempInnerStyle) {
+                objImage.tempInnerStyle = $ctl.attr("style");
             }
-        }
 
-        label.css("color", strOverForeColor);
-        if (strOverFont && strOverFont != "") {
-            label.css("font", strOverFont);
-        }
-        $ctl.css("background-color", hoverBgColor);
+            var strOverBgImage = Xml_GetAttribute(objNode, "HoverBgImg");
+            var strBgImage = Xml_GetAttribute(objNode, "Attr.BackgroundImage");
+            var imgLayout = Xml_GetAttribute(objNode, "Attr.BackgroundImageLayout");
 
+            var strOverImage = Xml_GetAttribute(objNode, "HoverImage");
+            var strOverForeColor = Xml_GetAttribute(objNode, "HoverFore");
+            var strOverFont = Xml_GetAttribute(objNode, "HoverFont");
 
-        var hoverLinearGradient = Xml_GetAttribute(objNode, "HoverLinear");
-        var innerStyle = '';
+            var hoverBgColor = Xml_GetAttribute(objNode, "HoverBgColor");
 
-        if (hoverLinearGradient) {
-            innerStyle = conactStyle(innerStyle, hoverLinearGradient);
-        }
-
-        if (innerStyle && innerStyle != "") {
-            $ctl.attr("style", conactStyle($ctl.attr("style"), innerStyle));
-        }
-
-        if (strOverBgImage && strOverBgImage != "") {
-            $ctl.css("background-image", "url(" + strOverBgImage + ")");
-        }
-        if (strBgImage == null || strBgImage == "") {
-            if (imgLayout * 1 == 2) {
-                $ctl.css("background-repeat", "no-repeat");
-                $ctl.css("background-position", "center center");
+            if (strOverImage && strOverImage != "") {
+                //objImage.childNodes[0].style.backgroundImage = "url(" + strOverImage + ")";
+                var imgPostion = Xml_GetAttribute(objNode, "ImgPS");
+                if (!imgPostion) {
+                    objImage.childNodes[0].style.backgroundImage = "url(" + strOverImage + ")";
+                }
+                else {
+                    $ctl.find(".label_icon").attr("src", strOverImage);
+                }
             }
-            else if (imgLayout * 1 == 0) {
-                $ctl.css("background-repeat", "no-repeat");
-                $ctl.css("background-position", "top left");
+
+            label.css("color", strOverForeColor);
+            if (strOverFont && strOverFont != "") {
+                label.css("font", strOverFont);
+            }
+            $ctl.css("background-color", hoverBgColor);
+
+
+            var hoverLinearGradient = Xml_GetAttribute(objNode, "HoverLinear");
+            var innerStyle = '';
+
+            if (hoverLinearGradient) {
+                innerStyle = conactStyle(innerStyle, hoverLinearGradient);
+            }
+
+            if (innerStyle && innerStyle != "") {
+                $ctl.attr("style", conactStyle($ctl.attr("style"), innerStyle));
+            }
+
+            if (strOverBgImage && strOverBgImage != "") {
+                $ctl.css("background-image", "url(" + strOverBgImage + ")");
+            }
+            if (strBgImage == null || strBgImage == "") {
+                if (imgLayout * 1 == 2) {
+                    $ctl.css("background-repeat", "no-repeat");
+                    $ctl.css("background-position", "center center");
+                }
+                else if (imgLayout * 1 == 0) {
+                    $ctl.css("background-repeat", "no-repeat");
+                    $ctl.css("background-position", "top left");
+                }
             }
         }
-
         var overScript = Xml_GetAttribute(objNode, "OverScript");
         if (overScript) {
             eval(overScript);
@@ -158,10 +155,9 @@ function JrtLabel_MouseLeave(strGuid, objImage) {
         if (objImage.tempInnerStyle != null) {
             $ctl.attr("style", objImage.tempInnerStyle);
         }
-
-        var leaveScript = Xml_GetAttribute(objNode, "LeaveScript");
-        if (leaveScript) {
-            eval(leaveScript);
-        }
+    }
+    var leaveScript = Xml_GetAttribute(objNode, "LeaveScript");
+    if (leaveScript) {
+        eval(leaveScript);
     }
 }

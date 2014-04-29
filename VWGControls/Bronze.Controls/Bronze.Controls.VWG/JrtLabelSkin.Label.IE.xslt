@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:WC="wgcontrols" xmlns:WG="http://www.gizmox.com/webgui">
 
   <xsl:template name="SetLabelMouseEvent">
-    <xsl:if test="not(@Attr.Enabled='0') and not(@Overable='0')">
+    <xsl:if test="not(@Attr.Enabled='0')">
       <xsl:attribute name="onmouseleave">
         JrtLabel_MouseLeave('<xsl:value-of select="@Attr.Id" />',this);
       </xsl:attribute>

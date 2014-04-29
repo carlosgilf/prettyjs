@@ -1,4 +1,4 @@
-function SupperHoverPanel_Init(strGuid) {
+锘縡unction SupperHoverPanel_Init(strGuid) {
     var objImage=Web_GetElementByDataId(strGuid);
     var objNode=Data_GetNode(strGuid);
     //    var layer1 = $(objImage).children("div:first");
@@ -71,7 +71,7 @@ function HoverPanel_RunLeaveScript(strGuid) {
 };
 
 
-function vwg_showMenu(id, option, animate, zIndex) {
+function vwg_showMenu(id, option, animate, zIndex, relatedId) {
     zIndex = zIndex || 116;
     var _option={ duration: 500,animate: 'dropDown' };
     if(isNumber(option)) {
@@ -84,12 +84,18 @@ function vwg_showMenu(id, option, animate, zIndex) {
 
     var obj=$(Web_GetElementByDataId(id));
 
-    var delayTimer=obj.attr('delayTimer');
+    var last_relatedId = obj.attr('relatedId');
+   
+    var delayTimer = obj.attr('delayTimer');
     window.clearInterval(delayTimer);
+    
     if(option.showManyTimes || obj.attr('showed')!='1') {
-        obj.attr('showed',1);
+        obj.attr('showed', 1);
+        if (relatedId) {
+            obj.attr('relatedId', relatedId);
+        }
 
-        //确保该div显示
+        //纭繚璇iv鏄剧ず
         obj.find('.SupperPanel-Hidden').removeClass('SupperPanel-Hidden');
         obj.find('.SupperPanel-VHidden').removeClass('SupperPanel-VHidden');
         obj.css('visibility', 'visible');
@@ -103,7 +109,7 @@ function vwg_showMenu(id, option, animate, zIndex) {
     }
 };
 
-function vwg_hideMenu(id,option,animate,hideTimeout) {
+function vwg_hideMenu(id, option, animate, hideTimeout, onComplete) {
     var _option={ duration: 500,animate: 'dropUp',hideTimeout: 150 };
     if(isNumber(option)) {
         _option.duration=option;
@@ -120,11 +126,20 @@ function vwg_hideMenu(id,option,animate,hideTimeout) {
     var delayTimer=obj.attr('delayTimer');
     window.clearInterval(delayTimer);
 
-    delayTimer=setInterval(function () {
+    delayTimer = setInterval(function () {
         window.clearInterval(delayTimer);
-        obj.attr('showed',0);
-        obj[_option.animate](_option.duration,function () { obj.attr('showed',0); });
-    },_option.hideTimeout);
+        obj.attr('showed', 0);
+        obj[_option.animate](_option.duration, function () {
+            if (onComplete) {
+                try {
+                    var relatedId = obj.attr('relatedId');
+                    onComplete(relatedId);
+                } catch (e) {
+                }
+            }
+            obj.attr('showed', 0);
+        });
+    }, _option.hideTimeout);
     obj.attr('delayTimer',delayTimer);
 };
 
