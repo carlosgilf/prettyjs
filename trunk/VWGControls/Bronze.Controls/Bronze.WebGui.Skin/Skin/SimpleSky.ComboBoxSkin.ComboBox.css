@@ -1,0 +1,120 @@
+.ComboBox-Control
+{
+	[Skin.Border];
+	[Skin.Background];
+	behavior: url(Static.Bronze.Controls.VWG.HtcFileLoader.wgx);		
+	border-radius:4px;
+}
+
+.ComboBox-Content
+{
+	[Skin.Foreground];
+	[Skin.Font];
+	[Skin.DropDownListTextBoxStyle];
+}
+.ComboBox-Input
+{
+	[Skin.Foreground];
+	[Skin.Font];
+	[Skin.TextBoxStyle];
+	
+}
+
+.ComboBox-ItemTable #ColorBoxColumn
+{
+	width:[Skin.PreferdColorBoxWidth]px;
+}
+
+.ComboBox-ItemTable #ImageBoxColumn
+{
+	width:[Skin.PreferdImageBoxWidth]px;
+}
+
+
+.ComboBox-Item
+{
+	[Skin.PopupItemStyle];	
+}
+
+.ComboBox-Item #LabelBox
+{
+	[Skin.Foreground];
+	[Skin.Font];
+}
+
+.ComboBox-Box
+{
+	overflow:hidden;	
+}
+
+.ComboBox-Item #ColorBox
+{
+	width:[Skin.ColorBoxWidth]px;
+	height:[Skin.ColorBoxHeight]px;
+	[Skin.ColorBoxStyle];
+}
+
+.ComboBox-Item #ImageBox
+{
+	width:[Skin.ImageBoxWidth]px;
+	height:[Skin.ImageBoxHeight]px;
+}
+
+
+.ComboBox-Item_Selected #LabelBox
+{
+	[Skin.PopupItemEnterForeColor];
+}
+
+.ComboBox-Item_Selected td
+{
+	[Skin.PopupItemEnterStyle];	
+}
+
+
+.ComboBox-Content_Focus
+{
+	[Skin.FocusedDropDownListTextBoxStyle];	
+}
+
+.ComboBox-Button
+{
+	background-image:url([Skin.DropDownNormalImage]);
+}
+
+.ComboBox-Control_Enter .ComboBox-Button
+{
+	background-image:url([Skin.DropDownOverImage]);
+}
+
+.ComboBox-Control_Down .ComboBox-Button
+{
+	background-image:url([Skin.DropDownDownImage]);
+}
+
+.ComboBox-Control_Disabled
+{
+	cursor:default;
+}
+
+.ComboBox-Control_Disabled .ComboBox-Button
+{
+	background-image:url([Skin.DropDownImageDisable]);
+}
+
+.ComboBox-ControlLayout
+{
+	table-layout:fixed;
+	width:100%;
+	height:100%;
+}
+
+.ComboBox-InputContainer
+{
+	[Skin.SimpleComboBoxTextBoxBorderStyle];	
+}
+
+.ComboBox-Container
+{
+	padding:1px;
+}
