@@ -1,0 +1,36 @@
+.TextBox-Control
+{
+	[Skin.Border];
+	[Skin.Background];
+	behavior: url(Static.Bronze.Controls.VWG.HtcFileLoader.wgx);
+	border-radius:4px;
+}
+
+.TextBox-Text
+{
+	[Skin.Font];
+	[Skin.Foreground];
+
+}
+
+.TextBox-Input
+{
+	border-width:0px;
+	background-color:Transparent;
+	padding:0px;
+	width:100%;	
+	height:100%;
+	top:0px;
+	position:absolute;
+	resize:none;
+}
+
+.TextBox-SingleLine
+{
+	[Skin.SingleLineInputStyle];
+}
+
+.TextBox-MultiLine
+{
+	[Skin.MultiLineInputStyle];
+}
