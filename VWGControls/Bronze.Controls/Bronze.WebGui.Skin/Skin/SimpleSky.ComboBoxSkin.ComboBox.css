@@ -2,7 +2,7 @@
 {
 	[Skin.Border];
 	[Skin.Background];
-	behavior: url(Static.Bronze.Controls.VWG.HtcFileLoader.wgx);		
+	/*behavior: url(Static.Bronze.Controls.VWG.HtcFileLoader.wgx);*/
 	border-radius:4px;
 }
 

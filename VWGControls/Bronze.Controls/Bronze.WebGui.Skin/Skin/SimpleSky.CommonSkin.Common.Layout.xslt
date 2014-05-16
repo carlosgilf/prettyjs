@@ -535,10 +535,10 @@
         <td style="text-align:right;">
           <xsl:if test="$prmTotalItems!=''">
           <table border="0" cellpadding="0" cellspacing="0"  style="text-align:right;width:100%;"  class="Common-FontData" >
-            <td style="text-align:right; vertical-align:middle;" noWrap="noWrap">
+            <td style="text-align:right; vertical-align:middle;padding-left:16px;" noWrap="noWrap">
               共<span style="color:Blue;">
                 <xsl:value-of select="$prmTotalItems"/>
-              </span>条记录<span style="width:10px"></span>每页
+              </span>条记录，每页
             </td>
             <td style="width:23px;">
               <INPUT id="VWG{../@Attr.Id}_pagesize" style="width:100%;position:relative;OVERFLOW-X: hidden; OVERFLOW-Y: hidden; TEXT-TRANSFORM: none; HEIGHT: 18px;border-width:1px;" dir="ltr" 
@@ -551,7 +551,7 @@
                 
               </INPUT>
             </td>
-            <td style="width:18px;text-align:left; vertical-align:middle;">条</td>
+            <td style="width:40px;text-align:left; vertical-align:middle;">条记录</td>
           </table>
           </xsl:if>
         </td>
