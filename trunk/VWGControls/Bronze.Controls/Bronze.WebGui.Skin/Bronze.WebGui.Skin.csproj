@@ -42,6 +42,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Gizmox.WebGUI.Forms.Extended, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=85eae29607c9f5f3, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Extended.Design, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=63e79e6cd5280864, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Office, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=d50c2c7452ba77d9, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Office.Design, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=e838c68aaf727726, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Professional, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=6b5c571512bede7c, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Professional.Design, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=fd7bc2dbb230d265, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
@@ -79,9 +84,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Skin\Blue.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Skin\SimpleSky.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -90,67 +92,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Skin\Blue.resx">
-      <DependentUpon>Blue.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Skin\SimpleSky.resx">
       <DependentUpon>SimpleSky.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="Skin\Blue.ButtonSkin.Button.css">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.CommonSkin.Common.css">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.CommonSkin.Common.Layout.xslt">
-      <DependentUpon>Blue.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Skin\Blue.CommonSkin.ListServices.js">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.FormSkin.Form.css">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.FormSkin.Form.xslt">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.ListViewSkin.ArrowArrowLTR.gif">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.ListViewSkin.ArrowArrowRTL.gif">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.ListViewSkin.ArrowLTR.gif">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.ListViewSkin.ArrowRTL.gif">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.ListViewSkin.ListView.css">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.ListViewSkin.ListView.ie.xslt">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.ListViewSkin.ListView.js">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.ListViewSkin.ListView.moz.xslt">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.ListViewSkin.ListView.xslt">
-      <DependentUpon>Blue.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Skin\Blue.ListViewSkin.PagingBG.gif">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
-    <Content Include="Skin\Blue.ToolBarButtonSkin.ToolBarButton.xslt">
-      <DependentUpon>Blue.cs</DependentUpon>
-    </Content>
     <Content Include="Skin\SimpleSky.ButtonSkin.Button.css">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
@@ -465,7 +410,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetName).dll" "E:\Bronze\项目\校讯通-基于精简版数字校园\Bronze.XXTong.Web\bin\$(TargetName).dll"
+copy /Y "$(TargetDir)$(TargetName).pdb" "E:\Bronze\项目\校讯通-基于精简版数字校园\Bronze.XXTong.Web\bin\$(TargetName).pdb"</PostBuildEvent>
   </PropertyGroup>
 </Project>

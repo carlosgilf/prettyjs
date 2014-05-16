@@ -518,7 +518,7 @@
     <value>ValueResource:System.Int32, mscorlib</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:TopFrameHeight:Value" xml:space="preserve">
-    <value>28</value>
+    <value>31</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.Padding" xml:space="preserve">
     <value>ValueResource:Gizmox.WebGUI.Forms.Skins.PaddingValue, Gizmox.WebGUI.Forms</value>
@@ -526,29 +526,11 @@
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.Padding:Value" xml:space="preserve">
     <value>5, 5, 5, 0</value>
   </data>
-  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.BorderWidth" xml:space="preserve">
-    <value>ValueResource:Gizmox.WebGUI.Forms.BorderWidth, Gizmox.WebGUI.Forms</value>
-  </data>
-  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.BorderWidth:Value" xml:space="preserve">
-    <value>0, 0, 0, 1</value>
-  </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ControlSkin:BorderColor" xml:space="preserve">
     <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ControlSkin:BorderColor:Value" xml:space="preserve">
-    <value>176, 176, 176</value>
-  </data>
-  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:BorderColor" xml:space="preserve">
-    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
-  </data>
-  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:BorderColor:Value" xml:space="preserve">
-    <value>137, 189, 225</value>
-  </data>
-  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.BorderColor" xml:space="preserve">
-    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
-  </data>
-  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.BorderColor:Value" xml:space="preserve">
-    <value>White White White 137, 189, 225</value>
+    <value>209, 209, 209</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:LeftBottomStyle.BackgroundImage" xml:space="preserve">
     <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
@@ -617,7 +599,7 @@
     <value>ValueResource:System.Int32, mscorlib</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:Height:Value" xml:space="preserve">
-    <value>28</value>
+    <value>35</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterStyle.BorderStyle" xml:space="preserve">
     <value>ValueResource:Gizmox.WebGUI.Forms.BorderStyle, Gizmox.WebGUI.Forms</value>
@@ -1143,5 +1125,95 @@
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ComboBoxSkin:ComboBox.css:Presentation" xml:space="preserve">
     <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterStyle.BackColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterStyle.BackColor:Value" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelStyle.BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelStyle.BorderColor:Value" xml:space="preserve">
+    <value>176, 176, 176</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelStyle.BackColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelStyle.BackColor:Value" xml:space="preserve">
+    <value>236, 236, 236</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.LinkLabelSkin:ContentStyle.Font" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.LinkLabelSkin:ContentStyle.Font:Value" xml:space="preserve">
+    <value>Tahoma, 9pt, style=Underline</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.WatermarkTextBoxSkin:WatermarkStyle.Font" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.WatermarkTextBoxSkin:WatermarkStyle.Font:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.SearchTextBoxSkin:WatermarkStyle.Font" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.SearchTextBoxSkin:WatermarkStyle.Font:Value" xml:space="preserve">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TextBoxBaseSkin:BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.TextBoxBaseSkin:BorderColor:Value" xml:space="preserve">
+    <value>187, 187, 187</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.UpDownBaseSkin:BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.UpDownBaseSkin:BorderColor:Value" xml:space="preserve">
+    <value>187, 187, 187</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ComboBoxSkin:BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ComboBoxSkin:BorderColor:Value" xml:space="preserve">
+    <value>187, 187, 187</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Editors.Skins.FCKEditorSkin:BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Editors.Skins.FCKEditorSkin:BorderColor:Value" xml:space="preserve">
+    <value>187, 187, 187</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.DateTimePickerSkin:BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.DateTimePickerSkin:BorderColor:Value" xml:space="preserve">
+    <value>187, 187, 187</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.RichTextBoxSkin:BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.RichTextBoxSkin:BorderColor:Value" xml:space="preserve">
+    <value>187, 187, 187</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.RichTextEditorSkin:BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.RichTextEditorSkin:BorderColor:Value" xml:space="preserve">
+    <value>187, 187, 187</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:BorderColor:Value" xml:space="preserve">
+    <value>209, 209, 209</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.BorderColor" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.BorderColor:Value" xml:space="preserve">
+    <value>White White White 209, 209, 209</value>
   </data>
 </root>
