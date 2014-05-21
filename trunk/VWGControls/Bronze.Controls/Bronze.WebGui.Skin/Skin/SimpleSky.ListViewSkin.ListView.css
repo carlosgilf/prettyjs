@@ -327,3 +327,31 @@
 	height:100%;
 }
 
+/*jrt added treeNode support*/
+.ListView-Node
+{
+    width:16px;
+    height:16px;
+    display:inline-block;
+    background-repeat: no-repeat;
+}
+
+.ListView-Empty
+{
+    background-image:url(Resources.Gizmox.WebGUI.Forms.Skins.TreeViewSkin.TreeViewEmpty11LTR.gif.wgx);
+}
+
+.ListView-EmptyLast
+{
+    background-image:url(Resources.Gizmox.WebGUI.Forms.Skins.TreeViewSkin.TreeViewEmpty10LTR.gif.wgx);
+}
+
+.ListView-Expend
+{
+    background-image:url(Resources.Gizmox.WebGUI.Forms.Skins.TreeViewSkin.TreeView0.gif.wgx);
+}
+
+.ListView-Collapse
+{
+    background-image:url(Resources.Gizmox.WebGUI.Forms.Skins.TreeViewSkin.TreeView1.gif.wgx);
+}
