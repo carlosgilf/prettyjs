@@ -437,6 +437,7 @@
 	<xsl:variable name="varAlternate" select="(count(preceding-sibling::Tags.Row) mod 2)=0" />
     <xsl:variable name="varHeight" select="../@Attr.ItemHeight" />
     <xsl:variable name="varIsFullRowSelect" select="../@Attr.FullRowSelect='1' or not(../@Attr.FullRowSelect)" />
+    <xsl:variable name="varShowHtml" select="../@showHtml='1' or not(../@showHtml)" />
     
     <xsl:if test="name()='Tags.ListViewPanel'">
       <tr>
@@ -576,14 +577,14 @@
                       <img align="absmiddle" class="Common-Icon16X16" src="{../@Attr.Image}" /> 
                     </xsl:if>
                     <xsl:choose>
-                      <xsl:when test="@showHtml='1'">
-                        <!--jrt 支持现实html-->
+                      <xsl:when test="$varShowHtml">
+                        <!--jrt 支持现实html,这里的判断也可以用test="../../@showHtml='1'" 来判断-->
                         <img src="[Skin.CommonPath]Empty.gif.wgx" onload="$(this).replaceWith($(this).attr('vwgsource'))">
                           <xsl:attribute name="vwgsource">
                             <xsl:value-of select="." /> 
                           </xsl:attribute>
                         </img>
-                      </xsl:when>
+                    </xsl:when>
                       <xsl:otherwise>
                         <xsl:value-of select="." /> 
                       </xsl:otherwise>
