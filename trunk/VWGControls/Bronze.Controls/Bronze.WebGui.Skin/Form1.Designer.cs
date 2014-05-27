@@ -33,17 +33,6 @@ namespace Bronze.WebGui.Skin
         {
             this.button1 = new Gizmox.WebGUI.Forms.Button();
             this.button2 = new Gizmox.WebGUI.Forms.Button();
-            this.listView1 = new Bronze.WebGui.Skin.TestListView();
-            this.columnHeader1 = new Gizmox.WebGUI.Forms.ColumnHeader();
-            this.listViewItem1 = new Gizmox.WebGUI.Forms.ListViewItem("<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd0</div>");
-            this.listViewItem2 = new Gizmox.WebGUI.Forms.ListViewItem("<div style=\'padding-left:16px;\'><a class=\'ListView-Node ListView-Empty\'></a>ddddd" +
-                    "1</div>");
-            this.listViewItem3 = new Gizmox.WebGUI.Forms.ListViewItem("<div style=\'padding-left:16px;\'><a class=\'ListView-Node ListView-EmptyLast\'></a>d" +
-                    "dddd2</div>");
-            this.listViewItem4 = new Gizmox.WebGUI.Forms.ListViewItem("<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd4</div>");
-            this.listViewItem5 = new Gizmox.WebGUI.Forms.ListViewItem("<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd5</div>");
-            this.listViewItem6 = new Gizmox.WebGUI.Forms.ListViewItem("<div><a class=\'ListView-Node ListView-Collapse\'></a>ddddd6</div>");
-            this.listViewItem7 = new Gizmox.WebGUI.Forms.ListViewItem("<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd7</div>");
             this.treeView1 = new Gizmox.WebGUI.Forms.TreeView();
             this.treeNode1 = new Gizmox.WebGUI.Forms.TreeNode();
             this.treeNode5 = new Gizmox.WebGUI.Forms.TreeNode();
@@ -58,6 +47,19 @@ namespace Bronze.WebGui.Skin
             this.treeNode11 = new Gizmox.WebGUI.Forms.TreeNode();
             this.treeNode12 = new Gizmox.WebGUI.Forms.TreeNode();
             this.treeNode13 = new Gizmox.WebGUI.Forms.TreeNode();
+            this.listView1 = new Bronze.WebGui.Skin.TestListView();
+            this.columnHeader1 = new Gizmox.WebGUI.Forms.ColumnHeader();
+            this.columnHeader2 = new Gizmox.WebGUI.Forms.ColumnHeader();
+            this.columnHeader3 = new Gizmox.WebGUI.Forms.ColumnHeader();
+            this.listViewItem1 = new Gizmox.WebGUI.Forms.ListViewItem("<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd0</div>");
+            this.listViewItem2 = new Gizmox.WebGUI.Forms.ListViewItem("<div style=\'padding-left:16px;\'><a class=\'ListView-Node ListView-Empty\'></a>ddddd" +
+        "1</div>");
+            this.listViewItem3 = new Gizmox.WebGUI.Forms.ListViewItem("<div style=\'padding-left:16px;\'><a class=\'ListView-Node ListView-EmptyLast\'></a>d" +
+        "dddd2</div>");
+            this.listViewItem4 = new Gizmox.WebGUI.Forms.ListViewItem("<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd4</div>");
+            this.listViewItem5 = new Gizmox.WebGUI.Forms.ListViewItem("<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd5</div>");
+            this.listViewItem6 = new Gizmox.WebGUI.Forms.ListViewItem("<div><a class=\'ListView-Node ListView-Collapse\'></a>ddddd6</div>");
+            this.listViewItem7 = new Gizmox.WebGUI.Forms.ListViewItem("<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd7</div>");
             this.SuspendLayout();
             // 
             // button1
@@ -77,86 +79,6 @@ namespace Bronze.WebGui.Skin
             this.button2.TabIndex = 1;
             this.button2.Text = "button2";
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.AllowListItemDisplayHtml = false;
-            this.listView1.AutoGenerateColumns = true;
-            this.listView1.Columns.AddRange(new Gizmox.WebGUI.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.listView1.DataMember = null;
-            this.listView1.FullRowSelect = false;
-            this.listView1.Items.AddRange(new Gizmox.WebGUI.Forms.ListViewItem[] {
-            this.listViewItem1,
-            this.listViewItem2,
-            this.listViewItem3,
-            this.listViewItem4,
-            this.listViewItem5,
-            this.listViewItem6,
-            this.listViewItem7});
-            this.listView1.ItemsPerPage = 20;
-            this.listView1.Location = new System.Drawing.Point(19, 53);
-            this.listView1.Name = "listView1";
-            this.listView1.ShowItemToolTips = false;
-            this.listView1.Size = new System.Drawing.Size(528, 404);
-            this.listView1.TabIndex = 4;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Image = null;
-            this.columnHeader1.Text = "col1";
-            this.columnHeader1.Width = 470;
-            // 
-            // listViewItem1
-            // 
-            this.listViewItem1.BackColor = System.Drawing.SystemColors.Window;
-            this.listViewItem1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.listViewItem1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listViewItem1.Text = "<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd0</div>";
-            // 
-            // listViewItem2
-            // 
-            this.listViewItem2.BackColor = System.Drawing.SystemColors.Window;
-            this.listViewItem2.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.listViewItem2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listViewItem2.Text = "<div style=\'padding-left:16px;\'><a class=\'ListView-Node ListView-Empty\'></a>ddddd" +
-                "1</div>";
-            // 
-            // listViewItem3
-            // 
-            this.listViewItem3.BackColor = System.Drawing.SystemColors.Window;
-            this.listViewItem3.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.listViewItem3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listViewItem3.Text = "<div style=\'padding-left:16px;\'><a class=\'ListView-Node ListView-EmptyLast\'></a>d" +
-                "dddd2</div>";
-            // 
-            // listViewItem4
-            // 
-            this.listViewItem4.BackColor = System.Drawing.SystemColors.Window;
-            this.listViewItem4.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.listViewItem4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listViewItem4.Text = "<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd4</div>";
-            // 
-            // listViewItem5
-            // 
-            this.listViewItem5.BackColor = System.Drawing.SystemColors.Window;
-            this.listViewItem5.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.listViewItem5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listViewItem5.Text = "<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd5</div>";
-            // 
-            // listViewItem6
-            // 
-            this.listViewItem6.BackColor = System.Drawing.SystemColors.Window;
-            this.listViewItem6.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.listViewItem6.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listViewItem6.Text = "<div><a class=\'ListView-Node ListView-Collapse\'></a>ddddd6</div>";
-            // 
-            // listViewItem7
-            // 
-            this.listViewItem7.BackColor = System.Drawing.SystemColors.Window;
-            this.listViewItem7.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.listViewItem7.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listViewItem7.Text = "<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd7</div>";
             // 
             // treeView1
             // 
@@ -274,13 +196,106 @@ namespace Bronze.WebGui.Skin
             this.treeNode13.Text = "treeNode13";
             this.treeNode13.ToolTipText = "";
             // 
+            // listView1
+            // 
+            this.listView1.AllowListItemDisplayHtml = false;
+            this.listView1.AutoGenerateColumns = true;
+            this.listView1.Columns.AddRange(new Gizmox.WebGUI.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listView1.DataMember = null;
+            this.listView1.FullRowSelect = false;
+            this.listView1.Items.AddRange(new Gizmox.WebGUI.Forms.ListViewItem[] {
+            this.listViewItem1,
+            this.listViewItem2,
+            this.listViewItem3,
+            this.listViewItem4,
+            this.listViewItem5,
+            this.listViewItem6,
+            this.listViewItem7});
+            this.listView1.ItemsPerPage = 20;
+            this.listView1.Location = new System.Drawing.Point(19, 53);
+            this.listView1.Name = "listView1";
+            this.listView1.ShowItemToolTips = false;
+            this.listView1.Size = new System.Drawing.Size(528, 404);
+            this.listView1.TabIndex = 4;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Image = null;
+            this.columnHeader1.Text = "col1";
+            this.columnHeader1.Width = 269;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Image = null;
+            this.columnHeader2.Text = "co2";
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Image = null;
+            this.columnHeader3.Text = "co3";
+            this.columnHeader3.Width = 150;
+            // 
+            // listViewItem1
+            // 
+            this.listViewItem1.BackColor = System.Drawing.SystemColors.Window;
+            this.listViewItem1.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.listViewItem1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.listViewItem1.Text = "<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd0</div>";
+            // 
+            // listViewItem2
+            // 
+            this.listViewItem2.BackColor = System.Drawing.SystemColors.Window;
+            this.listViewItem2.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.listViewItem2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.listViewItem2.Text = "<div style=\'padding-left:16px;\'><a class=\'ListView-Node ListView-Empty\'></a>ddddd" +
+    "1</div>";
+            // 
+            // listViewItem3
+            // 
+            this.listViewItem3.BackColor = System.Drawing.SystemColors.Window;
+            this.listViewItem3.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.listViewItem3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.listViewItem3.Text = "<div style=\'padding-left:16px;\'><a class=\'ListView-Node ListView-EmptyLast\'></a>d" +
+    "dddd2</div>";
+            // 
+            // listViewItem4
+            // 
+            this.listViewItem4.BackColor = System.Drawing.SystemColors.Window;
+            this.listViewItem4.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.listViewItem4.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.listViewItem4.Text = "<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd4</div>";
+            // 
+            // listViewItem5
+            // 
+            this.listViewItem5.BackColor = System.Drawing.SystemColors.Window;
+            this.listViewItem5.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.listViewItem5.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.listViewItem5.Text = "<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd5</div>";
+            // 
+            // listViewItem6
+            // 
+            this.listViewItem6.BackColor = System.Drawing.SystemColors.Window;
+            this.listViewItem6.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.listViewItem6.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.listViewItem6.Text = "<div><a class=\'ListView-Node ListView-Collapse\'></a>ddddd6</div>";
+            // 
+            // listViewItem7
+            // 
+            this.listViewItem7.BackColor = System.Drawing.SystemColors.Window;
+            this.listViewItem7.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.listViewItem7.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.listViewItem7.Text = "<div><a class=\'ListView-Node ListView-Expend\'></a>ddddd7</div>";
+            // 
             // Form1
             // 
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.FormBorderStyle = Gizmox.WebGUI.Forms.FormBorderStyle.Sizable;
             this.Size = new System.Drawing.Size(898, 545);
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -314,6 +329,8 @@ namespace Bronze.WebGui.Skin
         private ListViewItem listViewItem5;
         private ListViewItem listViewItem6;
         private ListViewItem listViewItem7;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
 
 
     }
