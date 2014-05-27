@@ -37,7 +37,11 @@
           <xsl:attribute name="class">ListView-GridLines</xsl:attribute>
         </xsl:if>
         <xsl:if test="$prmCheckBoxes='1'">
-          <col width="22" class="ListView-Column" />
+          <col width="22" class="ListView-Column" >
+            <xsl:if test="count(Tags.Group)>0">
+              <xsl:attribute name="width" >30</xsl:attribute>
+            </xsl:if>
+          </col>
           <col width="[Skin.HeaderSeperatorWidth]px" class="ListView-ColumnSeperator" />
         </xsl:if>
         <xsl:for-each select="$prmCols">
@@ -333,7 +337,12 @@
     <xsl:variable name="varHeight" select="@Attr.HeaderHeight" />
     <table border="0" cellspacing="0" cellpadding="0" style="height:100%;width:100%;table-layout:fixed">
       <xsl:if test="$prmCheckBoxes='1'">
-        <col width="22px" class="ListView-Column" />
+        <col width="22px" class="ListView-Column" >
+          <!--jrt-->
+          <xsl:if test="count(Tags.Group)>0">
+            <xsl:attribute name="width" >30</xsl:attribute>
+          </xsl:if>
+        </col>
         <col width="[Skin.HeaderSeperatorWidth]px" class="ListView-ColumnSeperator" />
       </xsl:if>
       <xsl:for-each select="$prmCols">
@@ -438,7 +447,9 @@
     <xsl:variable name="varHeight" select="../@Attr.ItemHeight" />
     <xsl:variable name="varIsFullRowSelect" select="../@Attr.FullRowSelect='1' or not(../@Attr.FullRowSelect)" />
     <xsl:variable name="varShowHtml" select="../@showHtml='1' or not(../@showHtml)" />
+    <xsl:variable name="varHasGroup" select="count(../Tags.Group)>0" />
     
+
     <xsl:if test="name()='Tags.ListViewPanel'">
       <tr>
         <xsl:if test="$prmFlagMatchedElement=1"><xsl:attribute name="vwg_matchedelement">1</xsl:attribute></xsl:if>
@@ -475,6 +486,13 @@
         </xsl:attribute>
         <xsl:if test="$prmCheckBoxes='1'">
           <td class="ListView-Cell ListView-DataCell" align="center">
+            
+            <xsl:if test="$varHasGroup">
+              <xsl:attribute name="style">
+                padding-left:17px;
+              </xsl:attribute>
+            </xsl:if>
+            
             <xsl:if test="not(../@Attr.Enabled='0') and not(@Attr.Enabled='0')">
               <xsl:attribute name="onclick">
                 mobjApp.ListView_CheckBoxClick('<xsl:value-of select="../@Id" />','<xsl:value-of select="@Id" />',window,event)
@@ -508,12 +526,20 @@
             <xsl:when test="$varType='Control'">
               <td class="ListView-Cell ListView-ControlCell" onresize="mobjApp.Layout_ContainerResized(this.firstChild);">     
                 <div vwgtype="container" style="width:100%; height:{$varHeight}px; overflow:hidden;position:relative;">
+                    <xsl:call-template name="tplSetDetailsRowPadding">
+                      <xsl:with-param name="prmStyle" select="concat('width:100%; height:',$varHeight,'px; overflow:hidden;position:relative;')" />
+                      <xsl:with-param name="prmHasGroup" select="$varHasGroup" />
+                      <xsl:with-param name="prmCheckBoxes" select="$prmCheckBoxes" />
+                    </xsl:call-template>
+                  
                     <xsl:apply-templates select="$varRow/*[@Id=$varValue]" mode="modLayoutItem" />            
                   </div>
               </td>
             </xsl:when>
             <xsl:when test="$varType='Icon'">
               <td class="ListView-Cell ListView-DataCell" align="center">
+                
+
                 <xsl:call-template name="tplApplyListViewItemClickEvents">
                   <xsl:with-param name="prmCheckBoxes" select="$prmCheckBoxes" />
                   <xsl:with-param name="prmListViewId" select="../../@Id" />
@@ -525,7 +551,23 @@
                   
 					<xsl:if test=".=''"> </xsl:if>
 					<xsl:if test="not(.='')">
-						<img class="Common-Icon16X16" src="{.}" />
+            <!--<xsl:choose>
+              <xsl:when test="not($prmCheckBoxes) and $varHasGroup and position()=1">
+                <div>
+                  <xsl:call-template name="tplSetDetailsRowPadding">
+                    <xsl:with-param name="prmStyle" select="''" />
+                    <xsl:with-param name="prmHasGroup" select="$varHasGroup" />
+                    <xsl:with-param name="prmCheckBoxes" select="$prmCheckBoxes" />
+                  </xsl:call-template>
+                  <img class="Common-Icon16X16" src="{.}" />
+                </div>
+              </xsl:when>
+              <xsl:otherwise>
+                <img class="Common-Icon16X16" src="{.}" />
+              </xsl:otherwise>
+            </xsl:choose>-->
+            
+            <img class="Common-Icon16X16" src="{.}" />
 					</xsl:if>
 				  
 				  
@@ -564,6 +606,12 @@
                   <xsl:with-param name="prmRow" select="$varRow" />
                 </xsl:call-template>
                 <div style="direction:{$dir};" dir="{$dir}">
+                  <xsl:call-template name="tplSetDetailsRowPadding">
+                    <xsl:with-param name="prmStyle" select="concat('direction:',$dir,';')" />
+                    <xsl:with-param name="prmHasGroup" select="$varHasGroup" />
+                    <xsl:with-param name="prmCheckBoxes" select="$prmCheckBoxes" />
+                  </xsl:call-template>
+                  
                   <xsl:if test="$dir='RTL'">
                     <xsl:attribute name="class">ListView-FloatRight</xsl:attribute>
                   </xsl:if>
@@ -605,6 +653,19 @@
       </tr>
     </xsl:if>
 	</xsl:template>
+
+  <!--jrt 如果包含group,设置第一列的padding-->
+  <xsl:template name="tplSetDetailsRowPadding">
+    <xsl:param name="prmStyle"/>
+    <xsl:param name="prmHasGroup"/>
+    <xsl:param name="prmCheckBoxes"/>
+    
+    <xsl:if test="not($prmCheckBoxes) and $prmHasGroup and position()=1">
+      <xsl:attribute name="style">
+        <xsl:value-of select="$prmStyle" /> padding-left:17px
+      </xsl:attribute>
+    </xsl:if>
+  </xsl:template>
   
   <!--Matching for controls that serve as panel.-->
   <xsl:template match="Tags.ListViewPanel/*" mode="modLayoutItem">
