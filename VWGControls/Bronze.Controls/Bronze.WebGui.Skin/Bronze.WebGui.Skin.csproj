@@ -212,6 +212,9 @@
     <Content Include="Skin\SimpleSky.ListViewSkin.ArrowRTL.gif">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.arrows.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
     <Content Include="Skin\SimpleSky.ListViewSkin.ListView.css">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
@@ -423,8 +426,12 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetName).dll" "E:\Bronze\项目\校讯通-基于精简版数字校园\Bronze.XXTong.Web\bin\$(TargetName).dll"
-copy /Y "$(TargetDir)$(TargetName).pdb" "E:\Bronze\项目\校讯通-基于精简版数字校园\Bronze.XXTong.Web\bin\$(TargetName).pdb"
+    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetName).dll" "E:\Work-2013\天台教育局\源码\dlls\$(TargetName).dll"
+copy /Y "$(TargetDir)$(TargetName).pdb" "E:\Work-2013\天台教育局\源码\dlls\$(TargetName).pdb"
+
+
+copy /Y "$(TargetDir)$(TargetName).dll" "E:\Work-2013\天台教育局\源码\Bronze.SchoolWorkGuide.Web\bin\$(TargetName).dll"
+copy /Y "$(TargetDir)$(TargetName).pdb" "E:\Work-2013\天台教育局\源码\Bronze.SchoolWorkGuide.Web\bin\$(TargetName).pdb"
 exit 0</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -1216,4 +1216,25 @@
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.HeaderedPanelSkin:HeaderStyle.BorderColor:Value" xml:space="preserve">
     <value>White White White 209, 209, 209</value>
   </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:GroupHeaderFont" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Font, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:GroupHeaderFont:Value" xml:space="preserve">
+    <value>Tahoma, 9pt, style=Bold</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:arrows.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:arrows.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:arrows.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.arrows.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:arrows.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:arrows.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.arrows.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
 </root>
