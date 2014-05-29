@@ -460,7 +460,7 @@
    </xsl:if>
     
     <xsl:if test="name()='Tags.Group'">
-      <tr>
+      <tr vwg_group="{position()}">
         <xsl:if test="$prmFlagMatchedElement=1"><xsl:attribute name="vwg_matchedelement">1</xsl:attribute></xsl:if>
         <td colspan="{count($prmCols)*2 + number($prmCheckBoxes='1')*2+1}">
           <xsl:call-template name="tplDrawGroupHeader" />
@@ -489,7 +489,7 @@
             
             <xsl:if test="$varHasGroup">
               <xsl:attribute name="style">
-                padding-left:17px;
+                padding-left:16px;
               </xsl:attribute>
             </xsl:if>
             
@@ -551,7 +551,7 @@
                   
 					<xsl:if test=".=''"> </xsl:if>
 					<xsl:if test="not(.='')">
-            <!--<xsl:choose>
+            <xsl:choose>
               <xsl:when test="not($prmCheckBoxes) and $varHasGroup and position()=1">
                 <div>
                   <xsl:call-template name="tplSetDetailsRowPadding">
@@ -565,9 +565,8 @@
               <xsl:otherwise>
                 <img class="Common-Icon16X16" src="{.}" />
               </xsl:otherwise>
-            </xsl:choose>-->
-            
-            <img class="Common-Icon16X16" src="{.}" />
+            </xsl:choose>
+            <!--<img class="Common-Icon16X16" src="{.}" />-->
 					</xsl:if>
 				  
 				  
@@ -627,7 +626,7 @@
                     <xsl:choose>
                       <xsl:when test="$varShowHtml">
                         <!--jrt 支持现实html,这里的判断也可以用test="../../@showHtml='1'" 来判断-->
-                        <img src="[Skin.CommonPath]Empty.gif.wgx" onload="$(this).replaceWith($(this).attr('vwgsource'))">
+                        <img src="[Skin.CommonPath]Empty.gif.wgx" onload="$(this).replaceWith($(this).attr('vwgsource')||'&#160;')">
                           <xsl:attribute name="vwgsource">
                             <xsl:value-of select="." /> 
                           </xsl:attribute>
@@ -662,7 +661,7 @@
     
     <xsl:if test="not($prmCheckBoxes) and $prmHasGroup and position()=1">
       <xsl:attribute name="style">
-        <xsl:value-of select="$prmStyle" /> padding-left:17px
+        <xsl:value-of select="$prmStyle" /> padding-left:15px
       </xsl:attribute>
     </xsl:if>
   </xsl:template>
@@ -745,14 +744,8 @@
   <xsl:template name="tplDrawGroupHeader">
     <table class="ListView-FontGroupHeader" cellpadding="0" cellspacing="0" width="100%">
       <tr>
-        <td class="ListView-FontGroupHeaderLabel">
-          <nobr><xsl:call-template name="tplDecodeTextAsHtml" /></nobr>
-        </td>
-        <td width="100%">
-          <div class="ListView-FontGroupHeaderSeperator"> </div>
-        </td>
-        <td>
-          <img>
+        <td class="ListView-GroupIcon" onclick="ListView_GroupToggle($(this).find('img'))" valign="bottom">
+          <img expanded="{@Attr.Expanded}" vwg_group="{position()}" valign="bottom" style="vertical-align:bottom">
             <xsl:choose>
               <xsl:when test="not(@Attr.Expanded='0')">
                 <xsl:attribute name="src">[Skin.Path]GroupHeaderExpanded.gif.wgx</xsl:attribute>
@@ -763,7 +756,15 @@
             </xsl:choose>
           </img>
         </td>
-      </tr>    
+        <td class="ListView-FontGroupHeaderLabel"  width="100%">
+          <nobr><xsl:call-template name="tplDecodeTextAsHtml" /></nobr>
+        </td>
+      </tr>
+      <tr>
+        <td width="100%" colspan="2">
+          <div class="ListView-FontGroupHeaderSeperator"> </div>
+        </td>
+      </tr>
     </table>
   </xsl:template>
 

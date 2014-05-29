@@ -1,4 +1,4 @@
-/// <parameters>
+﻿/// <parameters>
 /// <summary>
 /// Global parameters
 /// </summary>
@@ -623,3 +623,94 @@ function ListView_CheckAllClick(box, strGuid, objWindow) {
 
 
 }
+
+
+function ListView_GroupToggle(obj) {
+    var $img = $(obj);
+    var state = $img.attr("expanded");
+    var currIdx = $img.attr("vwg_group");
+    var TRs = $img.closest('table').parent().closest("table").find("> tbody > tr");
+
+    var found = false;
+    TRs.each(function () {
+        var idx = $(this).attr("vwg_group");
+        if (idx) {
+            found = (idx == currIdx);
+        }
+        else if (found) {
+            $(this).css("display", state == "1" ? "table-row" : "none");
+            var imgSrc = $img.attr("src");
+            if (state == "1") {
+                imgSrc = imgSrc.replace("Collapsed.gif", "Expanded.gif");
+            }
+            else {
+                imgSrc = imgSrc.replace("Expanded.gif", "Collapsed.gif");
+            }
+
+            $img.attr("src", imgSrc).attr("expanded", state == "1" ? 0 : 1);
+        }
+    })
+}
+
+function ListView_TreeToggle(e, obj) {
+    vwg_cancelBubble(e);
+
+    var $img = $(obj);
+    var state = $img.attr("expanded");
+    if (state == undefined || state === "") state = "1";
+    var shouldHide = (state == "1");
+    var uid = $img.attr("uid");
+    var TRs = $img.closest('table').find("> tbody > tr");
+    var level = uid.charCount("-");
+
+    TRs.each(function () {
+        var $node = $(this).find("[uid^='" + uid + "-']");
+        if ($node.length > 0) {
+            var node_uid = $node.attr("uid");
+            var hideByLevel = $node.attr("hideBy");
+            if (hideByLevel == undefined || hideByLevel == "") {
+                hideByLevel = -1;
+            } else { hideByLevel = hideByLevel * 1; }
+
+            nodeLevel = node_uid.charCount("-");
+            if (shouldHide) {
+                //hide items
+                //如果是直接的父子关系，无论如何也应该隐藏，没有隐藏过的节点(hideByLevel==-1)也应该隐藏
+                if (hideByLevel == -1 || nodeLevel == level + 1) {
+                    $node.attr("hideBy", level);
+                }
+                $(this).css("display", "none");
+            }
+            else {
+                //show items
+                //在展开的时候，只有被隐藏的节点才应该show出来，
+                //已经被下级节点隐藏的子节点状态应该保持隐藏
+                if (hideByLevel <= level) {
+                    $(this).css("display", "table-row");
+                    $node.attr("hideBy", "");
+                }
+            }
+        }
+    });
+
+    if (shouldHide) {
+        $img.removeClass("ListView-Expend").addClass("ListView-Collapse");
+    }
+    else {
+        $img.removeClass("ListView-Collapse").addClass("ListView-Expend");
+    }
+    $img.attr("expanded", state == "1" ? "0" : "1");
+    return false;
+}
+
+function vwg_cancelBubble(e) {
+    var evt = e ? e : window.event;
+    if (evt.stopPropagation) evt.stopPropagation();
+    if (evt.cancelBubble != null) evt.cancelBubble = true;
+    return false;
+}
+
+
+String.prototype.charCount = function (s1) {
+    return (this.length - this.replace(new RegExp(s1, "g"), '').length) / s1.length;
+};

@@ -27,14 +27,14 @@ namespace Bronze.WebGui.Skin
             button1.SetLoadingMessage("撒旦解放开绿灯撒看见法律监督所");
             Gizmox.WebGUI.Forms.ListViewGroup listViewGroup1 = new Gizmox.WebGUI.Forms.ListViewGroup("小组1", Gizmox.WebGUI.Forms.HorizontalAlignment.Left);
             Gizmox.WebGUI.Forms.ListViewGroup listViewGroup2 = new Gizmox.WebGUI.Forms.ListViewGroup("列表组2", Gizmox.WebGUI.Forms.HorizontalAlignment.Left);
-            //this.listView1.CheckBoxes = true;
-            //this.listView1.Groups.Add(listViewGroup1);
-            //this.listView1.Groups.Add(listViewGroup2);
-            //this.listViewItem1.Group = listViewGroup1;
-            //this.listViewItem2.Group = listViewGroup1;
-            //this.listViewItem3.Group = listViewGroup1;
-            //this.listViewItem4.Group = listViewGroup1;
-            this.listViewItem7.IndentCount = 5;
+            this.listView1.CheckBoxes = true;
+            this.listView1.Groups.Add(listViewGroup1);
+            this.listView1.Groups.Add(listViewGroup2);
+            this.listViewItem1.Group = listViewGroup1;
+            this.listViewItem2.Group = listViewGroup1;
+            this.listViewItem3.Group = listViewGroup1;
+            this.listViewItem4.Group = listViewGroup1;
+            //this.listViewItem7.IndentCount = 5;
 
         }
 

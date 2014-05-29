@@ -22,6 +22,7 @@ namespace Bronze.WebGui.Skin
         {
             InitializeComponent();
             this.listViewItem1.Text = GetIcon("bulb_green.png");
+            this.listViewItem2.Text = GetIcon("bulb_red.png");
             //this.testListView1.Items.Add(
         }
 
