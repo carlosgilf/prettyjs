@@ -413,7 +413,7 @@
     <value>ValueResource:System.Drawing.Font, System.Drawing</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Font:Value" xml:space="preserve">
-    <value>Tahoma, 9pt</value>
+    <value>微软雅黑, 9pt</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarButtonSkin:ToolBarButton.xslt" xml:space="preserve">
     <value>TemplateResource</value>
@@ -1220,7 +1220,7 @@
     <value>ValueResource:System.Drawing.Font, System.Drawing</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:GroupHeaderFont:Value" xml:space="preserve">
-    <value>Tahoma, 9pt, style=Bold</value>
+    <value>微软雅黑, 9pt, style=Bold</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:arrows.gif" xml:space="preserve">
     <value>ImageResource</value>
@@ -1236,5 +1236,11 @@
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:arrows.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SimpleSky.ListViewSkin.arrows.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ForeColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ForeColor:Value" xml:space="preserve">
+    <value>34, 34, 34</value>
   </data>
 </root>
