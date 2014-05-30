@@ -40,7 +40,7 @@
 .ListView-FontGroupHeader
 {
 	table-layout:auto;
-	height:30px;
+	height:32px;
 }
 
 .ListView-FontGroupHeader TD
@@ -180,6 +180,22 @@
 	[Skin.CellSelectedStyle!important];
 }
 
+.ListView-Lines .ListView-DataCell
+{
+    [Skin.GridLines];
+    border-top:none;
+	border-left:none;
+	border-right:none;
+}
+
+.ListView-Lines .ListView-SeperatorCell
+{
+    [Skin.GridLines];
+    border-top:none;
+	border-left:none;
+	border-right:none;
+}
+
 .ListView-GridLines .ListView-DataCell
 {
 	[Skin.GridLines];
@@ -195,8 +211,6 @@
 	border-left:none;
 }
 
-
-.
 
 .ListView-LargeItemLabelHeight
 {

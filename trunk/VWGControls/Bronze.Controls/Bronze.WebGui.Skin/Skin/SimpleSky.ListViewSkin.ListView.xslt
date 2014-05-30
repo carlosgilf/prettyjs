@@ -36,6 +36,9 @@
         <xsl:if test="@Attr.GridLines='1'">
           <xsl:attribute name="class">ListView-GridLines</xsl:attribute>
         </xsl:if>
+        <xsl:if test="@Attr.GridLines='2'">
+          <xsl:attribute name="class">ListView-Lines</xsl:attribute>
+        </xsl:if>
         <xsl:if test="$prmCheckBoxes='1'">
           <col width="22" class="ListView-Column" >
             <xsl:if test="count(Tags.Group)>0">
@@ -757,7 +760,13 @@
           </img>
         </td>
         <td class="ListView-FontGroupHeaderLabel"  width="100%">
-          <nobr><xsl:call-template name="tplDecodeTextAsHtml" /></nobr>
+          <nobr>
+            <img src="Resources.Gizmox.WebGUI.Forms.Skins.CommonSkin.Empty.gif.ashx" onload="$(this).replaceWith($(this).attr('vwgsource'))">
+              <xsl:attribute name="vwgsource">
+                <xsl:call-template name="tplDecodeTextAsHtml" />
+              </xsl:attribute>
+            </img>
+          </nobr>
         </td>
       </tr>
       <tr>

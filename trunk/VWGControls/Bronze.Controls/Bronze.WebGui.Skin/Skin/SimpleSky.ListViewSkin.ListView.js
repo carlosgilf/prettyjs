@@ -35,6 +35,14 @@ function ListView_Click(strGuid, strId, objWindow, objEvent) {
         // Handles the click event and forces raise (this 'overload' cancels the click bubble.
         Web_OnClick(objEvent, objWindow, true);
     }
+
+    // jrt 2014-5-30 Added RowItemClick event
+    var objEvent = Events_CreateEvent(strGuid, "RowItemClick", true);
+    if (Data_IsCriticalEvent(strGuid, mcntEventEnterId)) {
+        //Events_SetEventAttribute(objEvent, "ItemId", strGuid);
+        Events_SetEventAttribute(objEvent, "RowId", strId);
+        Events_RaiseEvents();
+    }
 }
 /// </method>
 
