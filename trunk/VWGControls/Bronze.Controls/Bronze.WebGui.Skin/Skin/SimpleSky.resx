@@ -650,7 +650,7 @@
     <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterStyle.BackgroundImage:Value" xml:space="preserve">
-    <value>Name=CenterFrame.jpg;Namespace=Gizmox.WebGUI.Forms.Skins.ToolBarSkin</value>
+    <value>[Empty]</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.TabControlSkin:LeftTabHoverLTR.gif" xml:space="preserve">
     <value>ImageResource</value>
@@ -1130,19 +1130,19 @@
     <value>ValueResource:System.Drawing.Color, System.Drawing</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterStyle.BackColor:Value" xml:space="preserve">
-    <value>White</value>
+    <value>247, 247, 247</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelStyle.BorderColor" xml:space="preserve">
     <value>ValueResource:Gizmox.WebGUI.Forms.BorderColor, Gizmox.WebGUI.Forms</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelStyle.BorderColor:Value" xml:space="preserve">
-    <value>176, 176, 176</value>
+    <value>209, 209, 209</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelStyle.BackColor" xml:space="preserve">
     <value>ValueResource:System.Drawing.Color, System.Drawing</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelStyle.BackColor:Value" xml:space="preserve">
-    <value>236, 236, 236</value>
+    <value>247, 247, 247</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.LinkLabelSkin:ContentStyle.Font" xml:space="preserve">
     <value>ValueResource:System.Drawing.Font, System.Drawing</value>
@@ -1248,5 +1248,77 @@
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:GroupHeaderSeperatorColor:Value" xml:space="preserve">
     <value>152, 199, 212</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CheckBoxSkin:CheckBox0.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CheckBoxSkin:CheckBox0.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CheckBoxSkin:CheckBox0.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.CheckBoxSkin.CheckBox0.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CheckBoxSkin:CheckBox0.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CheckBoxSkin:CheckBox0.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.CheckBoxSkin.CheckBox0.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CheckBoxSkin:CheckBox1.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CheckBoxSkin:CheckBox1.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CheckBoxSkin:CheckBox1.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.CheckBoxSkin.CheckBox1.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CheckBoxSkin:CheckBox1.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CheckBoxSkin:CheckBox1.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.CheckBoxSkin.CheckBox1.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:CheckBox0.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:CheckBox0.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:CheckBox0.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.CheckBox0.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:CheckBox0.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:CheckBox0.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.CheckBox0.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:CheckBox1.gif" xml:space="preserve">
+    <value>ImageResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:CheckBox1.gif:ImageFormat" xml:space="preserve">
+    <value>Gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:CheckBox1.gif:FileName" xml:space="preserve">
+    <value>SimpleSky.ListViewSkin.CheckBox1.gif</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:CheckBox1.gif:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:CheckBox1.gif:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ListViewSkin.CheckBox1.gif;Gizmox.WebGUI.Forms.Skins.Resources.ImageContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelStyle.BackgroundImage" xml:space="preserve">
+    <value>ValueResource:Gizmox.WebGUI.Forms.Skins.ImageResourceReference, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelStyle.BackgroundImage:Value" xml:space="preserve">
+    <value>[Empty]</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelHeight" xml:space="preserve">
+    <value>ValueResource:System.Int32, mscorlib</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelHeight:Value" xml:space="preserve">
+    <value>24</value>
   </data>
 </root>
