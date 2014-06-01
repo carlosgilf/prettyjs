@@ -629,7 +629,7 @@
     <value>ValueResource:System.Drawing.Color, System.Drawing</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:GridLinesColor:Value" xml:space="preserve">
-    <value>237, 237, 237</value>
+    <value>213, 214, 215</value>
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ToolBarSkin:CenterFrame.jpg" xml:space="preserve">
     <value>ImageResource</value>
@@ -1242,5 +1242,11 @@
   </data>
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:ForeColor:Value" xml:space="preserve">
     <value>34, 34, 34</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:GroupHeaderSeperatorColor" xml:space="preserve">
+    <value>ValueResource:System.Drawing.Color, System.Drawing</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:GroupHeaderSeperatorColor:Value" xml:space="preserve">
+    <value>152, 199, 212</value>
   </data>
 </root>
