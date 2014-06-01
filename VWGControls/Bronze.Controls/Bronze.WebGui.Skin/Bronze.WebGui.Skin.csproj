@@ -112,6 +112,12 @@
     <Content Include="Skin\SimpleSky.ButtonSkin.Button.css">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
+    <Content Include="Skin\SimpleSky.CheckBoxSkin.CheckBox0.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.CheckBoxSkin.CheckBox1.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
     <Content Include="Skin\SimpleSky.ComboBoxSkin.ComboBox.css">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
@@ -213,6 +219,12 @@
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
     <Content Include="Skin\SimpleSky.ListViewSkin.arrows.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.CheckBox0.gif">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ListViewSkin.CheckBox1.gif">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
     <Content Include="Skin\SimpleSky.ListViewSkin.ListView.css">
