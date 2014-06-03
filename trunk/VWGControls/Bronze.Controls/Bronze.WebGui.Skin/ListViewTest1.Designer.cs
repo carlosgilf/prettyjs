@@ -31,82 +31,71 @@ namespace Bronze.WebGui.Skin
         /// </summary>
         private void InitializeComponent()
         {
-            Gizmox.WebGUI.Forms.ListViewGroup listViewGroup1 = new Gizmox.WebGUI.Forms.ListViewGroup("ListViewGroup1", Gizmox.WebGUI.Forms.HorizontalAlignment.Left);
-            Gizmox.WebGUI.Forms.ListViewGroup listViewGroup2 = new Gizmox.WebGUI.Forms.ListViewGroup("ListViewGroup2", Gizmox.WebGUI.Forms.HorizontalAlignment.Left);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListViewTest1));
-            this.testListView1 = new Bronze.WebGui.Skin.TestListView();
-            this.columnHeader1 = new Gizmox.WebGUI.Forms.ColumnHeader();
-            this.columnHeader2 = new Gizmox.WebGUI.Forms.ColumnHeader();
-            this.columnHeader3 = new Gizmox.WebGUI.Forms.ColumnHeader();
-            this.listViewItem1 = new Gizmox.WebGUI.Forms.ListViewItem("ww");
-            this.listViewItem2 = new Gizmox.WebGUI.Forms.ListViewItem("");
+            this.toolBar1 = new Gizmox.WebGUI.Forms.ToolBar();
+            this.button1 = new Gizmox.WebGUI.Forms.Button();
+            this.toolBarButton1 = new Gizmox.WebGUI.Forms.ToolBarButton();
+            this.toolBarButton2 = new Gizmox.WebGUI.Forms.ToolBarButton();
+            this.toolBarButton3 = new Gizmox.WebGUI.Forms.ToolBarButton();
             this.SuspendLayout();
             // 
-            // testListView1
+            // toolBar1
             // 
-            this.testListView1.AllowListItemDisplayHtml = false;
-            this.testListView1.AutoGenerateColumns = true;
-            this.testListView1.Columns.AddRange(new Gizmox.WebGUI.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.testListView1.DataMember = null;
-            listViewGroup1.Header = "ListViewGroup1";
-            listViewGroup1.HeaderAlignment = Gizmox.WebGUI.Forms.HorizontalAlignment.Left;
-            listViewGroup1.Name = "group1";
-            listViewGroup2.Header = "ListViewGroup2";
-            listViewGroup2.HeaderAlignment = Gizmox.WebGUI.Forms.HorizontalAlignment.Left;
-            listViewGroup2.Name = "group2";
-            this.testListView1.Groups.AddRange(new Gizmox.WebGUI.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
-            this.testListView1.Items.AddRange(new Gizmox.WebGUI.Forms.ListViewItem[] {
-            this.listViewItem1,
-            this.listViewItem2});
-            this.testListView1.ItemsPerPage = 20;
-            this.testListView1.Location = new System.Drawing.Point(29, 24);
-            this.testListView1.Name = "testListView1";
-            this.testListView1.ShowItemToolTips = false;
-            this.testListView1.Size = new System.Drawing.Size(602, 441);
-            this.testListView1.TabIndex = 0;
+            this.toolBar1.Appearance = Gizmox.WebGUI.Forms.ToolBarAppearance.Normal;
+            this.toolBar1.Buttons.AddRange(new Gizmox.WebGUI.Forms.ToolBarButton[] {
+            this.toolBarButton1,
+            this.toolBarButton2,
+            this.toolBarButton3});
+            this.toolBar1.DragHandle = true;
+            this.toolBar1.DropDownArrows = true;
+            this.toolBar1.ImageSize = new System.Drawing.Size(16, 16);
+            this.toolBar1.Location = new System.Drawing.Point(0, 0);
+            this.toolBar1.MenuHandle = true;
+            this.toolBar1.Name = "toolBar1";
+            this.toolBar1.ShowToolTips = true;
+            this.toolBar1.Size = new System.Drawing.Size(662, 42);
+            this.toolBar1.TabIndex = 1;
             // 
-            // columnHeader1
+            // button1
             // 
-            this.columnHeader1.Image = null;
-            this.columnHeader1.Text = "qqq";
-            this.columnHeader1.Type = Gizmox.WebGUI.Forms.ListViewColumnType.Icon;
-            this.columnHeader1.Width = 125;
+            this.button1.Anchor = Gizmox.WebGUI.Forms.AnchorStyles.Right;
+            this.button1.Location = new System.Drawing.Point(556, 91);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
             // 
-            // columnHeader2
+            // toolBarButton1
             // 
-            this.columnHeader2.Image = null;
-            this.columnHeader2.Text = "ttt";
-            this.columnHeader2.Width = 150;
+            this.toolBarButton1.CustomStyle = "";
+            this.toolBarButton1.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.toolBarButton1.Name = "toolBarButton1";
+            this.toolBarButton1.Size = 24;
+            this.toolBarButton1.Text = "sss";
+            this.toolBarButton1.ToolTipText = "";
             // 
-            // columnHeader3
+            // toolBarButton2
             // 
-            this.columnHeader3.Image = null;
-            this.columnHeader3.Text = "yyy";
-            this.columnHeader3.Width = 150;
+            this.toolBarButton2.CustomStyle = "";
+            this.toolBarButton2.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.toolBarButton2.Name = "toolBarButton2";
+            this.toolBarButton2.Size = 24;
+            this.toolBarButton2.Text = "ddd";
+            this.toolBarButton2.ToolTipText = "";
             // 
-            // listViewItem1
+            // toolBarButton3
             // 
-            this.listViewItem1.BackColor = System.Drawing.Color.White;
-            this.listViewItem1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.listViewItem1.ForeColor = System.Drawing.Color.Black;
-            this.listViewItem1.SmallImage = new Gizmox.WebGUI.Common.Resources.IconResourceHandle(resources.GetString("listViewItem1.SmallImage"));
-            this.listViewItem1.Text = "ww";
-            // 
-            // listViewItem2
-            // 
-            this.listViewItem2.BackColor = System.Drawing.Color.White;
-            this.listViewItem2.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.listViewItem2.ForeColor = System.Drawing.Color.Black;
-            this.listViewItem2.SmallImage = new Gizmox.WebGUI.Common.Resources.IconResourceHandle(resources.GetString("listViewItem2.SmallImage"));
+            this.toolBarButton3.CustomStyle = "";
+            this.toolBarButton3.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.toolBarButton3.Name = "toolBarButton3";
+            this.toolBarButton3.Size = 24;
+            this.toolBarButton3.Text = "eee";
+            this.toolBarButton3.ToolTipText = "";
             // 
             // ListViewTest1
             // 
-            this.Controls.Add(this.testListView1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.toolBar1);
+            this.FormBorderStyle = Gizmox.WebGUI.Forms.FormBorderStyle.Sizable;
             this.Size = new System.Drawing.Size(662, 495);
             this.Text = "ListViewTest1";
             this.ResumeLayout(false);
@@ -115,12 +104,11 @@ namespace Bronze.WebGui.Skin
 
         #endregion
 
-        private TestListView testListView1;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ListViewItem listViewItem1;
-        private ListViewItem listViewItem2;
+        private ToolBar toolBar1;
+        private Button button1;
+        private ToolBarButton toolBarButton1;
+        private ToolBarButton toolBarButton2;
+        private ToolBarButton toolBarButton3;
 
 
     }
