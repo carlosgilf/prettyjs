@@ -134,6 +134,12 @@
       <DependentUpon>SimpleSky.cs</DependentUpon>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Skin\SimpleSky.CommonSkin.Common.Xml.ie.js">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.CommonSkin.Common.Xml.js">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
     <Content Include="Skin\SimpleSky.CommonSkin.ListServices.js">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
