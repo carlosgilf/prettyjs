@@ -1321,4 +1321,52 @@
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.ListViewSkin:PagingPanelHeight:Value" xml:space="preserve">
     <value>24</value>
   </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.js" xml:space="preserve">
+    <value>ScriptResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.js:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.js:FileName" xml:space="preserve">
+    <value>SimpleSky.CommonSkin.Common.Xml.js</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.js:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.CommonSkin.Common.Xml.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.js:PresentationRole" xml:space="preserve">
+    <value>101</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.js:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.js:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.ie.js" xml:space="preserve">
+    <value>ScriptResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.ie.js:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.ie.js:FileName" xml:space="preserve">
+    <value>SimpleSky.CommonSkin.Common.Xml.ie.js</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.ie.js:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.ie.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.CommonSkin.Common.Xml.ie.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.ie.js:PresentationRole" xml:space="preserve">
+    <value>101</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.ie.js:PresentationEngine" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.ie.js:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
 </root>
