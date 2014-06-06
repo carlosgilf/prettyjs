@@ -1030,7 +1030,10 @@ function Events_ExecuteRaiseEvents(blnTerminate, objXmlHTTP,blnSynchronicLoading
 
 		    // define http definitions
 		    objXmlHTTP.open(strMethod, strUrl, blnTerminate?false:true);
-    		
+
+		    //jrt HACK IE10 Quirks模式下不支持Ajax调用时候返回XMLDocment对象
+		    if (mcntIsIE) try { objXmlHTTP.responseType = 'msxml-document'; } catch (e) { }
+
 		    // Store current http handler
 		    mobjEventProcesser = objXmlHTTP;
 
@@ -1233,7 +1236,7 @@ function Events_HandleResponse(objResponse,objStartedAt,intContentLength,intPost
 		
 		// Get the current window element
 		var objMainFormNode = Xml_SelectSingleNode("/WG:Tags.Response/WG:Tags.Form", objResponse);
-		
+
 		// If there is a valid main form node
 		if(objMainFormNode)
 		{
