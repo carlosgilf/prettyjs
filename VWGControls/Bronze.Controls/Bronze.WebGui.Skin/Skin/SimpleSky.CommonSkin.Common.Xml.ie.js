@@ -17,10 +17,10 @@ function Xml_CreateElementFromXml(strXml)
 /// </summary>
 function Xml_CreateXmlHttp()
 {
-	// Support for IE 7 internal http object
+	// Support for IE 7 internal http object 
 	if(window.XMLHttpRequest)
 	{
-		return new XMLHttpRequest();
+	    return new XMLHttpRequest();
 	}
 	else
 	{

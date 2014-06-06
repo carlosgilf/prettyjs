@@ -14,8 +14,7 @@ function Xml_LoadDocument(strUrl,fncCallback,blnXmlHttp,strXmlHttpBody,blnIsForm
     {
        Xml_LoadXmlDom(strUrl,fncCallback);
        return;
-    }
-    
+    }    
 	// create HTTP object
 	var objXmlHTTP	= Xml_CreateXmlHttp();
 	
