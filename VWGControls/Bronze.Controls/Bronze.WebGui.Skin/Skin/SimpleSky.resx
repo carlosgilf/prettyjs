@@ -1369,4 +1369,76 @@
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.Xml.ie.js:Presentation" xml:space="preserve">
     <value>100</value>
   </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.xslt" xml:space="preserve">
+    <value>TemplateResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.xslt:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.xslt:FileName" xml:space="preserve">
+    <value>SimpleSky.ScheduleBoxSkin.ScheduleBox.xslt</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.xslt:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.xslt:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ScheduleBoxSkin.ScheduleBox.xslt;Gizmox.WebGUI.Forms.Skins.Resources.TemplateContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.xslt:PresentationRole" xml:space="preserve">
+    <value>103</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.xslt:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.xslt:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.js" xml:space="preserve">
+    <value>ScriptResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.js:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.js:FileName" xml:space="preserve">
+    <value>SimpleSky.ScheduleBoxSkin.ScheduleBox.js</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.js:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.js:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ScheduleBoxSkin.ScheduleBox.js;Gizmox.WebGUI.Forms.Skins.Resources.ScriptContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.js:PresentationRole" xml:space="preserve">
+    <value>101</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.js:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.js:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.css" xml:space="preserve">
+    <value>StyleSheetResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.css:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.css:FileName" xml:space="preserve">
+    <value>SimpleSky.ScheduleBoxSkin.ScheduleBox.css</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.css:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.ScheduleBoxSkin.ScheduleBox.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.css:PresentationRole" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.css:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.ScheduleBoxSkin:ScheduleBox.css:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
 </root>

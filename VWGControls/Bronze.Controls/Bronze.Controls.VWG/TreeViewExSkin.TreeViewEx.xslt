@@ -6,7 +6,7 @@
     <div tag="jrtttttttttttttttt" class="Common-Unselectable TreeView-Container" dir="{$dir}" onkeydown="mobjApp.TreeView_KeyDown({@Id},window,event);" vwgfocuselement="1" tabindex="-1">
       <xsl:call-template name="tplApplyScrollable" />
       <div class="TreeView-PaddingContainer">
-        <xsl:apply-templates select="TN"  mode="modExtend">
+        <xsl:apply-templates select="TN[@JRT='1']" >
           <xsl:with-param name="prmTreeView" select="." />
         </xsl:apply-templates>
         <xsl:if test="count(TN)=0"> </xsl:if>
@@ -15,7 +15,7 @@
   </xsl:template>
 
   <!-- TreeNode -->
-  <xsl:template match="TN" mode="modExtend">
+  <xsl:template match="TN[@JRT='1']">
 
     <!-- TreeNode parameters-->
     <xsl:param name="prmTreeView" select="ancestor::WC:TV" />
@@ -261,7 +261,7 @@
 
           <!--Check if node is expanded or loaded-->
           <xsl:if test="not(@Attr.Expanded='0') or not(@Attr.Loaded='0')">
-            <xsl:apply-templates select="TN" mode="modExtend">
+            <xsl:apply-templates select="TN[@JRT='1']" >
               <xsl:with-param name="prmTreeView" select="$prmTreeView" />
               <xsl:with-param name="prmHidePlusMinus" select="$prmHidePlusMinus" />
             </xsl:apply-templates>

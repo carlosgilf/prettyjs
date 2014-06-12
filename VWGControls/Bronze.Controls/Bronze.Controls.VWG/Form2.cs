@@ -21,12 +21,34 @@ namespace Bronze.Controls.VWG
         public Form2()
         {
             InitializeComponent();
+
+
+
+            var newEvent = new ScheduleBoxEvent();
+
+
+            // Create absolutely new event
+            newEvent = new ScheduleBoxEvent();
+            newEvent.Start = DateTime.Now;
+            newEvent.End = newEvent.Start.AddHours(1);
+            newEvent.Subject = "This is a test Subject";
+            newEvent.Tag = "This is a test tag";
+            this.scheduleBox1.Events.Add(newEvent);
+            this.scheduleBox1.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var de=LZStringCompress.Compress("ÄãºÃ°¡£¡£¡£¡this is my code");
             var src = LZStringCompress.Decompress(de);
+
+
+
+        }
+
+        private void scheduleBox1_EventDoubleClick(object sender, ScheduleBoxEx.ScheduleBoxEventArgs e)
+        {
+
         }
     }
 }

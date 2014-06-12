@@ -255,6 +255,15 @@
     <Content Include="Skin\SimpleSky.OpenFileDialogSkin.OpenFileDialog.SWFUpload.swf">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
+    <Content Include="Skin\SimpleSky.ScheduleBoxSkin.ScheduleBox.css">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ScheduleBoxSkin.ScheduleBox.js">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.ScheduleBoxSkin.ScheduleBox.xslt">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
     <Content Include="Skin\SimpleSky.TabControlSkin.CenterTabHover.gif">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
