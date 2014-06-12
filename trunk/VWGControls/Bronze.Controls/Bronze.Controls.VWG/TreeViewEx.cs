@@ -62,6 +62,25 @@ namespace Bronze.Controls.VWG
             set;
         }
 
+        protected override void RenderControls(IContext objContext, IResponseWriter objWriter, long lngRequestID)
+        {
+            MarkNode(Nodes);
+            base.RenderControls(objContext, objWriter, lngRequestID);
+        }
+
+        private void MarkNode(TreeNodeCollection nodes)
+        {
+            foreach (TreeNode objNode in nodes)
+            {
+                var objAttributeExtender = objNode as IAttributeExtender;
+                if (objAttributeExtender != null)
+                {
+                    objAttributeExtender.SetAttribute("JRT", "1");
+                }
+                MarkNode(objNode.Nodes);
+            }
+        }
+
         protected override void RenderAttributes(IContext context, IAttributeWriter objWriter)
         {
             base.RenderAttributes(context, objWriter);

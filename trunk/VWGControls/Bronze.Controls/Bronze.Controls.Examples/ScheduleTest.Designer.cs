@@ -1,9 +1,9 @@
 using Gizmox.WebGUI.Forms;
 using Gizmox.WebGUI.Common;
 
-namespace Bronze.Controls.VWG
+namespace Bronze.Controls.Examples
 {
-    partial class Form2
+    partial class ScheduleTest
     {
         /// <summary>
         /// Required designer variable.
@@ -31,38 +31,53 @@ namespace Bronze.Controls.VWG
         /// </summary>
         private void InitializeComponent()
         {
+            this.comboBox1 = new Gizmox.WebGUI.Forms.ComboBox();
             this.scheduleBox1 = new Bronze.Controls.VWG.ScheduleBoxEx();
             this.SuspendLayout();
             // 
+            // comboBox1
+            // 
+            this.comboBox1.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.Fixed3D;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(9, 9);
+            this.comboBox1.MaxDropDownItems = 8;
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // scheduleBox1
             // 
+            this.scheduleBox1.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.scheduleBox1.DisplayMonthHeader = false;
-            this.scheduleBox1.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
-            this.scheduleBox1.FirstDate = new System.DateTime(2014, 6, 10, 16, 10, 29, 827);
+            this.scheduleBox1.FirstDate = new System.DateTime(2014, 6, 10, 17, 8, 56, 784);
             this.scheduleBox1.FirstDayOfWeek = Gizmox.WebGUI.Forms.Day.Monday;
             this.scheduleBox1.HourFormat = Gizmox.WebGUI.Forms.ScheduleBoxHourFormat.Clock12H;
-            this.scheduleBox1.Location = new System.Drawing.Point(0, 0);
+            this.scheduleBox1.Location = new System.Drawing.Point(9, 55);
             this.scheduleBox1.Name = "scheduleBox1";
-            this.scheduleBox1.Size = new System.Drawing.Size(835, 662);
-            this.scheduleBox1.TabIndex = 0;
+            this.scheduleBox1.Size = new System.Drawing.Size(757, 573);
+            this.scheduleBox1.TabIndex = 1;
             this.scheduleBox1.View = Gizmox.WebGUI.Forms.ScheduleBoxView.Week;
             this.scheduleBox1.WorkEndHour = 17;
             this.scheduleBox1.WorkStartHour = 9;
-            this.scheduleBox1.EventDoubleClick += new Bronze.Controls.VWG.ScheduleBoxEx.ScheduleBoxEventHandler(this.scheduleBox1_EventDoubleClick);
             // 
-            // Form2
+            // ScheduleTest
             // 
             this.Controls.Add(this.scheduleBox1);
-            this.Size = new System.Drawing.Size(835, 662);
-            this.Text = "Form2";
+            this.Controls.Add(this.comboBox1);
+            this.Size = new System.Drawing.Size(799, 637);
+            this.Text = "ScheduleTest";
+            this.Load += new System.EventHandler(this.ScheduleTest_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ScheduleBoxEx scheduleBox1;
-
+        private ComboBox comboBox1;
+        private VWG.ScheduleBoxEx scheduleBox1;
 
 
     }

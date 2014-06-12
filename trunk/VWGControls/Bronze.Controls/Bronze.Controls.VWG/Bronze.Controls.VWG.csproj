@@ -38,6 +38,8 @@
     <Reference Include="Bronze.Core">
       <HintPath>..\RefrenceDlls\Bronze.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms.Office, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=d50c2c7452ba77d9, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Office.Design, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=e838c68aaf727726, processorArchitecture=MSIL" />
     <Reference Include="SevenZipSharp">
       <HintPath>..\RefrenceDlls\SevenZipSharp.dll</HintPath>
     </Reference>
@@ -241,6 +243,11 @@
     <Compile Include="JrtLabelSkin.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ScheduleBox\ScheduleBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScheduleBox\ScheduleBoxEvent.cs" />
+    <Compile Include="ScheduleBox\ScheduleBoxEventCollection.cs" />
     <Compile Include="SelectorTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -344,7 +351,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>14321</DevelopmentServerPort>
+          <DevelopmentServerPort>3118</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
