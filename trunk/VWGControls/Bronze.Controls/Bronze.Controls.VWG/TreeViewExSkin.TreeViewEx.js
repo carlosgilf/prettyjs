@@ -87,6 +87,11 @@ function TreeViewEx_HandleEvent(strGuid, strTreeViewGuid, strEvent, objWindow, o
                         TreeView_Checked(strGuid, objSource, objWindow);
                     }
                     break;
+                case "ext":
+                case "ext0":
+                case "ext1":
+                    TreeView_ExtClick(strTreeViewGuid, strGuid, objSource);
+                    break;
             }
         }
     }
@@ -112,7 +117,7 @@ function TreeViewEx_DoNodeAction(strCurrentNodeDataId, objWindow, blnIsKeyboard,
             if (nodeText == "" || nodeText == null) {
                 return;
             }
-            
+
             // Get tree view node
             var objTreeViewNode = TreeView_GetTreeViewFromNode(objCurrentNode);
 
@@ -148,7 +153,7 @@ function TreeViewEx_DoNodeAction(strCurrentNodeDataId, objWindow, blnIsKeyboard,
                         //jrt Add: select full line options
                         var isSelectFullLine = Xml_IsAttribute(objTreeViewNode, "selectFullLine", "1");
                         var preSelectElement = objPreviousElement;
-                        if (isSelectFullLine) {
+                        if (!isSelectFullLine) {
                             preSelectElement = Web_GetWebElement("VWGTXT_" + strPreviousNodeDataId, objWindow)
                         }
                         Web_SetUnselectedElement(preSelectElement, objWindow);
@@ -180,9 +185,10 @@ function TreeViewEx_DoNodeAction(strCurrentNodeDataId, objWindow, blnIsKeyboard,
                     //jrt Add: select full line options
                     var isSelectFullLine = Xml_IsAttribute(objTreeViewNode, "selectFullLine", "1");
                     var currSelectElement = objCurrentElement;
-                    if (isSelectFullLine) {
+                    if (!isSelectFullLine) {
                         var currSelectElement = Web_GetWebElement("VWGTXT_" + strCurrentNodeDataId, objWindow)
                     }
+                    $(currSelectElement).removeClass("TreeView-Hover");
                     Web_SetSelectedElement(currSelectElement, objWindow);
                 }
 
@@ -280,6 +286,54 @@ function TreeViewEx_KeyDown(strGuid, objWindow, objEvent) {
 
         // Cancel default scrolling functionality.
         Web_EventCancelBubble(objEvent, true, false);
+    }
+}
+
+
+function TreeViewEx_MonseLeave(evt, ele) {
+    var icon = $(ele).find("[vwgtype=ext1]");
+    icon.css("display", "none");
+
+    var node = $(ele).closest('[vwgtype=root]');
+
+    node.attr("class",node.attr("class").replace("TreeView-Hover ",""));
+}
+
+function TreeViewEx_MouseEnter(evt, ele) {
+    var icon = $(ele).find("[vwgtype=ext1]");
+    icon.css("display", "block");
+
+    var node = $(ele).closest('[vwgtype=root]');
+    var strGuid = node.attr("id").replace("VWGNODE_", "");
+    var objCurrentNode = Data_GetNode(strGuid);
+    if (objCurrentNode) {
+        var isSelected = Xml_IsAttribute(objCurrentNode, "Attr.Selected", "1");
+        if (!isSelected) {
+            var css = node.attr("class");
+            if (css.indexOf("TreeView-Hover")<0) {
+                node.attr("class", "TreeView-Hover " + css);
+            }
+        }
+    }
+}
+
+function TreeView_ExtClick(strTreeViewGuid,strGuid, ele) {
+    if (!strGuid) {
+        var nobr = $(ele).closest('nobr');
+        strGuid = nobr.attr("id").replace("VWGLE_", "");
+    }
+    if (!strTreeViewGuid) {
+        var divControl = $(ele).closest("div[vwgtype=control]");
+        strTreeViewGuid = divControl.attr("id").replace("VWG_", "");
+    }
+    var srcName = $(ele).attr("name");
+
+    // jrt 2014-6-13 Added NodeExtClick event
+    var objEvent = Events_CreateEvent(strTreeViewGuid, "NodeExtClick", true);
+    if (Data_IsCriticalEvent(strTreeViewGuid, mcntEventEnterId)) {
+        Events_SetEventAttribute(objEvent, "id", strGuid);
+        Events_SetEventAttribute(objEvent, "srcName", srcName);
+        Events_RaiseEvents();
     }
 }
 /// </method>

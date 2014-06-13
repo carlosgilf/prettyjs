@@ -35,11 +35,11 @@
       <xsl:call-template name="tplApplyDragAndDrop" />
 
       <!-- TreeNode row container -->
-      <div id="VWGNODE_{@Id}" vwgtype="root" onmousedown="mobjApp.TreeViewEx_HandleEvent({@Id},'{$prmTreeView/@Attr.Id}','mousedown',window,event)" onmouseup="mobjApp.TreeViewEx_HandleEvent({@Id},'{$prmTreeView/@Attr.Id}','mouseup',window,event)" ondblclick="mobjApp.TreeViewEx_HandleEvent({@Id},'{$prmTreeView/@Attr.Id}','dblclick',window,event)" onclick="mobjApp.TreeViewEx_HandleEvent({@Id},'{$prmTreeView/@Attr.Id}','click',window,event)">
-
+      <div id="VWGNODE_{@Id}" vwgtype="root" onmouseleave="mobjApp.TreeViewEx_MonseLeave(event,this);" onmouseenter="mobjApp.TreeViewEx_MouseEnter(event,this);"
+           onmousedown="mobjApp.TreeViewEx_HandleEvent({@Id},'{$prmTreeView/@Attr.Id}','mousedown',window,event)" onmouseup="mobjApp.TreeViewEx_HandleEvent({@Id},'{$prmTreeView/@Attr.Id}','mouseup',window,event)" ondblclick="mobjApp.TreeViewEx_HandleEvent({@Id},'{$prmTreeView/@Attr.Id}','dblclick',window,event)" onclick="mobjApp.TreeViewEx_HandleEvent({@Id},'{$prmTreeView/@Attr.Id}','click',window,event)">
 
         <xsl:choose>
-          <xsl:when test="@Attr.Selected='1'">
+          <xsl:when test="$prmTreeView/@selectFullLine='1' and @Attr.Selected='1'">
             <xsl:attribute name="class">TreeView-RowContainer TreeView-RowContainer_Selected</xsl:attribute>
           </xsl:when>
           <xsl:otherwise>
@@ -194,9 +194,19 @@
 
               <!-- TreeNode text container -->
               <div  id="VWGTXT_{@Id}" class="Common-HandCursor TreeView-TextContainer" vwgtype="text">
+
+                <xsl:choose>
+                  <xsl:when test="not($prmTreeView/@selectFullLine='1') and @Attr.Selected='1'">
+                    <xsl:attribute name="class">Common-HandCursor TreeView-TextContainer TreeView-TextContainer_Selected</xsl:attribute>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:attribute name="class">Common-HandCursor TreeView-TextContainer</xsl:attribute>
+                  </xsl:otherwise>
+                </xsl:choose>
+                
                 <xsl:call-template name="tplSetToolTip" />
 
-                <nobr id="VWGLE_{@Id}" class="TreeView-Label" vwgtype="label">
+                <nobr id="VWGLE_{@Id}" class="TreeView-Label"  vwgtype="label">
                   <xsl:if test="$prmTreeView/@Attr.LabelEdit='1' and @Attr.Selected='1'">
                     <xsl:attribute name="vwglabeledit">1</xsl:attribute>
                   </xsl:if>
@@ -211,6 +221,9 @@
                     </xsl:if>
                     <xsl:if test="@Attr.Background">
                       background:<xsl:value-of select="@Attr.Background" />;
+                    </xsl:if>
+                    <xsl:if test="$prmTreeView/@Attr.ItemHeight">
+                      line-height:<xsl:value-of select="$prmTreeView/@Attr.ItemHeight"/>px;
                     </xsl:if>
                   </xsl:attribute>
                   <xsl:if test="@Attr.Text and not(@Attr.Text='')">

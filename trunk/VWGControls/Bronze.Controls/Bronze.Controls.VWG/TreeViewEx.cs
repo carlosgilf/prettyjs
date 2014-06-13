@@ -29,6 +29,48 @@ namespace Bronze.Controls.VWG
     [Skin(typeof(TreeViewExSkin))]
     public partial class TreeViewEx : TreeView
     {
+        #region TreeNodeExtClick event
+        public delegate void NodeExtHandler(object sender, TreeViewEx.TreeNodeExtEventArgs e);
+        /// <summary>
+        /// The RowItemClick event registration.
+        /// </summary>
+        private static readonly SerializableEvent NodeExtClickEvent = SerializableEvent.Register("NodeExtClick", typeof(NodeExtHandler), typeof(TreeViewEx));
+
+        /// <summary>
+        /// Occurs when selection changed.
+        /// </summary>
+        public event NodeExtHandler NodeExtClick
+        {
+            add
+            {
+                this.AddHandler(TreeViewEx.NodeExtClickEvent, value);
+            }
+            remove
+            {
+                this.RemoveHandler(TreeViewEx.NodeExtClickEvent, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets the hanlder for the TreeNodeExtClick event.
+        /// </summary>
+        private NodeExtHandler NodeExtClickHandler
+        {
+            get
+            {
+                return (NodeExtHandler)this.GetHandler(TreeViewEx.NodeExtClickEvent);
+            }
+        }
+
+        protected virtual void OnNodeExtClick(TreeNodeExtEventArgs objArgs)
+        {
+            if (NodeExtClickHandler != null)
+            {
+                NodeExtClickHandler(this, objArgs);
+            }
+        } 
+        #endregion
+
         public TreeViewEx()
         {
             InitializeComponent();
@@ -38,7 +80,7 @@ namespace Bronze.Controls.VWG
 
         private int nodeHeight = 20;
 
-         [Description("Node的高度")]
+        [Description("Node的高度")]
         [DefaultValue(20)]
         public int NodeHeight
         {
@@ -89,8 +131,75 @@ namespace Bronze.Controls.VWG
             objWriter.WriteAttributeString("selectFullLine", this.AllowSelectFullLine ? "1" : "0");
         }
 
-       
+        protected override EventTypes GetCriticalEvents()
+        {
+            EventTypes enmTypes = base.GetCriticalEvents();
+            if (this.NodeExtClickHandler != null) enmTypes |= EventTypes.Enter;
+            return enmTypes;
+        }
+
+        protected override void FireEvent(IEvent objEvent)
+        {
+            if (objEvent.Type == "NodeExtClick")
+            {
+                try
+                {
+                    var id = objEvent["id"];
+                    if (string.IsNullOrEmpty( id))
+                    {
+                        return;
+                    }
+                    var nodeId = long.Parse(id);
+                    var currentNode = this.FindNodeById(nodeId);
+                    var name = objEvent["srcName"];
+                    var arg = new TreeNodeExtEventArgs() {Node=currentNode, SourceName = name };
+                    this.OnNodeExtClick(arg);
+                }
+                catch (Exception)
+                {
+                }
+            }
+            base.FireEvent(objEvent);
+        }
+
+
+        public TreeNode FindNodeById(long id)
+        {
+            return FindNodeById(this.Nodes, id);
+        }
+
+        private  TreeNode FindNodeById(TreeNodeCollection nodes, long id)
+        {
+            foreach (TreeNode item in nodes)
+            {
+                if (item.ID == id)
+                {
+                    return item;
+                }
+                else
+                {
+                    var node= FindNodeById(item.Nodes, id);
+                    if (node!=null)
+                    {
+                        return node;
+                    }
+                }
+            }
+            return null;
+        }
+
+
+        public class TreeNodeExtEventArgs : EventArgs
+        {
+            public TreeNode Node
+            { get; set; }
+
+            public string SourceName
+            { get; set; }
+        }
+
+
     }
 
-   
+
 }

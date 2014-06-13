@@ -47,6 +47,7 @@ namespace Bronze.Controls.Examples
             this.treeNode5 = new Gizmox.WebGUI.Forms.TreeNode();
             this.treeNode6 = new Gizmox.WebGUI.Forms.TreeNode();
             this.treeNode7 = new Gizmox.WebGUI.Forms.TreeNode();
+            this.treeNode21 = new Gizmox.WebGUI.Forms.TreeNode();
             this.treeNode3 = new Gizmox.WebGUI.Forms.TreeNode();
             this.treeNode8 = new Gizmox.WebGUI.Forms.TreeNode();
             this.treeNode9 = new Gizmox.WebGUI.Forms.TreeNode();
@@ -54,7 +55,9 @@ namespace Bronze.Controls.Examples
             this.treeNode4 = new Gizmox.WebGUI.Forms.TreeNode();
             this.treeViewEx1 = new Bronze.Controls.VWG.TreeViewEx();
             this.treeNode1 = new Gizmox.WebGUI.Forms.TreeNode();
-            this.treeNode21 = new Gizmox.WebGUI.Forms.TreeNode();
+            this.treeNode22 = new Gizmox.WebGUI.Forms.TreeNode();
+            this.treeNode23 = new Gizmox.WebGUI.Forms.TreeNode();
+            this.treeNode24 = new Gizmox.WebGUI.Forms.TreeNode();
             this.SuspendLayout();
             // 
             // treeNode11
@@ -194,6 +197,12 @@ namespace Bronze.Controls.Examples
             this.treeNode7.Text = "treeNode7";
             this.treeNode7.ToolTipText = "";
             // 
+            // treeNode21
+            // 
+            this.treeNode21.CheckBox = Gizmox.WebGUI.Forms.CheckBoxVisibility.Inherited;
+            this.treeNode21.Name = "treeNode21";
+            this.treeNode21.ToolTipText = "";
+            // 
             // treeNode3
             // 
             this.treeNode3.CheckBox = Gizmox.WebGUI.Forms.CheckBoxVisibility.Inherited;
@@ -252,11 +261,26 @@ namespace Bronze.Controls.Examples
             this.treeNode1.Text = "treeNode1";
             this.treeNode1.ToolTipText = "";
             // 
-            // treeNode21
+            // treeNode22
             // 
-            this.treeNode21.CheckBox = Gizmox.WebGUI.Forms.CheckBoxVisibility.Inherited;
-            this.treeNode21.Name = "treeNode21";
-            this.treeNode21.ToolTipText = "";
+            this.treeNode22.CheckBox = Gizmox.WebGUI.Forms.CheckBoxVisibility.Inherited;
+            this.treeNode22.Name = "treeNode22";
+            this.treeNode22.Text = "treeNode22";
+            this.treeNode22.ToolTipText = "";
+            // 
+            // treeNode23
+            // 
+            this.treeNode23.CheckBox = Gizmox.WebGUI.Forms.CheckBoxVisibility.Inherited;
+            this.treeNode23.Name = "treeNode23";
+            this.treeNode23.Text = "treeNode23";
+            this.treeNode23.ToolTipText = "";
+            // 
+            // treeNode24
+            // 
+            this.treeNode24.CheckBox = Gizmox.WebGUI.Forms.CheckBoxVisibility.Inherited;
+            this.treeNode24.Name = "treeNode24";
+            this.treeNode24.Text = "treeNode24";
+            this.treeNode24.ToolTipText = "";
             // 
             // TreeTest
             // 
@@ -295,6 +319,9 @@ namespace Bronze.Controls.Examples
         private TreeView treeViewEx3;
         private TreeNode treeNode20;
         private TreeNode treeNode21;
+        private TreeNode treeNode22;
+        private TreeNode treeNode23;
+        private TreeNode treeNode24;
 
 
     }

@@ -253,6 +253,9 @@
     <Compile Include="UcMenu.Designer.cs">
       <DependentUpon>UcMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="WebGuiExtension\CustomContext.cs" />
+    <Compile Include="WebGuiExtension\PreloadEx.cs" />
+    <Compile Include="WebGuiExtension\RouterEx.cs" />
     <EmbeddedResource Include="Demo\MainMenuTest.resx">
       <DependentUpon>MainMenuTest.cs</DependentUpon>
       <SubType>Designer</SubType>
