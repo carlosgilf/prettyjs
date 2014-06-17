@@ -291,33 +291,42 @@ function TreeViewEx_KeyDown(strGuid, objWindow, objEvent) {
 
 
 function TreeViewEx_MonseLeave(evt, ele) {
-    var icon = $(ele).find("[vwgtype=ext1]");
-    icon.css("display", "none");
-
-    var node = $(ele).closest('[vwgtype=root]');
-
-    node.attr("class",node.attr("class").replace("TreeView-Hover ",""));
-}
-
-function TreeViewEx_MouseEnter(evt, ele) {
-    var icon = $(ele).find("[vwgtype=ext1]");
-    icon.css("display", "block");
-
     var node = $(ele).closest('[vwgtype=root]');
     var strGuid = node.attr("id").replace("VWGNODE_", "");
     var objCurrentNode = Data_GetNode(strGuid);
     if (objCurrentNode) {
+        var disable = Xml_IsAttribute(objCurrentNode, "Attr.Text", "");
+        if (disable) {
+            return;
+        }
+    }
+    var icon = $(ele).find("[vwgtype=ext1]");
+    icon.css("display", "none");
+    node.attr("class", node.attr("class").replace("TreeView-Hover ", ""));
+}
+
+function TreeViewEx_MouseEnter(evt, ele) {
+    var node = $(ele).closest('[vwgtype=root]');
+    var strGuid = node.attr("id").replace("VWGNODE_", "");
+    var objCurrentNode = Data_GetNode(strGuid);
+    if (objCurrentNode) {
+        var disable = Xml_IsAttribute(objCurrentNode, "Attr.Text", "");
+        if (disable) {
+            return;
+        }
+        var icon = $(ele).find("[vwgtype=ext1]");
+        icon.css("display", "block");
         var isSelected = Xml_IsAttribute(objCurrentNode, "Attr.Selected", "1");
         if (!isSelected) {
             var css = node.attr("class");
-            if (css.indexOf("TreeView-Hover")<0) {
+            if (css.indexOf("TreeView-Hover") < 0) {
                 node.attr("class", "TreeView-Hover " + css);
             }
         }
     }
 }
 
-function TreeView_ExtClick(strTreeViewGuid,strGuid, ele) {
+function TreeView_ExtClick(strTreeViewGuid, strGuid, ele) {
     if (!strGuid) {
         var nobr = $(ele).closest('nobr');
         strGuid = nobr.attr("id").replace("VWGLE_", "");

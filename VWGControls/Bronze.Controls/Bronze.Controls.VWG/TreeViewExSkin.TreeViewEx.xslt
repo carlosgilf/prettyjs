@@ -50,9 +50,9 @@
         <!--jrt set TreeNode height-->
         <xsl:attribute name="style">
           <xsl:choose>
-            <xsl:when test="@Attr.Text and not(@Attr.Text='')">height:<xsl:value-of select="$prmTreeView/@Attr.ItemHeight" />px;
+            <xsl:when test="not(@Attr.Text='')">height:<xsl:value-of select="$prmTreeView/@Attr.ItemHeight" />px;
             </xsl:when>
-            <xsl:otherwise>height:13px;</xsl:otherwise>
+            <xsl:otherwise>height:8px;line-height:8px;</xsl:otherwise>
           </xsl:choose>
         </xsl:attribute>
 
@@ -222,12 +222,14 @@
                     <xsl:if test="@Attr.Background">
                       background:<xsl:value-of select="@Attr.Background" />;
                     </xsl:if>
-                    <xsl:if test="$prmTreeView/@Attr.ItemHeight">
+                    <xsl:if test="not(@Attr.Text='') and $prmTreeView/@Attr.ItemHeight">
                       line-height:<xsl:value-of select="$prmTreeView/@Attr.ItemHeight"/>px;
+                    </xsl:if>
+                    <xsl:if test="@Attr.Text=''"> 
+                      display:none;
                     </xsl:if>
                   </xsl:attribute>
                   <xsl:if test="@Attr.Text and not(@Attr.Text='')">
-                    
                     <xsl:choose>
                       <xsl:when test="($prmTreeView/@showHtml)='1'">
                         <!--jrt 支持现实html-->
@@ -243,8 +245,6 @@
                     </xsl:choose>
                   </xsl:if>
                  
-                  
-                  <xsl:if test="not(@Attr.Text) or @Attr.Text=''"> </xsl:if>
                 </nobr>
               </div>
             </div>
