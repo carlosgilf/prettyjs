@@ -190,4 +190,28 @@
   <data name="Skin:Bronze.Controls.VWG.HtmlBoxExSkin:HtmlBoxEx.moz.css:Presentation" xml:space="preserve">
     <value>100</value>
   </data>
+  <data name="Skin:Bronze.Controls.VWG.HtmlBoxExSkin:HtmlBoxEx.css" xml:space="preserve">
+    <value>StyleSheetResource</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HtmlBoxExSkin:HtmlBoxEx.css:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HtmlBoxExSkin:HtmlBoxEx.css:FileName" xml:space="preserve">
+    <value>HtmlBoxExSkin.HtmlBoxEx.css</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HtmlBoxExSkin:HtmlBoxEx.css:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HtmlBoxExSkin:HtmlBoxEx.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>HtmlBoxExSkin.HtmlBoxEx.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HtmlBoxExSkin:HtmlBoxEx.css:PresentationRole" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HtmlBoxExSkin:HtmlBoxEx.css:PresentationEngine" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Skin:Bronze.Controls.VWG.HtmlBoxExSkin:HtmlBoxEx.css:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
 </root>
