@@ -130,6 +130,12 @@
     <Content Include="Skin\SimpleSky.CommonSkin.Common.Events.js">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
+    <Content Include="Skin\SimpleSky.CommonSkin.Common.ie.css">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
+    <Content Include="Skin\SimpleSky.CommonSkin.Common.Layout.js">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
     <Content Include="Skin\SimpleSky.CommonSkin.Common.Layout.xslt">
       <DependentUpon>SimpleSky.cs</DependentUpon>
       <SubType>Designer</SubType>

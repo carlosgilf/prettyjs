@@ -1,0 +1,80 @@
+.Common-DragMarker
+{
+	position: absolute;
+	border:2px solid #6F9DD9;
+	overflow:hidden;
+}
+
+.Common-BorderBox
+{
+
+}
+
+.Common-DragContainer
+{
+	position: absolute;
+	border:none;
+	padding:0px;
+}
+
+.Common-Disabled
+{
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+}
+
+.Common-InheritDisabled input
+{
+	aa:expression(this.disabled=1);
+}
+
+.Common-WaitCursor
+{
+	cursor:wait;
+}
+
+.Common-HandCursor
+{
+	cursor:hand;
+}
+
+.Common-Container
+{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+
+.Common-DockLayout
+{
+	table-layout:fixed;
+	width:100%;
+	height:100%;
+}
+
+.Common-DockDynamicLayout
+{
+	table-layout:auto;
+	width:100%;
+	height:100%;
+}
+
+.Common-Unselectable
+{
+	
+}
+
+
+.Common-PreWordWrap
+{
+    word-wrap: break-word; 
+    display:inline;
+    margin:0px;
+}
+
+.Common-PreNoWrap
+{
+	display:inline;
+	margin:0px;
+}
+
+div {zoom:1 ;}

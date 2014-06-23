@@ -52,7 +52,7 @@
           <xsl:choose>
             <xsl:when test="not(@Attr.Text='')">height:<xsl:value-of select="$prmTreeView/@Attr.ItemHeight" />px;
             </xsl:when>
-            <xsl:otherwise>height:8px;line-height:8px;</xsl:otherwise>
+            <xsl:otherwise>height:10px;line-height:10px;</xsl:otherwise>
           </xsl:choose>
         </xsl:attribute>
 

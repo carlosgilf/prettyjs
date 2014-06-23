@@ -1,0 +1,5 @@
+﻿.HtmlBoxEx-Selectable div,img,span,table,a
+{
+	-moz-user-select:text;
+	-webkit-user-select:auto;	
+}

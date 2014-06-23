@@ -78,6 +78,15 @@
     <Content Include="FlyTreeSkin.templateresource1.xslt">
       <DependentUpon>FlyTreeSkin.cs</DependentUpon>
     </Content>
+    <Content Include="HtmlBoxExSkin.HtmlBoxEx.js">
+      <DependentUpon>HtmlBoxExSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="HtmlBoxExSkin.HtmlBoxEx.moz.css">
+      <DependentUpon>HtmlBoxExSkin.cs</DependentUpon>
+    </Content>
+    <Content Include="HtmlBoxExSkin.HtmlBoxEx.xslt">
+      <DependentUpon>HtmlBoxExSkin.cs</DependentUpon>
+    </Content>
     <Content Include="ImageProcessor.bmp" />
     <Content Include="ImageProcessorSkin.ImageProcessor.js">
       <DependentUpon>ImageProcessorSkin.cs</DependentUpon>
@@ -191,6 +200,9 @@
       <DependentUpon>Form2.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="HtmlBoxExSkin.resx">
+      <DependentUpon>HtmlBoxExSkin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JrtLabelSkin.resx">
       <DependentUpon>JrtLabelSkin.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -236,6 +248,15 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="HtcFileLoader.cs" />
+    <Compile Include="HtmlBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HtmlBoxEx.designer.cs">
+      <DependentUpon>HtmlBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlBoxExSkin.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="IHoverControl.cs" />
     <Compile Include="JrtLabel.cs">
       <SubType>Component</SubType>
