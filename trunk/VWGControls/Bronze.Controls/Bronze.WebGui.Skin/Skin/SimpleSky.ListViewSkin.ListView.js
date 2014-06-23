@@ -37,10 +37,20 @@ function ListView_Click(strGuid, strId, objWindow, objEvent) {
     }
 
     // jrt 2014-5-30 Added RowItemClick event
-    var objEvent = Events_CreateEvent(strGuid, "RowItemClick", true);
+    var rowClickEvent = Events_CreateEvent(strGuid, "RowItemClick", true);
     if (Data_IsCriticalEvent(strGuid, mcntEventEnterId)) {
-        //Events_SetEventAttribute(objEvent, "ItemId", strGuid);
-        Events_SetEventAttribute(objEvent, "RowId", strId);
+        var objSource = Web_GetEventSource(objEvent);
+        var td = $(objSource).closest("td.ListView-DataCell");
+        // Get the multiselect attribute.
+        var objNode = Data_GetNode(strGuid);
+        var blnCheckBox = Xml_IsAttribute(objNode, "Attr.CheckBoxes", "1");
+        var cols = td.parent().find("td.ListView-DataCell");
+        var colIdx = cols.index(td);
+        if (blnCheckBox) {
+            colIdx--;
+        }
+        Events_SetEventAttribute(rowClickEvent, "ColIndex", colIdx);
+        Events_SetEventAttribute(rowClickEvent, "RowId", strId);
         Events_RaiseEvents();
     }
 }
