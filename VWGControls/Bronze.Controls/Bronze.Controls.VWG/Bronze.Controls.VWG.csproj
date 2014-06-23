@@ -78,6 +78,9 @@
     <Content Include="FlyTreeSkin.templateresource1.xslt">
       <DependentUpon>FlyTreeSkin.cs</DependentUpon>
     </Content>
+    <Content Include="HtmlBoxExSkin.HtmlBoxEx.css">
+      <DependentUpon>HtmlBoxExSkin.cs</DependentUpon>
+    </Content>
     <Content Include="HtmlBoxExSkin.HtmlBoxEx.js">
       <DependentUpon>HtmlBoxExSkin.cs</DependentUpon>
     </Content>
