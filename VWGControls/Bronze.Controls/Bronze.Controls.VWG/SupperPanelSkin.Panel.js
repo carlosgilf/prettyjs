@@ -101,6 +101,25 @@
     }
 }
 
+function SupperPanel_Show(obj) {
+    var $vwgObj = null;
+    if (typeof (obj) == "string") {
+        if (obj.indexOf("VWG_")!=0) {
+            obj = "VWG_" + obj;
+        }
+        $vwgObj = $("#" + obj);
+    }
+    else if (typeof (obj) == "number") {
+        $vwgObj = $("#VWG_" + obj);
+    }
+    else {
+        $vwgObj = $(obj);
+    }
+    $vwgObj.find(".SupperPanel-Hidden,.SupperPanel-VHidden").css("display", "block").css("visibility", "visible").
+        removeClass("SupperPanel-Hidden").removeClass("SupperPanel-VHidden");
+    $vwgObj.css("display", "block").css("visibility", "visible");
+}
+
 
 
 //run server method
