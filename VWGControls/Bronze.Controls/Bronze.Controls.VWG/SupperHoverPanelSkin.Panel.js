@@ -1,18 +1,9 @@
 ﻿function SupperHoverPanel_Init(strGuid) {
     var objImage=Web_GetElementByDataId(strGuid);
     var objNode=Data_GetNode(strGuid);
-    //    var layer1 = $(objImage).children("div:first");
-    //    var radius = Xml_GetAttribute(objNode, "Radius");
-
-    //    if(radius){
-    //        var newStyle = layer1.attr("style") + ";" + radius
-    //        layer1.attr("style", newStyle);
-    //    }
 
     $(objImage).bind("mouseenter", function () {
-
         if (objNode) {
-            //debugger;
             var layer = $(objImage).children("div:first");
 
             if (!objImage.tempStyle) {
@@ -42,8 +33,6 @@
                     layer.css("background-position", "top left");
                 }
             }
-
-
             if (overScript) {
                 eval(overScript);
             }
@@ -70,7 +59,6 @@ function HoverPanel_RunLeaveScript(strGuid) {
     }
 };
 
-
 function vwg_showMenu(id, option, animate, zIndex, relatedId) {
     zIndex = zIndex || 116;
     var _option={ duration: 500,animate: 'dropDown' };
@@ -80,8 +68,6 @@ function vwg_showMenu(id, option, animate, zIndex, relatedId) {
     if(animate) {
         _option.animate=animate;
     }
-     
-
     var obj=$(Web_GetElementByDataId(id));
 
     var last_relatedId = obj.attr('relatedId');
