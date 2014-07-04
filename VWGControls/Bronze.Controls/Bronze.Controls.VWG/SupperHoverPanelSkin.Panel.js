@@ -368,9 +368,9 @@ function isNumber(n) {
                 });
                 observer.observe(this, { subtree: false, attributes: true });
             } else if (isEventSupported('DOMAttrModified', div)) {
-                $el.on('DOMAttrModified', callback);
+                $el.bind('DOMAttrModified', callback);
             } else if (isEventSupported('propertychange', div)) {
-                $el.on('propertychange', callback);
+                $el.bind('propertychange', callback);
             } else {
                 setInterval(function () { check.call(that, $el); }, options.throttle);
             }

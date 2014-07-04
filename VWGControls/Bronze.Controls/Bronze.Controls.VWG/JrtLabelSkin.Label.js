@@ -31,7 +31,8 @@ function JrtLabel_Init(controlId, sender) {
     if (autoEllipsis == "1") {
         var labelHeight = $ctl.height();
         var $span = $ctl.find(".Common-Unselectable");
-        $span.css("word-break", "break-word");
+        //$span.css("word-wrap", "break-word");
+        $span.css("word-break", "break-all");
         $span.wrapEllipsis(labelHeight);
     }
 
