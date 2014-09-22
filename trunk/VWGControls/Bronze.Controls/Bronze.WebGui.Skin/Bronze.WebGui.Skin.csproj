@@ -191,6 +191,9 @@
     <Content Include="Skin\SimpleSky.FormSkin.Form.css">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
+    <Content Include="Skin\SimpleSky.FormSkin.Form.moz.css">
+      <DependentUpon>SimpleSky.cs</DependentUpon>
+    </Content>
     <Content Include="Skin\SimpleSky.FormSkin.Form.xslt">
       <DependentUpon>SimpleSky.cs</DependentUpon>
     </Content>
