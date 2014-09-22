@@ -1489,4 +1489,28 @@
   <data name="Skin:Gizmox.WebGUI.Forms.Skins.CommonSkin:Common.ie.css:Presentation" xml:space="preserve">
     <value>100</value>
   </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.moz.css" xml:space="preserve">
+    <value>StyleSheetResource</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.moz.css:CompilerActions" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.moz.css:FileName" xml:space="preserve">
+    <value>SimpleSky.FormSkin.Form.moz.css</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.moz.css:ContentType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.moz.css:Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SimpleSky.FormSkin.Form.moz.css;Gizmox.WebGUI.Forms.Skins.Resources.StyleSheetContent, Gizmox.WebGUI.Common</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.moz.css:PresentationRole" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.moz.css:PresentationEngine" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="Skin:Gizmox.WebGUI.Forms.Skins.FormSkin:Form.moz.css:Presentation" xml:space="preserve">
+    <value>100</value>
+  </data>
 </root>
